@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getPortfolioPage, portfolioPages } from '@/lib/portfolio-pages';
 import ImageLightbox from '@/components/ImageLightbox';
+import FormattedText from '@/components/FormattedText';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -50,7 +51,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="max-w-5xl mx-auto px-6 py-16">
       {/* Back Link */}
       <Link
         href="/portfolio"
@@ -71,7 +72,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
         {page.subtitle && (
           <p className="mt-2 text-xl text-gray-500">{page.subtitle}</p>
         )}
-        <p className="mt-4 text-lg text-gray-600">{page.description}</p>
+        <p className="mt-4 text-lg text-gray-600">
+          <FormattedText text={page.description} />
+        </p>
       </div>
 
       {/* Sections */}
@@ -79,7 +82,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
         {page.sections.map((section, index) => (
           <section key={index} className="border-t border-gray-100 pt-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">{section.heading}</h2>
-            <p className="text-gray-600 leading-relaxed">{section.content}</p>
+            <p className="text-gray-600 leading-relaxed">
+              <FormattedText text={section.content} />
+            </p>
 
             {/* Metrics */}
             {section.metrics && section.metrics.length > 0 && (
@@ -99,7 +104,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
                 {section.bullets.map((bullet, i) => (
                   <li key={i} className="flex items-start gap-2 text-gray-600">
                     <span className="text-blue-600 mt-1">•</span>
-                    {bullet}
+                    <FormattedText text={bullet} />
                   </li>
                 ))}
               </ul>
