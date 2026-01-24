@@ -1,34 +1,35 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
 
 const stats = [
-  { value: '$2.6M+', label: 'Total Sales' },
-  { value: '6 Years', label: 'Shopify Experience' },
-  { value: '340%', label: 'Traffic Growth' },
-  { value: '10+', label: 'Tools Built' },
+  { value: '$2.6M+', label: 'Sales Managed' },
+  { value: '340%', label: 'Organic Growth' },
+  { value: '5K+', label: 'Products Managed' },
+  { value: '6 Years', label: 'Shopify' },
 ];
 
 const featuredProjects = [
   {
     slug: 'quality-sewing',
     title: 'Quality Sewing',
-    description: 'E-commerce Manager driving $2M+/year in revenue for a family-owned sewing retailer.',
-    metric: '$2M+/year revenue, 340% traffic growth',
+    description: 'Running the e-commerce side of a family-owned sewing retailer. $2M+ in annual sales, 5K+ products.',
+    metric: '5K→22K monthly organic traffic',
     tags: ['Shopify', 'SEO', 'E-commerce'],
   },
   {
     slug: 'masterpieces',
     title: 'Masterpiece Locator',
-    description: 'Full art discovery platform with 4,094+ paintings across 455+ museums worldwide.',
-    metric: '4,094+ paintings indexed',
+    description: 'Built a tool to find famous paintings in museums. 4,094 paintings across 455+ museums, all searchable.',
+    metric: '4,094 paintings indexed',
     tags: ['Full-Stack', 'Database', 'SEO'],
   },
   {
     slug: 'luxury-wall-art',
     title: 'Luxury Wall Art',
-    description: 'Built and scaled a Shopify + Etsy art store from zero to $120K in revenue.',
-    metric: '$120K revenue, 9,200 keywords',
-    tags: ['Shopify', 'Etsy', 'Paid Ads'],
+    description: 'My side project. Started from zero, grew to $120K in sales across Shopify and Etsy.',
+    metric: '$120K total revenue',
+    tags: ['Shopify', 'Etsy', 'SEO'],
   },
 ];
 
@@ -36,31 +37,44 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-6 py-20 md:py-32">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-          Jesse Johnson
-        </h1>
-        <p className="mt-4 text-xl md:text-2xl text-gray-600 max-w-2xl">
-          Digital marketer and e-commerce specialist. I build brands that grow.
-        </p>
-        <p className="mt-4 text-gray-500">
-          Currently E-commerce Manager at{' '}
-          <a
-            href="https://qualitysewing.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            Quality Sewing
-          </a>
-          {' '}in Seattle, WA.
-        </p>
+      <section className="max-w-5xl mx-auto px-6 py-16 md:py-24">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
+          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-gray-100 shadow-lg flex-shrink-0">
+            <Image
+              src="/images/headshots/jesse-pfp.jpg"
+              alt="Jesse Johnson"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Jesse Johnson
+            </h1>
+            <p className="mt-3 text-xl text-gray-600 max-w-xl">
+              E-commerce manager by day. I run the digital side of things for a sewing retailer in Seattle. On the side, I build tools and grow brands.
+            </p>
+            <p className="mt-3 text-gray-500">
+              Currently at{' '}
+              <a
+                href="https://qualitysewing.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Quality Sewing
+              </a>
+              . Open to new opportunities.
+            </p>
+          </div>
+        </div>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
             href="/portfolio"
             className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
           >
-            View My Work
+            See My Work
           </Link>
           <Link
             href="/contact"
@@ -110,16 +124,16 @@ export default function Home() {
       <section className="bg-gray-900 text-white">
         <div className="max-w-5xl mx-auto px-6 py-16 text-center">
           <h2 className="text-2xl md:text-3xl font-bold">
-            Looking for your next hire?
+            Want to work together?
           </h2>
           <p className="mt-4 text-gray-300 max-w-xl mx-auto">
-            I'm open to full-time opportunities in digital marketing, e-commerce, and growth roles.
+            I'm looking for my next full-time role in e-commerce, digital marketing, or growth. Remote or Seattle area.
           </p>
           <Link
             href="/contact"
             className="mt-8 inline-block px-8 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors font-medium"
           >
-            Get in Touch
+            Let's Talk
           </Link>
         </div>
       </section>

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with Jesse Johnson for digital marketing, e-commerce, and freelance opportunities.',
+    'Contact Jesse Johnson for e-commerce, digital marketing, and freelance opportunities.',
 };
 
 export default function ContactPage() {
@@ -12,8 +12,7 @@ export default function ContactPage() {
       <div className="max-w-2xl">
         <h1 className="text-4xl font-bold text-gray-900">Get in Touch</h1>
         <p className="mt-4 text-lg text-gray-600">
-          I'm open to full-time opportunities, freelance projects, and interesting
-          collaborations. Drop me a message and I'll get back to you.
+          Looking for my next full-time gig. Also open to freelance if the project makes sense. Send me a note and I'll get back to you.
         </p>
 
         {/* Contact Form */}
@@ -102,7 +101,7 @@ export default function ContactPage() {
         {/* Location */}
         <div className="mt-8">
           <p className="text-gray-500 text-sm">
-            Based in Seattle, WA. Open to remote work.
+            Seattle, WA. Remote works too.
           </p>
         </div>
       </div>

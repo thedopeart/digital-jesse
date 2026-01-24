@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Jesse Johnson is a digital marketer and e-commerce specialist based in Seattle. 6 years Shopify experience, $2.6M+ in sales.',
+    'Jesse Johnson is a digital marketer and e-commerce manager in Seattle. 6 years on Shopify, over $2M in sales managed.',
 };
 
 const workHistory = [
@@ -12,19 +13,19 @@ const workHistory = [
     role: 'E-commerce Manager',
     company: 'Quality Sewing',
     period: '2022 - Present',
-    achievement: '$2M+/year revenue, 340% organic traffic growth',
+    achievement: '5K→22K organic traffic, $2M+/year in sales, 5000+ products',
   },
   {
-    role: 'Business Consultant',
+    role: 'Freelance Consultant',
     company: 'Self-Employed',
     period: '2022 - Present',
-    achievement: 'Freelance SEO, design, content for Pharma, Finance, E-commerce',
+    achievement: 'SEO, design, 3D mockups for pharma, finance, and e-commerce clients',
   },
   {
     role: 'Founder',
     company: 'Luxury Wall Art & The Dope Art',
     period: '2019 - Present',
-    achievement: '$120K+ revenue, 9,000+ digital assets, 2,700+ products',
+    achievement: '$120K in sales, 9,000+ digital assets, 2,700+ products',
   },
   {
     role: 'Real Estate Agent',
@@ -33,37 +34,37 @@ const workHistory = [
     achievement: '$20M in closed sales',
   },
   {
-    role: 'Customer Service Representative',
+    role: 'Customer Service',
     company: 'Netflix',
     period: '2011 - 2013',
-    achievement: 'Top 1% for satisfaction and problem-solving',
+    achievement: 'Top 1% in satisfaction scores',
   },
 ];
 
 const skills = {
   'SEO & Analytics': [
     'Google Analytics',
-    'Google Search Console',
+    'Search Console',
     'Ahrefs',
     'Screaming Frog',
     'Keyword Research',
     'YouTube SEO',
   ],
   'E-commerce': [
-    'Shopify (6 years)',
+    'Shopify',
     'Etsy',
     'Amazon',
-    'Walmart Marketplace',
+    'Walmart',
     'TikTok Shop',
     'WooCommerce',
   ],
-  'Design & Creative': [
+  'Design': [
     'Photoshop',
     'Illustrator',
     'Figma',
     'Canva',
     'Premiere Pro',
-    '3D Modeling',
+    '3D Mockups',
   ],
   'Marketing': [
     'Google Ads',
@@ -79,21 +80,25 @@ export default function AboutPage() {
     <div className="max-w-5xl mx-auto px-6 py-16">
       {/* Intro */}
       <section className="max-w-2xl">
-        <h1 className="text-4xl font-bold text-gray-900">About Me</h1>
-        <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-          I'm Jesse Johnson, a digital marketer and e-commerce specialist based in Seattle.
-          I've been building and selling online since I was 15, starting with eBay and growing
-          into multiple six-figure e-commerce brands.
+        <div className="flex items-center gap-6 mb-8">
+          <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-gray-100 shadow-lg flex-shrink-0">
+            <Image
+              src="/images/headshots/jesse-pfp.jpg"
+              alt="Jesse Johnson"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900">About Me</h1>
+        </div>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          I've been selling stuff online since I was 15. Started on eBay, moved to Craigslist, eventually figured out real e-commerce. These days I manage the digital side of a sewing retailer in Seattle.
         </p>
         <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-          Currently, I manage all e-commerce operations at Quality Sewing, a family-owned
-          sewing retailer. I grew their organic traffic from 5K to 22K monthly visitors
-          while reducing ad spend through strategic SEO investments.
+          At Quality Sewing, I handle everything from product listings to SEO to conversion optimization. When I started, they had around 5K organic visitors a month. Now it's 22K. We've also cut ad spend significantly since most traffic is now organic.
         </p>
         <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-          I also run Luxury Wall Art and The Dope Art, my own canvas art brands that have
-          generated over $120K in revenue. On the side, I build tools like the Masterpiece
-          Locator, a database of 4,094+ paintings across 455 museums worldwide.
+          On the side, I run Luxury Wall Art and The Dope Art, two canvas art brands that have done about $120K in sales combined. I also like building tools. My latest one lets you search 4,000+ famous paintings to find where they're displayed.
         </p>
       </section>
 
@@ -160,20 +165,17 @@ export default function AboutPage() {
       <section className="mt-16">
         <h2 className="text-2xl font-bold text-gray-900">What I'm Looking For</h2>
         <p className="mt-4 text-gray-600 leading-relaxed">
-          I'm open to full-time opportunities in digital marketing, e-commerce management,
-          and growth roles. I'm based in Seattle but open to remote work.
+          I want a role where I can own outcomes. E-commerce management, digital marketing, growth. Something where I can actually move numbers, not just check boxes.
         </p>
         <p className="mt-4 text-gray-600 leading-relaxed">
-          I thrive in roles where I can own outcomes, build tools, and make data-driven
-          decisions. If you're looking for someone who can grow traffic, optimize conversions,
-          and think strategically about e-commerce, let's talk.
+          Based in Seattle, happy to work remote. If you need someone who can grow traffic, improve conversion rates, and figure out the rest as they go, I'm your guy.
         </p>
         <div className="mt-8">
           <Link
             href="/contact"
             className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
           >
-            Get in Touch
+            Let's Talk
           </Link>
         </div>
       </section>
