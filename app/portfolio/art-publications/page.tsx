@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ArtPublicationsPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 py-16">
       {/* Back Link */}
       <Link
         href="/portfolio"
@@ -22,81 +22,86 @@ export default function ArtPublicationsPage() {
       </Link>
 
       {/* Header */}
-      <div className="mb-12">
+      <div className="mb-16 text-center">
         <span className="inline-block px-3 py-1 text-sm text-white rounded-full mb-4 bg-[#553C9A]">
           Digital Art
         </span>
-        <h1 className="text-4xl font-bold text-gray-900">Art Publications</h1>
-        <p className="mt-2 text-xl text-gray-500">Press Coverage & Brand Partnerships</p>
-        <p className="mt-4 text-lg text-gray-600">
-          Featured publications, media coverage, and brand collaborations that have expanded reach and established credibility in the digital art space.
+        <h1 className="text-5xl font-bold text-gray-900">Art Publications</h1>
+        <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">
+          Press Coverage & Brand Partnerships
         </p>
       </div>
 
-      {/* Tiger King Section - Image Left, Text Right */}
-      <section className="border-t border-gray-100 pt-8 mb-12">
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-            <Image
-              src="/images/portfolio/detail/art/tiger-king-cover.jpg"
-              alt="Tiger King Comic Book Cover Art"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Tiger King Comic Book Cover Art</h2>
-            <p className="text-gray-600 leading-relaxed">
-              When <strong className="font-semibold text-gray-900">Tiger King</strong> became a cultural phenomenon in 2020, I partnered with{' '}
-              <a href="https://tidalwavecomics.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-                TidalWave Productions
-              </a>{' '}
-              to create a comic book that captured the show&apos;s wild energy.
-            </p>
-            <p className="text-gray-600 leading-relaxed mt-4">
-              The collaboration gained traction, with mentions from cast members and media outlets like{' '}
-              <a href="https://www.tmz.com/2020/05/31/tiger-king-comic-book-first-pages-special-edition-cover-joe-exotic-origin-story-carole-baskin/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-                TMZ
-              </a>
-              . This project was a great example of leveraging current trends to create engaging content that resonates with a broad audience.
-            </p>
-          </div>
+      {/* Tiger King Section - Hero Style */}
+      <section className="mb-20">
+        <div className="mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Tiger King Comic Book Cover Art</h2>
+          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
+            When <strong className="font-semibold text-gray-900">Tiger King</strong> became a cultural phenomenon in 2020, I partnered with{' '}
+            <a href="https://tidalwavecomics.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+              TidalWave Productions
+            </a>{' '}
+            to create a comic book that captured the show&apos;s wild energy. The collaboration gained traction, with mentions from cast members and media outlets like{' '}
+            <a href="https://www.tmz.com/2020/05/31/tiger-king-comic-book-first-pages-special-edition-cover-joe-exotic-origin-story-carole-baskin/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+              TMZ
+            </a>
+            . This project was a great example of leveraging current trends to create engaging content that resonates with a broad audience.
+          </p>
+        </div>
+
+        {/* Hero Image */}
+        <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-lg">
+          <Image
+            src="/images/portfolio/detail/art/tiger-king-cover.jpg"
+            alt="Tiger King Comic Book Cover Art"
+            fill
+            className="object-cover"
+            unoptimized
+          />
         </div>
       </section>
 
-      {/* ShoutOut LA Section */}
-      <section className="border-t border-gray-100 pt-8 mb-12">
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+      {/* ShoutOut LA Section - Editorial Style */}
+      <section className="mb-20 border-t border-gray-200 pt-16">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Quote */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">ShoutOut LA</h2>
-            <p className="text-gray-600 leading-relaxed italic">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Your Headline</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-6">
               &quot;Jesse Johnson, the visionary behind thedopeart.com, attributes his success to three critical elements: passion, organization, and balance. With a fervor for creating distinctive pieces of art, he devoted two years to honing his skills, eventually finding a unique style resonating with entrepreneurial spirits seeking inspiring decor.&quot;
             </p>
             <a
               href="https://shoutoutla.com/meet-jesse-johnson-digital-artist/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4 px-4 py-2 border border-gray-300 rounded text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              className="inline-block px-6 py-3 border-2 border-gray-900 rounded text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition-colors uppercase tracking-wide"
             >
-              VIEW ALL
+              View All
             </a>
           </div>
-          <div className="space-y-4">
-            {/* ShoutOut LA Article Preview */}
-            <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
-              <div className="p-4 border-b border-gray-100">
-                <p className="text-xs text-gray-500 uppercase tracking-wide">Local Stories</p>
-                <h3 className="font-semibold text-gray-900">Meet Jesse Johnson: Digital Artist</h3>
+
+          {/* Right Column - Article Preview */}
+          <div>
+            <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm">
+              {/* ShoutOut LA Header */}
+              <div className="bg-white p-4 border-b border-gray-100">
+                <h3 className="text-2xl font-serif font-normal text-gray-900 tracking-tight">SHOUTOUT LA</h3>
+                <div className="h-px bg-gray-300 w-12 mt-2"></div>
               </div>
-              <div className="relative aspect-[16/9]">
-                <Image
-                  src="/images/portfolio/detail/art/shoutout-la-canvases.jpg"
-                  alt="Jesse with Canvas Art Collection"
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
+
+              {/* Article Card */}
+              <div className="p-4">
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Local Stories</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Meet Jesse Johnson: Digital Artist</h4>
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <Image
+                    src="/images/portfolio/detail/art/shoutout-la-canvases.jpg"
+                    alt="Jesse with Canvas Art Collection"
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -104,44 +109,43 @@ export default function ArtPublicationsPage() {
       </section>
 
       {/* Collaborations Header */}
-      <section className="pt-8 mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 text-center uppercase tracking-wide">
+      <section className="mb-12 pt-8">
+        <h2 className="text-4xl font-bold text-gray-900 text-center uppercase tracking-widest">
           Collaborations
         </h2>
       </section>
 
-      {/* Jondo Prints Section - Image Left, Text Right */}
-      <section className="mb-12">
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-            <Image
-              src="/images/portfolio/detail/art/nft-la-booth.jpg"
-              alt="NFT LA Booth with Jondo Prints"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Jondo Prints</h3>
-            <p className="text-gray-600 leading-relaxed">
-              For the 2022 NFT LA event, I partnered with Jondo Prints to create an interactive booth showcasing high-quality digital prints from{' '}
-              <a href="https://thedopeart.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-                The Dope Art
-              </a>{' '}
-              and <strong className="font-semibold text-gray-900">Eternal Royals</strong>.
-            </p>
-            <p className="text-gray-600 leading-relaxed mt-4">
-              I designed our booth layout and featured artwork, blending physical art with digital innovation. This collaboration was a fantastic way to highlight both my art and Jondo&apos;s print quality, while engaging with the NFT and digital art community, expanding The Dope Art&apos;s reach.
-            </p>
-          </div>
+      {/* Jondo Prints Section - Full Width */}
+      <section className="mb-20">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Jondo Prints</h3>
+        <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl">
+          For the 2022 NFT LA event, I partnered with Jondo Prints to create an interactive booth showcasing high-quality digital prints from{' '}
+          <a href="https://thedopeart.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+            The Dope Art
+          </a>{' '}
+          and{' '}
+          <a href="https://eternalroyals.io/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+            Eternal Royals
+          </a>
+          . I designed our booth layout and featured artwork, blending physical art with digital innovation. This collaboration was a fantastic way to highlight both my art and Jondo&apos;s print quality, while engaging with the NFT and digital art community, expanding The Dope Art&apos;s reach.
+        </p>
+
+        {/* Full Width Booth Image */}
+        <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg">
+          <Image
+            src="/images/portfolio/detail/art/nft-la-booth.jpg"
+            alt="NFT LA Booth with Jondo Prints"
+            fill
+            className="object-cover"
+            unoptimized
+          />
         </div>
       </section>
 
-      {/* NFT LA Gallery Section */}
-      <section className="border-t border-gray-100 pt-8 mb-12">
-        <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">NFT LA</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      {/* NFT LA Gallery */}
+      <section className="mb-20 border-t border-gray-200 pt-12">
+        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">NFT LA</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { src: '/images/portfolio/detail/art/nft-la.jpg', alt: 'NFT LA Event Display' },
             { src: '/images/portfolio/detail/art/nft-la-booth-2.jpg', alt: 'NFT LA Booth Setup' },
@@ -152,7 +156,7 @@ export default function ArtPublicationsPage() {
             { src: '/images/portfolio/detail/art/nft-la-booth-7.jpg', alt: 'Art Collection Display' },
             { src: '/images/portfolio/detail/art/nft-la-booth-8.jpg', alt: 'Event Booth with Visitors' },
           ].map((img, i) => (
-            <div key={i} className="relative aspect-square rounded-lg overflow-hidden">
+            <div key={i} className="relative aspect-square rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <Image
                 src={img.src}
                 alt={img.alt}
@@ -165,41 +169,38 @@ export default function ArtPublicationsPage() {
         </div>
       </section>
 
-      {/* Wall Street Prints Section - Image Left, Text Right */}
-      <section className="border-t border-gray-100 pt-8 mb-12">
-        <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div className="relative aspect-[3/4] rounded-lg overflow-hidden max-w-sm">
+      {/* Wall Street Prints Section - Full Width */}
+      <section className="mb-20 border-t border-gray-200 pt-16">
+        <h3 className="text-2xl font-bold text-gray-900 mb-4">Wall Street Prints</h3>
+        <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl">
+          My collaboration with{' '}
+          <a href="https://wallstreetprints.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+            Wall Street Prints
+          </a>{' '}
+          reflects the depth of my creativity over the years. I&apos;ve channeled my artistic passion into producing digital art using Photoshop, each piece tailored to resonate with the distinct character and needs of different businesses. The positive reception to these characters serves as a testament to the power of creative digital art in brand storytelling and engagement.
+        </p>
+
+        {/* Bull Bear Image - Centered */}
+        <div className="flex justify-center">
+          <div className="relative w-full max-w-2xl aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
             <Image
               src="/images/portfolio/detail/art/bull-bear-collab.png"
               alt="Bull and Bear Collaboration Art"
               fill
-              className="object-cover"
+              className="object-contain bg-white"
               unoptimized
             />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Wall Street Prints</h3>
-            <p className="text-gray-600 leading-relaxed">
-              My collaboration with{' '}
-              <a href="https://wallstreetprints.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-                Wall Street Prints
-              </a>{' '}
-              reflects the depth of my creativity over the years. I&apos;ve channeled my artistic passion into producing digital art using Photoshop, each piece tailored to resonate with the distinct character and needs of different businesses.
-            </p>
-            <p className="text-gray-600 leading-relaxed mt-4">
-              The positive reception to these characters serves as a testament to the power of creative digital art in brand storytelling and engagement.
-            </p>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <div className="mt-16 p-8 bg-gray-50 rounded-lg text-center">
-        <h3 className="text-xl font-bold text-gray-900">Want similar results?</h3>
-        <p className="mt-2 text-gray-600">Let&apos;s talk about how I can help with your project.</p>
+      <div className="mt-20 p-12 bg-gray-50 rounded-2xl text-center">
+        <h3 className="text-2xl font-bold text-gray-900">Want similar results?</h3>
+        <p className="mt-3 text-lg text-gray-600">Let&apos;s talk about how I can help with your project.</p>
         <Link
           href="/contact"
-          className="mt-4 inline-block px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+          className="mt-6 inline-block px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium text-lg"
         >
           Get in Touch
         </Link>
