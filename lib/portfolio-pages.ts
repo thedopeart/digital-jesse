@@ -30,8 +30,8 @@ export const portfolioPages: PortfolioPage[] = [
           { label: 'Starting Backlinks', value: '10' },
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/organic_seo_growth.png?v=1722477109', alt: 'Organic SEO Growth Overview' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/SEO_Growth.png?v=1722477109', alt: 'SEO Growth Chart' },
+          { src: '/images/portfolio/detail/seo/lwa-stats-jan-june.png', alt: 'LWA Stats January to June' },
+          { src: '/images/portfolio/detail/seo/lwa-july-stats.png', alt: 'LWA July Stats' },
         ],
       },
       {
@@ -58,10 +58,8 @@ export const portfolioPages: PortfolioPage[] = [
           { label: 'Organic Impressions', value: '700% increase' },
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Google_Traffic.png?v=1722477109', alt: 'Google Traffic Growth' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Top_3_Keywords.png?v=1722477109', alt: 'Top 3 Keywords' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Conversions.png?v=1722477109', alt: 'Conversion Growth' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Organic_Impressions.png?v=1722477109', alt: 'Organic Impressions' },
+          { src: '/images/portfolio/detail/seo/lwa-traffic.png', alt: 'LWA Traffic Growth' },
+          { src: '/images/portfolio/detail/seo/lwa-blog.jpg', alt: 'LWA Blog Content' },
         ],
       },
     ],
@@ -83,8 +81,8 @@ export const portfolioPages: PortfolioPage[] = [
           { label: 'Total Sessions', value: '46,000' },
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/organic_seo_growth_TDA.png?v=1722477536', alt: 'The Dope Art SEO Overview' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/TDA_Traffic.png?v=1722477537', alt: 'TDA Traffic Growth' },
+          { src: '/images/portfolio/detail/seo/tda-organic-traffic.png', alt: 'The Dope Art SEO Overview' },
+          { src: '/images/portfolio/detail/seo/tda-traffic.png', alt: 'TDA Traffic Growth' },
         ],
       },
       {
@@ -107,8 +105,8 @@ export const portfolioPages: PortfolioPage[] = [
           { label: 'Direct Traffic Growth', value: '53.9%' },
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/google_traffic_TDA.png?v=1722477536', alt: 'TDA Google Traffic' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/TDA_Top_3_Keywords.png?v=1722477537', alt: 'TDA Top 3 Keywords' },
+          { src: '/images/portfolio/detail/seo/tda-organic-traffic-2.jpg', alt: 'TDA Google Traffic' },
+          { src: '/images/portfolio/detail/seo/tda-lifetime-sales.jpg', alt: 'TDA Lifetime Sales' },
         ],
       },
     ],
@@ -124,8 +122,8 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'The Approach',
         content: 'Etsy has its own search algorithm. I revised product titles, tags, and descriptions across the art store to target valuable keywords while keeping descriptions engaging and informative.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Etsy_Keyword_Research_1.png?v=1722449912', alt: 'Etsy Keyword Research Before' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Etsy_Keyword_Research_2.png?v=1722449912', alt: 'Etsy Keyword Research After' },
+          { src: '/images/portfolio/detail/seo/etsy-shark-before.jpg', alt: 'Etsy Keyword Research Before' },
+          { src: '/images/portfolio/detail/seo/etsy-shark-after.jpg', alt: 'Etsy Keyword Research After' },
         ],
       },
       {
@@ -138,8 +136,9 @@ export const portfolioPages: PortfolioPage[] = [
           'Niche keyword identification for specific art categories',
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Etsy_Keyword_Research_3.png?v=1722449912', alt: 'Keyword Research Tools' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Etsy_Keyword_Research_4.png?v=1722449912', alt: 'SEO Results' },
+          { src: '/images/portfolio/detail/seo/etsy-peacock-before.jpg', alt: 'Etsy Peacock Before' },
+          { src: '/images/portfolio/detail/seo/etsy-peacock-after.jpg', alt: 'Etsy Peacock After' },
+          { src: '/images/portfolio/detail/seo/etsy-profile.png', alt: 'Etsy Profile' },
         ],
       },
       {
@@ -170,10 +169,10 @@ export const portfolioPages: PortfolioPage[] = [
           'Pharmaceutical: Health and wellness industry content',
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Blog_Example_1.png?v=1722450455', alt: 'Wall Street Blog Examples' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Blog_Example_2.png?v=1722450455', alt: 'Macabre Blog Examples' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Blog_Example_4.png?v=1722450455', alt: 'Poker Blog Examples' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Blog_Example_6.png?v=1722450455', alt: 'Royalty Blog Examples' },
+          { src: '/images/portfolio/detail/seo/blog-luxury-art.jpg', alt: 'Luxury Art Blog' },
+          { src: '/images/portfolio/detail/seo/blog-macabre.jpg', alt: 'Macabre Blog Examples' },
+          { src: '/images/portfolio/detail/seo/blog-queen-spades.jpg', alt: 'Queen of Spades Blog' },
+          { src: '/images/portfolio/detail/seo/seo-score-100.png', alt: 'SEO Score 100' },
         ],
       },
       {
@@ -193,18 +192,16 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'Company Profile Design',
         content: 'Designed a complete company profile for Rocky Mountain Steel, Inc. using Canva and Photoshop. The layout emphasizes precision, strength, and reliability while showcasing company history, services, and industry expertise.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Company_Profile_1.png?v=1722444728', alt: 'Company Profile Page 1' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Company_Profile_2.png?v=1722444727', alt: 'Company Profile Page 2' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Company_Profile_3.png?v=1722444727', alt: 'Company Profile Page 3' },
+          { src: '/images/portfolio/detail/design/lwa-site-1.jpg', alt: 'LWA Site Design' },
+          { src: '/images/portfolio/detail/design/lwa-site-2.jpg', alt: 'LWA Site Interior' },
         ],
       },
       {
         heading: 'Pitch Deck & Market Research',
         content: 'Created an investor-focused pitch deck for an art e-commerce business. Included market research, analytics on the online art space, SEO growth data, keyword rankings, and marketplace performance demonstrating scalability and ROI potential.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Pitch_Deck_1.png?v=1722444728', alt: 'Pitch Deck Cover' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Pitch_Deck_2.png?v=1722444728', alt: 'Pitch Deck Market Research' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Pitch_Deck_3.png?v=1722444728', alt: 'Pitch Deck Analytics' },
+          { src: '/images/portfolio/detail/design/er-site.png', alt: 'Eternal Royals Site Design' },
+          { src: '/images/portfolio/detail/design/lwa-site-3.jpg', alt: 'LWA Site Design 3' },
         ],
       },
       {
@@ -216,9 +213,8 @@ export const portfolioPages: PortfolioPage[] = [
           'Process infographics: Roadmaps and workflows',
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Infographic_1.png?v=1722444728', alt: 'Pharmaceutical Infographic' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Infographic_2.png?v=1722444728', alt: 'Finance Infographic' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Infographic_3.png?v=1722444728', alt: 'Process Infographic' },
+          { src: '/images/portfolio/detail/design/ds-site-1.jpg', alt: 'Dope Stitches Site 1' },
+          { src: '/images/portfolio/detail/design/ds-site-2.jpg', alt: 'Dope Stitches Site 2' },
         ],
       },
     ],
@@ -244,9 +240,8 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'Featured Project: QuickLenders.com',
         content: 'Designed the complete website for QuickLenders, a business finance company. Created wireframes, mockups, and final designs in Figma before handoff to development.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Figma_Design_1.png?v=1722445191', alt: 'QuickLenders Homepage Design' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Figma_Design_2.png?v=1722445191', alt: 'QuickLenders Interior Pages' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Figma_Design_3.png?v=1722445191', alt: 'QuickLenders Mobile Design' },
+          { src: '/images/portfolio/detail/design/lwa-site-1.jpg', alt: 'Website Design Example' },
+          { src: '/images/portfolio/detail/design/er-site.png', alt: 'Eternal Royals Website' },
         ],
       },
       {
@@ -259,8 +254,8 @@ export const portfolioPages: PortfolioPage[] = [
           'Team collaboration on branding projects',
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Product_Mockup_1.png?v=1722445191', alt: '3D Product Mockup' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Product_Mockup_2.png?v=1722445191', alt: 'Product Visualization' },
+          { src: '/images/portfolio/detail/art/er-parallax-mock.jpg', alt: '3D Product Mockup' },
+          { src: '/images/portfolio/detail/art/er-banner-mock.jpg', alt: 'Banner Mockup' },
         ],
       },
     ],
@@ -276,8 +271,8 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'Ad Management',
         content: 'I manage Meta and Google advertising campaigns focused on achieving positive ROIs through audience segmentation, A/B testing, and real-time campaign adjustments.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Paid_SM_1.png?v=1722446239', alt: 'Meta Ads Dashboard' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Paid_SM_2.png?v=1722446239', alt: 'Ad Performance' },
+          { src: '/images/portfolio/detail/ecommerce/paid-ads-cover.png', alt: 'Paid Ads Dashboard' },
+          { src: '/images/portfolio/detail/ecommerce/paid-ads-1.png', alt: 'Ad Performance' },
         ],
       },
       {
@@ -289,8 +284,9 @@ export const portfolioPages: PortfolioPage[] = [
           { label: 'Etsy Sales', value: '~$143K' },
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Paid_SM_3.png?v=1722446239', alt: 'Shopify Revenue' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Paid_SM_4.png?v=1722446239', alt: 'Etsy Performance' },
+          { src: '/images/portfolio/detail/ecommerce/shopify-stats.jpg', alt: 'Shopify Revenue' },
+          { src: '/images/portfolio/detail/ecommerce/tda-total-sales.jpg', alt: 'TDA Total Sales' },
+          { src: '/images/portfolio/detail/ecommerce/successful-campaign.png', alt: 'Successful Campaign' },
         ],
       },
       {
@@ -320,18 +316,17 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'Featured Work: QuickLenders.com',
         content: 'Created a full suite of social media graphics for a business finance company. Topics included business funding, ESOP funding, invoice factoring, and credit improvement.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Posts_5.png?v=1722446755', alt: 'QuickLenders Social Post 1' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Posts_6.png?v=1722446756', alt: 'QuickLenders Social Post 2' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Posts_7.png?v=1722446756', alt: 'QuickLenders Social Post 3' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Posts_8.png?v=1722446756', alt: 'QuickLenders Social Post 4' },
+          { src: '/images/portfolio/detail/ecommerce/creator-cover.png', alt: 'Creator Cover' },
+          { src: '/images/portfolio/detail/ecommerce/creator-2.jpg', alt: 'Content Creation 2' },
+          { src: '/images/portfolio/detail/ecommerce/creator-3.jpg', alt: 'Content Creation 3' },
         ],
       },
       {
         heading: 'Educational Content',
         content: 'Designed educational graphics series including Social Media Hacks and SEO Hacks, helping audiences learn while building brand authority.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Posts_15.png?v=1722447243', alt: 'Social Media Hacks' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Posts_16.png?v=1722447243', alt: 'SEO Hacks' },
+          { src: '/images/portfolio/detail/ecommerce/cell-phone-tda.png', alt: 'Cell Phone TDA' },
+          { src: '/images/portfolio/detail/ecommerce/social-media-phones.png', alt: 'Social Media Phones' },
         ],
       },
     ],
@@ -353,8 +348,8 @@ export const portfolioPages: PortfolioPage[] = [
           'Performance analytics and optimization',
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Management_1.png?v=1722448063', alt: 'Social Media Content Examples' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Management_2.png?v=1722448063', alt: 'Platform Content' },
+          { src: '/images/portfolio/detail/ecommerce/social-media-management.jpg', alt: 'Social Media Management' },
+          { src: '/images/portfolio/detail/ecommerce/tiktok-viral.png', alt: 'TikTok Viral Content' },
         ],
       },
       {
@@ -365,8 +360,9 @@ export const portfolioPages: PortfolioPage[] = [
           { label: 'Starting Point', value: '0' },
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Management_3.png?v=1722448063', alt: 'Instagram Growth' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/SM_Management_5.png?v=1722448064', alt: 'Engagement Analytics' },
+          { src: '/images/portfolio/detail/ecommerce/ig-page-2.png', alt: 'Instagram Page' },
+          { src: '/images/portfolio/detail/ecommerce/ig-page-3.png', alt: 'Instagram Growth' },
+          { src: '/images/portfolio/detail/ecommerce/tda-video-views.png', alt: 'TDA Video Views' },
         ],
       },
       {
@@ -392,8 +388,8 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'The Dope Art',
         content: 'My primary art brand featuring diverse artwork collections. Pieces explore themes of ambition, success, and the entrepreneurial journey.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Design_1.png?v=1722448586', alt: 'Digital Art Sample 1' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Design_2.png?v=1722448586', alt: 'Digital Art Sample 2' },
+          { src: '/images/portfolio/detail/art/tda-site-1.jpg', alt: 'The Dope Art Website' },
+          { src: '/images/portfolio/detail/art/tda-site-2.jpg', alt: 'The Dope Art Products' },
         ],
       },
       {
@@ -406,10 +402,10 @@ export const portfolioPages: PortfolioPage[] = [
           'Money & Finance: Currency and wealth imagery',
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Design_5.png?v=1722448586', alt: 'Royalty Collection' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Design_6.png?v=1722448587', alt: 'Wall Street Collection' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Design_7.png?v=1722448587', alt: 'Surrealism Series' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Design_8.png?v=1722448587', alt: 'Money Collection' },
+          { src: '/images/portfolio/detail/art/lwa-royalty.jpg', alt: 'Royalty Collection' },
+          { src: '/images/portfolio/detail/art/lwa-abstracts.jpg', alt: 'Abstracts Collection' },
+          { src: '/images/portfolio/detail/art/moon-boat.jpg', alt: 'Moon Boat Art' },
+          { src: '/images/portfolio/detail/art/outrun.jpg', alt: 'Outrun Art' },
         ],
       },
       {
@@ -429,7 +425,7 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'Animation Creation',
         content: 'Using Adobe Premiere Pro and Photoshop, I bring static images to life, creating engaging digital animations with enhanced storytelling and visual impact.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Animation_1.png?v=1722448822', alt: 'Animation Sample' },
+          { src: '/images/portfolio/detail/art/animations.png', alt: 'Animation Sample' },
         ],
       },
       {
@@ -459,15 +455,16 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'Tiger King Comic Book',
         content: 'When Tiger King became a cultural phenomenon in 2020, I partnered with TidalWave Productions to develop comic book cover art. The project gained media attention from TMZ and other outlets.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Publications_1.png?v=1722449150', alt: 'Tiger King Comic Art' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Publications_2.png?v=1722449151', alt: 'TMZ Coverage' },
+          { src: '/images/portfolio/detail/art/tiger-king-cover.jpg', alt: 'Tiger King Comic Art' },
+          { src: '/images/portfolio/detail/art/tiger-king-pics.jpg', alt: 'Tiger King Pics' },
+          { src: '/images/portfolio/detail/art/tiger-king-site.jpg', alt: 'Tiger King Site' },
         ],
       },
       {
         heading: 'ShoutOut LA Feature',
         content: 'Featured in ShoutOut LA: "Jesse Johnson, the visionary behind thedopeart.com, attributes his success to three critical elements: passion, organization, and balance."',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Publications_4.png?v=1722449151', alt: 'ShoutOut LA Feature' },
+          { src: '/images/portfolio/detail/art/shoutout-la.jpg', alt: 'ShoutOut LA Feature' },
         ],
       },
       {
@@ -479,8 +476,9 @@ export const portfolioPages: PortfolioPage[] = [
           'Various brand collaborations for digital art',
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Publications_6.png?v=1722449151', alt: 'NFT LA Booth' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Art_Publications_7.png?v=1722449151', alt: 'Wall Street Prints Collab' },
+          { src: '/images/portfolio/detail/art/nft-la-booth.jpg', alt: 'NFT LA Booth' },
+          { src: '/images/portfolio/detail/art/nft-la.jpg', alt: 'NFT LA Event' },
+          { src: '/images/portfolio/detail/art/canvases.jpg', alt: 'Art Canvases' },
         ],
       },
     ],
@@ -496,8 +494,9 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'Eternal Royals',
         content: 'A collection of 9,224 unique Kings and Queens NFTs bridging digital art with canvas prints. Holders receive access to limited edition art drops, IRL and virtual events, and 1-of-1 prints of their NFT.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Crypto_NFT_1.png?v=1722449593', alt: 'Eternal Royals Collection' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Crypto_NFT_3.png?v=1722449593', alt: 'NFT Examples' },
+          { src: '/images/portfolio/detail/art/er-cover.jpg', alt: 'Eternal Royals Collection' },
+          { src: '/images/portfolio/detail/art/er-king.jpg', alt: 'Eternal Royals King' },
+          { src: '/images/portfolio/detail/art/er-queen.jpg', alt: 'Eternal Royals Queen' },
         ],
       },
       {
@@ -509,15 +508,17 @@ export const portfolioPages: PortfolioPage[] = [
           { label: 'Unique NFTs', value: '9,224' },
         ],
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Crypto_NFT_8.png?v=1722449593', alt: 'NFT LA Event' },
-          { src: 'https://digitaljesse.com/cdn/shop/files/Crypto_NFT_9.png?v=1722449593', alt: 'Trading Activity' },
+          { src: '/images/portfolio/detail/art/er-opensea.jpg', alt: 'Eternal Royals on OpenSea' },
+          { src: '/images/portfolio/detail/art/er-opensea-2.jpg', alt: 'OpenSea Trading' },
+          { src: '/images/portfolio/detail/art/nfc-chips.jpg', alt: 'NFC Chips' },
         ],
       },
       {
         heading: 'Eternal Guardians',
         content: 'An unreleased digital art collection representing six months of work using advanced Photoshop and photo manipulation techniques. Features over 400 distinct traits with interconnected pieces.',
         images: [
-          { src: 'https://digitaljesse.com/cdn/shop/files/Crypto_NFT_10.png?v=1722449594', alt: 'Eternal Guardians Preview' },
+          { src: '/images/portfolio/detail/art/er-mystery.jpg', alt: 'Mystery Royal Preview' },
+          { src: '/images/portfolio/detail/art/miami-sign-1.jpg', alt: 'Miami Event Sign' },
         ],
       },
     ],
