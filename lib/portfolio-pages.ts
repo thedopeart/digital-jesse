@@ -472,10 +472,10 @@ export const portfolioPages: PortfolioPage[] = [
       },
       {
         heading: 'ShoutOut LA',
-        content: '"Jesse Johnson, the visionary behind thedopeart.com, attributes his success to three critical elements: passion, organization, and balance. With a fervor for creating distinctive pieces of art, he devoted two years to honing his skills, eventually finding a unique style resonating with entrepreneurial spirits seeking inspiring decor."',
+        content: '"Jesse Johnson, the visionary behind thedopeart.com, attributes his success to three critical elements: passion, organization, and balance. With a fervor for creating distinctive pieces of art, he devoted two years to honing his skills, eventually finding a unique style resonating with entrepreneurial spirits seeking inspiring decor." [Read the full article](https://shoutoutla.com/meet-jesse-johnson-digital-artist/)',
         images: [
           { src: '/images/portfolio/detail/art/shoutout-la.jpg', alt: 'ShoutOut LA Article - Meet Jesse Johnson: Digital Artist' },
-          { src: '/images/portfolio/detail/art/jesse-studio.jpg', alt: 'Jesse in Studio' },
+          { src: '/images/portfolio/detail/art/shoutout-la-canvases.jpg', alt: 'Jesse with Canvas Art Collection' },
         ],
       },
       {
@@ -494,20 +494,20 @@ export const portfolioPages: PortfolioPage[] = [
         content: '',
         images: [
           { src: '/images/portfolio/detail/art/nft-la.jpg', alt: 'NFT LA Event Display' },
-          { src: '/images/portfolio/detail/art/nft-la-3.jpg', alt: 'NFT LA Booth Display' },
-          { src: '/images/portfolio/detail/art/nft-la-4.jpg', alt: 'NFT LA Event Attendees' },
-          { src: '/images/portfolio/detail/art/nft-la-2.jpg', alt: 'NFT LA Prints' },
-          { src: '/images/portfolio/detail/art/canvases.jpg', alt: 'Canvas Art Display' },
-          { src: '/images/portfolio/detail/art/jesse-room.jpg', alt: 'Art Installation' },
-          { src: '/images/portfolio/detail/art/tiger-king-pics.jpg', alt: 'Tiger King Comic Books at booth' },
-          { src: '/images/portfolio/detail/art/tiger-king-site.jpg', alt: 'Tiger King Feature Coverage' },
+          { src: '/images/portfolio/detail/art/nft-la-booth-2.jpg', alt: 'NFT LA Booth Setup' },
+          { src: '/images/portfolio/detail/art/nft-la-booth-3.jpg', alt: 'NFT LA Art Display' },
+          { src: '/images/portfolio/detail/art/nft-la-booth-4.jpg', alt: 'NFT LA Booth Overview' },
+          { src: '/images/portfolio/detail/art/nft-la-booth-5.jpg', alt: 'Eternal Royals Display' },
+          { src: '/images/portfolio/detail/art/nft-la-booth-6.jpg', alt: 'Canvas Prints at NFT LA' },
+          { src: '/images/portfolio/detail/art/nft-la-booth-7.jpg', alt: 'Art Collection Display' },
+          { src: '/images/portfolio/detail/art/nft-la-booth-8.jpg', alt: 'Event Booth with Visitors' },
         ],
       },
       {
         heading: 'Wall Street Prints',
         content: 'My collaboration with [Wall Street Prints](https://wallstreetprints.com/) reflects the depth of my creativity over the years. I\'ve channeled my artistic passion into producing digital art using Photoshop, each piece tailored to resonate with the distinct character and needs of different businesses. The positive reception to these characters serves as a testament to the power of creative digital art in brand storytelling and engagement.',
         images: [
-          { src: '/images/portfolio/detail/art/time-is-king.jpg', alt: 'Time is King Artwork' },
+          { src: '/images/portfolio/detail/art/bull-bear-collab.png', alt: 'Bull and Bear Collaboration Art' },
         ],
       },
     ],
