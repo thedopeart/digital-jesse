@@ -1,161 +1,123 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { projects, getProject } from '@/lib/projects';
+import { getPortfolioPage, portfolioPages } from '@/lib/portfolio-pages';
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
+  return portfolioPages.map((page) => ({
+    slug: page.slug,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProject(slug);
-
-  if (!project) {
-    return {
-      title: 'Project Not Found',
-    };
-  }
+  const page = getPortfolioPage(slug);
+  if (!page) return { title: 'Not Found' };
 
   return {
-    title: project.title,
-    description: project.description,
+    title: page.title,
+    description: page.description,
   };
 }
 
-export default async function ProjectPage({ params }: Props) {
-  const { slug } = await params;
-  const project = getProject(slug);
+const categoryColors: Record<string, string> = {
+  seo: 'bg-[#282F59]',
+  design: 'bg-[#4A5568]',
+  ecommerce: 'bg-[#2D3748]',
+  art: 'bg-[#553C9A]',
+  brands: 'bg-[#1A365D]',
+};
 
-  if (!project) {
+const categoryLabels: Record<string, string> = {
+  seo: 'SEO & Content',
+  design: 'Design',
+  ecommerce: 'E-Commerce & Social',
+  art: 'Digital Art',
+  brands: 'Brand Management',
+};
+
+export default async function PortfolioDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const page = getPortfolioPage(slug);
+
+  if (!page) {
     notFound();
   }
 
-  const currentIndex = projects.findIndex((p) => p.slug === slug);
-  const nextProject = projects[currentIndex + 1] || projects[0];
-
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
+      {/* Back Link */}
+      <Link
+        href="/portfolio"
+        className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 mb-8"
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Portfolio
+      </Link>
+
       {/* Header */}
-      <div className="mb-8">
-        <Link
-          href="/portfolio"
-          className="text-gray-500 hover:text-gray-700 text-sm mb-4 inline-block"
-        >
-          ← Back to Portfolio
-        </Link>
-        <h1 className="text-4xl font-bold text-gray-900 mt-4">{project.title}</h1>
-        <p className="mt-4 text-xl text-gray-600">{project.description}</p>
-
-        {project.url && (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block text-blue-600 hover:text-blue-700"
-          >
-            Visit site →
-          </a>
+      <div className="mb-12">
+        <span className={`inline-block px-3 py-1 text-sm text-white rounded-full mb-4 ${categoryColors[page.category]}`}>
+          {categoryLabels[page.category]}
+        </span>
+        <h1 className="text-4xl font-bold text-gray-900">{page.title}</h1>
+        {page.subtitle && (
+          <p className="mt-2 text-xl text-gray-500">{page.subtitle}</p>
         )}
-
-        {/* Tags */}
-        <div className="mt-6 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        <p className="mt-4 text-lg text-gray-600">{page.description}</p>
       </div>
 
-      {/* Metrics */}
-      {project.metrics && project.metrics.length > 0 && (
-        <section className="mb-12 p-6 bg-gray-50 rounded-lg border border-gray-100">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Key Metrics</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {project.metrics.map((metric) => (
-              <div key={metric.label}>
-                <p className="text-2xl font-bold text-gray-900">{metric.value}</p>
-                <p className="text-gray-500 text-sm">{metric.label}</p>
+      {/* Sections */}
+      <div className="space-y-12">
+        {page.sections.map((section, index) => (
+          <section key={index} className="border-t border-gray-100 pt-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{section.heading}</h2>
+            <p className="text-gray-600 leading-relaxed">{section.content}</p>
+
+            {/* Metrics */}
+            {section.metrics && section.metrics.length > 0 && (
+              <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+                {section.metrics.map((metric, i) => (
+                  <div key={i} className="bg-gray-50 p-4 rounded-lg">
+                    <p className="text-2xl font-bold text-gray-900">{metric.value}</p>
+                    <p className="text-sm text-gray-500">{metric.label}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
-      )}
+            )}
 
-      {/* Overview */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Overview</h2>
-        <p className="text-gray-600 leading-relaxed">{project.content.overview}</p>
-      </section>
+            {/* Bullets */}
+            {section.bullets && section.bullets.length > 0 && (
+              <ul className="mt-6 space-y-2">
+                {section.bullets.map((bullet, i) => (
+                  <li key={i} className="flex items-start gap-2 text-gray-600">
+                    <span className="text-blue-600 mt-1">•</span>
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
+      </div>
 
-      {/* Challenge */}
-      {project.content.challenge && (
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">The Challenge</h2>
-          <p className="text-gray-600 leading-relaxed">{project.content.challenge}</p>
-        </section>
-      )}
-
-      {/* Solution */}
-      {project.content.solution && (
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">The Solution</h2>
-          <p className="text-gray-600 leading-relaxed">{project.content.solution}</p>
-        </section>
-      )}
-
-      {/* Results */}
-      {project.content.results && project.content.results.length > 0 && (
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Results</h2>
-          <ul className="space-y-3">
-            {project.content.results.map((result, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-blue-600 mt-1">✓</span>
-                <span className="text-gray-600">{result}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Tools */}
-      {project.content.tools && project.content.tools.length > 0 && (
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Tools Used</h2>
-          <div className="flex flex-wrap gap-2">
-            {project.content.tools.map((tool) => (
-              <span
-                key={tool}
-                className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-              >
-                {tool}
-              </span>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Next Project */}
-      <section className="mt-16 pt-8 border-t border-gray-200">
-        <p className="text-gray-500 text-sm mb-2">Next Project</p>
+      {/* CTA */}
+      <div className="mt-16 p-8 bg-gray-50 rounded-lg text-center">
+        <h3 className="text-xl font-bold text-gray-900">Want similar results?</h3>
+        <p className="mt-2 text-gray-600">Let's talk about how I can help with your project.</p>
         <Link
-          href={`/portfolio/${nextProject.slug}`}
-          className="text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+          href="/contact"
+          className="mt-4 inline-block px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
         >
-          {nextProject.title} →
+          Get in Touch
         </Link>
-      </section>
+      </div>
     </div>
   );
 }

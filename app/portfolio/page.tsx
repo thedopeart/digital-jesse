@@ -12,6 +12,7 @@ interface SectionImage {
   src: string;
   label: string;
   isLogo?: boolean;
+  href?: string;
 }
 
 interface Section {
@@ -36,10 +37,10 @@ const sections: Section[] = [
       { bold: 'Content analysis', text: 'to improve performance' },
     ],
     images: [
-      { src: '/images/portfolio/seo/seo-growth-1.png', label: 'SEO Growth 1' },
-      { src: '/images/portfolio/seo/seo-growth-2.png', label: 'SEO Growth 2' },
-      { src: '/images/portfolio/seo/keyword-research.png', label: 'Keyword Research' },
-      { src: '/images/portfolio/seo/blogs-copywriting.png', label: 'Blogs & Copywriting' },
+      { src: '/images/portfolio/seo/seo-growth-1.png', label: 'SEO Growth 1', href: '/portfolio/organic-seo-growth' },
+      { src: '/images/portfolio/seo/seo-growth-2.png', label: 'SEO Growth 2', href: '/portfolio/organic-seo-growth-2' },
+      { src: '/images/portfolio/seo/keyword-research.png', label: 'Keyword Research', href: '/portfolio/etsy-keyword-research' },
+      { src: '/images/portfolio/seo/blogs-copywriting.png', label: 'Blogs & Copywriting', href: '/portfolio/blog-example-1' },
     ],
   },
   {
@@ -54,8 +55,8 @@ const sections: Section[] = [
       { bold: 'Experience', text: 'in crafting infographics that tell a story' },
     ],
     images: [
-      { src: '/images/portfolio/design/infographics.png', label: 'Infographics, Pitchdecks, etc.' },
-      { src: '/images/portfolio/design/wireframes.png', label: 'Wireframes & Mockups' },
+      { src: '/images/portfolio/design/infographics.png', label: 'Infographics, Pitchdecks, etc.', href: '/portfolio/company-profile' },
+      { src: '/images/portfolio/design/wireframes.png', label: 'Wireframes & Mockups', href: '/portfolio/figma-design' },
     ],
   },
   {
@@ -70,9 +71,9 @@ const sections: Section[] = [
       { bold: 'Video Production', text: '& Graphic Design' },
     ],
     images: [
-      { src: '/images/portfolio/ecommerce/paid-ads.png', label: 'E-Commerce & Paid Ads' },
-      { src: '/images/portfolio/ecommerce/content-creation.png', label: 'Content Creation' },
-      { src: '/images/portfolio/ecommerce/social-media.png', label: 'Social Media' },
+      { src: '/images/portfolio/ecommerce/paid-ads.png', label: 'E-Commerce & Paid Ads', href: '/portfolio/paid-sm-marketing' },
+      { src: '/images/portfolio/ecommerce/content-creation.png', label: 'Content Creation', href: '/portfolio/social-media-posts-example' },
+      { src: '/images/portfolio/ecommerce/social-media.png', label: 'Social Media', href: '/portfolio/social-media-management' },
     ],
   },
   {
@@ -87,10 +88,10 @@ const sections: Section[] = [
       { bold: 'Pioneered blockchain technology', text: 'for art distribution' },
     ],
     images: [
-      { src: '/images/portfolio/art/digital-art.png', label: 'Digital Art & Prints' },
-      { src: '/images/portfolio/art/animations.png', label: 'Animations' },
-      { src: '/images/portfolio/art/publications.png', label: 'Publications & Collabs' },
-      { src: '/images/portfolio/art/crypto-nfts.jpg', label: 'Crypto & NFTs' },
+      { src: '/images/portfolio/art/digital-art.png', label: 'Digital Art & Prints', href: '/portfolio/art-design' },
+      { src: '/images/portfolio/art/animations.png', label: 'Animations', href: '/portfolio/animation' },
+      { src: '/images/portfolio/art/publications.png', label: 'Publications & Collabs', href: '/portfolio/art-publications' },
+      { src: '/images/portfolio/art/crypto-nfts.jpg', label: 'Crypto & NFTs', href: '/portfolio/crypto-nfts' },
     ],
   },
   {
@@ -164,21 +165,31 @@ export default function PortfolioPage() {
 
           {/* Images */}
           <div className={`grid gap-4 ${section.id === 'brands' ? 'grid-cols-5' : 'grid-cols-2 md:grid-cols-4'}`}>
-            {section.images.map((img, i) => (
-              <div key={i} className="group text-center">
-                <div className={`relative ${img.isLogo ? 'aspect-square p-4' : 'aspect-[4/3]'} rounded-lg overflow-hidden border border-gray-200 bg-white`}>
-                  <Image
-                    src={img.src}
-                    alt={img.label}
-                    fill
-                    className={`${img.isLogo ? 'object-contain p-2' : 'object-cover'} group-hover:scale-105 transition-transform duration-300`}
-                  />
+            {section.images.map((img, i) => {
+              const ImageCard = (
+                <div className="group text-center">
+                  <div className={`relative ${img.isLogo ? 'aspect-square p-4' : 'aspect-[4/3]'} rounded-lg overflow-hidden border border-gray-200 bg-white ${img.href ? 'cursor-pointer' : ''}`}>
+                    <Image
+                      src={img.src}
+                      alt={img.label}
+                      fill
+                      className={`${img.isLogo ? 'object-contain p-2' : 'object-cover'} group-hover:scale-105 transition-transform duration-300`}
+                    />
+                  </div>
+                  <p className="mt-2 text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
+                    {img.label}
+                  </p>
                 </div>
-                <p className="mt-2 text-sm font-medium text-gray-700">
-                  {img.label}
-                </p>
-              </div>
-            ))}
+              );
+
+              return img.href ? (
+                <Link key={i} href={img.href}>
+                  {ImageCard}
+                </Link>
+              ) : (
+                <div key={i}>{ImageCard}</div>
+              );
+            })}
           </div>
         </section>
       ))}
