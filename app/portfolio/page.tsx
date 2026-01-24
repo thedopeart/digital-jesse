@@ -29,12 +29,12 @@ const sections: Section[] = [
     id: 'seo',
     title: 'SEO, KW Research, and Blogging',
     color: 'bg-[#282F59]',
-    description: `I create content that ranks. Using Google Analytics, Ahrefs, Screaming Frog, and Search Console, I find what people actually search for and build content around it. At Quality Sewing, I grew organic traffic from 5K to 22K monthly visitors.`,
+    description: `I create content that ranks. Using Google Analytics, Ahrefs, Screaming Frog, and Search Console, I find what people actually search for and build content around it. At Quality Sewing, I grew organic traffic from 5K to 22K monthly visitors. I've also taken a brand new domain from zero rankings to 1,000+ top-100 keywords in under a year through strategic content creation and technical SEO optimization.`,
     bullets: [
-      { bold: 'Advanced SEO techniques', text: 'for higher rankings' },
-      { bold: 'Strategic content', text: 'for engagement and conversions' },
-      { bold: 'Keyword research', text: 'for optimized relevance' },
-      { bold: 'Content analysis', text: 'to improve performance' },
+      { bold: 'Advanced SEO techniques', text: 'including schema markup, internal linking, and site architecture' },
+      { bold: 'Strategic content creation', text: 'that drives engagement, conversions, and organic growth' },
+      { bold: 'Keyword research', text: 'using Ahrefs, SEMrush, and competitor gap analysis' },
+      { bold: 'Technical audits', text: 'with Screaming Frog to identify and fix crawl issues' },
     ],
     images: [
       { src: '/images/portfolio/seo/seo-growth-1.png', label: 'SEO Growth 1', href: '/portfolio/organic-seo-growth' },
@@ -47,12 +47,12 @@ const sections: Section[] = [
     id: 'design',
     title: 'Design & Illustrations',
     color: 'bg-[#282F59]',
-    description: `I make things look good. Product mockups, pitch decks, brochures, infographics. Photoshop, Illustrator, Figma, Canva. Whatever the project needs.`,
+    description: `I make things look good. Product mockups, pitch decks, brochures, infographics, company profiles, and marketing materials. I work in Photoshop, Illustrator, Figma, and Canva. Whatever the project needs, I deliver polished visuals that communicate clearly and convert browsers into buyers.`,
     bullets: [
-      { bold: 'Expert in Photoshop', text: 'for mockups and visual design' },
-      { bold: 'Canva', text: 'for pitch decks and marketing materials' },
-      { bold: 'Creative mind', text: 'with a strong eye for detail' },
-      { bold: 'Experience', text: 'in crafting infographics that tell a story' },
+      { bold: 'Expert in Adobe Photoshop', text: 'for mockups, composites, and product photography editing' },
+      { bold: 'Pitch deck design', text: 'that has helped secure funding and close deals' },
+      { bold: 'Figma wireframes', text: 'for UI/UX design and rapid prototyping' },
+      { bold: 'Data visualization', text: 'through infographics that tell a clear, compelling story' },
     ],
     images: [
       { src: '/images/portfolio/design/infographics.png', label: 'Infographics, Pitchdecks, etc.', href: '/portfolio/company-profile' },
@@ -63,12 +63,12 @@ const sections: Section[] = [
     id: 'ecommerce',
     title: 'E-Commerce & Social Media',
     color: 'bg-[#282F59]',
-    description: `I run e-commerce stores and manage social content. Shopify, Etsy, Amazon, Walmart, TikTok Shop. I've managed $2M+ in annual sales and grown multiple stores from zero.`,
+    description: `I run e-commerce stores and manage social content across Shopify, Etsy, Amazon, Walmart, and TikTok Shop. I've personally managed over $2M in annual sales and grown multiple stores from zero to profitability. From product listings and paid ads to organic social strategy, I handle the full e-commerce lifecycle.`,
     bullets: [
-      { bold: 'Adobe Suite', text: '(Photoshop, Illustrator, Premiere Pro)' },
-      { bold: 'Content Management Systems', text: '(CMS)' },
-      { bold: 'Social Media Algorithms', text: '& Engagement' },
-      { bold: 'Video Production', text: '& Graphic Design' },
+      { bold: 'Multi-platform management', text: 'across Shopify, Amazon, Etsy, Walmart, and TikTok Shop' },
+      { bold: 'Paid advertising', text: 'on Meta, Google, and TikTok with proven ROAS optimization' },
+      { bold: 'Social media content', text: 'that builds engaged audiences and drives traffic' },
+      { bold: 'Product photography', text: 'and video production for listings and ads' },
     ],
     images: [
       { src: '/images/portfolio/ecommerce/paid-ads.png', label: 'E-Commerce & Paid Ads', href: '/portfolio/paid-sm-marketing' },
@@ -80,12 +80,12 @@ const sections: Section[] = [
     id: 'art',
     title: 'Digital Art & Animations',
     color: 'bg-[#282F59]',
-    description: `I create digital art and have built two art brands: The Dope Art and Luxury Wall Art. Combined $120K in sales. I also launched Eternal Royals, an NFT project with physical prints and NFC chips.`,
+    description: `I create digital art and have built two profitable art brands: The Dope Art (200K+ social following) and Luxury Wall Art ($120K+ in sales). My work has been featured in publications and shared by major brands. I also launched Eternal Royals, an innovative NFT project combining blockchain authenticity with physical prints and NFC chips.`,
     bullets: [
-      { bold: 'Built a recognized digital art brand', text: 'with "The Dope Art"' },
-      { bold: 'Collaborated with top brands', text: 'to produce impactful visuals' },
-      { bold: 'Created viral digital art pieces', text: 'shared widely online' },
-      { bold: 'Pioneered blockchain technology', text: 'for art distribution' },
+      { bold: 'Built The Dope Art', text: 'to 200K+ followers across Instagram, Facebook, and Pinterest' },
+      { bold: 'Featured in publications', text: 'including online magazines and brand collaborations' },
+      { bold: 'Created viral content', text: 'with individual pieces reaching millions of impressions' },
+      { bold: 'Pioneered phygital art', text: 'combining NFTs with physical prints and NFC technology' },
     ],
     images: [
       { src: '/images/portfolio/art/digital-art.png', label: 'Digital Art & Prints', href: '/portfolio/art-design' },
@@ -98,12 +98,12 @@ const sections: Section[] = [
     id: 'brands',
     title: 'Brand Project Management',
     color: 'bg-[#282F59]',
-    description: `I've built and managed multiple brands from scratch. Quick Lenders (finance), Luxury Wall Art (e-commerce), The Dope Art (social-driven art), Eternal Royals (blockchain + physical), and Date Ideas (lifestyle content).`,
+    description: `I've built and managed multiple brands from scratch, handling everything from initial concept to profitable execution. Each project taught me different aspects of brand building: finance (Quick Lenders), e-commerce (Luxury Wall Art), social media growth (The Dope Art), blockchain technology (Eternal Royals), and content virality (Date Ideas).`,
     bullets: [
-      { bold: 'Quick Lenders', text: 'finance sector website' },
-      { bold: 'Luxury Wall Art', text: 'profitable art collection' },
-      { bold: 'The Dope Art', text: 'large social following' },
-      { bold: 'Eternal Royals', text: 'blockchain technology' },
+      { bold: 'Quick Lenders', text: 'finance sector brand with lead generation and SEO strategy' },
+      { bold: 'Luxury Wall Art', text: 'e-commerce brand generating $120K+ in art sales' },
+      { bold: 'The Dope Art', text: 'social media brand with 200K+ engaged followers' },
+      { bold: 'Eternal Royals', text: 'blockchain-authenticated art with physical NFC-enabled prints' },
     ],
     images: [
       { src: '/images/portfolio/brands/quick-lenders.png', label: 'Quick Lenders', isLogo: true },
@@ -140,35 +140,35 @@ export default function PortfolioPage() {
 
       {/* Sections */}
       {sections.map((section) => (
-        <section key={section.id} className="mb-16">
+        <section key={section.id} className="mb-20">
           {/* Section Header */}
-          <div className={`${section.color} text-white text-center py-5 rounded-lg mb-6`}>
-            <h2 className="text-2xl font-bold">{section.title}</h2>
+          <div className={`${section.color} text-white text-center py-6 rounded-xl mb-8 shadow-lg`}>
+            <h2 className="text-2xl md:text-3xl font-bold">{section.title}</h2>
           </div>
 
           {/* Description */}
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-8 text-lg">
             {section.description}
           </p>
 
           {/* Bullet Points */}
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             {section.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-2">
-                <span className="text-[#2e563c] font-bold">•</span>
-                <span>
-                  <strong className="text-blue-600">{bullet.bold}</strong> {bullet.text}
+              <li key={i} className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
+                <span className="text-blue-600 font-bold text-lg mt-0.5">•</span>
+                <span className="text-gray-700">
+                  <strong className="text-gray-900 font-semibold">{bullet.bold}</strong> {bullet.text}
                 </span>
               </li>
             ))}
           </ul>
 
           {/* Images */}
-          <div className={`grid gap-4 ${section.id === 'brands' ? 'grid-cols-5' : 'grid-cols-2 md:grid-cols-4'}`}>
+          <div className={`grid gap-6 ${section.id === 'brands' ? 'grid-cols-3 md:grid-cols-5' : 'grid-cols-1 md:grid-cols-2'}`}>
             {section.images.map((img, i) => {
               const ImageCard = (
                 <div className="group text-center">
-                  <div className={`relative ${img.isLogo ? 'aspect-square p-4' : 'aspect-[16/9]'} rounded-lg overflow-hidden border border-gray-200 bg-white ${img.href ? 'cursor-pointer' : ''}`}>
+                  <div className={`relative ${img.isLogo ? 'aspect-square p-4' : 'aspect-[4/3]'} rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 ${img.href ? 'cursor-pointer' : ''}`}>
                     <Image
                       src={img.src}
                       alt={img.label}
@@ -176,7 +176,7 @@ export default function PortfolioPage() {
                       className={`${img.isLogo ? 'object-contain p-2' : 'object-contain'} group-hover:scale-105 transition-transform duration-300`}
                     />
                   </div>
-                  <p className="mt-2 text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
+                  <p className="mt-3 text-base font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
                     {img.label}
                   </p>
                 </div>
