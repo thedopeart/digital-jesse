@@ -32,32 +32,38 @@ export default function ArtPublicationsPage() {
         </p>
       </div>
 
-      {/* Tiger King Section - Hero Style */}
-      <section className="mb-20">
-        <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Tiger King Comic Book Cover Art</h2>
-          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
-            When <strong className="font-semibold text-gray-900">Tiger King</strong> became a cultural phenomenon in 2020, I partnered with{' '}
-            <a href="https://tidalwavecomics.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-              TidalWave Productions
-            </a>{' '}
-            to create a comic book that captured the show&apos;s wild energy. The collaboration gained traction, with mentions from cast members and media outlets like{' '}
-            <a href="https://www.tmz.com/2020/05/31/tiger-king-comic-book-first-pages-special-edition-cover-joe-exotic-origin-story-carole-baskin/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-              TMZ
-            </a>
-            . This project was a great example of leveraging current trends to create engaging content that resonates with a broad audience.
-          </p>
-        </div>
+      {/* Tiger King Section - Side by Side */}
+      <section className="mb-16">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Image */}
+          <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/portfolio/detail/art/tiger-king-cover.jpg"
+              alt="Tiger King Comic Book Cover Art"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </div>
 
-        {/* Hero Image */}
-        <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden shadow-lg">
-          <Image
-            src="/images/portfolio/detail/art/tiger-king-cover.jpg"
-            alt="Tiger King Comic Book Cover Art"
-            fill
-            className="object-cover"
-            unoptimized
-          />
+          {/* Text */}
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Tiger King Comic Book Cover Art</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-4">
+              When <strong className="font-semibold text-gray-900">Tiger King</strong> became a cultural phenomenon in 2020, I partnered with{' '}
+              <a href="https://tidalwavecomics.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+                TidalWave Productions
+              </a>{' '}
+              to create a comic book that captured the show&apos;s wild energy.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              The collaboration gained traction, with mentions from cast members and media outlets like{' '}
+              <a href="https://www.tmz.com/2020/05/31/tiger-king-comic-book-first-pages-special-edition-cover-joe-exotic-origin-story-carole-baskin/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+                TMZ
+              </a>
+              . This project was a great example of leveraging current trends to create engaging content that resonates with a broad audience.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -115,30 +121,38 @@ export default function ArtPublicationsPage() {
         </h2>
       </section>
 
-      {/* Jondo Prints Section - Full Width */}
-      <section className="mb-20">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Jondo Prints</h3>
-        <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl">
-          For the 2022 NFT LA event, I partnered with Jondo Prints to create an interactive booth showcasing high-quality digital prints from{' '}
-          <a href="https://thedopeart.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-            The Dope Art
-          </a>{' '}
-          and{' '}
-          <a href="https://eternalroyals.io/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-            Eternal Royals
-          </a>
-          . I designed our booth layout and featured artwork, blending physical art with digital innovation. This collaboration was a fantastic way to highlight both my art and Jondo&apos;s print quality, while engaging with the NFT and digital art community, expanding The Dope Art&apos;s reach.
-        </p>
+      {/* Jondo Prints Section - Side by Side */}
+      <section className="mb-16">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Image */}
+          <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/portfolio/detail/art/nft-la-booth.jpg"
+              alt="NFT LA Booth with Jondo Prints"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </div>
 
-        {/* Full Width Booth Image */}
-        <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg">
-          <Image
-            src="/images/portfolio/detail/art/nft-la-booth.jpg"
-            alt="NFT LA Booth with Jondo Prints"
-            fill
-            className="object-cover"
-            unoptimized
-          />
+          {/* Text */}
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Jondo Prints</h3>
+            <p className="text-lg text-gray-600 leading-relaxed mb-4">
+              For the 2022 NFT LA event, I partnered with Jondo Prints to create an interactive booth showcasing high-quality digital prints from{' '}
+              <a href="https://thedopeart.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+                The Dope Art
+              </a>{' '}
+              and{' '}
+              <a href="https://eternalroyals.io/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+                Eternal Royals
+              </a>
+              .
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              I designed our booth layout and featured artwork, blending physical art with digital innovation. This collaboration was a fantastic way to highlight both my art and Jondo&apos;s print quality, while engaging with the NFT and digital art community, expanding The Dope Art&apos;s reach.
+            </p>
+          </div>
         </div>
       </section>
 
