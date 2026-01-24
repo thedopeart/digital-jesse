@@ -465,23 +465,44 @@ export const portfolioPages: PortfolioPage[] = [
     sections: [
       {
         heading: 'Tiger King Comic Book Cover',
-        content: 'When **Tiger King** became a cultural phenomenon in 2020, I recognized an opportunity to create relevant art while the moment was hot. I partnered with **TidalWave Productions**, a comic book publisher known for biographical and pop culture titles. My artwork was used as variant cover art for their Tiger King comic book series. The project gained media attention from **TMZ** and other entertainment outlets, exposing my work to audiences far beyond the typical art collector community. This collaboration demonstrated the value of timing, trend awareness, and proactive outreach in building an art career.',
+        content: 'When **Tiger King** became a cultural phenomenon in 2020, I recognized an opportunity to create relevant art while the moment was hot. I partnered with **TidalWave Productions**, a comic book publisher known for biographical and pop culture titles. My artwork was used as variant cover art for their Tiger King comic book series. The collaboration gained traction, with mentions from cast members and media outlets like **TMZ**. This project was a great example of leveraging current trends to create engaging content that resonates with a broad audience.',
         images: [
           { src: '/images/portfolio/detail/art/tiger-king-cover.jpg', alt: 'Tiger King Comic Art' },
-          { src: '/images/portfolio/detail/art/tiger-king-pics.jpg', alt: 'Tiger King Pics' },
-          { src: '/images/portfolio/detail/art/tiger-king-site.jpg', alt: 'Tiger King Site' },
+          { src: '/images/portfolio/detail/art/tiger-king-pics.jpg', alt: 'Tiger King Comic Books' },
+          { src: '/images/portfolio/detail/art/tiger-king-site.jpg', alt: 'Tiger King Feature' },
         ],
       },
       {
         heading: 'ShoutOut LA Feature',
         content: 'I was featured in **ShoutOut LA**, a publication highlighting entrepreneurs and creatives in the Los Angeles area. The interview covered my journey building The Dope Art, the challenges of running an art business, and my approach to balancing creativity with commerce. Being featured in publications like this builds credibility and provides social proof that helps in conversations with potential partners, collectors, and collaborators. It also drives traffic and awareness to the brand. I actively pursue media coverage as part of my overall marketing strategy, not waiting for journalists to find me.',
         images: [
-          { src: '/images/portfolio/detail/art/shoutout-la.jpg', alt: 'ShoutOut LA Feature' },
+          { src: '/images/portfolio/detail/art/shoutout-la.jpg', alt: 'ShoutOut LA Article - Meet Jesse Johnson: Digital Artist' },
+          { src: '/images/portfolio/detail/art/jesse-studio.jpg', alt: 'Jesse in Studio' },
         ],
       },
       {
-        heading: 'Brand Collaborations',
-        content: 'I\'ve partnered with various brands and events in the art and NFT space. At **NFT LA 2022**, I collaborated with Jondo Prints on an interactive booth where attendees could engage with digital art displays and physical prints. The **Wall Street Prints** partnership focused on bull and bear market artwork, combining my designs with their printing and distribution capabilities. These collaborations expand reach to new audiences, provide learning opportunities, and often generate revenue that would be difficult to achieve solo. I actively seek partnerships where both parties benefit and the collaboration feels authentic to my brand.',
+        heading: 'Jondo Prints Collaboration',
+        content: 'For the 2022 NFT LA event, I partnered with **Jondo Prints** to create an interactive booth showcasing high-quality digital prints from **The Dope Art** and **Eternal Royals**. I designed our booth layout and featured artwork, blending physical art with digital innovation. This collaboration was a fantastic way to highlight both my art and Jondo\'s print quality, while engaging with the NFT and digital art community, expanding The Dope Art\'s reach.',
+        images: [
+          { src: '/images/portfolio/detail/art/nft-la-booth.jpg', alt: 'NFT LA Booth with Jondo Prints' },
+          { src: '/images/portfolio/detail/art/nft-la.jpg', alt: 'NFT LA Event Display' },
+        ],
+      },
+      {
+        heading: 'NFT LA 2022',
+        content: 'NFT LA was one of the largest NFT conferences in 2022, bringing together artists, collectors, and technology enthusiasts. Our booth featured large-format canvas prints alongside digital displays showing animated versions of the artwork. Attendees could see how digital art translates to physical products, addressing one of the main concerns collectors have about NFTs. The event generated significant exposure and led to multiple follow-up partnerships.',
+        images: [
+          { src: '/images/portfolio/detail/art/nft-la-3.jpg', alt: 'NFT LA Booth Display' },
+          { src: '/images/portfolio/detail/art/nft-la-4.jpg', alt: 'NFT LA Event Attendees' },
+          { src: '/images/portfolio/detail/art/nft-la-5.jpg', alt: 'NFT LA Art Showcase' },
+          { src: '/images/portfolio/detail/art/nft-la-2.jpg', alt: 'NFT LA Prints' },
+          { src: '/images/portfolio/detail/art/canvases.jpg', alt: 'Canvas Art Display' },
+          { src: '/images/portfolio/detail/art/jesse-room.jpg', alt: 'Art Installation' },
+        ],
+      },
+      {
+        heading: 'Wall Street Prints',
+        content: 'My collaboration with **Wall Street Prints** reflects the depth of my creativity over the years. I\'ve channeled my artistic passion into producing digital art using Photoshop, each piece intricately tailored to resonate with the distinct character and needs of different businesses. The positive reception to these characters serves as a testament to the power of creative digital art in brand storytelling and engagement.',
         bullets: [
           '**NFT LA 2022**: Interactive booth collaboration with Jondo Prints',
           '**Wall Street Prints**: Bull and bear artwork licensing partnership',
@@ -489,9 +510,9 @@ export const portfolioPages: PortfolioPage[] = [
           '**Various galleries**: Digital art displays and exhibitions',
         ],
         images: [
-          { src: '/images/portfolio/detail/art/nft-la-booth.jpg', alt: 'NFT LA Booth' },
-          { src: '/images/portfolio/detail/art/nft-la.jpg', alt: 'NFT LA Event' },
-          { src: '/images/portfolio/detail/art/canvases.jpg', alt: 'Art Canvases' },
+          { src: '/images/portfolio/detail/art/er-cover.jpg', alt: 'Eternal Royals Artwork' },
+          { src: '/images/portfolio/detail/art/time-is-king.jpg', alt: 'Time is King Artwork' },
+          { src: '/images/portfolio/detail/art/reviews.jpg', alt: 'Customer Reviews' },
         ],
       },
     ],
