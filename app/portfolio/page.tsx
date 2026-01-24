@@ -168,12 +168,12 @@ export default function PortfolioPage() {
             {section.images.map((img, i) => {
               const ImageCard = (
                 <div className="group text-center">
-                  <div className={`relative ${img.isLogo ? 'aspect-square p-4' : 'aspect-[4/3]'} rounded-lg overflow-hidden border border-gray-200 bg-white ${img.href ? 'cursor-pointer' : ''}`}>
+                  <div className={`relative ${img.isLogo ? 'aspect-square p-4' : 'aspect-[16/9]'} rounded-lg overflow-hidden border border-gray-200 bg-white ${img.href ? 'cursor-pointer' : ''}`}>
                     <Image
                       src={img.src}
                       alt={img.label}
                       fill
-                      className={`${img.isLogo ? 'object-contain p-2' : 'object-cover'} group-hover:scale-105 transition-transform duration-300`}
+                      className={`${img.isLogo ? 'object-contain p-2' : 'object-contain'} group-hover:scale-105 transition-transform duration-300`}
                     />
                   </div>
                   <p className="mt-2 text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
