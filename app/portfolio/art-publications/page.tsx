@@ -51,17 +51,17 @@ export default function ArtPublicationsPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Tiger King Comic Book Cover Art</h2>
             <p className="text-gray-600 leading-relaxed mb-3">
               When <strong className="font-semibold text-gray-900">Tiger King</strong> became a cultural phenomenon in 2020, I partnered with{' '}
-              <a href="https://tidalwavecomics.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+              <a href="https://tidalwavecomics.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:text-teal-700 underline">
                 TidalWave Productions
               </a>{' '}
-              to create a comic book that captured the show&apos;s wild energy.
+              to create a comic book that captured the show&apos;s wild energy. My artwork was used as variant cover art for their Tiger King comic book series.
             </p>
             <p className="text-gray-600 leading-relaxed">
               The collaboration gained traction, with mentions from cast members and media outlets like{' '}
-              <a href="https://www.tmz.com/2020/05/31/tiger-king-comic-book-first-pages-special-edition-cover-joe-exotic-origin-story-carole-baskin/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+              <a href="https://www.tmz.com/2020/05/31/tiger-king-comic-book-first-pages-special-edition-cover-joe-exotic-origin-story-carole-baskin/" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:text-teal-700 underline">
                 TMZ
               </a>
-              . This project was a great example of leveraging current trends to create engaging content that resonates with a broad audience.
+              . This project showed how quickly you can capitalize on cultural moments to create relevant, engaging content.
             </p>
           </div>
         </div>
@@ -70,19 +70,29 @@ export default function ArtPublicationsPage() {
       {/* ShoutOut LA Section */}
       <section className="mb-14 border-t border-gray-200 pt-10">
         <div className="grid md:grid-cols-2 gap-10 items-start">
-          {/* Left Column - Quote */}
+          {/* Left Column - About the Feature */}
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3">Your Headline</h2>
-            <p className="text-gray-600 leading-relaxed mb-5 text-sm">
-              &quot;Jesse Johnson, the visionary behind thedopeart.com, attributes his success to three critical elements: passion, organization, and balance. With a fervor for creating distinctive pieces of art, he devoted two years to honing his skills, eventually finding a unique style resonating with entrepreneurial spirits seeking inspiring decor.&quot;
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">ShoutOut LA Feature</h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              I was featured in{' '}
+              <a href="https://shoutoutla.com/meet-jesse-johnson-digital-artist/" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:text-teal-700 underline">
+                ShoutOut LA
+              </a>
+              , a publication highlighting entrepreneurs and creatives in the Los Angeles area. The interview covered my journey building The Dope Art, the challenges of running an art business, and my approach to balancing creativity with commerce.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-4 italic border-l-4 border-gray-300 pl-4">
+              &quot;Jesse Johnson attributes his success to three critical elements: passion, organization, and balance. With a fervor for creating distinctive pieces of art, he devoted two years to honing his skills, eventually finding a unique style resonating with entrepreneurial spirits seeking inspiring decor.&quot;
             </p>
             <a
               href="https://shoutoutla.com/meet-jesse-johnson-digital-artist/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-5 py-2.5 border-2 border-gray-900 rounded text-sm font-semibold text-gray-900 hover:bg-gray-900 hover:text-white transition-colors uppercase tracking-wide"
+              className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium"
             >
-              View All
+              Read the full article
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
           </div>
 
@@ -137,11 +147,11 @@ export default function ArtPublicationsPage() {
             <h3 className="text-xl font-bold text-gray-900 mb-3">Jondo Prints</h3>
             <p className="text-gray-600 leading-relaxed mb-3">
               For the 2022 NFT LA event, I partnered with Jondo Prints to create an interactive booth showcasing high-quality digital prints from{' '}
-              <a href="https://thedopeart.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+              <a href="https://thedopeart.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:text-teal-700 underline">
                 The Dope Art
               </a>{' '}
               and{' '}
-              <a href="https://eternalroyals.io/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+              <a href="https://eternalroyals.io/" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:text-teal-700 underline">
                 Eternal Royals
               </a>
               .
@@ -199,7 +209,7 @@ export default function ArtPublicationsPage() {
             <h3 className="text-xl font-bold text-gray-900 mb-3">Wall Street Prints</h3>
             <p className="text-gray-600 leading-relaxed mb-3">
               My collaboration with{' '}
-              <a href="https://wallstreetprints.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+              <a href="https://wallstreetprints.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:text-teal-700 underline">
                 Wall Street Prints
               </a>{' '}
               reflects the depth of my creativity over the years. I&apos;ve channeled my artistic passion into producing digital art using Photoshop, each piece tailored to resonate with the distinct character and needs of different businesses.
@@ -211,17 +221,6 @@ export default function ArtPublicationsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <div className="mt-14 p-8 bg-gray-50 rounded-xl text-center">
-        <h3 className="text-xl font-bold text-gray-900">Want similar results?</h3>
-        <p className="mt-2 text-gray-600">Let&apos;s talk about how I can help with your project.</p>
-        <Link
-          href="/contact"
-          className="mt-4 inline-block px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
-        >
-          Get in Touch
-        </Link>
-      </div>
     </div>
   );
 }
