@@ -183,27 +183,33 @@ export default function ArtPublicationsPage() {
         </div>
       </section>
 
-      {/* Wall Street Prints Section - Full Width */}
-      <section className="mb-20 border-t border-gray-200 pt-16">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">Wall Street Prints</h3>
-        <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl">
-          My collaboration with{' '}
-          <a href="https://wallstreetprints.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
-            Wall Street Prints
-          </a>{' '}
-          reflects the depth of my creativity over the years. I&apos;ve channeled my artistic passion into producing digital art using Photoshop, each piece tailored to resonate with the distinct character and needs of different businesses. The positive reception to these characters serves as a testament to the power of creative digital art in brand storytelling and engagement.
-        </p>
-
-        {/* Bull Bear Image - Centered */}
-        <div className="flex justify-center">
-          <div className="relative w-full max-w-2xl aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+      {/* Wall Street Prints Section - Side by Side */}
+      <section className="mb-16 border-t border-gray-200 pt-16">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Image */}
+          <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg bg-white">
             <Image
               src="/images/portfolio/detail/art/bull-bear-collab.png"
               alt="Bull and Bear Collaboration Art"
               fill
-              className="object-contain bg-white"
+              className="object-contain p-4"
               unoptimized
             />
+          </div>
+
+          {/* Text */}
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Wall Street Prints</h3>
+            <p className="text-lg text-gray-600 leading-relaxed mb-4">
+              My collaboration with{' '}
+              <a href="https://wallstreetprints.com/" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-700 underline">
+                Wall Street Prints
+              </a>{' '}
+              reflects the depth of my creativity over the years. I&apos;ve channeled my artistic passion into producing digital art using Photoshop, each piece tailored to resonate with the distinct character and needs of different businesses.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              The positive reception to these characters serves as a testament to the power of creative digital art in brand storytelling and engagement.
+            </p>
           </div>
         </div>
       </section>
