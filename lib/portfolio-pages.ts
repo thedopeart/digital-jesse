@@ -465,7 +465,7 @@ export const portfolioPages: PortfolioPage[] = [
     sections: [
       {
         heading: 'Tiger King Comic Book Cover Art',
-        content: 'When **Tiger King** became a cultural phenomenon in 2020, I partnered with **TidalWave Productions** to create a comic book that captured the show\'s wild energy. The collaboration gained traction, with mentions from cast members and media outlets like **TMZ**. This project was a great example of leveraging current trends to create engaging content that resonates with a broad audience.',
+        content: 'When **Tiger King** became a cultural phenomenon in 2020, I partnered with [TidalWave Productions](https://tidalwavecomics.com/) to create a comic book that captured the show\'s wild energy. The collaboration gained traction, with mentions from cast members and media outlets like [TMZ](https://www.tmz.com/2020/05/31/tiger-king-comic-book-first-pages-special-edition-cover-joe-exotic-origin-story-carole-baskin/). This project was a great example of leveraging current trends to create engaging content that resonates with a broad audience.',
         images: [
           { src: '/images/portfolio/detail/art/tiger-king-cover.jpg', alt: 'Tiger King Comic Book Cover Art' },
         ],
@@ -484,7 +484,7 @@ export const portfolioPages: PortfolioPage[] = [
       },
       {
         heading: 'Jondo Prints',
-        content: 'For the 2022 NFT LA event, I partnered with Jondo Prints to create an interactive booth showcasing high-quality digital prints from **The Dope Art** and **Eternal Royals**. I designed our booth layout and featured artwork, blending physical art with digital innovation. This collaboration was a fantastic way to highlight both my art and Jondo\'s print quality, while engaging with the NFT and digital art community, expanding The Dope Art\'s reach.',
+        content: 'For the 2022 NFT LA event, I partnered with Jondo Prints to create an interactive booth showcasing high-quality digital prints from [The Dope Art](https://thedopeart.com/) and **Eternal Royals**. I designed our booth layout and featured artwork, blending physical art with digital innovation. This collaboration was a fantastic way to highlight both my art and Jondo\'s print quality, while engaging with the NFT and digital art community, expanding The Dope Art\'s reach.',
         images: [
           { src: '/images/portfolio/detail/art/nft-la-booth.jpg', alt: 'NFT LA Booth with Jondo Prints' },
         ],
@@ -505,7 +505,7 @@ export const portfolioPages: PortfolioPage[] = [
       },
       {
         heading: 'Wall Street Prints',
-        content: 'My collaboration with **Wall Street Prints** reflects the depth of my creativity over the years. I\'ve channeled my artistic passion into producing digital art using Photoshop, each piece tailored to resonate with the distinct character and needs of different businesses. The positive reception to these characters serves as a testament to the power of creative digital art in brand storytelling and engagement.',
+        content: 'My collaboration with [Wall Street Prints](https://wallstreetprints.com/) reflects the depth of my creativity over the years. I\'ve channeled my artistic passion into producing digital art using Photoshop, each piece tailored to resonate with the distinct character and needs of different businesses. The positive reception to these characters serves as a testament to the power of creative digital art in brand storytelling and engagement.',
         images: [
           { src: '/images/portfolio/detail/art/time-is-king.jpg', alt: 'Time is King Artwork' },
         ],

@@ -6,22 +6,47 @@ interface FormattedTextProps {
 }
 
 export default function FormattedText({ text, className = '' }: FormattedTextProps) {
-  // Parse **bold** markdown syntax
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  // Parse markdown: **bold** and [link](url)
+  // First split by links, then by bold within each part
+  const linkRegex = /(\[[^\]]+\]\([^)]+\))/g;
+  const boldRegex = /(\*\*[^*]+\*\*)/g;
 
-  return (
-    <span className={className}>
-      {parts.map((part, i) => {
-        if (part.startsWith('**') && part.endsWith('**')) {
-          // Remove the ** and render as bold
+  const parseText = (str: string, keyPrefix: string = ''): React.ReactNode[] => {
+    // Split by links first
+    const linkParts = str.split(linkRegex);
+
+    return linkParts.flatMap((part, i) => {
+      const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (linkMatch) {
+        // This is a link
+        const [, linkText, url] = linkMatch;
+        return (
+          <a
+            key={`${keyPrefix}link-${i}`}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-600 hover:text-teal-700 underline"
+          >
+            {linkText}
+          </a>
+        );
+      }
+
+      // Not a link, check for bold
+      const boldParts = part.split(boldRegex);
+      return boldParts.map((boldPart, j) => {
+        if (boldPart.startsWith('**') && boldPart.endsWith('**')) {
           return (
-            <strong key={i} className="font-semibold text-gray-900">
-              {part.slice(2, -2)}
+            <strong key={`${keyPrefix}bold-${i}-${j}`} className="font-semibold text-gray-900">
+              {boldPart.slice(2, -2)}
             </strong>
           );
         }
-        return part;
-      })}
-    </span>
-  );
+        return boldPart;
+      });
+    });
+  };
+
+  return <span className={className}>{parseText(text)}</span>;
 }
