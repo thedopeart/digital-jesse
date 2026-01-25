@@ -34,8 +34,8 @@ export default function MagneticButton({
       const y = e.clientY - rect.top - rect.height / 2;
 
       gsap.to(button, {
-        x: x * 0.3,
-        y: y * 0.3,
+        x: x * 0.2,
+        y: y * 0.2,
         duration: 0.3,
         ease: 'power2.out',
       });
@@ -46,7 +46,7 @@ export default function MagneticButton({
         x: 0,
         y: 0,
         duration: 0.5,
-        ease: 'elastic.out(1, 0.3)',
+        ease: 'elastic.out(1, 0.4)',
       });
     };
 
@@ -59,12 +59,12 @@ export default function MagneticButton({
     };
   }, { scope: buttonRef });
 
-  const baseStyles = 'inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden group';
+  const baseStyles = 'inline-flex items-center justify-center px-7 py-3.5 rounded-lg font-medium transition-all duration-300 relative overflow-hidden group';
 
   const variants = {
-    primary: `${baseStyles} bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105`,
-    secondary: `${baseStyles} bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:scale-105`,
-    ghost: `${baseStyles} bg-transparent border-2 border-gray-300 text-gray-700 hover:border-gray-900 hover:bg-gray-900 hover:text-white`,
+    primary: `${baseStyles} bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black shadow-lg hover:shadow-xl hover:shadow-amber-900/20 hover:scale-[1.02]`,
+    secondary: `${baseStyles} bg-white/5 backdrop-blur-sm border border-[#d4a847]/30 text-white hover:bg-white/10 hover:border-[#d4a847]/50 hover:scale-[1.02]`,
+    ghost: `${baseStyles} bg-transparent border border-gray-300 text-gray-700 hover:border-[#d4a847] hover:text-[#d4a847]`,
   };
 
   return (
@@ -74,9 +74,6 @@ export default function MagneticButton({
       className={`${variants[variant]} ${className}`}
     >
       <span className="relative z-10">{children}</span>
-      {variant === 'primary' && (
-        <span className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      )}
     </Link>
   );
 }

@@ -4,26 +4,24 @@
   --background: #ffffff;
   --foreground: #1a1a1a;
   --secondary: #4a4a4a;
-  --accent: #2563eb;
-  --surface: #f5f5f5;
+  --surface: #f8f8f8;
   --border: #e5e5e5;
 
-  /* Bold & Creative palette */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --accent-blue: #4f46e5;
-  --accent-purple: #7c3aed;
-  --accent-pink: #ec4899;
-  --accent-cyan: #06b6d4;
-  --accent-orange: #f97316;
+  /* Dark with Gold/Bronze palette */
+  --accent-gold: #d4a847;
+  --accent-bronze: #cd7f32;
+  --accent-amber: #f59e0b;
+  --accent-warm: #b8860b;
 
-  /* Dark mode colors */
-  --bg-dark: #0f0f23;
-  --bg-dark-secondary: #1a1a3e;
+  /* Dark backgrounds */
+  --bg-dark: #0a0a0a;
+  --bg-dark-secondary: #111111;
+  --bg-dark-tertiary: #1a1a1a;
 
   /* Glass effect */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(212, 168, 71, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 @theme inline {
@@ -47,15 +45,15 @@ html {
 /* Focus styles */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
 /* ===== ANIMATION UTILITIES ===== */
 
-/* Gradient text */
+/* Gradient text - Gold */
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ec4899 100%);
+  background: linear-gradient(135deg, #d4a847 0%, #f5d78e 50%, #cd7f32 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -64,11 +62,11 @@ button:focus-visible {
 .gradient-text-animated {
   background: linear-gradient(
     90deg,
-    #667eea 0%,
-    #764ba2 25%,
-    #ec4899 50%,
-    #764ba2 75%,
-    #667eea 100%
+    #d4a847 0%,
+    #f5d78e 25%,
+    #cd7f32 50%,
+    #f5d78e 75%,
+    #d4a847 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -83,23 +81,23 @@ button:focus-visible {
   100% { background-position: 0% center; }
 }
 
-/* Glow effects */
-.glow-purple {
-  box-shadow: 0 0 20px rgba(147, 51, 234, 0.5),
-              0 0 40px rgba(147, 51, 234, 0.3),
-              0 0 60px rgba(147, 51, 234, 0.1);
+/* Glow effects - Gold */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 168, 71, 0.4),
+              0 0 40px rgba(212, 168, 71, 0.2),
+              0 0 60px rgba(212, 168, 71, 0.1);
 }
 
-.glow-blue {
-  box-shadow: 0 0 20px rgba(79, 70, 229, 0.5),
-              0 0 40px rgba(79, 70, 229, 0.3),
-              0 0 60px rgba(79, 70, 229, 0.1);
+.glow-amber {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.4),
+              0 0 40px rgba(245, 158, 11, 0.2),
+              0 0 60px rgba(245, 158, 11, 0.1);
 }
 
-.glow-pink {
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5),
-              0 0 40px rgba(236, 72, 153, 0.3),
-              0 0 60px rgba(236, 72, 153, 0.1);
+.glow-bronze {
+  box-shadow: 0 0 20px rgba(205, 127, 50, 0.4),
+              0 0 40px rgba(205, 127, 50, 0.2),
+              0 0 60px rgba(205, 127, 50, 0.1);
 }
 
 /* Glass morphism */
@@ -112,13 +110,13 @@ button:focus-visible {
 }
 
 .glass-light {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(212, 168, 71, 0.1);
 }
 
-/* Animated border gradient */
+/* Animated border gradient - Gold */
 .border-gradient {
   position: relative;
   background: transparent;
@@ -129,8 +127,8 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(135deg, #667eea, #764ba2, #ec4899);
+  padding: 1px;
+  background: linear-gradient(135deg, #d4a847, #f5d78e, #cd7f32);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -138,7 +136,7 @@ button:focus-visible {
 }
 
 .border-gradient-animated::before {
-  background: linear-gradient(135deg, #667eea, #764ba2, #ec4899, #667eea);
+  background: linear-gradient(135deg, #d4a847, #f5d78e, #cd7f32, #d4a847);
   background-size: 300% 300%;
   animation: borderGradient 3s ease infinite;
 }
@@ -155,8 +153,8 @@ button:focus-visible {
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* Magnetic cursor effect base */
@@ -164,14 +162,14 @@ button:focus-visible {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Pulse animation */
+/* Pulse animation - Gold */
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+    box-shadow: 0 0 15px rgba(212, 168, 71, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(147, 51, 234, 0.6),
-                0 0 60px rgba(147, 51, 234, 0.3);
+    box-shadow: 0 0 25px rgba(212, 168, 71, 0.5),
+                0 0 40px rgba(212, 168, 71, 0.2);
   }
 }
 
@@ -185,7 +183,7 @@ button:focus-visible {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
@@ -209,7 +207,7 @@ button:focus-visible {
   background: linear-gradient(
     to right,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
+    rgba(212, 168, 71, 0.1) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: rotate(30deg);
@@ -233,8 +231,8 @@ button:focus-visible {
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+  height: 1px;
+  background: linear-gradient(90deg, #d4a847, #cd7f32);
   transition: width 0.3s ease;
 }
 
@@ -263,7 +261,7 @@ button:focus-visible {
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -280,7 +278,7 @@ button:focus-visible {
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -297,7 +295,7 @@ button:focus-visible {
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
@@ -314,7 +312,7 @@ button:focus-visible {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
@@ -325,4 +323,22 @@ button:focus-visible {
 .animate-slide-right {
   animation: slideInRight 0.5s ease forwards;
   opacity: 0;
+}
+
+/* Gold accent text */
+.text-gold {
+  color: #d4a847;
+}
+
+.text-bronze {
+  color: #cd7f32;
+}
+
+/* Subtle gold border */
+.border-gold {
+  border-color: rgba(212, 168, 71, 0.3);
+}
+
+.border-gold-strong {
+  border-color: rgba(212, 168, 71, 0.6);
 }

@@ -33,7 +33,6 @@ export default function ProjectCard({
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      // Move glow to cursor position
       gsap.to(glow, {
         x: x - 100,
         y: y - 100,
@@ -41,11 +40,10 @@ export default function ProjectCard({
         ease: 'power2.out',
       });
 
-      // 3D tilt effect
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
+      const rotateX = (y - centerY) / 25;
+      const rotateY = (centerX - x) / 25;
 
       gsap.to(card, {
         rotateX: rotateX,
@@ -56,21 +54,12 @@ export default function ProjectCard({
     };
 
     const handleMouseEnter = () => {
-      gsap.to(glow, {
-        opacity: 1,
-        duration: 0.3,
-      });
-      gsap.to(card, {
-        scale: 1.02,
-        duration: 0.3,
-      });
+      gsap.to(glow, { opacity: 1, duration: 0.3 });
+      gsap.to(card, { scale: 1.01, duration: 0.3 });
     };
 
     const handleMouseLeave = () => {
-      gsap.to(glow, {
-        opacity: 0,
-        duration: 0.3,
-      });
+      gsap.to(glow, { opacity: 0, duration: 0.3 });
       gsap.to(card, {
         rotateX: 0,
         rotateY: 0,
@@ -95,34 +84,32 @@ export default function ProjectCard({
     <Link
       ref={cardRef}
       href={`/portfolio/${slug}`}
-      className="group relative block bg-white rounded-2xl p-6 overflow-hidden transition-shadow duration-300"
+      className="group relative block bg-white rounded-xl p-6 overflow-hidden transition-shadow duration-300"
       style={{
         transformStyle: 'preserve-3d',
         perspective: '1000px',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+        boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
       }}
     >
-      {/* Gradient border effect */}
-      <div className="absolute inset-0 rounded-2xl border border-gray-200 group-hover:border-transparent transition-colors duration-300" />
-      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-gradient-animated" style={{ borderRadius: 'inherit' }} />
+      {/* Border */}
+      <div className="absolute inset-0 rounded-xl border border-gray-200 group-hover:border-[#d4a847]/40 transition-colors duration-300" />
 
-      {/* Cursor glow effect */}
+      {/* Cursor glow */}
       <div
         ref={glowRef}
         className="absolute w-[200px] h-[200px] rounded-full pointer-events-none opacity-0"
         style={{
-          background: 'radial-gradient(circle, rgba(147,51,234,0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(212,168,71,0.08) 0%, transparent 70%)',
         }}
       />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        {/* Title with arrow */}
         <div className="flex items-start justify-between gap-4">
-          <h3 className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300">
+          <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#b8860b] transition-colors duration-300">
             {title}
           </h3>
-          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-purple-600 flex items-center justify-center transition-all duration-300 transform group-hover:translate-x-1">
+          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-[#d4a847] flex items-center justify-center transition-all duration-300 transform group-hover:translate-x-0.5">
             <svg
               className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-300"
               fill="none"
@@ -139,8 +126,8 @@ export default function ProjectCard({
         </p>
 
         {metric && (
-          <p className="mt-4 text-purple-600 font-semibold flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-purple-600" />
+          <p className="mt-4 text-[#b8860b] font-semibold flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#d4a847]" />
             {metric}
           </p>
         )}
@@ -150,7 +137,7 @@ export default function ProjectCard({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full group-hover:bg-purple-50 group-hover:text-purple-700 transition-colors duration-300"
+                className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full group-hover:bg-amber-50 group-hover:text-[#b8860b] transition-colors duration-300"
               >
                 {tag}
               </span>
