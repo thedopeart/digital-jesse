@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Dark Header */}
-      <div className="bg-[#0a0a0a] py-16">
+      <div className="bg-[#1e1e1e] py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">Contact</span>
           <h1 className="mt-2 text-4xl md:text-5xl font-bold text-white">Get in Touch</h1>

@@ -119,7 +119,7 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen">
       {/* Dark Hero Header */}
-      <div className="bg-[#0a0a0a] py-10">
+      <div className="bg-[#1e1e1e] py-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="relative w-full md:w-2/5">
@@ -181,7 +181,7 @@ export default function PortfolioPage() {
                 section.id === 'brands'
                   ? 'grid-cols-3 md:grid-cols-5'
                   : section.images.length === 2
-                    ? 'grid-cols-2'
+                    ? 'grid-cols-2 max-w-2xl'
                     : section.images.length === 3
                       ? 'grid-cols-2 md:grid-cols-3'
                       : 'grid-cols-2 md:grid-cols-4'
@@ -219,7 +219,7 @@ export default function PortfolioPage() {
       })}
 
       {/* CTA - Dark Section */}
-      <section className="bg-[#0a0a0a] py-16">
+      <section className="bg-[#1e1e1e] py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white">Want to work together?</h2>
           <p className="mt-3 text-gray-400">I'm open to full-time roles and freelance projects.</p>

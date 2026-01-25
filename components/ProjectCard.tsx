@@ -11,6 +11,7 @@ interface ProjectCardProps {
   description: string;
   metric?: string;
   tags?: string[];
+  variant?: 'light' | 'dark';
 }
 
 export default function ProjectCard({
@@ -19,7 +20,9 @@ export default function ProjectCard({
   description,
   metric,
   tags,
+  variant = 'light',
 }: ProjectCardProps) {
+  const isDark = variant === 'dark';
   const cardRef = useRef<HTMLAnchorElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
 
@@ -84,49 +87,48 @@ export default function ProjectCard({
     <Link
       ref={cardRef}
       href={`/portfolio/${slug}`}
-      className="group relative block bg-white rounded-xl p-6 overflow-hidden transition-shadow duration-300"
+      className={`group relative block rounded-xl p-5 overflow-hidden transition-all duration-300 ${
+        isDark ? 'bg-[#1a1a1a]' : 'bg-white'
+      }`}
       style={{
         transformStyle: 'preserve-3d',
         perspective: '1000px',
-        boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
       }}
     >
       {/* Border */}
-      <div className="absolute inset-0 rounded-xl border border-gray-200 group-hover:border-[#d4a847]/40 transition-colors duration-300" />
+      <div className={`absolute inset-0 rounded-xl border-2 transition-colors duration-300 ${
+        isDark
+          ? 'border-[#d4a847]/30 group-hover:border-[#d4a847]/70'
+          : 'border-gray-200 group-hover:border-[#d4a847]/40'
+      }`} />
 
       {/* Cursor glow */}
       <div
         ref={glowRef}
         className="absolute w-[200px] h-[200px] rounded-full pointer-events-none opacity-0"
         style={{
-          background: 'radial-gradient(circle, rgba(212,168,71,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(212,168,71,0.12) 0%, transparent 70%)',
         }}
       />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#b8860b] transition-colors duration-300">
-            {title}
-          </h3>
-          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-[#d4a847] flex items-center justify-center transition-all duration-300 transform group-hover:translate-x-0.5">
-            <svg
-              className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </span>
-        </div>
+        <h3 className={`text-lg font-bold transition-colors duration-300 ${
+          isDark
+            ? 'text-white group-hover:text-[#d4a847]'
+            : 'text-gray-900 group-hover:text-[#b8860b]'
+        }`}>
+          {title}
+        </h3>
 
-        <p className="mt-3 text-gray-600 flex-1 leading-relaxed">
+        <p className={`mt-2 text-sm leading-relaxed flex-1 ${
+          isDark ? 'text-gray-300' : 'text-gray-600'
+        }`}>
           {description}
         </p>
 
         {metric && (
-          <p className="mt-4 text-[#b8860b] font-semibold flex items-center gap-2">
+          <p className="mt-4 text-[#d4a847] text-sm font-semibold flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d4a847]" />
             {metric}
           </p>
@@ -137,7 +139,11 @@ export default function ProjectCard({
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full group-hover:bg-amber-50 group-hover:text-[#b8860b] transition-colors duration-300"
+                className={`px-3 py-1 text-xs font-semibold rounded-full transition-colors duration-300 ${
+                  isDark
+                    ? 'bg-[#d4a847]/10 text-[#d4a847] border border-[#d4a847]/30'
+                    : 'bg-gray-100 text-gray-600 group-hover:text-[#b8860b]'
+                }`}
               >
                 {tag}
               </span>

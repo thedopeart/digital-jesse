@@ -165,7 +165,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Dark Header */}
-      <div className="bg-[#0a0a0a] py-16">
+      <div className="bg-[#1e1e1e] py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">
             Skills
@@ -188,7 +188,7 @@ export default function ServicesPage() {
           <section
             key={service.id}
             id={service.id}
-            className={`py-20 scroll-mt-20 ${isDarkSection ? 'bg-[#0a0a0a]' : 'bg-white'}`}
+            className={`py-20 scroll-mt-20 ${isDarkSection ? 'bg-[#1e1e1e]' : 'bg-white'}`}
           >
             <div className="max-w-7xl mx-auto px-6">
               <div className={`grid lg:grid-cols-2 gap-12 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
@@ -235,7 +235,7 @@ export default function ServicesPage() {
                     {service.stats.map((stat, i) => (
                       <div
                         key={i}
-                        className="rounded-xl p-4 text-center bg-[#111111] border border-[#d4a847]/20"
+                        className="rounded-xl p-4 text-center bg-[#252525] border border-[#d4a847]/20"
                       >
                         <p className="text-xl font-bold text-[#d4a847]">{stat.value}</p>
                         <p className="text-xs mt-1 text-gray-300">{stat.label}</p>
@@ -269,7 +269,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section - Dark */}
-      <section className="bg-[#0a0a0a] py-24 overflow-hidden">
+      <section className="bg-[#1e1e1e] py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">
@@ -310,7 +310,7 @@ export default function ServicesPage() {
               ].map((phase, index) => (
                 <div key={phase.step} className="relative group">
                   {/* Card */}
-                  <div className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6 hover:border-[#d4a847]/30 transition-all duration-300 h-full">
+                  <div className="bg-[#252525] border border-[#2d2d2d] rounded-2xl p-6 hover:border-[#d4a847]/30 transition-all duration-300 h-full">
                     {/* Step number */}
                     <div className="flex items-center gap-4 mb-4">
                       <div className="relative">
