@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
+import ImageLightbox from '@/components/ImageLightbox';
 
 export const metadata: Metadata = {
   title: 'Art Publications',
@@ -22,29 +22,25 @@ export default function ArtPublicationsPage() {
       </Link>
 
       {/* Header */}
-      <div className="mb-12 text-center">
-        <span className="inline-block px-3 py-1 text-sm text-white rounded-full mb-3 bg-[#553C9A]">
+      <div className="mb-12 text-center py-8 bg-gradient-to-b from-purple-50 to-white rounded-xl">
+        <span className="inline-block px-4 py-1.5 text-sm font-medium text-white rounded-full mb-4 bg-[#553C9A] shadow-sm">
           Digital Art
         </span>
         <h1 className="text-4xl font-bold text-gray-900">Art Publications</h1>
-        <p className="mt-2 text-lg text-gray-500">
-          Press Coverage & Brand Partnerships
+        <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
+          Press coverage, media features, and brand partnerships that have expanded reach and credibility in the digital art space.
         </p>
       </div>
 
       {/* Tiger King Section */}
       <section className="mb-14">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Image - smaller aspect ratio */}
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md max-w-md">
-            <Image
-              src="/images/portfolio/detail/art/tiger-king-cover.jpg"
-              alt="Tiger King Comic Book Cover Art"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
+          {/* Image */}
+          <ImageLightbox
+            src="/images/portfolio/detail/art/tiger-king-cover.jpg"
+            alt="Tiger King Comic Book Cover Art"
+            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
+          />
 
           {/* Text */}
           <div>
@@ -98,32 +94,39 @@ export default function ArtPublicationsPage() {
 
           {/* Right Column - Article Preview */}
           <div>
-            <div className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
-              <div className="bg-white px-4 py-3 border-b border-gray-100">
+            <a
+              href="https://shoutoutla.com/meet-jesse-johnson-digital-artist/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-200"
+            >
+              <div className="bg-gray-50 px-4 py-3 border-b border-gray-100 group-hover:bg-gray-100 transition-colors">
                 <h3 className="text-xl font-serif text-gray-900">SHOUTOUT LA</h3>
-                <div className="h-px bg-gray-300 w-10 mt-1"></div>
+                <div className="h-px bg-teal-500 w-10 mt-1"></div>
               </div>
               <div className="p-4">
                 <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Local Stories</p>
-                <h4 className="font-semibold text-gray-900 mb-3">Meet Jesse Johnson: Digital Artist</h4>
-                <div className="relative aspect-[4/3] rounded overflow-hidden">
-                  <Image
-                    src="/images/portfolio/detail/art/shoutout-la-canvases.jpg"
-                    alt="Jesse with Canvas Art Collection"
-                    fill
-                    className="object-cover"
-                    unoptimized
-                  />
-                </div>
+                <h4 className="font-semibold text-gray-900 mb-3 group-hover:text-teal-600 transition-colors">Meet Jesse Johnson: Digital Artist</h4>
+                <ImageLightbox
+                  src="/images/portfolio/detail/art/shoutout-la-canvases.jpg"
+                  alt="Jesse with Canvas Art Collection"
+                  className="relative aspect-[4/3] rounded overflow-hidden"
+                />
+                <p className="mt-3 text-sm text-teal-600 font-medium flex items-center gap-1">
+                  Read article
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Collaborations Header */}
-      <section className="mb-10 pt-6">
-        <h2 className="text-3xl font-bold text-gray-900 text-center uppercase tracking-widest">
+      <section className="mb-10 pt-10 border-t border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-900 text-center uppercase tracking-widest">
           Collaborations
         </h2>
       </section>
@@ -132,15 +135,11 @@ export default function ArtPublicationsPage() {
       <section className="mb-14">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Image */}
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md">
-            <Image
-              src="/images/portfolio/detail/art/nft-la-booth.jpg"
-              alt="NFT LA Booth with Jondo Prints"
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          </div>
+          <ImageLightbox
+            src="/images/portfolio/detail/art/nft-la-booth.jpg"
+            alt="NFT LA Booth with Jondo Prints"
+            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg"
+          />
 
           {/* Text */}
           <div>
@@ -165,8 +164,8 @@ export default function ArtPublicationsPage() {
 
       {/* NFT LA Gallery */}
       <section className="mb-14 border-t border-gray-200 pt-10">
-        <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">NFT LA</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <h3 className="text-lg font-bold text-gray-900 mb-6 text-center uppercase tracking-wide">NFT LA Gallery</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { src: '/images/portfolio/detail/art/nft-la.jpg', alt: 'NFT LA Event Display' },
             { src: '/images/portfolio/detail/art/nft-la-booth-2.jpg', alt: 'NFT LA Booth Setup' },
@@ -177,15 +176,12 @@ export default function ArtPublicationsPage() {
             { src: '/images/portfolio/detail/art/nft-la-booth-7.jpg', alt: 'Art Collection Display' },
             { src: '/images/portfolio/detail/art/nft-la-booth-8.jpg', alt: 'Event Booth with Visitors' },
           ].map((img, i) => (
-            <div key={i} className="relative aspect-square rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-300"
-                unoptimized
-              />
-            </div>
+            <ImageLightbox
+              key={i}
+              src={img.src}
+              alt={img.alt}
+              className="relative aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+            />
           ))}
         </div>
       </section>
@@ -194,15 +190,11 @@ export default function ArtPublicationsPage() {
       <section className="mb-14 border-t border-gray-200 pt-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Image */}
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md bg-white">
-            <Image
-              src="/images/portfolio/detail/art/bull-bear-collab.png"
-              alt="Bull and Bear Collaboration Art"
-              fill
-              className="object-contain p-2"
-              unoptimized
-            />
-          </div>
+          <ImageLightbox
+            src="/images/portfolio/detail/art/bull-bear-collab.png"
+            alt="Bull and Bear Collaboration Art"
+            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg bg-white border border-gray-100"
+          />
 
           {/* Text */}
           <div>

@@ -117,10 +117,10 @@ const sections: Section[] = [
 
 export default function PortfolioPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-5xl mx-auto px-6 py-10">
       {/* Header with Laptop */}
-      <div className="flex flex-col md:flex-row items-center gap-8 mb-16">
-        <div className="relative w-full md:w-1/2">
+      <div className="flex flex-col md:flex-row items-center gap-6 mb-10">
+        <div className="relative w-full md:w-2/5">
           <Image
             src="/images/portfolio/laptop-hero.png"
             alt="Digital Jesse Portfolio"
@@ -130,9 +130,9 @@ export default function PortfolioPage() {
             priority
           />
         </div>
-        <div className="md:w-1/2">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Jesse Johnson Digital Portfolio</h1>
-          <p className="mt-4 text-gray-600 leading-relaxed">
+        <div className="md:w-3/5">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 uppercase tracking-wide">Jesse Johnson Digital Portfolio</h1>
+          <p className="mt-3 text-gray-600 leading-relaxed text-sm">
             I'm Jesse Johnson, focused on crafting web designs, developing e-commerce platforms, and creating impactful branding.
           </p>
         </div>
@@ -140,23 +140,23 @@ export default function PortfolioPage() {
 
       {/* Sections */}
       {sections.map((section) => (
-        <section key={section.id} className="mb-20">
+        <section key={section.id} className="mb-12">
           {/* Section Header */}
-          <div className={`${section.color} text-white text-center py-6 rounded-xl mb-8 shadow-lg`}>
-            <h2 className="text-2xl md:text-3xl font-bold">{section.title}</h2>
+          <div className={`${section.color} text-white text-center py-4 rounded-lg mb-5`}>
+            <h2 className="text-xl md:text-2xl font-bold">{section.title}</h2>
           </div>
 
           {/* Description */}
-          <p className="text-gray-700 leading-relaxed mb-8 text-lg">
+          <p className="text-gray-700 leading-relaxed mb-5 text-sm">
             {section.description}
           </p>
 
           {/* Bullet Points */}
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mb-6">
             {section.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg">
-                <span className="text-blue-600 font-bold text-lg mt-0.5">•</span>
-                <span className="text-gray-700">
+              <li key={i} className="flex items-start gap-2 text-gray-700 text-sm">
+                <span className="text-blue-600 mt-0.5">•</span>
+                <span>
                   <strong className="text-gray-900 font-semibold">{bullet.bold}</strong> {bullet.text}
                 </span>
               </li>
@@ -164,19 +164,28 @@ export default function PortfolioPage() {
           </ul>
 
           {/* Images */}
-          <div className={`grid gap-6 ${section.id === 'brands' ? 'grid-cols-3 md:grid-cols-5' : 'grid-cols-1 md:grid-cols-2'}`}>
+          <div className={`grid gap-4 ${
+            section.id === 'brands'
+              ? 'grid-cols-3 md:grid-cols-5'
+              : section.images.length === 2
+                ? 'grid-cols-2'
+                : section.images.length === 3
+                  ? 'grid-cols-2 md:grid-cols-3'
+                  : 'grid-cols-2 md:grid-cols-4'
+          }`}>
             {section.images.map((img, i) => {
               const ImageCard = (
-                <div className="group text-center">
-                  <div className={`relative ${img.isLogo ? 'aspect-square p-4' : 'aspect-[4/3]'} rounded-xl overflow-hidden border border-gray-200 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 ${img.href ? 'cursor-pointer' : ''}`}>
+                <div className={`group text-center ${img.href ? 'cursor-pointer' : ''}`}>
+                  <div className={`relative overflow-hidden ${img.isLogo ? '' : 'rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow'}`}>
                     <Image
                       src={img.src}
                       alt={img.label}
-                      fill
-                      className={`${img.isLogo ? 'object-contain p-2' : 'object-contain'} group-hover:scale-105 transition-transform duration-300`}
+                      width={400}
+                      height={300}
+                      className={`w-full h-auto ${img.isLogo ? 'p-2' : ''} group-hover:scale-105 transition-transform duration-300`}
                     />
                   </div>
-                  <p className="mt-3 text-base font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+                  <p className="mt-2 text-xs font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
                     {img.label}
                   </p>
                 </div>
@@ -195,13 +204,13 @@ export default function PortfolioPage() {
       ))}
 
       {/* CTA */}
-      <section className="mt-16 text-center py-12 bg-gray-50 rounded-lg">
-        <h2 className="text-2xl font-bold text-gray-900">Want to work together?</h2>
-        <p className="mt-2 text-gray-600">I'm open to full-time roles and freelance projects.</p>
-        <div className="mt-6 flex justify-center gap-4">
+      <section className="mt-10 text-center py-8 bg-gray-100 rounded-lg">
+        <h2 className="text-xl font-bold text-gray-900">Want to work together?</h2>
+        <p className="mt-1 text-gray-600 text-sm">I'm open to full-time roles and freelance projects.</p>
+        <div className="mt-4">
           <Link
             href="/contact"
-            className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+            className="px-5 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium text-sm"
           >
             Get in Touch
           </Link>
