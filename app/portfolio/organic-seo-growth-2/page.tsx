@@ -38,12 +38,14 @@ export default function OrganicSeoGrowth2Page() {
             <ImageLightbox
               src="/images/portfolio/detail/seo/tda-organic-traffic.png"
               alt="The Dope Art Organic Traffic Overview"
-              className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md"
+              className="relative aspect-[16/10] rounded-lg overflow-hidden shadow-md border border-gray-200 bg-white"
+              contain
             />
             <ImageLightbox
               src="/images/portfolio/detail/seo/tda-seo.jpg"
               alt="The Dope Art SEO Performance"
-              className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md"
+              className="relative aspect-[16/10] rounded-lg overflow-hidden shadow-md border border-gray-200 bg-white"
+              contain
             />
           </div>
 
@@ -157,7 +159,8 @@ export default function OrganicSeoGrowth2Page() {
             <ImageLightbox
               src="/images/portfolio/detail/seo/tda-traffic.png"
               alt="The Dope Art Traffic Growth Chart"
-              className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg border border-gray-200"
+              className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-lg border border-gray-200 bg-white"
+              contain
             />
           </div>
         </div>
@@ -171,32 +174,38 @@ export default function OrganicSeoGrowth2Page() {
           <ImageLightbox
             src="/images/portfolio/detail/seo/tda-organic-traffic-2.jpg"
             alt="Google Analytics Traffic Data"
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+            className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200 bg-white"
+            contain
           />
           <ImageLightbox
             src="/images/portfolio/detail/seo/ubersuggest.png"
             alt="Ubersuggest Keyword Research"
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+            className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200 bg-white"
+            contain
           />
           <ImageLightbox
             src="/images/portfolio/detail/seo/seo-score-100.png"
             alt="SEO Score 100"
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+            className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200 bg-white"
+            contain
           />
           <ImageLightbox
             src="/images/portfolio/detail/seo/blog-luxury-art.jpg"
             alt="Blog Content: Luxury Art"
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+            className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200 bg-white"
+            contain
           />
           <ImageLightbox
             src="/images/portfolio/detail/seo/blog-macabre.jpg"
             alt="Blog Content: Macabre Art"
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+            className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200 bg-white"
+            contain
           />
           <ImageLightbox
             src="/images/portfolio/detail/seo/blog-queen-spades.jpg"
             alt="Blog Content: Queen of Spades"
-            className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+            className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-200 bg-white"
+            contain
           />
         </div>
       </section>

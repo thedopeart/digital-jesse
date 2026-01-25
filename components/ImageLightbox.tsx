@@ -7,9 +7,10 @@ interface ImageLightboxProps {
   src: string;
   alt: string;
   className?: string;
+  contain?: boolean;
 }
 
-export default function ImageLightbox({ src, alt, className = '' }: ImageLightboxProps) {
+export default function ImageLightbox({ src, alt, className = '', contain = false }: ImageLightboxProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -23,7 +24,7 @@ export default function ImageLightbox({ src, alt, className = '' }: ImageLightbo
           src={src}
           alt={alt}
           fill
-          className="object-cover hover:scale-105 transition-transform duration-300"
+          className={`${contain ? 'object-contain' : 'object-cover'} hover:scale-105 transition-transform duration-300`}
         />
       </div>
 
