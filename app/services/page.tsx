@@ -153,26 +153,27 @@ const tools = [
 ];
 
 const colorMap: Record<string, { bg: string; border: string; text: string; light: string }> = {
-  blue: { bg: 'bg-blue-600', border: 'border-blue-500', text: 'text-blue-600', light: 'bg-blue-50' },
-  green: { bg: 'bg-green-600', border: 'border-green-500', text: 'text-green-600', light: 'bg-green-50' },
-  purple: { bg: 'bg-purple-600', border: 'border-purple-500', text: 'text-purple-600', light: 'bg-purple-50' },
-  orange: { bg: 'bg-orange-600', border: 'border-orange-500', text: 'text-orange-600', light: 'bg-orange-50' },
-  pink: { bg: 'bg-pink-600', border: 'border-pink-500', text: 'text-pink-600', light: 'bg-pink-50' },
-  teal: { bg: 'bg-teal-600', border: 'border-teal-500', text: 'text-teal-600', light: 'bg-teal-50' },
+  blue: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
+  green: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
+  purple: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
+  orange: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
+  pink: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
+  teal: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
 };
 
 export default function ServicesPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="bg-[#0a0a0a] min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 py-12">
       {/* Header */}
       <div className="text-center mb-16">
-        <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+        <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">
           Services
         </span>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <h1 className="mt-2 text-4xl md:text-5xl font-bold text-white">
           What I Do
         </h1>
-        <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
           E-commerce management, digital marketing, and project leadership. I help businesses grow online through strategic execution and hands-on management.
         </p>
       </div>
@@ -209,12 +210,12 @@ export default function ServicesPage() {
                   {/* Title with colored accent */}
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-1.5 h-10 ${colors.bg} rounded-full`}></div>
-                    <h2 className="text-3xl font-bold text-gray-900">
+                    <h2 className="text-3xl font-bold text-white">
                       {service.title}
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  <p className="text-lg text-gray-400 leading-relaxed mb-6">
                     {service.description}
                   </p>
 
@@ -225,7 +226,7 @@ export default function ServicesPage() {
                         <svg className={`w-5 h-5 ${colors.text} mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-gray-700">{bullet}</span>
+                        <span className="text-gray-300">{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -233,7 +234,7 @@ export default function ServicesPage() {
                   {/* Stats Row */}
                   <div className="grid grid-cols-3 gap-4">
                     {service.stats.map((stat, i) => (
-                      <div key={i} className={`${colors.light} rounded-xl p-4 text-center`}>
+                      <div key={i} className={`${colors.light} border border-[#d4a847]/20 rounded-xl p-4 text-center`}>
                         <p className={`text-xl font-bold ${colors.text}`}>{stat.value}</p>
                         <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
                       </div>
@@ -247,15 +248,15 @@ export default function ServicesPage() {
       </div>
 
       {/* Tools Section */}
-      <section className="mt-24 pt-12 border-t border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+      <section className="mt-24 pt-12 border-t border-[#d4a847]/10">
+        <h2 className="text-2xl font-bold text-white text-center mb-8">
           Tools & Platforms
         </h2>
         <div className="flex flex-wrap justify-center gap-3">
           {tools.map((tool) => (
             <span
               key={tool.name}
-              className="px-5 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-full text-sm font-medium hover:border-gray-400 hover:shadow-sm transition-all"
+              className="px-5 py-2.5 bg-[#111111] border border-[#d4a847]/20 text-gray-300 rounded-full text-sm font-medium hover:border-[#d4a847]/40 hover:text-[#d4a847] transition-all"
             >
               {tool.name}
             </span>
@@ -264,7 +265,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="mt-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white -mx-6 px-8 py-16 rounded-3xl">
+      <section className="mt-24 bg-[#111111] border border-[#d4a847]/10 text-white -mx-6 px-8 py-16 rounded-3xl">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
           How I Work
         </h2>
@@ -292,39 +293,40 @@ export default function ServicesPage() {
             },
           ].map((phase) => (
             <div key={phase.step} className="text-center">
-              <div className="w-14 h-14 rounded-full bg-blue-600 text-white font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-600/30">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d4a847] to-[#cd7f32] text-black font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-900/30">
                 {phase.step}
               </div>
               <h3 className="text-xl font-semibold mb-2">{phase.title}</h3>
-              <p className="text-gray-400">{phase.description}</p>
+              <p className="text-gray-500">{phase.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="mt-24 text-center py-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border border-blue-100">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+      <section className="mt-24 text-center py-16 bg-[#111111] border border-[#d4a847]/10 rounded-3xl">
+        <h2 className="text-2xl md:text-3xl font-bold text-white">
           Ready to work together?
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
+        <p className="mt-4 text-lg text-gray-400 max-w-xl mx-auto">
           I'm looking for my next full-time role in e-commerce management, digital marketing, or growth. Also open to freelance projects that make sense.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="px-8 py-3.5 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors font-medium shadow-lg shadow-gray-900/20"
+            className="px-8 py-3.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-xl hover:shadow-lg hover:shadow-amber-900/30 transition-all font-medium"
           >
             Get in Touch
           </Link>
           <Link
             href="/portfolio"
-            className="px-8 py-3.5 bg-white border border-gray-300 text-gray-700 rounded-xl hover:border-gray-400 transition-colors font-medium"
+            className="px-8 py-3.5 border border-[#d4a847]/30 text-white rounded-xl hover:border-[#d4a847]/50 hover:bg-white/5 transition-all font-medium"
           >
             View Portfolio
           </Link>
         </div>
       </section>
+      </div>
     </div>
   );
 }

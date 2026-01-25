@@ -28,7 +28,7 @@ const sections: Section[] = [
   {
     id: 'seo',
     title: 'SEO, KW Research, and Blogging',
-    color: 'bg-[#282F59]',
+    color: 'bg-gradient-to-r from-[#d4a847] to-[#cd7f32]',
     description: `I create content that ranks. Using Google Analytics, Ahrefs, Screaming Frog, and Search Console, I find what people actually search for and build content around it. At Quality Sewing, I grew organic traffic from 5K to 22K monthly visitors. I've also taken a brand new domain from zero rankings to 1,000+ top-100 keywords in under a year through strategic content creation and technical SEO optimization.`,
     bullets: [
       { bold: 'Advanced SEO techniques', text: 'including schema markup, internal linking, and site architecture' },
@@ -46,7 +46,7 @@ const sections: Section[] = [
   {
     id: 'design',
     title: 'Design & Illustrations',
-    color: 'bg-[#282F59]',
+    color: 'bg-gradient-to-r from-[#d4a847] to-[#cd7f32]',
     description: `I make things look good. Product mockups, pitch decks, brochures, infographics, company profiles, and marketing materials. I work in Photoshop, Illustrator, Figma, and Canva. Whatever the project needs, I deliver polished visuals that communicate clearly and convert browsers into buyers.`,
     bullets: [
       { bold: 'Expert in Adobe Photoshop', text: 'for mockups, composites, and product photography editing' },
@@ -62,7 +62,7 @@ const sections: Section[] = [
   {
     id: 'ecommerce',
     title: 'E-Commerce & Social Media',
-    color: 'bg-[#282F59]',
+    color: 'bg-gradient-to-r from-[#d4a847] to-[#cd7f32]',
     description: `I run e-commerce stores and manage social content across Shopify, Etsy, Amazon, Walmart, and TikTok Shop. I've personally managed over $2M in annual sales and grown multiple stores from zero to profitability. From product listings and paid ads to organic social strategy, I handle the full e-commerce lifecycle.`,
     bullets: [
       { bold: 'Multi-platform management', text: 'across Shopify, Amazon, Etsy, Walmart, and TikTok Shop' },
@@ -79,7 +79,7 @@ const sections: Section[] = [
   {
     id: 'art',
     title: 'Digital Art & Animations',
-    color: 'bg-[#282F59]',
+    color: 'bg-gradient-to-r from-[#d4a847] to-[#cd7f32]',
     description: `I create digital art and have built two profitable art brands: The Dope Art (200K+ social following) and Luxury Wall Art ($120K+ in sales). My work has been featured in publications and shared by major brands. I also launched Eternal Royals, an innovative NFT project combining blockchain authenticity with physical prints and NFC chips.`,
     bullets: [
       { bold: 'Built The Dope Art', text: 'to 200K+ followers across Instagram, Facebook, and Pinterest' },
@@ -97,7 +97,7 @@ const sections: Section[] = [
   {
     id: 'brands',
     title: 'Brand Project Management',
-    color: 'bg-[#282F59]',
+    color: 'bg-gradient-to-r from-[#d4a847] to-[#cd7f32]',
     description: `I've built and managed multiple brands from scratch, handling everything from initial concept to profitable execution. Each project taught me different aspects of brand building: finance (Quick Lenders), e-commerce (Luxury Wall Art), social media growth (The Dope Art), blockchain technology (Eternal Royals), and content virality (Date Ideas).`,
     bullets: [
       { bold: 'Quick Lenders', text: 'finance sector brand with lead generation and SEO strategy' },
@@ -117,105 +117,109 @@ const sections: Section[] = [
 
 export default function PortfolioPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10">
-      {/* Header with Laptop */}
-      <div className="flex flex-col md:flex-row items-center gap-6 mb-10">
-        <div className="relative w-full md:w-2/5">
-          <Image
-            src="/images/portfolio/laptop-hero.png"
-            alt="Digital Jesse Portfolio"
-            width={600}
-            height={400}
-            className="w-full h-auto"
-            priority
-          />
-        </div>
-        <div className="md:w-3/5">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 uppercase tracking-wide">Jesse Johnson Digital Portfolio</h1>
-          <p className="mt-3 text-gray-600 leading-relaxed">
-            I'm Jesse Johnson, focused on crafting web designs, developing e-commerce platforms, and creating impactful branding.
-          </p>
-        </div>
-      </div>
-
-      {/* Sections */}
-      {sections.map((section) => (
-        <section key={section.id} className="mb-12">
-          {/* Section Header */}
-          <div className={`${section.color} text-white text-center py-4 rounded-lg mb-5`}>
-            <h2 className="text-xl md:text-2xl font-bold">{section.title}</h2>
+    <div className="bg-[#0a0a0a] min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        {/* Header with Laptop */}
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+          <div className="relative w-full md:w-2/5">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#d4a847]/20 to-[#cd7f32]/10 blur-2xl" />
+            <Image
+              src="/images/portfolio/laptop-hero.png"
+              alt="Digital Jesse Portfolio"
+              width={600}
+              height={400}
+              className="relative w-full h-auto"
+              priority
+            />
           </div>
+          <div className="md:w-3/5">
+            <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">Portfolio</span>
+            <h1 className="mt-2 text-3xl md:text-4xl font-bold text-white">Jesse Johnson Digital Portfolio</h1>
+            <p className="mt-4 text-gray-400 leading-relaxed">
+              I'm Jesse Johnson, focused on crafting web designs, developing e-commerce platforms, and creating impactful branding.
+            </p>
+          </div>
+        </div>
 
-          {/* Description */}
-          <p className="text-gray-700 leading-relaxed mb-5">
-            {section.description}
-          </p>
+        {/* Sections */}
+        {sections.map((section) => (
+          <section key={section.id} className="mb-12">
+            {/* Section Header */}
+            <div className={`${section.color} text-black text-center py-4 rounded-lg mb-6`}>
+              <h2 className="text-xl md:text-2xl font-bold">{section.title}</h2>
+            </div>
 
-          {/* Bullet Points */}
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mb-6">
-            {section.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-2 text-gray-700">
-                <span className="text-blue-600 mt-0.5">•</span>
-                <span>
-                  <strong className="text-gray-900 font-semibold">{bullet.bold}</strong> {bullet.text}
-                </span>
-              </li>
-            ))}
-          </ul>
+            {/* Description */}
+            <p className="text-gray-400 leading-relaxed mb-5">
+              {section.description}
+            </p>
 
-          {/* Images */}
-          <div className={`grid gap-4 ${
-            section.id === 'brands'
-              ? 'grid-cols-3 md:grid-cols-5'
-              : section.images.length === 2
-                ? 'grid-cols-2'
-                : section.images.length === 3
-                  ? 'grid-cols-2 md:grid-cols-3'
-                  : 'grid-cols-2 md:grid-cols-4'
-          }`}>
-            {section.images.map((img, i) => {
-              const ImageCard = (
-                <div className={`group text-center ${img.href ? 'cursor-pointer' : ''}`}>
-                  <div className={`relative overflow-hidden ${img.isLogo ? '' : 'rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow'}`}>
-                    <Image
-                      src={img.src}
-                      alt={img.label}
-                      width={400}
-                      height={300}
-                      className={`w-full h-auto ${img.isLogo ? 'p-2' : ''} group-hover:scale-105 transition-transform duration-300`}
-                    />
+            {/* Bullet Points */}
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mb-6">
+              {section.bullets.map((bullet, i) => (
+                <li key={i} className="flex items-start gap-2 text-gray-400">
+                  <span className="text-[#d4a847] mt-0.5">•</span>
+                  <span>
+                    <strong className="text-white font-semibold">{bullet.bold}</strong> {bullet.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Images */}
+            <div className={`grid gap-4 ${
+              section.id === 'brands'
+                ? 'grid-cols-3 md:grid-cols-5'
+                : section.images.length === 2
+                  ? 'grid-cols-2'
+                  : section.images.length === 3
+                    ? 'grid-cols-2 md:grid-cols-3'
+                    : 'grid-cols-2 md:grid-cols-4'
+            }`}>
+              {section.images.map((img, i) => {
+                const ImageCard = (
+                  <div className={`group text-center ${img.href ? 'cursor-pointer' : ''}`}>
+                    <div className={`relative overflow-hidden ${img.isLogo ? 'bg-white/5 rounded-lg p-4' : 'rounded-lg border border-[#d4a847]/10 hover:border-[#d4a847]/30 transition-all'}`}>
+                      <Image
+                        src={img.src}
+                        alt={img.label}
+                        width={400}
+                        height={300}
+                        className={`w-full h-auto ${img.isLogo ? '' : ''} group-hover:scale-105 transition-transform duration-300`}
+                      />
+                    </div>
+                    <p className="mt-2 text-sm font-medium text-gray-400 group-hover:text-[#d4a847] transition-colors">
+                      {img.label}
+                    </p>
                   </div>
-                  <p className="mt-2 text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
-                    {img.label}
-                  </p>
-                </div>
-              );
+                );
 
-              return img.href ? (
-                <Link key={i} href={img.href}>
-                  {ImageCard}
-                </Link>
-              ) : (
-                <div key={i}>{ImageCard}</div>
-              );
-            })}
+                return img.href ? (
+                  <Link key={i} href={img.href}>
+                    {ImageCard}
+                  </Link>
+                ) : (
+                  <div key={i}>{ImageCard}</div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+
+        {/* CTA */}
+        <section className="mt-10 text-center py-10 bg-[#111111] border border-[#d4a847]/10 rounded-xl">
+          <h2 className="text-2xl font-bold text-white">Want to work together?</h2>
+          <p className="mt-2 text-gray-400">I'm open to full-time roles and freelance projects.</p>
+          <div className="mt-6">
+            <Link
+              href="/contact"
+              className="px-6 py-3 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-lg hover:shadow-lg hover:shadow-amber-900/30 transition-all font-medium"
+            >
+              Get in Touch
+            </Link>
           </div>
         </section>
-      ))}
-
-      {/* CTA */}
-      <section className="mt-10 text-center py-8 bg-gray-100 rounded-lg">
-        <h2 className="text-xl font-bold text-gray-900">Want to work together?</h2>
-        <p className="mt-1 text-gray-600">I'm open to full-time roles and freelance projects.</p>
-        <div className="mt-4">
-          <Link
-            href="/contact"
-            className="px-5 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
-          >
-            Get in Touch
-          </Link>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

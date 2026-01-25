@@ -2,11 +2,22 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      headerRef.current,
+      { y: -20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' }
+    );
+  }, { scope: headerRef });
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -22,7 +33,10 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#d4a847]/10"
+    >
       <nav className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Name */}
@@ -30,11 +44,11 @@ export default function Header() {
             href="/"
             className="group flex items-center gap-3"
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <span className="text-white font-bold text-lg">JJ</span>
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#d4a847] to-[#cd7f32] flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-amber-900/20 transition-all">
+              <span className="text-black font-bold text-lg">JJ</span>
             </div>
             <div className="hidden sm:block">
-              <span className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
+              <span className="text-lg font-bold text-white group-hover:text-[#d4a847] transition-colors">
                 Jesse Johnson
               </span>
               <p className="text-xs text-gray-500 -mt-0.5">Digital Portfolio</p>
@@ -49,8 +63,8 @@ export default function Header() {
                   href={link.href}
                   className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                     isActive(link.href)
-                      ? 'bg-gray-900 text-white shadow-md'
-                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                      ? 'bg-[#d4a847] text-black shadow-md'
+                      : 'text-gray-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {link.label}
@@ -63,7 +77,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-medium shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200"
+              className="px-5 py-2.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-lg font-medium shadow-md hover:shadow-lg hover:shadow-amber-900/30 hover:scale-[1.02] transition-all duration-200"
             >
               Let's Talk
             </Link>
@@ -72,7 +86,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -102,7 +116,7 @@ export default function Header() {
 
         {/* Mobile nav */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100">
+          <div className="md:hidden py-4 border-t border-[#d4a847]/10">
             <ul className="space-y-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -110,8 +124,8 @@ export default function Header() {
                     href={link.href}
                     className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
                       isActive(link.href)
-                        ? 'bg-gray-900 text-white'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                        ? 'bg-[#d4a847] text-black'
+                        : 'text-gray-400 hover:text-white hover:bg-white/5'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -120,10 +134,10 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 pt-4 border-t border-gray-100">
+            <div className="mt-4 pt-4 border-t border-[#d4a847]/10">
               <Link
                 href="/contact"
-                className="block w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center rounded-lg font-medium shadow-md"
+                className="block w-full px-4 py-3 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black text-center rounded-lg font-medium shadow-md"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Let's Talk
