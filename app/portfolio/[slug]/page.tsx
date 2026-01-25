@@ -51,7 +51,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-7xl mx-auto px-6 py-16">
       {/* Back Link */}
       <Link
         href="/portfolio"

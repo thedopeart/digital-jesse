@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-6 py-16 md:py-24">
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
           <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-gray-100 shadow-lg flex-shrink-0">
             <Image
@@ -87,7 +87,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="bg-gray-50 border-y border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-12">
+        <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -102,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Featured Work Section */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
+      <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold text-gray-900">Featured Work</h2>
           <Link
@@ -122,7 +122,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="bg-gray-900 text-white">
-        <div className="max-w-5xl mx-auto px-6 py-16 text-center">
+        <div className="max-w-7xl mx-auto px-6 py-16 text-center">
           <h2 className="text-2xl md:text-3xl font-bold">
             Want to work together?
           </h2>

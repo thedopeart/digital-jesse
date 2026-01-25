@@ -77,7 +77,7 @@ const skills = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-7xl mx-auto px-6 py-16">
       {/* Intro */}
       <section className="max-w-2xl">
         <div className="flex items-center gap-6 mb-8">

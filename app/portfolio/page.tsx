@@ -117,7 +117,7 @@ const sections: Section[] = [
 
 export default function PortfolioPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10">
+    <div className="max-w-7xl mx-auto px-6 py-10">
       {/* Header with Laptop */}
       <div className="flex flex-col md:flex-row items-center gap-6 mb-10">
         <div className="relative w-full md:w-2/5">
@@ -132,7 +132,7 @@ export default function PortfolioPage() {
         </div>
         <div className="md:w-3/5">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 uppercase tracking-wide">Jesse Johnson Digital Portfolio</h1>
-          <p className="mt-3 text-gray-600 leading-relaxed text-sm">
+          <p className="mt-3 text-gray-600 leading-relaxed">
             I'm Jesse Johnson, focused on crafting web designs, developing e-commerce platforms, and creating impactful branding.
           </p>
         </div>
@@ -147,14 +147,14 @@ export default function PortfolioPage() {
           </div>
 
           {/* Description */}
-          <p className="text-gray-700 leading-relaxed mb-5 text-sm">
+          <p className="text-gray-700 leading-relaxed mb-5">
             {section.description}
           </p>
 
           {/* Bullet Points */}
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mb-6">
             {section.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-2 text-gray-700 text-sm">
+              <li key={i} className="flex items-start gap-2 text-gray-700">
                 <span className="text-blue-600 mt-0.5">•</span>
                 <span>
                   <strong className="text-gray-900 font-semibold">{bullet.bold}</strong> {bullet.text}
@@ -185,7 +185,7 @@ export default function PortfolioPage() {
                       className={`w-full h-auto ${img.isLogo ? 'p-2' : ''} group-hover:scale-105 transition-transform duration-300`}
                     />
                   </div>
-                  <p className="mt-2 text-xs font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
+                  <p className="mt-2 text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors">
                     {img.label}
                   </p>
                 </div>
@@ -206,11 +206,11 @@ export default function PortfolioPage() {
       {/* CTA */}
       <section className="mt-10 text-center py-8 bg-gray-100 rounded-lg">
         <h2 className="text-xl font-bold text-gray-900">Want to work together?</h2>
-        <p className="mt-1 text-gray-600 text-sm">I'm open to full-time roles and freelance projects.</p>
+        <p className="mt-1 text-gray-600">I'm open to full-time roles and freelance projects.</p>
         <div className="mt-4">
           <Link
             href="/contact"
-            className="px-5 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium text-sm"
+            className="px-5 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
           >
             Get in Touch
           </Link>
