@@ -22,11 +22,8 @@ const services = [
       'Conversion rate optimization',
       'Customer experience improvements',
     ],
-    icon: (
-      <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
+    image: '/images/services/analytics.png',
+    color: 'blue',
     stats: [
       { value: '$2M+', label: 'Annual Revenue Managed' },
       { value: '5,000+', label: 'Products Managed' },
@@ -46,11 +43,8 @@ const services = [
       'Link building strategy',
       'Performance tracking and reporting',
     ],
-    icon: (
-      <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-    ),
+    image: '/images/services/seo-blog.png',
+    color: 'green',
     stats: [
       { value: '5K→22K', label: 'Organic Traffic Growth' },
       { value: '9,200+', label: 'Ranking Keywords' },
@@ -70,11 +64,8 @@ const services = [
       'Resource allocation and prioritization',
       'Stakeholder communication',
     ],
-    icon: (
-      <svg className="w-12 h-12 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-    ),
+    image: '/images/services/workflow.png',
+    color: 'purple',
     stats: [
       { value: '10+', label: 'Tools Built' },
       { value: '6 Years', label: 'E-commerce Experience' },
@@ -94,12 +85,8 @@ const services = [
       'A/B testing and optimization',
       'Marketing calendar management',
     ],
-    icon: (
-      <svg className="w-12 h-12 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-      </svg>
-    ),
+    image: '/images/services/social-icons.png',
+    color: 'orange',
     stats: [
       { value: '852%', label: 'Sales Growth' },
       { value: '$60K+', label: 'Organic Conversions' },
@@ -119,11 +106,8 @@ const services = [
       'UI/UX wireframes and mockups',
       'Marketing collateral design',
     ],
-    icon: (
-      <svg className="w-12 h-12 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-      </svg>
-    ),
+    image: '/images/services/art-design.png',
+    color: 'pink',
     stats: [
       { value: 'Adobe CC', label: 'Photoshop, Illustrator, Premiere' },
       { value: 'Figma', label: 'UI/UX Design' },
@@ -143,11 +127,8 @@ const services = [
       'Automation and workflow tools',
       'SEO-driven content tools',
     ],
-    icon: (
-      <svg className="w-12 h-12 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
+    image: '/images/services/workflow.png',
+    color: 'teal',
     stats: [
       { value: '4,094', label: 'Paintings in Masterpiece Locator' },
       { value: '455+', label: 'Museums Indexed' },
@@ -171,72 +152,102 @@ const tools = [
   { name: 'Slack', category: 'Communication' },
 ];
 
+const colorMap: Record<string, { bg: string; border: string; text: string; light: string }> = {
+  blue: { bg: 'bg-blue-600', border: 'border-blue-500', text: 'text-blue-600', light: 'bg-blue-50' },
+  green: { bg: 'bg-green-600', border: 'border-green-500', text: 'text-green-600', light: 'bg-green-50' },
+  purple: { bg: 'bg-purple-600', border: 'border-purple-500', text: 'text-purple-600', light: 'bg-purple-50' },
+  orange: { bg: 'bg-orange-600', border: 'border-orange-500', text: 'text-orange-600', light: 'bg-orange-50' },
+  pink: { bg: 'bg-pink-600', border: 'border-pink-500', text: 'text-pink-600', light: 'bg-pink-50' },
+  teal: { bg: 'bg-teal-600', border: 'border-teal-500', text: 'text-teal-600', light: 'bg-teal-50' },
+};
+
 export default function ServicesPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
       {/* Header */}
       <div className="text-center mb-16">
+        <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+          Services
+        </span>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
           What I Do
         </h1>
-        <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
           E-commerce management, digital marketing, and project leadership. I help businesses grow online through strategic execution and hands-on management.
         </p>
       </div>
 
       {/* Services Grid */}
-      <div className="space-y-16">
-        {services.map((service, index) => (
-          <section
-            key={service.id}
-            id={service.id}
-            className={`scroll-mt-20 ${index % 2 === 1 ? 'bg-gray-50 -mx-6 px-6 py-12 rounded-2xl' : ''}`}
-          >
-            <div className={`grid md:grid-cols-2 gap-10 items-start ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-              {/* Content */}
-              <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                <div className="flex items-center gap-4 mb-4">
-                  {service.icon}
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                    {service.title}
-                  </h2>
-                </div>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <ul className="space-y-2 mb-8">
-                  {service.bullets.map((bullet, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700">
-                      <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+      <div className="space-y-24">
+        {services.map((service, index) => {
+          const colors = colorMap[service.color];
+          const isReversed = index % 2 === 1;
 
-              {/* Stats Card */}
-              <div className={`bg-white rounded-xl shadow-lg border border-gray-100 p-8 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">
-                  Results & Experience
-                </h3>
-                <div className="space-y-6">
-                  {service.stats.map((stat, i) => (
-                    <div key={i} className="border-l-4 border-blue-500 pl-4">
-                      <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                      <p className="text-sm text-gray-500">{stat.label}</p>
+          return (
+            <section
+              key={service.id}
+              id={service.id}
+              className="scroll-mt-20"
+            >
+              <div className={`grid lg:grid-cols-2 gap-12 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
+                {/* Image Side */}
+                <div className={`${isReversed ? 'lg:order-2' : ''}`}>
+                  <div className={`relative rounded-2xl overflow-hidden ${colors.light} p-8`}>
+                    <div className="relative aspect-[4/3] w-full">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-contain"
+                      />
                     </div>
-                  ))}
+                  </div>
+                </div>
+
+                {/* Content Side */}
+                <div className={isReversed ? 'lg:order-1' : ''}>
+                  {/* Title with colored accent */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-1.5 h-10 ${colors.bg} rounded-full`}></div>
+                    <h2 className="text-3xl font-bold text-gray-900">
+                      {service.title}
+                    </h2>
+                  </div>
+
+                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+
+                  {/* Bullets */}
+                  <ul className="space-y-3 mb-8">
+                    {service.bullets.map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <svg className={`w-5 h-5 ${colors.text} mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="text-gray-700">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Stats Row */}
+                  <div className="grid grid-cols-3 gap-4">
+                    {service.stats.map((stat, i) => (
+                      <div key={i} className={`${colors.light} rounded-xl p-4 text-center`}>
+                        <p className={`text-xl font-bold ${colors.text}`}>{stat.value}</p>
+                        <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
+            </section>
+          );
+        })}
       </div>
 
       {/* Tools Section */}
-      <section className="mt-20 pt-12 border-t border-gray-200">
+      <section className="mt-24 pt-12 border-t border-gray-200">
         <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
           Tools & Platforms
         </h2>
@@ -244,7 +255,7 @@ export default function ServicesPage() {
           {tools.map((tool) => (
             <span
               key={tool.name}
-              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors"
+              className="px-5 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-full text-sm font-medium hover:border-gray-400 hover:shadow-sm transition-all"
             >
               {tool.name}
             </span>
@@ -253,7 +264,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="mt-20 bg-gray-900 text-white -mx-6 px-6 py-16 rounded-2xl">
+      <section className="mt-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white -mx-6 px-8 py-16 rounded-3xl">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
           How I Work
         </h2>
@@ -281,34 +292,34 @@ export default function ServicesPage() {
             },
           ].map((phase) => (
             <div key={phase.step} className="text-center">
-              <div className="w-12 h-12 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center mx-auto mb-4">
+              <div className="w-14 h-14 rounded-full bg-blue-600 text-white font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-600/30">
                 {phase.step}
               </div>
-              <h3 className="text-lg font-semibold mb-2">{phase.title}</h3>
-              <p className="text-gray-400 text-sm">{phase.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{phase.title}</h3>
+              <p className="text-gray-400">{phase.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="mt-20 text-center py-12 bg-gray-50 rounded-2xl">
+      <section className="mt-24 text-center py-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl border border-blue-100">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
           Ready to work together?
         </h2>
-        <p className="mt-4 text-gray-600 max-w-xl mx-auto">
+        <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
           I'm looking for my next full-time role in e-commerce management, digital marketing, or growth. Also open to freelance projects that make sense.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
             href="/contact"
-            className="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+            className="px-8 py-3.5 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors font-medium shadow-lg shadow-gray-900/20"
           >
             Get in Touch
           </Link>
           <Link
             href="/portfolio"
-            className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:border-gray-400 transition-colors font-medium"
+            className="px-8 py-3.5 bg-white border border-gray-300 text-gray-700 rounded-xl hover:border-gray-400 transition-colors font-medium"
           >
             View Portfolio
           </Link>
