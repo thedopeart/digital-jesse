@@ -179,31 +179,28 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Services Grid - Alternating backgrounds */}
+      {/* Services Grid - Alternating dark/light backgrounds */}
       {services.map((service, index) => {
-        const colors = colorMap[service.color];
         const isReversed = index % 2 === 1;
-        const isWhiteSection = index % 2 === 0;
+        const isDarkSection = index % 2 === 0;
 
         return (
           <section
             key={service.id}
             id={service.id}
-            className={`py-20 scroll-mt-20 ${isWhiteSection ? 'bg-white' : 'bg-gray-50'}`}
+            className={`py-20 scroll-mt-20 ${isDarkSection ? 'bg-[#0a0a0a]' : 'bg-white'}`}
           >
             <div className="max-w-7xl mx-auto px-6">
               <div className={`grid lg:grid-cols-2 gap-12 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
-                {/* Image Side */}
+                {/* Image Side - No card background */}
                 <div className={`${isReversed ? 'lg:order-2' : ''}`}>
-                  <div className="relative rounded-2xl overflow-hidden bg-amber-50 border border-amber-100 p-8">
-                    <div className="relative aspect-[4/3] w-full">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
+                  <div className="relative aspect-[4/3] w-full">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 </div>
 
@@ -212,12 +209,12 @@ export default function ServicesPage() {
                   {/* Title with colored accent */}
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-1.5 h-10 bg-gradient-to-b from-[#d4a847] to-[#cd7f32] rounded-full"></div>
-                    <h2 className="text-3xl font-bold text-gray-900">
+                    <h2 className={`text-3xl font-bold ${isDarkSection ? 'text-white' : 'text-gray-900'}`}>
                       {service.title}
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  <p className={`text-lg leading-relaxed mb-6 ${isDarkSection ? 'text-gray-400' : 'text-gray-600'}`}>
                     {service.description}
                   </p>
 
@@ -228,7 +225,7 @@ export default function ServicesPage() {
                         <svg className="w-5 h-5 text-[#d4a847] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-gray-700">{bullet}</span>
+                        <span className={isDarkSection ? 'text-gray-300' : 'text-gray-700'}>{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -236,9 +233,16 @@ export default function ServicesPage() {
                   {/* Stats Row */}
                   <div className="grid grid-cols-3 gap-4">
                     {service.stats.map((stat, i) => (
-                      <div key={i} className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-center">
-                        <p className="text-xl font-bold text-[#b8860b]">{stat.value}</p>
-                        <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
+                      <div
+                        key={i}
+                        className={`rounded-xl p-4 text-center ${
+                          isDarkSection
+                            ? 'bg-[#111111] border border-[#d4a847]/20'
+                            : 'bg-amber-50 border border-amber-100'
+                        }`}
+                      >
+                        <p className="text-xl font-bold text-[#d4a847]">{stat.value}</p>
+                        <p className={`text-xs mt-1 ${isDarkSection ? 'text-gray-500' : 'text-gray-500'}`}>{stat.label}</p>
                       </div>
                     ))}
                   </div>
