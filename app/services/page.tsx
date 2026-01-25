@@ -163,37 +163,39 @@ const colorMap: Record<string, { bg: string; border: string; text: string; light
 
 export default function ServicesPage() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-      {/* Header */}
-      <div className="text-center mb-16">
-        <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">
-          Services
-        </span>
-        <h1 className="mt-2 text-4xl md:text-5xl font-bold text-white">
-          What I Do
-        </h1>
-        <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          E-commerce management, digital marketing, and project leadership. I help businesses grow online through strategic execution and hands-on management.
-        </p>
+    <div className="min-h-screen">
+      {/* Dark Header */}
+      <div className="bg-[#0a0a0a] py-16">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">
+            Services
+          </span>
+          <h1 className="mt-2 text-4xl md:text-5xl font-bold text-white">
+            What I Do
+          </h1>
+          <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            E-commerce management, digital marketing, and project leadership. I help businesses grow online through strategic execution and hands-on management.
+          </p>
+        </div>
       </div>
 
-      {/* Services Grid */}
-      <div className="space-y-24">
-        {services.map((service, index) => {
-          const colors = colorMap[service.color];
-          const isReversed = index % 2 === 1;
+      {/* Services Grid - Alternating backgrounds */}
+      {services.map((service, index) => {
+        const colors = colorMap[service.color];
+        const isReversed = index % 2 === 1;
+        const isWhiteSection = index % 2 === 0;
 
-          return (
-            <section
-              key={service.id}
-              id={service.id}
-              className="scroll-mt-20"
-            >
+        return (
+          <section
+            key={service.id}
+            id={service.id}
+            className={`py-20 scroll-mt-20 ${isWhiteSection ? 'bg-white' : 'bg-gray-50'}`}
+          >
+            <div className="max-w-7xl mx-auto px-6">
               <div className={`grid lg:grid-cols-2 gap-12 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Image Side */}
                 <div className={`${isReversed ? 'lg:order-2' : ''}`}>
-                  <div className={`relative rounded-2xl overflow-hidden ${colors.light} p-8`}>
+                  <div className="relative rounded-2xl overflow-hidden bg-amber-50 border border-amber-100 p-8">
                     <div className="relative aspect-[4/3] w-full">
                       <Image
                         src={service.image}
@@ -209,13 +211,13 @@ export default function ServicesPage() {
                 <div className={isReversed ? 'lg:order-1' : ''}>
                   {/* Title with colored accent */}
                   <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-1.5 h-10 ${colors.bg} rounded-full`}></div>
-                    <h2 className="text-3xl font-bold text-white">
+                    <div className="w-1.5 h-10 bg-gradient-to-b from-[#d4a847] to-[#cd7f32] rounded-full"></div>
+                    <h2 className="text-3xl font-bold text-gray-900">
                       {service.title}
                     </h2>
                   </div>
 
-                  <p className="text-lg text-gray-400 leading-relaxed mb-6">
+                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
                     {service.description}
                   </p>
 
@@ -223,10 +225,10 @@ export default function ServicesPage() {
                   <ul className="space-y-3 mb-8">
                     {service.bullets.map((bullet, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <svg className={`w-5 h-5 ${colors.text} mt-0.5 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-[#d4a847] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-gray-300">{bullet}</span>
+                        <span className="text-gray-700">{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -234,99 +236,104 @@ export default function ServicesPage() {
                   {/* Stats Row */}
                   <div className="grid grid-cols-3 gap-4">
                     {service.stats.map((stat, i) => (
-                      <div key={i} className={`${colors.light} border border-[#d4a847]/20 rounded-xl p-4 text-center`}>
-                        <p className={`text-xl font-bold ${colors.text}`}>{stat.value}</p>
+                      <div key={i} className="bg-amber-50 border border-amber-100 rounded-xl p-4 text-center">
+                        <p className="text-xl font-bold text-[#b8860b]">{stat.value}</p>
                         <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
-            </section>
-          );
-        })}
-      </div>
-
-      {/* Tools Section */}
-      <section className="mt-24 pt-12 border-t border-[#d4a847]/10">
-        <h2 className="text-2xl font-bold text-white text-center mb-8">
-          Tools & Platforms
-        </h2>
-        <div className="flex flex-wrap justify-center gap-3">
-          {tools.map((tool) => (
-            <span
-              key={tool.name}
-              className="px-5 py-2.5 bg-[#111111] border border-[#d4a847]/20 text-gray-300 rounded-full text-sm font-medium hover:border-[#d4a847]/40 hover:text-[#d4a847] transition-all"
-            >
-              {tool.name}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="mt-24 bg-[#111111] border border-[#d4a847]/10 text-white -mx-6 px-8 py-16 rounded-3xl">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-          How I Work
-        </h2>
-        <div className="grid md:grid-cols-4 gap-8">
-          {[
-            {
-              step: '01',
-              title: 'Understand',
-              description: 'I dig into your business, goals, and current state. No generic advice.',
-            },
-            {
-              step: '02',
-              title: 'Plan',
-              description: 'Clear priorities, realistic timelines, and measurable outcomes.',
-            },
-            {
-              step: '03',
-              title: 'Execute',
-              description: 'Hands-on implementation. I do the work, not just delegate it.',
-            },
-            {
-              step: '04',
-              title: 'Iterate',
-              description: 'Track results, learn from data, and continuously improve.',
-            },
-          ].map((phase) => (
-            <div key={phase.step} className="text-center">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d4a847] to-[#cd7f32] text-black font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-900/30">
-                {phase.step}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{phase.title}</h3>
-              <p className="text-gray-500">{phase.description}</p>
             </div>
-          ))}
+          </section>
+        );
+      })}
+
+      {/* Tools Section - White */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            Tools & Platforms
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            {tools.map((tool) => (
+              <span
+                key={tool.name}
+                className="px-5 py-2.5 bg-gray-50 border border-gray-200 text-gray-700 rounded-full text-sm font-medium hover:border-[#d4a847] hover:text-[#b8860b] transition-all"
+              >
+                {tool.name}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="mt-24 text-center py-16 bg-[#111111] border border-[#d4a847]/10 rounded-3xl">
-        <h2 className="text-2xl md:text-3xl font-bold text-white">
-          Ready to work together?
-        </h2>
-        <p className="mt-4 text-lg text-gray-400 max-w-xl mx-auto">
-          I'm looking for my next full-time role in e-commerce management, digital marketing, or growth. Also open to freelance projects that make sense.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Link
-            href="/contact"
-            className="px-8 py-3.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-xl hover:shadow-lg hover:shadow-amber-900/30 transition-all font-medium"
-          >
-            Get in Touch
-          </Link>
-          <Link
-            href="/portfolio"
-            className="px-8 py-3.5 border border-[#d4a847]/30 text-white rounded-xl hover:border-[#d4a847]/50 hover:bg-white/5 transition-all font-medium"
-          >
-            View Portfolio
-          </Link>
+      {/* Process Section - Dark */}
+      <section className="bg-[#0a0a0a] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12">
+            How I Work
+          </h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Understand',
+                description: 'I dig into your business, goals, and current state. No generic advice.',
+              },
+              {
+                step: '02',
+                title: 'Plan',
+                description: 'Clear priorities, realistic timelines, and measurable outcomes.',
+              },
+              {
+                step: '03',
+                title: 'Execute',
+                description: 'Hands-on implementation. I do the work, not just delegate it.',
+              },
+              {
+                step: '04',
+                title: 'Iterate',
+                description: 'Track results, learn from data, and continuously improve.',
+              },
+            ].map((phase) => (
+              <div key={phase.step} className="text-center">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d4a847] to-[#cd7f32] text-black font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-900/30">
+                  {phase.step}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{phase.title}</h3>
+                <p className="text-gray-400">{phase.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-      </div>
+
+      {/* CTA - Light with gradient */}
+      <section className="bg-gradient-to-b from-gray-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+            Ready to work together?
+          </h2>
+          <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
+            I'm looking for my next full-time role in e-commerce management, digital marketing, or growth. Also open to freelance projects that make sense.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="px-8 py-3.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-xl hover:shadow-lg hover:shadow-amber-900/30 transition-all font-semibold"
+            >
+              Get in Touch
+            </Link>
+            <Link
+              href="/portfolio"
+              className="px-8 py-3.5 border-2 border-gray-300 text-gray-700 rounded-xl hover:border-[#d4a847] hover:text-[#b8860b] transition-all font-medium"
+            >
+              View Portfolio
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
