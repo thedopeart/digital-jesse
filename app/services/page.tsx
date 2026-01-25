@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Skills',
   description:
-    'E-commerce management, digital marketing, SEO strategy, and project management services by Jesse Johnson.',
+    'E-commerce management, digital marketing, SEO strategy, and project management skills by Jesse Johnson.',
 };
 
 const services = [
@@ -168,7 +168,7 @@ export default function ServicesPage() {
       <div className="bg-[#0a0a0a] py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">
-            Services
+            Skills
           </span>
           <h1 className="mt-2 text-4xl md:text-5xl font-bold text-white">
             What I Do
@@ -182,7 +182,7 @@ export default function ServicesPage() {
       {/* Services Grid - Alternating dark/light backgrounds */}
       {services.map((service, index) => {
         const isReversed = index % 2 === 1;
-        const isDarkSection = index % 2 === 0;
+        const isDarkSection = index % 2 === 1;
 
         return (
           <section
@@ -225,7 +225,7 @@ export default function ServicesPage() {
                         <svg className="w-5 h-5 text-[#d4a847] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className={isDarkSection ? 'text-gray-300' : 'text-gray-700'}>{bullet}</span>
+                        <span className={`font-semibold ${isDarkSection ? 'text-gray-300' : 'text-gray-700'}`}>{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -235,14 +235,10 @@ export default function ServicesPage() {
                     {service.stats.map((stat, i) => (
                       <div
                         key={i}
-                        className={`rounded-xl p-4 text-center ${
-                          isDarkSection
-                            ? 'bg-[#111111] border border-[#d4a847]/20'
-                            : 'bg-amber-50 border border-amber-100'
-                        }`}
+                        className="rounded-xl p-4 text-center bg-[#111111] border border-[#d4a847]/20"
                       >
                         <p className="text-xl font-bold text-[#d4a847]">{stat.value}</p>
-                        <p className={`text-xs mt-1 ${isDarkSection ? 'text-gray-500' : 'text-gray-500'}`}>{stat.label}</p>
+                        <p className="text-xs mt-1 text-gray-300">{stat.label}</p>
                       </div>
                     ))}
                   </div>
@@ -273,42 +269,67 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section - Dark */}
-      <section className="bg-[#0a0a0a] py-20">
+      <section className="bg-[#0a0a0a] py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12">
-            How I Work
-          </h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Understand',
-                description: 'I dig into your business, goals, and current state. No generic advice.',
-              },
-              {
-                step: '02',
-                title: 'Plan',
-                description: 'Clear priorities, realistic timelines, and measurable outcomes.',
-              },
-              {
-                step: '03',
-                title: 'Execute',
-                description: 'Hands-on implementation. I do the work, not just delegate it.',
-              },
-              {
-                step: '04',
-                title: 'Iterate',
-                description: 'Track results, learn from data, and continuously improve.',
-              },
-            ].map((phase) => (
-              <div key={phase.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d4a847] to-[#cd7f32] text-black font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-lg shadow-amber-900/30">
-                  {phase.step}
+          <div className="text-center mb-16">
+            <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">
+              My Process
+            </span>
+            <h2 className="mt-2 text-3xl md:text-4xl font-bold text-white">
+              How I Work
+            </h2>
+          </div>
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Connecting line */}
+            <div className="hidden md:block absolute top-8 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#d4a847]/30 to-transparent" />
+
+            <div className="grid md:grid-cols-4 gap-8 md:gap-6">
+              {[
+                {
+                  step: '01',
+                  title: 'Understand',
+                  description: 'I dig into your business, goals, and current state. No generic advice.',
+                },
+                {
+                  step: '02',
+                  title: 'Plan',
+                  description: 'Clear priorities, realistic timelines, and measurable outcomes.',
+                },
+                {
+                  step: '03',
+                  title: 'Execute',
+                  description: 'Hands-on implementation. I do the work, not just delegate it.',
+                },
+                {
+                  step: '04',
+                  title: 'Iterate',
+                  description: 'Track results, learn from data, and continuously improve.',
+                },
+              ].map((phase, index) => (
+                <div key={phase.step} className="relative group">
+                  {/* Card */}
+                  <div className="bg-[#111111] border border-[#1a1a1a] rounded-2xl p-6 hover:border-[#d4a847]/30 transition-all duration-300 h-full">
+                    {/* Step number */}
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="relative">
+                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d4a847] to-[#cd7f32] flex items-center justify-center shadow-lg shadow-amber-900/20">
+                          <span className="text-black font-bold text-sm">{phase.step}</span>
+                        </div>
+                        {/* Glow effect on hover */}
+                        <div className="absolute inset-0 rounded-xl bg-[#d4a847]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                      <div className="h-px flex-1 bg-gradient-to-r from-[#d4a847]/20 to-transparent" />
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-xl font-bold text-white mb-3">{phase.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{phase.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{phase.title}</h3>
-                <p className="text-gray-400">{phase.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
