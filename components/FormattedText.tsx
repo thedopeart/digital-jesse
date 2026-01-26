@@ -3,9 +3,10 @@
 interface FormattedTextProps {
   text: string;
   className?: string;
+  boldClassName?: string;
 }
 
-export default function FormattedText({ text, className = '' }: FormattedTextProps) {
+export default function FormattedText({ text, className = '', boldClassName = 'text-gray-900' }: FormattedTextProps) {
   // Parse markdown: **bold** and [link](url)
   // First split by links, then by bold within each part
   const linkRegex = /(\[[^\]]+\]\([^)]+\))/g;
@@ -38,7 +39,7 @@ export default function FormattedText({ text, className = '' }: FormattedTextPro
       return boldParts.map((boldPart, j) => {
         if (boldPart.startsWith('**') && boldPart.endsWith('**')) {
           return (
-            <strong key={`${keyPrefix}bold-${i}-${j}`} className="font-semibold text-gray-900">
+            <strong key={`${keyPrefix}bold-${i}-${j}`} className={`font-semibold ${boldClassName}`}>
               {boldPart.slice(2, -2)}
             </strong>
           );

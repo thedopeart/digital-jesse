@@ -1,16 +1,26 @@
+export interface PortfolioSection {
+  heading: string;
+  content?: string;
+  metrics?: { label: string; value: string }[];
+  images?: { src: string; alt: string }[];
+  bullets?: string[];
+  /** Layout hint for the renderer */
+  layout?: 'default' | 'side-by-side' | 'image-grid' | 'section-header';
+  /** Number of grid columns for image-grid layout (default: auto) */
+  gridCols?: number;
+  /** Whether images should use phone-mockup aspect ratio */
+  phoneAspect?: boolean;
+  /** Custom aspect ratio for images (e.g. '4/5', '16/9', 'auto') */
+  imageAspect?: string;
+}
+
 export interface PortfolioPage {
   slug: string;
   title: string;
   subtitle?: string;
   category: 'seo' | 'design' | 'ecommerce' | 'art' | 'brands';
   description: string;
-  sections: {
-    heading: string;
-    content: string;
-    metrics?: { label: string; value: string }[];
-    images?: { src: string; alt: string }[];
-    bullets?: string[];
-  }[];
+  sections: PortfolioSection[];
 }
 
 export const portfolioPages: PortfolioPage[] = [
@@ -188,81 +198,195 @@ export const portfolioPages: PortfolioPage[] = [
     title: 'Company Profile & Design',
     subtitle: 'Professional Marketing Materials',
     category: 'design',
-    description: 'Creating professional company profiles, investor pitch decks, brochures, and marketing materials that communicate brand value and drive business results.',
+    description: 'Company profiles, investor pitch decks, infographics, and brochures designed in Canva and Photoshop. Each project is built to communicate brand value and drive real business results.',
     sections: [
       {
-        heading: 'Company Profile Design',
-        content: 'I designed a complete company profile for **Rocky Mountain Steel, Inc.**, a steel fabrication company in Colorado. The project required translating industrial services into polished marketing materials that would resonate with B2B clients and potential partners. Using **Canva** and **Photoshop**, I created a multi-page company profile that emphasizes precision, strength, and reliability. The design incorporates the company\'s branding while showcasing their history, capabilities, and industry expertise. Each section was crafted to address common questions prospects have during the sales process, making the profile a practical sales tool beyond just a brochure.',
-        images: [
-          { src: '/images/portfolio/detail/design/lwa-site-1.jpg', alt: 'LWA Site Design' },
-          { src: '/images/portfolio/detail/design/lwa-site-2.jpg', alt: 'LWA Site Interior' },
-        ],
-      },
-      {
-        heading: 'Investor Pitch Decks',
-        content: 'I created an **investor-focused pitch deck** for an art e-commerce business seeking funding. The deck told a compelling story backed by data: market opportunity, growth trajectory, competitive advantages, and financial projections. I included detailed **market research** on the online art industry, showing the total addressable market and growth trends. Analytics screenshots demonstrated actual SEO growth, keyword rankings, and marketplace performance. The design balanced professional polish with authentic brand personality. Every slide was crafted to answer investor questions and build confidence in the business model. The pitch deck has been used in conversations with potential investors and business partners.',
-        images: [
-          { src: '/images/portfolio/detail/design/er-site.png', alt: 'Eternal Royals Site Design' },
-          { src: '/images/portfolio/detail/design/lwa-site-3.jpg', alt: 'LWA Site Design 3' },
-        ],
-      },
-      {
-        heading: 'Infographics & Visual Content',
-        content: 'Beyond traditional documents, I design **infographics** and visual content for various industries. For pharmaceutical and health clients, I\'ve created infographics about wellness topics, sleep improvement, and stress management. Finance industry projects include visual guides on loan processes, credit improvement steps, and business funding options. Process infographics help companies explain complex workflows in digestible formats. The key is combining **clear information hierarchy** with engaging visuals that hold attention. Each infographic is designed to be shareable on social media while also working in print and presentation contexts.',
+        heading: 'Company Profile & Case Study',
+        layout: 'section-header' as const,
         bullets: [
-          '**Pharmaceutical/Health**: Wellness infographics, supplement guides, health tips',
-          '**Finance**: Loan process guides, credit score explainers, funding roadmaps',
-          '**Process Documentation**: Workflow visualizations, step-by-step guides, timelines',
-          '**Social Media**: Shareable graphics optimized for different platforms',
+          '**Rocky Mountain Steel, Inc.** company profile designed in Canva and Photoshop',
+          '**Multi-page layout** covering company history, services, certifications, and case studies',
+          '**B2B sales tool** addressing common prospect questions during the sales process',
+          '**Brand identity** built around precision, strength, and reliability',
         ],
+      },
+      {
+        heading: 'Rocky Mountain Steel Profile Pages',
+        content: 'Using **Canva** and **Photoshop**, I designed a company profile for Rocky Mountain Steel, Inc. that captures their core values of precision, strength, and reliability. The layout highlights the company\'s history, services, and industry expertise in a way that is both visually appealing and professional. This project is a good example of my ability to create designs that connect with audiences and strengthen brand identity.',
+        layout: 'image-grid' as const,
+        gridCols: 2,
         images: [
-          { src: '/images/portfolio/detail/design/ds-site-1.jpg', alt: 'Dope Stitches Site 1' },
-          { src: '/images/portfolio/detail/design/ds-site-2.jpg', alt: 'Dope Stitches Site 2' },
+          { src: '/images/portfolio/detail/company-profile/company-overview.jpg', alt: 'Rocky Mountain Steel - Company Overview' },
+          { src: '/images/portfolio/detail/company-profile/industries-served.jpg', alt: 'Rocky Mountain Steel - Industries Served' },
+          { src: '/images/portfolio/detail/company-profile/why-choose-us.jpg', alt: 'Rocky Mountain Steel - Why Choose Us' },
+          { src: '/images/portfolio/detail/company-profile/aist-certified.jpg', alt: 'Rocky Mountain Steel - AIST Certified' },
+          { src: '/images/portfolio/detail/company-profile/services-overview.jpg', alt: 'Rocky Mountain Steel - Services Overview' },
+          { src: '/images/portfolio/detail/company-profile/case-studies.jpg', alt: 'Rocky Mountain Steel - Case Studies' },
+          { src: '/images/portfolio/detail/company-profile/quality-assurance.jpg', alt: 'Rocky Mountain Steel - Quality Assurance' },
+          { src: '/images/portfolio/detail/company-profile/highlighted-projects.jpg', alt: 'Rocky Mountain Steel - Highlighted Projects' },
+          { src: '/images/portfolio/detail/company-profile/contact.jpg', alt: 'Rocky Mountain Steel - Contact Page' },
+          { src: '/images/portfolio/detail/company-profile/rms-website.jpg', alt: 'Rocky Mountain Steel - Website Design' },
+          { src: '/images/portfolio/detail/company-profile/cover-profile.jpg', alt: 'Rocky Mountain Steel - Profile Cover' },
         ],
+        imageAspect: '25/9',
+      },
+      {
+        heading: 'Pitch Deck & Market Research',
+        layout: 'section-header' as const,
+        bullets: [
+          '**Investor pitch deck** for an art e-commerce business seeking funding',
+          '**Market research and analytics** showing SEO growth, keyword rankings, and marketplace performance',
+          '**Financial projections** with clear paths to ROI and visual storytelling',
+          '**Growth strategy** including art collaborations and revenue diversification',
+        ],
+      },
+      {
+        heading: 'Investor Pitch Deck Slides',
+        content: 'This pitch deck was built to attract investors through detailed **market research** and **performance analytics**. The deck showcased key market drivers and revenue opportunities in the online art space, focusing on brand scalability. It demonstrated growth potential with metrics on **SEO growth**, keyword ranking, and marketplace performance. By visualizing 12-month SEO results, top revenue-generating products, and growth strategies like art collaborations, the pitch deck offered investors clear paths to **ROI** with strong **financial projections** and visual storytelling.',
+        layout: 'image-grid' as const,
+        gridCols: 5,
+        images: [
+          { src: '/images/portfolio/detail/company-profile/pitch-intro.jpg', alt: 'Pitch Deck - Introduction & Vision' },
+          { src: '/images/portfolio/detail/company-profile/pitch-market.jpg', alt: 'Pitch Deck - Art Market Opportunity' },
+          { src: '/images/portfolio/detail/company-profile/pitch-business-model.jpg', alt: 'Pitch Deck - Scalable Business Model' },
+          { src: '/images/portfolio/detail/company-profile/pitch-competitors.jpg', alt: 'Pitch Deck - Competitor Analysis' },
+          { src: '/images/portfolio/detail/company-profile/pitch-seo-keywords.jpg', alt: 'Pitch Deck - SEO Keyword Research' },
+          { src: '/images/portfolio/detail/company-profile/pitch-art-collections.jpg', alt: 'Pitch Deck - Art Collections' },
+          { src: '/images/portfolio/detail/company-profile/pitch-top-sellers.jpg', alt: 'Pitch Deck - Top Sellers' },
+          { src: '/images/portfolio/detail/company-profile/pitch-seo-stats.jpg', alt: 'Pitch Deck - SEO Stats' },
+          { src: '/images/portfolio/detail/company-profile/pitch-sales-stats.jpg', alt: 'Pitch Deck - Sales Stats' },
+          { src: '/images/portfolio/detail/company-profile/pitch-growth-strategy.jpg', alt: 'Pitch Deck - Growth Strategy' },
+          { src: '/images/portfolio/detail/company-profile/pitch-growth-continued.jpg', alt: 'Pitch Deck - Growth Strategy Continued' },
+          { src: '/images/portfolio/detail/company-profile/pitch-financial.jpg', alt: 'Pitch Deck - Financial Projections' },
+          { src: '/images/portfolio/detail/company-profile/pitch-exit-strategy.jpg', alt: 'Pitch Deck - Exit Strategy' },
+        ],
+        imageAspect: '3/4',
+      },
+      {
+        heading: 'Digital Marketing Infographics',
+        layout: 'section-header' as const,
+        bullets: [
+          '**Infographics for pharmaceutical and finance clients** designed in Canva and Photoshop',
+          '**SEO-driven content** created with keyword research for search visibility',
+          '**Product benefits and scientific insights** presented in visually engaging formats',
+          '**Cross-platform design** optimized for social media, blogs, and print',
+        ],
+      },
+      {
+        heading: 'Pharmaceutical',
+        content: 'Using **Canva** and **Photoshop**, I designed a series of infographics promoting stress relief and daily wellness supplements. The content was created with a focus on keyword research to ensure visibility in digital marketing efforts. Each infographic showcases detailed information on product benefits, usage tips, and scientific insights, making the information visually appealing while optimizing for **SEO-driven content strategies**.',
+        layout: 'image-grid' as const,
+        gridCols: 3,
+        images: [
+          { src: '/images/portfolio/detail/company-profile/pharma-sleep.jpg', alt: 'Pharmaceutical - Relaxing Sleep Guide' },
+          { src: '/images/portfolio/detail/company-profile/pharma-sleep-strategies.jpg', alt: 'Pharmaceutical - Sleep Enhancing Strategies' },
+          { src: '/images/portfolio/detail/company-profile/pharma-stress-ease.png', alt: 'Pharmaceutical - Stress Ease & Mood Stabilizers' },
+          { src: '/images/portfolio/detail/company-profile/pharma-stress-formula.png', alt: 'Pharmaceutical - Stress Formula Benefits' },
+          { src: '/images/portfolio/detail/company-profile/pharma-blog-cut.jpg', alt: 'Pharmaceutical - Blog Content' },
+          { src: '/images/portfolio/detail/company-profile/pharma-daily-herbs.jpg', alt: 'Pharmaceutical - Daily Herbs for Wellness' },
+        ],
+      },
+      {
+        heading: 'Finance',
+        layout: 'image-grid' as const,
+        gridCols: 4,
+        images: [
+          { src: '/images/portfolio/detail/company-profile/finance-templates.jpg', alt: 'Finance - Quick Lenders Templates' },
+          { src: '/images/portfolio/detail/company-profile/finance-loan-tips.jpg', alt: 'Finance - Loan Approval Tips' },
+          { src: '/images/portfolio/detail/company-profile/finance-credit-myths.jpg', alt: 'Finance - Debunked Credit Myths' },
+          { src: '/images/portfolio/detail/company-profile/finance-venture-capital.jpg', alt: 'Finance - Venture Capital Funding' },
+          { src: '/images/portfolio/detail/company-profile/finance-equipment.jpg', alt: 'Finance - Equipment Financing Guide' },
+          { src: '/images/portfolio/detail/company-profile/finance-invoice.jpg', alt: 'Finance - Invoice Financing Options' },
+          { src: '/images/portfolio/detail/company-profile/finance-loan-criteria.jpg', alt: 'Finance - Loan Qualification Criteria' },
+          { src: '/images/portfolio/detail/company-profile/finance-veteran-loans.jpg', alt: 'Finance - Veteran Loan Programs' },
+        ],
+        imageAspect: '16/9',
+      },
+      {
+        heading: 'Assorted Brochures',
+        layout: 'image-grid' as const,
+        gridCols: 4,
+        images: [
+          { src: '/images/portfolio/detail/company-profile/brochure-king-county.jpg', alt: 'King County Parks Brochure' },
+          { src: '/images/portfolio/detail/company-profile/brochure-seo-automation.jpg', alt: 'SEO AI Automation Brochure' },
+        ],
+        imageAspect: '2/5',
       },
     ],
   },
   {
     slug: 'figma-design',
-    title: 'Web Design & Prototyping',
-    subtitle: 'From Wireframe to Final Design',
+    title: 'Figma Designs & Product Mockups',
+    subtitle: 'Web Design, Prototyping & 3D Visualization',
     category: 'design',
-    description: 'Creating user-friendly website designs using Figma, from initial wireframes through high-fidelity mockups ready for development handoff.',
+    description: 'I design websites in Figma and create product mockups in Photoshop. From concept to final design, I focus on user experience, brand identity, and visuals that actually convert.',
     sections: [
       {
-        heading: 'Design Philosophy',
-        content: 'Good web design isn\'t just about looking nice. It\'s about creating experiences that guide users toward their goals while achieving business objectives. I approach every project with **user-centered design** principles: understanding who will use the site, what they\'re trying to accomplish, and what barriers might prevent them from succeeding. This means research before design, testing assumptions, and iterating based on feedback. The visual layer comes after the structural decisions are solid. Typography, color, and imagery should reinforce the brand while maintaining **clarity and usability** across all devices.',
+        heading: 'Figma Designs',
+        layout: 'section-header' as const,
         bullets: [
-          '**User research** to understand audience needs and behaviors before designing',
-          '**Wireframing** to establish layout and information hierarchy',
-          '**High-fidelity mockups** with full visual design for desktop and mobile',
-          '**Interactive prototypes** for testing user flows before development',
-          '**Design systems** with reusable components for consistency and efficiency',
-          '**Developer handoff** with organized files, specs, and assets',
+          '**Full website designs** from concept to completion',
+          '**Responsive layouts** optimized for all devices',
+          '**Brand-consistent** designs that resonate with target audiences',
+          '**User-centered design** focusing on intuitive navigation',
         ],
       },
       {
-        heading: 'Featured Project: QuickLenders.com',
-        content: 'I designed the complete website for **QuickLenders**, a business finance company helping entrepreneurs access funding. The project started with understanding their target audience: business owners seeking loans, equipment financing, or invoice factoring. I created **wireframes** mapping out the user journey from landing page through application. High-fidelity mockups in Figma established the visual identity: professional yet approachable, with clear calls-to-action and trust signals throughout. The responsive design ensures the experience works on desktop, tablet, and mobile. After client approval, I prepared detailed specs and assets for the development team.',
+        heading: 'Website Designs',
+        content: 'Full website designs for **QuickLenders.com** (business finance) and blog layouts for **American Nutriceuticals** (health & wellness). Each project covered page structure, visual identity, responsive layouts, and developer handoff.',
+        layout: 'image-grid' as const,
+        gridCols: 4,
         images: [
-          { src: '/images/portfolio/detail/design/lwa-site-1.jpg', alt: 'Website Design Example' },
-          { src: '/images/portfolio/detail/design/er-site.png', alt: 'Eternal Royals Website' },
+          { src: '/images/portfolio/detail/figma-design/ql-figma-1.jpg', alt: 'QuickLenders Figma Design - Homepage' },
+          { src: '/images/portfolio/detail/figma-design/ql-figma-2.jpg', alt: 'QuickLenders Figma Design - Inner Pages' },
+          { src: '/images/portfolio/detail/figma-design/an-figma-blog.jpg', alt: 'American Nutriceuticals Figma Blog Design' },
+        ],
+        imageAspect: '1/2',
+      },
+      {
+        heading: '2D & 3D Product Mockups',
+        layout: 'section-header' as const,
+        bullets: [
+          '**2D & 3D product mockups** providing realistic visualizations',
+          '**High-quality renders** that help clients envision products',
+          '**Detailed packaging design** for marketing materials',
+          '**Collaboration with teams** to build cohesive branding',
         ],
       },
       {
-        heading: 'Product Mockups & Visualization',
-        content: 'Beyond website design, I create **2D and 3D product mockups** for marketing materials. Using **Adobe Photoshop** and specialized mockup tools, I produce realistic visualizations showing products in context. For e-commerce, this means room scenes showing wall art in realistic settings, helping customers envision pieces in their own spaces. For product launches, I create packaging mockups, promotional graphics, and social media assets. The goal is always to present products in the most compelling way while remaining honest about what customers will receive. High-quality visuals directly impact conversion rates and customer confidence.',
-        bullets: [
-          '**Room scene mockups** showing wall art in realistic interior settings',
-          '**Product photography enhancement** and background removal',
-          '**Packaging design** and 3D box/label mockups',
-          '**Social media templates** optimized for different platform dimensions',
-          '**Banner and ad creative** for marketing campaigns',
-        ],
+        heading: 'Product Packaging & Bottles',
+        layout: 'image-grid' as const,
+        gridCols: 5,
         images: [
-          { src: '/images/portfolio/detail/art/er-parallax-mock.jpg', alt: '3D Product Mockup' },
-          { src: '/images/portfolio/detail/art/er-banner-mock.jpg', alt: 'Banner Mockup' },
+          { src: '/images/portfolio/detail/figma-design/ecomer-front.jpg', alt: 'Ecomer Product Mockup' },
+          { src: '/images/portfolio/detail/figma-design/essential-detox.jpg', alt: 'Essential Detox Product Mockup' },
+          { src: '/images/portfolio/detail/figma-design/vitality-boost.jpg', alt: 'Vitality Boost Product Mockup' },
+          { src: '/images/portfolio/detail/figma-design/partial-set.jpg', alt: 'Product Line Display - Front' },
+          { src: '/images/portfolio/detail/figma-design/full-set.jpg', alt: 'Product Line Display - Full Collection' },
         ],
+        imageAspect: '1/1',
+      },
+      {
+        heading: 'Wall Art & Room Scene Mockups',
+        layout: 'image-grid' as const,
+        gridCols: 3,
+        images: [
+          { src: '/images/portfolio/detail/figma-design/peacock-room.jpg', alt: 'Peacock Enigma Room Mockup' },
+          { src: '/images/portfolio/detail/figma-design/wall-size-guide.jpg', alt: 'Wall Art Size Guide' },
+          { src: '/images/portfolio/detail/figma-design/sail-away.jpg', alt: 'Sail Away Room Scene Mockup' },
+        ],
+        imageAspect: '1/1',
+      },
+      {
+        heading: 'Phone Cases & Accessories',
+        layout: 'image-grid' as const,
+        gridCols: 3,
+        images: [
+          { src: '/images/portfolio/detail/figma-design/phone-case-1.png', alt: 'Phone Case Mockup' },
+          { src: '/images/portfolio/detail/figma-design/business-lion-iphone.jpg', alt: 'Business Lion iPhone Case' },
+          { src: '/images/portfolio/detail/figma-design/amethyst-gateway.jpg', alt: 'Amethyst Gateway Art' },
+        ],
+        imageAspect: '1/1',
       },
     ],
   },
@@ -309,31 +433,78 @@ export const portfolioPages: PortfolioPage[] = [
     description: 'Creating scroll-stopping social media content that builds brand presence, engages audiences, and drives traffic through strategic visual storytelling and platform-specific optimization.',
     sections: [
       {
-        heading: 'Content Creation Services',
-        content: 'I create social media content designed to **stop the scroll** and drive meaningful engagement. This goes beyond pretty graphics. Every piece of content has a purpose: building brand awareness, educating the audience, entertaining followers, or driving specific actions. I develop content strategies based on platform best practices and audience behavior. Instagram requires different content than LinkedIn or TikTok. Understanding these nuances is critical for performance. My process includes **content calendars**, brand voice guidelines, and consistent visual identity across all posts while maintaining the variety needed to keep feeds interesting.',
+        heading: 'Social Media Content Creation',
+        layout: 'section-header',
         bullets: [
-          '**Visual Storytelling**: Eye-catching graphics that communicate brand messages instantly',
-          '**Engagement-Driven Content**: Posts designed to spark comments, shares, and saves',
-          '**Brand Consistency**: Cohesive look and voice across all platforms',
-          '**Platform Optimization**: Content sized and formatted for each network',
-          '**Call-to-Action Design**: Clear next steps that drive traffic and conversions',
+          '**Visual Storytelling:** Crafted eye-catching graphics that connect with audiences and highlight key brand messages',
+          '**Engagement-Driven Posts:** Created content designed to boost interactions, drive conversations, and increase followers',
+          '**Brand Consistency:** Maintained a cohesive look and feel across all social media platforms to strengthen brand identity',
+          '**Effective Call-to-Action:** Designed posts that direct users toward specific actions, enhancing lead generation and conversions',
         ],
       },
       {
-        heading: 'Client Work: QuickLenders.com',
-        content: 'I created a full suite of social media graphics for **QuickLenders**, a business finance company. The content needed to make complex financial topics accessible and engaging for small business owners. Topics included business funding options, **ESOP funding** explanations, invoice factoring benefits, and credit improvement tips. Each post balanced educational value with brand promotion. The visual style was professional but approachable, using clean layouts, readable typography, and strategic use of color to highlight key information. Content was optimized for both feed posts and stories, maximizing reach across different formats.',
+        heading: 'QuickLenders.com',
+        content: 'For **QuickLenders**, I developed high-impact social media content that increases brand presence and engages the target audience, focusing on visually compelling designs and strategic messaging.',
         images: [
-          { src: '/images/portfolio/detail/ecommerce/creator-cover.png', alt: 'Creator Cover' },
-          { src: '/images/portfolio/detail/ecommerce/creator-2.jpg', alt: 'Content Creation 2' },
-          { src: '/images/portfolio/detail/ecommerce/creator-3.jpg', alt: 'Content Creation 3' },
+          { src: '/images/portfolio/detail/social-posts/ql-fb-cover.jpg', alt: 'Quick Lenders Facebook Cover' },
+        ],
+        layout: 'side-by-side',
+        imageAspect: '8/3',
+      },
+      {
+        heading: 'QuickLenders.com Marketing Materials',
+        layout: 'image-grid',
+        gridCols: 5,
+        images: [
+          { src: '/images/portfolio/detail/social-posts/ql-banks-maze.jpg', alt: 'Banks Are a Maze - Quick Lenders' },
+          { src: '/images/portfolio/detail/social-posts/ql-esop-2.jpg', alt: 'ESOP Funding' },
+          { src: '/images/portfolio/detail/social-posts/ql-esop-3.jpg', alt: 'ESOP Funding Benefits' },
+          { src: '/images/portfolio/detail/social-posts/ql-unlock-potential-1.jpg', alt: 'Unlock Business Potential' },
+          { src: '/images/portfolio/detail/social-posts/ql-single-1.jpg', alt: 'Quick Lenders Confidence' },
+          { src: '/images/portfolio/detail/social-posts/ql-empowering.jpg', alt: 'Empowering Business Dreams' },
+          { src: '/images/portfolio/detail/social-posts/ql-invoice-2.jpg', alt: 'Invoice Factoring' },
+          { src: '/images/portfolio/detail/social-posts/ql-invoice-3.jpg', alt: 'Invoice Factoring Benefits' },
+          { src: '/images/portfolio/detail/social-posts/ql-tired-banks.jpg', alt: 'Tired of Waiting on Banks' },
+          { src: '/images/portfolio/detail/social-posts/ql-first-time.jpg', alt: 'First Time Business Owners' },
+          { src: '/images/portfolio/detail/social-posts/ql-esop-1.jpg', alt: 'Build a Legacy with ESOP' },
+          { src: '/images/portfolio/detail/social-posts/ql-unlock-potential-2.jpg', alt: 'Unlock Your Business Potential' },
+          { src: '/images/portfolio/detail/social-posts/ql-standard-slices.jpg', alt: 'Skip the Standard Slice' },
+          { src: '/images/portfolio/detail/social-posts/ql-12-ways.jpg', alt: '12 Ways to Improve Credit Score' },
+          { src: '/images/portfolio/detail/social-posts/ql-100-million.jpg', alt: '$100 Million Private Lending' },
         ],
       },
       {
-        heading: 'Educational Content Series',
-        content: 'I\'ve developed educational content series that position brands as authorities in their space. The **Social Media Hacks** series shared actionable tips for growing social presence, while **SEO Hacks** taught basic search optimization concepts. This type of content builds trust by providing genuine value before asking for anything in return. Educational posts tend to get saved and shared more than promotional content, extending organic reach. The key is making complex topics digestible without being condescending. Each post should leave the viewer feeling like they learned something useful.',
+        heading: 'Social Media Hacks',
+        layout: 'image-grid',
+        gridCols: 5,
         images: [
-          { src: '/images/portfolio/detail/ecommerce/cell-phone-tda.png', alt: 'Cell Phone TDA' },
-          { src: '/images/portfolio/detail/ecommerce/social-media-phones.png', alt: 'Social Media Phones' },
+          { src: '/images/portfolio/detail/social-posts/smh-1.jpg', alt: 'Go Viral on Social Media' },
+          { src: '/images/portfolio/detail/social-posts/smh-2.jpg', alt: 'Use Eye-Catching Visuals' },
+          { src: '/images/portfolio/detail/social-posts/smh-3.jpg', alt: 'Timing Your Post is Crucial' },
+          { src: '/images/portfolio/detail/social-posts/smh-8.jpg', alt: 'Engage With Your Audience' },
+          { src: '/images/portfolio/detail/social-posts/smh-9.jpg', alt: 'Use Memes and Pop Culture' },
+          { src: '/images/portfolio/detail/social-posts/smh-6.jpg', alt: 'Timing With Trend Hijacking' },
+          { src: '/images/portfolio/detail/social-posts/smh-5.jpg', alt: 'Exploit the Power of FOMO' },
+          { src: '/images/portfolio/detail/social-posts/smh-4.jpg', alt: 'Utilize Emotional Triggers' },
+          { src: '/images/portfolio/detail/social-posts/smh-7.jpg', alt: 'Make Shareable and Helpful Content' },
+          { src: '/images/portfolio/detail/social-posts/smh-10.jpg', alt: 'Spark a Debate or Create Controversy' },
+        ],
+      },
+      {
+        heading: 'SEO Hacks',
+        layout: 'image-grid',
+        gridCols: 5,
+        images: [
+          { src: '/images/portfolio/detail/social-posts/seo-1.jpg', alt: 'Swim With the Sharks SEO' },
+          { src: '/images/portfolio/detail/social-posts/seo-2.jpg', alt: 'What is SEO' },
+          { src: '/images/portfolio/detail/social-posts/seo-3.jpg', alt: 'Key SEO Ranking Factors' },
+          { src: '/images/portfolio/detail/social-posts/seo-4.jpg', alt: 'Quality Content for SEO' },
+          { src: '/images/portfolio/detail/social-posts/seo-5.jpg', alt: 'Strengthen Your Online Authority' },
+          { src: '/images/portfolio/detail/social-posts/seo-6.jpg', alt: 'Optimize Your On-Page SEO' },
+          { src: '/images/portfolio/detail/social-posts/seo-7.jpg', alt: 'Optimize for User Experience' },
+          { src: '/images/portfolio/detail/social-posts/seo-8.jpg', alt: 'Key Technical SEO Practices' },
+          { src: '/images/portfolio/detail/social-posts/seo-9.jpg', alt: 'Maximize SEO with Social Interaction' },
+          { src: '/images/portfolio/detail/social-posts/seo-10.jpg', alt: 'Stay Ahead in the Digital World' },
         ],
       },
     ],
@@ -347,7 +518,7 @@ export const portfolioPages: PortfolioPage[] = [
     sections: [
       {
         heading: 'Platform Strategy',
-        content: 'I manage social media accounts across multiple platforms with tailored strategies for each. **TikTok** requires short, engaging video content that hooks viewers in the first second. **Instagram** rewards consistent posting and strong visual aesthetics. **Pinterest** functions more like a search engine, requiring keyword-optimized pins and boards. **Facebook** remains valuable for community building and certain demographics. **Reddit** requires authentic participation and value-first content. Rather than posting the same content everywhere, I create platform-native content that works with each algorithm and audience expectation.',
+        content: 'I manage social media accounts across multiple platforms with tailored strategies for each. **TikTok** requires short, engaging video content that hooks viewers in the first second. **Instagram** rewards consistent posting and strong visual aesthetics. **Pinterest** functions more like a search engine, requiring keyword-optimized pins and boards. **Facebook** remains valuable for community building and certain demographics. Rather than posting the same content everywhere, I create platform-native content that works with each algorithm and audience expectation.',
         bullets: [
           '**Content calendar** planning and scheduling across all platforms',
           '**Video creation** optimized for TikTok, Reels, and Shorts formats',
@@ -357,33 +528,78 @@ export const portfolioPages: PortfolioPage[] = [
           '**Trend monitoring** to capitalize on viral moments and formats',
         ],
         images: [
-          { src: '/images/portfolio/detail/ecommerce/social-media-management.jpg', alt: 'Social Media Management' },
-          { src: '/images/portfolio/detail/ecommerce/tiktok-viral.png', alt: 'TikTok Viral Content' },
+          { src: '/images/portfolio/detail/ecommerce/social-media-phones.png', alt: 'Social Media Phone Mockups' },
         ],
+        layout: 'side-by-side',
       },
       {
-        heading: 'Case Study: The Dope Art Instagram',
-        content: 'I grew **The Dope Art Instagram** from zero to over 26,000 followers through strategic content planning and consistent engagement. The growth came from understanding what the target audience wants to see: bold, eye-catching artwork presented in inspiring contexts. I developed content themes, created a consistent posting schedule, and actively engaged with the art community. **User-generated content** from customers showing their purchases built social proof. Behind-the-scenes content humanized the brand. Collaborations with other artists and accounts expanded reach to new audiences. The key was consistency combined with genuine community participation.',
+        heading: 'The Dope Art',
+        content: 'I grew **The Dope Art** from zero to over **26,000 followers** across Instagram and TikTok through strategic content planning and consistent engagement. The growth came from understanding what the target audience wants to see: bold, eye-catching artwork presented in inspiring contexts. I developed content themes, created a consistent posting schedule, and actively engaged with the art community. Customer content showing their purchases built social proof. Behind-the-scenes content humanized the brand. Collaborations with other artists and creators expanded reach to new audiences.',
         metrics: [
           { label: 'Followers Grown', value: '26,000+' },
           { label: 'Starting Point', value: '0' },
+          { label: 'Platforms', value: 'IG, TikTok, FB' },
         ],
         images: [
-          { src: '/images/portfolio/detail/ecommerce/ig-page-2.png', alt: 'Instagram Page' },
-          { src: '/images/portfolio/detail/ecommerce/ig-page-3.png', alt: 'Instagram Growth' },
-          { src: '/images/portfolio/detail/ecommerce/tda-video-views.png', alt: 'TDA Video Views' },
+          { src: '/images/portfolio/detail/ecommerce/social-media-2-phones-tda.jpg', alt: 'The Dope Art Instagram' },
         ],
+        layout: 'side-by-side',
       },
       {
-        heading: 'Tools & Workflow',
-        content: 'Managing multiple accounts efficiently requires the right tools and systems. I use **scheduling tools** like Hootsuite and Facebook Business Suite to batch content creation and ensure consistent posting. **Zapier** automates repetitive tasks like cross-posting and notifications. Platform-native analytics provide insights into what\'s working and what needs adjustment. I track key metrics including follower growth, engagement rate, reach, and most importantly, traffic and conversions driven to the e-commerce stores. Social media should ultimately support business goals, not just accumulate vanity metrics.',
+        heading: '26K+ Growth on Multiple Platforms',
+        images: [
+          { src: '/images/portfolio/detail/ecommerce/tik-post.png', alt: 'TikTok Post' },
+          { src: '/images/portfolio/detail/ecommerce/all-seeing-king.png', alt: 'All Seeing King' },
+          { src: '/images/portfolio/detail/ecommerce/reels-1.png', alt: 'Instagram Reels' },
+          { src: '/images/portfolio/detail/ecommerce/signing-art.png', alt: 'Signing Art' },
+          { src: '/images/portfolio/detail/ecommerce/anon-king-sm.png', alt: 'Anonymous King' },
+          { src: '/images/portfolio/detail/ecommerce/tiktok-viral.png', alt: 'TikTok Viral Content' },
+          { src: '/images/portfolio/detail/ecommerce/tiktok-viral-2.png', alt: 'TikTok Viral' },
+          { src: '/images/portfolio/detail/ecommerce/devil-royal.png', alt: 'Devil Royal' },
+          { src: '/images/portfolio/detail/ecommerce/kq-set.png', alt: 'KQ Set' },
+        ],
+        layout: 'image-grid',
+        gridCols: 5,
+        phoneAspect: true,
+      },
+      {
+        heading: 'Facebook, Pinterest, Instagram',
+        content: 'For **Luxury Wall Art**, I built a multi-platform social strategy that drove traffic and sales to the Shopify store. Each platform served a different purpose in the funnel. **Pinterest** drove long-term organic discovery through keyword-optimized pins. **Facebook** built community and retargeted warm audiences. **Instagram** showcased the art in real settings and drove direct sales through stories and posts. The combined strategy contributed to **$60K+ in organic conversions** and built a follower base of over **200,000** across all platforms.',
+        metrics: [
+          { label: 'Combined Followers', value: '200K+' },
+          { label: 'Organic Conversions', value: '$60K+' },
+          { label: 'Platforms Managed', value: '5+' },
+        ],
+        images: [
+          { src: '/images/portfolio/detail/ecommerce/lwa-social-media.png', alt: 'Luxury Wall Art Social Media' },
+        ],
+        layout: 'side-by-side',
+      },
+      {
+        heading: 'YouTube SEO',
+        content: 'I handle YouTube SEO for Quality Sewing\'s channel, optimizing titles, descriptions, tags, and thumbnails to drive organic discovery. Sewing tutorials and product demos are a natural fit for search-driven video content, so I treat each upload like a blog post: keyword research first, then structured metadata that matches what people are actually searching for. I also work on playlist organization and end screen strategy to keep viewers on the channel longer.',
+        bullets: [
+          '**Keyword-optimized titles and descriptions** for every video upload',
+          '**Custom thumbnails** designed for click-through rate',
+          '**Tag strategy** targeting long-tail sewing and quilting search terms',
+          '**Playlist curation** to improve session duration and channel authority',
+          '**Analytics review** to identify top-performing content and double down',
+        ],
+        layout: 'side-by-side',
+      },
+      {
+        heading: 'Scheduling Posts',
+        content: 'Managing multiple accounts efficiently requires the right tools and systems. I use **Hootsuite** and **Facebook Business Suite** to batch content creation and ensure consistent posting. I plan content calendars weeks in advance, batch-create graphics and captions, and schedule everything out. Platform-native analytics tell me what\'s working so I can double down. I track follower growth, engagement rate, reach, and the metric that actually matters: traffic and conversions driven to the store.',
         bullets: [
           '**Hootsuite** for multi-platform scheduling and management',
           '**Facebook Business Suite** for Meta platform management',
-          '**Zapier** for automation and workflow optimization',
           '**Canva** for quick graphic creation and templates',
           '**Platform analytics** for performance tracking and optimization',
         ],
+        images: [
+          { src: '/images/portfolio/detail/ecommerce/lwa-planning.png', alt: 'Content Calendar and Planning' },
+        ],
+        layout: 'side-by-side',
       },
     ],
   },

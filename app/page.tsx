@@ -183,7 +183,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative bg-[#0a0a0a]">
+      <section ref={heroRef} className="relative bg-[#1e1e1e]">
         <GradientMesh variant="hero" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16">
@@ -341,7 +341,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-16 overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#111]">
+      <section className="relative py-16 overflow-hidden bg-[#1e1e1e]">
         <div className="absolute inset-0 border-t border-[#d4a847]/20" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection>

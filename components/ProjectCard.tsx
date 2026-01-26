@@ -88,7 +88,7 @@ export default function ProjectCard({
       ref={cardRef}
       href={`/portfolio/${slug}`}
       className={`group relative block rounded-xl p-5 overflow-hidden transition-all duration-300 ${
-        isDark ? 'bg-[#1a1a1a]' : 'bg-white'
+        isDark ? 'bg-[#1e1e1e]' : 'bg-white'
       }`}
       style={{
         transformStyle: 'preserve-3d',

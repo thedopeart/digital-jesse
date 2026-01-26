@@ -8,9 +8,10 @@ interface ImageLightboxProps {
   alt: string;
   className?: string;
   contain?: boolean;
+  style?: React.CSSProperties;
 }
 
-export default function ImageLightbox({ src, alt, className = '', contain = false }: ImageLightboxProps) {
+export default function ImageLightbox({ src, alt, className = '', contain = false, style }: ImageLightboxProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,6 +19,7 @@ export default function ImageLightbox({ src, alt, className = '', contain = fals
       {/* Thumbnail */}
       <div
         className={`cursor-zoom-in ${className}`}
+        style={style}
         onClick={() => setIsOpen(true)}
       >
         <Image

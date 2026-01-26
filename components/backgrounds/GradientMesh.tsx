@@ -28,9 +28,9 @@ export default function GradientMesh({ className = '', variant = 'dark' }: Gradi
   }, { scope: containerRef });
 
   const variants = {
-    dark: 'bg-[#0a0a0a]',
+    dark: 'bg-[#1e1e1e]',
     light: 'bg-gray-50',
-    hero: 'bg-[#0a0a0a]',
+    hero: 'bg-[#1e1e1e]',
   };
 
   return (
