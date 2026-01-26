@@ -5,13 +5,13 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Jesse Johnson is a digital marketer and e-commerce manager in Seattle. 6 years on Shopify, $2.6M+ in sales, 340% organic traffic growth.',
+    'Jesse Johnson is a digital marketer and e-commerce manager in Seattle. 6 years on Shopify, $4.5M+ in sales, 340% organic traffic growth.',
 };
 
 const highlights = [
-  { value: '$2.6M+', label: 'Total Sales Managed' },
+  { value: '$4.5M+', label: 'Total Revenue Generated' },
   { value: '340%', label: 'Organic Traffic Growth' },
-  { value: '6 Years', label: 'Shopify Experience' },
+  { value: '3,000+', label: 'Personal Customers' },
   { value: '5,000+', label: 'Products Managed' },
 ];
 
@@ -24,13 +24,12 @@ const workHistory = [
     location: 'Seattle, WA',
     description: 'Running the full e-commerce operation for a family-owned sewing and vacuum retailer with 50+ years of history.',
     achievements: [
-      'Grew organic traffic from 5K to 22K monthly visitors (340% increase)',
-      'Managing $2M+ in annual online revenue across multiple channels',
-      'Oversee 5,000+ product catalog with pricing, inventory, and merchandising',
-      'Shifted strategy from paid ads to SEO, dramatically reducing ad spend while increasing revenue',
-      'Built 10+ custom tools including interactive calculators that drive engagement and reduce bounce rate',
-      'Expanded to multi-channel selling: Amazon, Walmart, TikTok Shop',
-      'Developed YouTube SEO strategy for product tutorials and brand content',
+      { text: 'Grew organic traffic from ', bold: '5K to 22K monthly visitors', after: ' (340% increase)' },
+      { text: 'Managing ', bold: '$2M+ in annual online revenue', after: ' across multiple channels' },
+      { text: 'Oversee ', bold: '5,000+ product catalog', after: ' with pricing, inventory, and merchandising' },
+      { text: 'Shifted strategy from paid ads to SEO, ', bold: 'dramatically reducing ad spend', after: ' while increasing revenue' },
+      { text: 'Built ', bold: '10+ custom tools', after: ' including interactive calculators that drive engagement' },
+      { text: 'Expanded to multi-channel: ', bold: 'Amazon, Walmart, TikTok Shop', after: '' },
     ],
     tags: ['Shopify', 'SEO', 'Multi-channel', 'Team Leadership'],
   },
@@ -41,28 +40,28 @@ const workHistory = [
     location: 'Remote',
     description: 'Providing SEO, design, and digital marketing services to clients in pharma, finance, and e-commerce.',
     achievements: [
-      'Rocky Mountain Steel: Full branding package including company profile, infographics, case studies',
-      'American Nutriceuticals: SEO blogging, keyword research, 3D product mockups, content strategy',
-      'Multiple e-commerce clients: Store audits, conversion optimization, paid ad management',
+      { text: '', bold: 'Rocky Mountain Steel:', after: ' Full branding package including company profile, infographics, case studies' },
+      { text: '', bold: 'American Nutriceuticals:', after: ' SEO blogging, keyword research, 3D product mockups, content strategy' },
+      { text: 'Multiple e-commerce clients: store audits, ', bold: 'conversion optimization', after: ', paid ad management' },
     ],
     tags: ['SEO', 'Design', 'Consulting'],
   },
   {
     role: 'Founder & Operator',
-    company: 'Luxury Wall Art & The Dope Art',
+    company: 'Luxury Wall Art, The Dope Art, Eternal Royals',
     companyUrl: 'https://thedopeart.com',
     period: '2019 - Present',
     location: 'Online',
-    description: 'Built two profitable digital art brands from scratch, handling everything from product creation to marketing to fulfillment.',
+    description: 'Built multiple digital brands from scratch. The Dope Art did $400K+ in art sales. Eternal Royals (NFT project) generated $2M+ in primary sales plus 10% commissions on $2M+ in resales. 3,000+ customers across all brands, both Etsy shops hold 5-star ratings.',
     achievements: [
-      '$120K+ in combined revenue ($67K Shopify, $53K Etsy)',
-      'Grew The Dope Art to 200K+ social media followers across platforms',
-      'Created 9,000+ digital art assets and 2,700+ products',
-      'Built domain authority from 0 to DA 20, ranking for 9,200+ keywords',
-      'Featured in ShoutOut LA and collaborated with TidalWave Productions on Tiger King comic',
-      'Developed Masterpiece Locator tool: 4,094 paintings across 455+ museums',
+      { text: '', bold: '$2.5M+ in combined brand revenue', after: ' across art, NFTs, and e-commerce' },
+      { text: 'Eternal Royals: ', bold: '$2M+ NFT primary sales', after: ', 10% royalties on $2M+ in resales' },
+      { text: 'The Dope Art: ', bold: '$400K+ in custom art sales', after: ', 200K+ social media followers' },
+      { text: 'Created ', bold: '9,000+ digital art assets', after: ' for Eternal Royals collection' },
+      { text: '', bold: '3,000+ personal customers', after: ' across The Dope Art and Luxury Wall Art (both 5-star Etsy)' },
+      { text: 'Built ', bold: 'Masterpiece Locator tool:', after: ' 4,094 paintings across 455+ museums' },
     ],
-    tags: ['E-commerce', 'Brand Building', 'Digital Art', 'SEO'],
+    tags: ['E-commerce', 'Brand Building', 'NFTs', 'Digital Art', 'SEO'],
   },
   {
     role: 'Real Estate Agent',
@@ -71,24 +70,11 @@ const workHistory = [
     location: 'Portland, OR',
     description: 'Residential real estate sales with focus on first-time homebuyers and investment properties.',
     achievements: [
-      'Closed $20M+ in total sales volume',
-      'Developed client relationships through digital marketing and referral networks',
-      'Managed full transaction lifecycle from lead generation to closing',
+      { text: 'Closed ', bold: '$20M+ in total sales volume', after: '' },
+      { text: 'Developed client relationships through ', bold: 'digital marketing and referral networks', after: '' },
+      { text: 'Managed ', bold: 'full transaction lifecycle', after: ' from lead generation to closing' },
     ],
     tags: ['Sales', 'Client Relations', 'Marketing'],
-  },
-  {
-    role: 'Customer Service Representative',
-    company: 'Netflix',
-    period: '2011 - 2013',
-    location: 'Hillsboro, OR',
-    description: 'Frontline customer support during Netflix\'s rapid growth phase, handling billing, technical issues, and account management.',
-    achievements: [
-      'Ranked in top 1% for customer satisfaction scores',
-      'Recognized for creative problem-solving and de-escalation skills',
-      'Trained new team members on company policies and best practices',
-    ],
-    tags: ['Customer Service', 'Problem Solving'],
   },
 ];
 
@@ -100,14 +86,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
-    skills: [
-      { name: 'Shopify', level: 95 },
-      { name: 'Etsy', level: 90 },
-      { name: 'Amazon Seller Central', level: 85 },
-      { name: 'Walmart Marketplace', level: 80 },
-      { name: 'TikTok Shop', level: 75 },
-      { name: 'WooCommerce', level: 70 },
-    ],
+    skills: ['Shopify', 'Etsy', 'Amazon Seller Central', 'Walmart Marketplace', 'TikTok Shop', 'WooCommerce'],
   },
   {
     title: 'SEO & Analytics',
@@ -116,14 +95,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    skills: [
-      { name: 'Google Analytics 4', level: 95 },
-      { name: 'Google Search Console', level: 95 },
-      { name: 'Ahrefs', level: 90 },
-      { name: 'Screaming Frog', level: 85 },
-      { name: 'SEMrush', level: 80 },
-      { name: 'YouTube SEO', level: 85 },
-    ],
+    skills: ['Google Analytics 4', 'Google Search Console', 'Ahrefs', 'Screaming Frog', 'SEMrush', 'YouTube SEO'],
   },
   {
     title: 'Design & Creative',
@@ -132,14 +104,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
       </svg>
     ),
-    skills: [
-      { name: 'Adobe Photoshop', level: 95 },
-      { name: 'Adobe Illustrator', level: 85 },
-      { name: 'Figma', level: 80 },
-      { name: 'Canva', level: 90 },
-      { name: 'Adobe Premiere Pro', level: 75 },
-      { name: '3D Mockups', level: 85 },
-    ],
+    skills: ['Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Canva', 'Adobe Premiere Pro', '3D Mockups'],
   },
   {
     title: 'Marketing & Ads',
@@ -149,14 +114,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
       </svg>
     ),
-    skills: [
-      { name: 'Google Ads', level: 85 },
-      { name: 'Meta Ads (Facebook/Instagram)', level: 90 },
-      { name: 'Email Marketing (Klaviyo)', level: 85 },
-      { name: 'Content Strategy', level: 90 },
-      { name: 'Social Media Management', level: 95 },
-      { name: 'Influencer Marketing', level: 75 },
-    ],
+    skills: ['Google Ads', 'Meta Ads (Facebook/Instagram)', 'Email Marketing (Klaviyo)', 'Content Strategy', 'Social Media Management', 'Influencer Marketing'],
   },
 ];
 
@@ -223,7 +181,6 @@ export default function AboutPage() {
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-[#111111] rounded-xl shadow-lg px-4 py-2 border border-[#d4a847]/20">
                   <p className="text-sm font-semibold text-white">Seattle, WA</p>
-                  <p className="text-xs text-emerald-500">Available for hire</p>
                 </div>
               </div>
             </div>
@@ -231,16 +188,16 @@ export default function AboutPage() {
             {/* Right - Bio */}
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Hey, I'm <span className="gradient-text">Jesse</span>
+                About <span className="gradient-text">Me</span>
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed mb-4">
+              <p className="text-xl text-gray-200 leading-relaxed mb-4">
                 I've been selling things online since I was 15, starting on eBay and eventually building multiple e-commerce brands. Now I manage digital operations for a Seattle retailer while running my own projects on the side.
               </p>
-              <p className="text-lg text-gray-400 leading-relaxed mb-4">
+              <p className="text-lg text-gray-300 leading-relaxed mb-4">
                 At Quality Sewing, I took organic traffic from 5K to 22K monthly visitors while managing $2M+ in annual sales. I handle everything: product catalog, SEO, paid ads, email, social, and the custom tools that tie it all together.
               </p>
-              <p className="text-lg text-gray-400 leading-relaxed mb-8">
-                I also run The Dope Art and Luxury Wall Art, two art brands I built from scratch to $120K+ in sales with 200K+ social followers. And when I see a problem worth solving, I build tools for it. Like my Masterpiece Locator that indexes 4,000+ paintings across 455 museums.
+              <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                On my own, I've built multiple brands from scratch. The Dope Art did $400K+ in art sales. Eternal Royals (my NFT project) generated $2M+ in sales. Between those and Luxury Wall Art, I've served 3,000+ customers with 5-star ratings on Etsy. I also build tools when I see a problem worth solving, like my Masterpiece Locator that indexes 4,000+ paintings across 455 museums.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -270,7 +227,7 @@ export default function AboutPage() {
                 <p className="text-3xl md:text-4xl font-bold gradient-text">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-gray-500 text-sm">{stat.label}</p>
+                <p className="mt-1 text-gray-400 text-sm">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -284,7 +241,7 @@ export default function AboutPage() {
             <span className="text-[#b8860b] font-medium tracking-wider uppercase text-sm">Experience</span>
             <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Work History</h2>
             <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-              From customer service to real estate to e-commerce, each role taught me something different about business, people, and getting things done.
+              From real estate to e-commerce, each role taught me something different about business, people, and getting things done.
             </p>
           </div>
 
@@ -334,7 +291,9 @@ export default function AboutPage() {
                         <svg className="w-5 h-5 text-[#d4a847] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>{achievement}</span>
+                        <span>
+                          {achievement.text}<strong className="text-gray-900">{achievement.bold}</strong>{achievement.after}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -361,20 +320,14 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">Education</h2>
           <div className="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
-            <div className="flex items-start gap-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold text-xl">UO</span>
+            <div className="flex items-center gap-6">
+              <div className="w-14 h-14 bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-bold text-lg">UO</span>
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900">University of Oregon</h3>
-                <p className="text-gray-700 mt-1">Bachelor of Science in Political Science</p>
-                <p className="text-gray-500 text-sm mt-2">
-                  Minors in Business Administration and Computer Science
-                </p>
-                <p className="text-gray-400 text-sm mt-2">Class of 2012 • Eugene, OR</p>
-                <p className="text-gray-600 mt-4 text-sm leading-relaxed">
-                  The poli-sci degree taught me how to research, analyze, and argue a position. The business minor gave me fundamentals. The CS minor sparked my interest in building things. The combination has served me well in e-commerce where you're constantly analyzing data, making decisions, and building solutions.
-                </p>
+                <p className="text-gray-700">BS Political Science, Minors in Business Admin & Computer Science</p>
+                <p className="text-gray-400 text-sm mt-1">Class of 2012</p>
               </div>
             </div>
           </div>
@@ -395,26 +348,20 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {skillCategories.map((category) => (
               <div key={category.title} className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#d4a847]/50 hover:shadow-lg transition-all">
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center text-[#b8860b]">
                     {category.icon}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{category.title}</h3>
                 </div>
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-gray-700 font-medium">{skill.name}</span>
-                        <span className="text-gray-500 text-sm">{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-[#d4a847] to-[#cd7f32] rounded-full"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
+                    <span
+                      key={skill}
+                      className="px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:border-[#d4a847]/40 hover:text-[#b8860b] transition-colors"
+                    >
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -429,7 +376,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">Philosophy</span>
             <h2 className="mt-2 text-3xl md:text-4xl font-bold text-white">How I Work</h2>
-            <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+            <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
               These are the principles that guide how I approach work. They're not just words on a page; they're how I actually operate.
             </p>
           </div>
@@ -439,7 +386,7 @@ export default function AboutPage() {
               <div key={value.title} className="bg-[#111111] border border-[#d4a847]/10 rounded-2xl p-6 hover:border-[#d4a847]/30 transition-all">
                 <div className="text-[#d4a847] mb-4">{value.icon}</div>
                 <h3 className="text-lg font-bold text-white mb-2">{value.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+                <p className="text-gray-300 text-sm leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>

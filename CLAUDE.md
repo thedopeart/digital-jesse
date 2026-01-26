@@ -9,8 +9,9 @@ Personal portfolio website for Jesse Johnson, a digital entrepreneur and creativ
 - **Location:** Seattle, WA (originally from Portland, OR)
 - **Current Role:** E-commerce Manager at Quality Sewing (qualitysewing.com)
 - **Experience:** 6 years Shopify expertise, 10+ years in online business (started with eBay at 15)
-- **Achievement:** $2.6M+ in total sales across physical and digital products
+- **Achievement:** $4.5M+ in total sales across e-commerce, NFTs, and digital products
 - **Proven Results:** 852% sales growth, $60K+ organic conversions, 9,200 ranking keywords grown from zero
+- **Customers:** 3,000+ personal customers across The Dope Art and Luxury Wall Art (both 5-star Etsy shops)
 - **Education:** University of Oregon (2012), BS Political Science, Minors in Business Admin & Computer Science
 
 ### Work History
@@ -19,7 +20,7 @@ Personal portfolio website for Jesse Johnson, a digital entrepreneur and creativ
 |------|---------|-------|-----------------|
 | E-commerce Manager | Quality Sewing | Current | $2M+/year revenue, 5K→22K organic traffic, 5,000+ products, 10+ tools built |
 | Business Consultant | Self-Employed | 2022-Current | Freelance SEO, design, content for Pharma, Finance, E-commerce |
-| Founder | Luxury Wall Art & The Dope Art | 2019-Current | $2.6M sales, 9,000+ digital assets, 2,700+ products |
+| Founder | Luxury Wall Art, The Dope Art, Eternal Royals | 2019-Current | $4.5M+ total sales, 9,000+ digital assets, 3,000+ customers |
 | Real Estate Agent | Premiere Property Group | 2013-2019 | $20M in closed sales |
 | CSR | Netflix | 2011-2013 | Top 1% for satisfaction & problem-solving |
 
@@ -42,11 +43,11 @@ Personal portfolio website for Jesse Johnson, a digital entrepreneur and creativ
 | Brand/Project | Description |
 |---------------|-------------|
 | Masterpieces Locator | Full art discovery platform: 4,094+ paintings, 455+ museums, searchable by artist/era/movement (luxurywallart.com/apps/masterpieces) |
-| Luxury Wall Art | E-commerce art store: $120K revenue ($67K Shopify, $53K Etsy), 0→9,200 keywords, DA 1→20 |
-| The Dope Art | Custom canvas prints: 300→8,000 keywords, 200→5,437 monthly traffic, 950+ backlinks |
-| Eternal Royals | NFT/blockchain art project |
+| Luxury Wall Art | E-commerce art store: $120K revenue ($67K Shopify, $53K Etsy), 0→9,200 keywords, DA 1→20, 5-star Etsy shop |
+| The Dope Art | Custom canvas art brand: $400K+ in sales, 200K+ social followers, 5-star Etsy shop, 3,000+ customers combined with LWA |
+| Eternal Royals | NFT/blockchain art project: $2M+ in primary sales, 10% commissions on $2M+ in art resales, 9,000+ digital assets created |
 | Quick Lenders | Finance sector website connecting lenders to businesses |
-| Date Ideas | Lifestyle project with date inspiration for couples worldwide |
+| Date Ideas | Full dating platform (dateideas.com): React/Vite app, 10+ interactive dating tools and generators, currently building from scratch |
 
 ### Freelance/Contract Work
 
@@ -152,20 +153,32 @@ Don't do these:
 - Social media management (Instagram, TikTok, Facebook, Twitter, Reddit, LinkedIn, Pinterest)
 
 ### Vibe Coding / Tool Building
+- React, Next.js, Vite web applications
 - **Masterpiece Locator**: Full art discovery platform with 4,094+ paintings across 455+ museums worldwide
   - Searchable database by artist, artwork, museum, era, movement
   - Featured artists with work counts (Rembrandt: 225, Monet: 167, Degas: 110, etc.)
   - Browse by era: Renaissance, Baroque, 19th Century, Modern
   - SEO-driven content tool for organic traffic
-- Built 10+ interactive calculators for Quality Sewing (qualitysewing.com/pages/sewing-calculators)
-- Custom web tools for user engagement and SEO
-- Spec tools and converters
+- **DateIdeas.com**: Full dating/relationship platform built from scratch in React
+  - 10+ interactive dating tools and generators
+  - Personalized date ideas, planning features, digital scrapbooks
+  - Currently in active development
+- Built 12+ interactive calculators for Quality Sewing (qualitysewing.com/pages/sewing-calculators)
+- 30+ custom tools built total across all projects
+- Custom Shopify app development
 - Focus: lower bounce rate, drive organic traffic, increase customer engagement
 
 ### Digital Art
 - Custom illustrations and animations
-- NFT creation and blockchain integration
+- NFT creation and blockchain integration (Eternal Royals: $2M+ primary sales)
 - Print-on-demand products
+- 9,000+ digital assets created
+
+### Vibe Coding
+- Building full web apps with AI-assisted development
+- React, Next.js, Vite, Tailwind CSS
+- Rapid prototyping and shipping functional tools
+- dateideas.com, Masterpiece Locator, calculators, and more
 
 ---
 

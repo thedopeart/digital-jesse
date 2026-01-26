@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Jesse Johnson",
   },
   description:
-    "Digital marketer and e-commerce specialist with $2.6M+ in sales. 6 years Shopify experience. Currently E-commerce Manager at Quality Sewing.",
+    "Digital marketer and e-commerce specialist with $4.5M+ in sales. 6 years Shopify experience. Currently E-commerce Manager at Quality Sewing.",
   keywords: [
     "digital marketing",
     "e-commerce",
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     siteName: "Jesse Johnson",
     title: "Jesse Johnson | Digital Marketing & E-commerce",
     description:
-      "Digital marketer and e-commerce specialist with $2.6M+ in sales.",
+      "Digital marketer and e-commerce specialist with $4.5M+ in sales.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Jesse Johnson | Digital Marketing & E-commerce",
     description:
-      "Digital marketer and e-commerce specialist with $2.6M+ in sales.",
+      "Digital marketer and e-commerce specialist with $4.5M+ in sales.",
   },
   robots: {
     index: true,

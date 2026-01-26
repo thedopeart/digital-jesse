@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
+import AnimatedServiceIllustration from '@/components/animations/AnimatedServiceIllustration';
+import type { ServiceType } from '@/components/animations/AnimatedServiceIllustration';
 
 export const metadata: Metadata = {
   title: 'Skills',
@@ -22,8 +23,6 @@ const services = [
       'Conversion rate optimization',
       'Customer experience improvements',
     ],
-    image: '/images/services/analytics.png',
-    color: 'blue',
     stats: [
       { value: '$2M+', label: 'Annual Revenue Managed' },
       { value: '5,000+', label: 'Products Managed' },
@@ -43,11 +42,9 @@ const services = [
       'Link building strategy',
       'Performance tracking and reporting',
     ],
-    image: '/images/services/seo-blog.png',
-    color: 'green',
     stats: [
       { value: '5K→22K', label: 'Organic Traffic Growth' },
-      { value: '9,200+', label: 'Ranking Keywords' },
+      { value: '6K→21K+', label: 'Ranking Keywords' },
       { value: '0→DA 20', label: 'Domain Authority' },
     ],
   },
@@ -55,21 +52,19 @@ const services = [
     id: 'project-management',
     title: 'Project & Operations Management',
     description:
-      'I keep projects moving and teams aligned. From coordinating cross-functional initiatives to building processes that scale, I focus on outcomes over activity.',
+      'I spot the opportunity, build the plan, and execute it. At Quality Sewing I took over an underperforming online store and turned it into a $2M+/year operation. On my own, I\'ve launched 5 brands from scratch. I know how to prioritize, delegate, and get things across the finish line.',
     bullets: [
-      'Cross-functional team coordination',
-      'Process documentation and optimization',
-      'Vendor and contractor management',
-      'Timeline and milestone tracking',
-      'Resource allocation and prioritization',
-      'Stakeholder communication',
+      'Full business growth strategy and execution',
+      'Identifying revenue opportunities and acting on them',
+      'Delegating and managing freelancers and vendors',
+      'Process building that scales (not just documentation)',
+      'Multi-channel operations across 5+ platforms',
+      'Grew Quality Sewing from 5K to 22K monthly organic visitors',
     ],
-    image: '/images/services/workflow.png',
-    color: 'purple',
     stats: [
-      { value: '10+', label: 'Tools Built' },
-      { value: '6 Years', label: 'E-commerce Experience' },
-      { value: '$2.6M+', label: 'Total Sales Managed' },
+      { value: '5', label: 'Brands Built From Scratch' },
+      { value: '340%', label: 'Organic Growth (Quality Sewing)' },
+      { value: '$4.5M+', label: 'Total Revenue Generated' },
     ],
   },
   {
@@ -85,8 +80,6 @@ const services = [
       'A/B testing and optimization',
       'Marketing calendar management',
     ],
-    image: '/images/services/social-icons.png',
-    color: 'orange',
     stats: [
       { value: '852%', label: 'Sales Growth' },
       { value: '$60K+', label: 'Organic Conversions' },
@@ -97,42 +90,38 @@ const services = [
     id: 'design-creative',
     title: 'Design & Creative Direction',
     description:
-      'Visual communication that converts. From product mockups to pitch decks, I create polished materials that tell your story clearly.',
+      'Photoshop is my strongest tool. I\'ve been making digital art and designs in it for over a decade, long before AI was a thing. I design, build, and ship. From mockups to full UI implementation, video edits to brand identities.',
     bullets: [
-      'Product photography direction',
-      'Pitch deck and presentation design',
-      'Brand identity and guidelines',
-      'Infographics and data visualization',
-      'UI/UX wireframes and mockups',
-      'Marketing collateral design',
+      'Advanced Photoshop: digital art, compositing, photo manipulation',
+      'UI/UX design and front-end implementation (Figma to code)',
+      'Video editing and motion graphics (Premiere Pro)',
+      'Brand identity, logos, and style guides',
+      'Pitch decks, infographics, and marketing collateral',
+      'Product mockups and 3D renders',
     ],
-    image: '/images/services/art-design.png',
-    color: 'pink',
     stats: [
-      { value: 'Adobe CC', label: 'Photoshop, Illustrator, Premiere' },
-      { value: 'Figma', label: 'UI/UX Design' },
-      { value: '9,000+', label: 'Digital Assets Created' },
+      { value: '10+ Years', label: 'Photoshop Experience' },
+      { value: 'Figma', label: 'Design to Code' },
+      { value: '5 Brands', label: 'Visual Identities Built' },
     ],
   },
   {
     id: 'tool-building',
     title: 'Tool & App Development',
     description:
-      'Custom tools that solve real problems. I build calculators, databases, and interactive features that improve user engagement and drive organic traffic.',
+      'I build React and Next.js tools that solve real problems and drive traffic. Calculators, databases, interactive features. If it helps users and ranks on Google, I\'ve probably built one.',
     bullets: [
+      'React and Next.js web applications',
       'Custom Shopify app development',
-      'Interactive calculators and tools',
-      'Database design and implementation',
-      'API integrations',
-      'Automation and workflow tools',
-      'SEO-driven content tools',
+      '12+ interactive calculators (sewing, quilting, fabric)',
+      '10+ dating tools and generators',
+      'Full-stack database apps (4,000+ records, search, filtering)',
+      'API integrations and automation',
     ],
-    image: '/images/services/workflow.png',
-    color: 'teal',
     stats: [
-      { value: '4,094', label: 'Paintings in Masterpiece Locator' },
-      { value: '455+', label: 'Museums Indexed' },
-      { value: '10+', label: 'Custom Tools Built' },
+      { value: '30+', label: 'Custom Tools Built' },
+      { value: '12+', label: 'Interactive Calculators' },
+      { value: '4,000+', label: 'Database Records (Masterpiece Locator)' },
     ],
   },
 ];
@@ -152,15 +141,6 @@ const tools = [
   { name: 'Slack', category: 'Communication' },
 ];
 
-const colorMap: Record<string, { bg: string; border: string; text: string; light: string }> = {
-  blue: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
-  green: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
-  purple: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
-  orange: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
-  pink: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
-  teal: { bg: 'bg-[#d4a847]', border: 'border-[#d4a847]', text: 'text-[#d4a847]', light: 'bg-[#d4a847]/10' },
-};
-
 export default function ServicesPage() {
   return (
     <div className="min-h-screen">
@@ -173,7 +153,7 @@ export default function ServicesPage() {
           <h1 className="mt-2 text-4xl md:text-5xl font-bold text-white">
             What I Do
           </h1>
-          <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             E-commerce management, digital marketing, and project leadership. I help businesses grow online through strategic execution and hands-on management.
           </p>
         </div>
@@ -192,14 +172,12 @@ export default function ServicesPage() {
           >
             <div className="max-w-7xl mx-auto px-6">
               <div className={`grid lg:grid-cols-2 gap-12 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
-                {/* Image Side - No card background */}
+                {/* Illustration Side */}
                 <div className={`${isReversed ? 'lg:order-2' : ''}`}>
                   <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-contain"
+                    <AnimatedServiceIllustration
+                      type={service.id as ServiceType}
+                      variant={isDarkSection ? 'dark' : 'light'}
                     />
                   </div>
                 </div>
@@ -214,7 +192,7 @@ export default function ServicesPage() {
                     </h2>
                   </div>
 
-                  <p className={`text-lg leading-relaxed mb-6 ${isDarkSection ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <p className={`text-lg leading-relaxed mb-6 ${isDarkSection ? 'text-gray-300' : 'text-gray-600'}`}>
                     {service.description}
                   </p>
 
@@ -225,7 +203,7 @@ export default function ServicesPage() {
                         <svg className="w-5 h-5 text-[#d4a847] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className={`font-semibold ${isDarkSection ? 'text-gray-300' : 'text-gray-700'}`}>{bullet}</span>
+                        <span className={`font-semibold ${isDarkSection ? 'text-gray-200' : 'text-gray-700'}`}>{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -238,7 +216,7 @@ export default function ServicesPage() {
                         className="rounded-xl p-4 text-center bg-[#252525] border border-[#d4a847]/20"
                       >
                         <p className="text-xl font-bold text-[#d4a847]">{stat.value}</p>
-                        <p className="text-xs mt-1 text-gray-300">{stat.label}</p>
+                        <p className="text-xs mt-1 text-gray-200">{stat.label}</p>
                       </div>
                     ))}
                   </div>
@@ -325,7 +303,7 @@ export default function ServicesPage() {
 
                     {/* Content */}
                     <h3 className="text-xl font-bold text-white mb-3">{phase.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{phase.description}</p>
+                    <p className="text-gray-300 text-sm leading-relaxed">{phase.description}</p>
                   </div>
                 </div>
               ))}

@@ -38,46 +38,48 @@ export default function Header() {
       className="sticky top-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#d4a847]/10"
     >
       <nav className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 md:h-[129px]">
           {/* Logo/Name */}
           <Link
             href="/"
             className="group flex items-center gap-3"
           >
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#d4a847] to-[#cd7f32] flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-amber-900/20 transition-all">
-              <span className="text-black font-bold text-lg">JJ</span>
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#d4a847] to-[#cd7f32] flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-amber-900/30 transition-all">
+              <span className="text-black font-bold text-xl">JJ</span>
             </div>
             <div className="hidden sm:block">
-              <span className="text-lg font-bold text-white group-hover:text-[#d4a847] transition-colors">
+              <span className="text-xl font-bold text-white group-hover:text-[#d4a847] transition-colors">
                 Jesse Johnson
               </span>
-              <p className="text-xs text-gray-500 -mt-0.5">Digital Portfolio</p>
+              <p className="text-xs text-gray-400">E-commerce & Growth</p>
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                    isActive(link.href)
-                      ? 'bg-[#d4a847] text-black shadow-md'
-                      : 'text-gray-400 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {/* Desktop nav - centered with pill background */}
+          <div className="hidden md:flex items-center">
+            <ul className="flex items-center gap-1 bg-white/5 rounded-full px-2 py-1.5">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`px-5 py-2 rounded-full font-medium transition-all duration-200 ${
+                      isActive(link.href)
+                        ? 'bg-[#d4a847] text-black shadow-md'
+                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="px-5 py-2.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-lg font-medium shadow-md hover:shadow-lg hover:shadow-amber-900/30 hover:scale-[1.02] transition-all duration-200"
+              className="px-6 py-2.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-full font-semibold shadow-lg hover:shadow-xl hover:shadow-amber-900/30 hover:scale-[1.03] transition-all duration-200"
             >
               Let's Talk
             </Link>
@@ -86,7 +88,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+            className="md:hidden p-2.5 rounded-xl text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -122,10 +124,10 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
+                    className={`block px-4 py-3.5 rounded-xl font-medium transition-colors ${
                       isActive(link.href)
                         ? 'bg-[#d4a847] text-black'
-                        : 'text-gray-400 hover:text-white hover:bg-white/5'
+                        : 'text-gray-300 hover:text-white hover:bg-white/5'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -137,7 +139,7 @@ export default function Header() {
             <div className="mt-4 pt-4 border-t border-[#d4a847]/10">
               <Link
                 href="/contact"
-                className="block w-full px-4 py-3 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black text-center rounded-lg font-medium shadow-md"
+                className="block w-full px-4 py-3.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black text-center rounded-xl font-semibold shadow-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Let's Talk

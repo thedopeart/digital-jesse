@@ -16,9 +16,9 @@ import ProjectCard from '@/components/ProjectCard';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: '$2.6M+', label: 'Sales Managed' },
+  { value: '$4.5M+', label: 'Revenue Generated' },
   { value: '340%', label: 'Organic Growth' },
-  { value: '5K+', label: 'Products Managed' },
+  { value: '3K+', label: 'Customers Served' },
   { value: '6 Years', label: 'Shopify Experience' },
 ];
 
@@ -40,16 +40,16 @@ const featuredProjects = [
   {
     slug: 'luxury-wall-art',
     title: 'Luxury Wall Art',
-    description: 'Art e-commerce brand. Started from zero, grew to $120K in sales.',
-    metric: '$120K total revenue',
+    description: 'Art e-commerce brand built from zero. Part of a portfolio that generated $2.5M+ across art and NFT brands.',
+    metric: '5-star Etsy shop',
     tags: ['Shopify', 'Etsy'],
   },
   {
     slug: 'date-ideas',
     title: 'Date Ideas',
-    description: 'Lifestyle project with date inspiration for couples. Content-driven SEO play.',
-    metric: 'Growing organic traffic',
-    tags: ['Content', 'SEO'],
+    description: 'Full dating platform built from scratch in React. 10+ interactive tools and generators.',
+    metric: '10+ tools built',
+    tags: ['React', 'Vibe Coding'],
   },
 ];
 
@@ -57,6 +57,7 @@ const skills = [
   {
     title: 'SEO & Growth',
     desc: 'Data-driven strategies',
+    href: '/portfolio#seo',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -66,6 +67,7 @@ const skills = [
   {
     title: 'E-commerce',
     desc: '6 years Shopify expertise',
+    href: '/portfolio#ecommerce',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -75,6 +77,7 @@ const skills = [
   {
     title: 'Design',
     desc: 'Wireframes to production',
+    href: '/portfolio#design',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -82,8 +85,9 @@ const skills = [
     ),
   },
   {
-    title: 'Tool Building',
-    desc: 'Custom web solutions',
+    title: 'Vibe Coding',
+    desc: '30+ tools built',
+    href: '/portfolio/masterpieces',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -93,6 +97,7 @@ const skills = [
   {
     title: 'Analytics',
     desc: 'GA4, Search Console',
+    href: '/portfolio#seo',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -102,6 +107,7 @@ const skills = [
   {
     title: 'Paid Ads',
     desc: 'Google, Meta, TikTok',
+    href: '/portfolio/paid-sm-marketing',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
@@ -112,6 +118,7 @@ const skills = [
   {
     title: 'Content',
     desc: 'Blogs, copy, strategy',
+    href: '/portfolio/blog-example-1',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -121,6 +128,7 @@ const skills = [
   {
     title: 'Social Media',
     desc: '200K+ followers built',
+    href: '/portfolio/social-media-management',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -178,11 +186,11 @@ export default function Home() {
       <section ref={heroRef} className="relative bg-[#0a0a0a]">
         <GradientMesh variant="hero" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-10 md:py-12">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             {/* Photo */}
             <div ref={photoRef} className="relative flex-shrink-0">
-              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/20 shadow-xl">
+              <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-white/20 shadow-xl">
                 <Image
                   src="/images/headshots/jesse-pfp.jpg"
                   alt="Jesse Johnson"
@@ -194,15 +202,15 @@ export default function Home() {
             </div>
 
             {/* Text */}
-            <div className="text-center md:text-left max-w-2xl">
+            <div className="text-center md:text-left flex-1 max-w-xl">
               <h1 ref={nameRef} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
                 Jesse Johnson
               </h1>
               <div ref={bioRef}>
-                <p className="mt-4 text-lg md:text-xl text-gray-300 leading-relaxed">
+                <p className="mt-4 text-lg md:text-xl text-gray-200 leading-relaxed">
                   E-commerce manager and growth specialist. I build tools, optimize funnels, and turn traffic into revenue.
                 </p>
-                <p className="mt-3 text-gray-500 text-sm">
+                <p className="mt-3 text-gray-400 text-sm">
                   Currently at{' '}
                   <a
                     href="https://qualitysewing.com"
@@ -227,16 +235,16 @@ export default function Home() {
             </div>
 
             {/* Stats */}
-            <div className="hidden md:grid grid-cols-2 gap-3 flex-shrink-0">
+            <div className="hidden md:grid grid-cols-2 gap-4 flex-shrink-0">
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="glass rounded-lg p-3 text-center hover-lift"
+                  className="glass rounded-xl px-7 py-6 text-center hover-lift min-w-[160px]"
                 >
-                  <p className="text-xl font-bold gradient-text">
+                  <p className="text-[2rem] font-bold gradient-text whitespace-nowrap">
                     <CountUp end={stat.value} delay={index * 0.15} />
                   </p>
-                  <p className="mt-1 text-gray-400 text-[11px] uppercase tracking-wider font-medium">
+                  <p className="mt-2 text-gray-300 text-xs uppercase tracking-wider font-medium leading-tight">
                     {stat.label}
                   </p>
                 </div>
@@ -254,7 +262,7 @@ export default function Home() {
                 <p className="text-xl font-bold gradient-text">
                   <CountUp end={stat.value} delay={index * 0.15} />
                 </p>
-                <p className="mt-1 text-gray-400 text-[11px] uppercase tracking-wider font-medium">
+                <p className="mt-1 text-gray-300 text-[11px] uppercase tracking-wider font-medium">
                   {stat.label}
                 </p>
               </div>
@@ -311,20 +319,21 @@ export default function Home() {
           <AnimatedSection stagger={0.05}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {skills.map((skill) => (
-                <div
+                <Link
                   key={skill.title}
-                  className="bg-white rounded-xl p-6 hover-lift group border border-gray-200 hover:border-[#d4a847]/40 transition-all text-center"
+                  href={skill.href}
+                  className="bg-white rounded-xl p-6 hover-lift group border border-gray-200 hover:border-[#d4a847]/40 transition-all text-center block"
                 >
                   <div className="text-[#d4a847] flex justify-center [&>svg]:w-8 [&>svg]:h-8">
                     {skill.icon}
                   </div>
-                  <h3 className="mt-3 text-lg font-bold text-gray-900">
+                  <h3 className="mt-3 text-lg font-bold text-gray-900 group-hover:text-[#b8860b] transition-colors">
                     {skill.title}
                   </h3>
                   <p className="mt-1 text-gray-600 text-base">
                     {skill.desc}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </AnimatedSection>
@@ -339,7 +348,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold text-white">
               Ready to work together?
             </h2>
-            <p className="mt-4 text-gray-400 max-w-xl mx-auto">
+            <p className="mt-4 text-gray-300 max-w-xl mx-auto">
               Looking for my next role in e-commerce, digital marketing, or growth. Remote or Seattle.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">

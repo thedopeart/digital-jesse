@@ -136,7 +136,7 @@ export default function PortfolioPage() {
             <div className="md:w-3/5">
               <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">Portfolio</span>
               <h1 className="mt-2 text-3xl md:text-4xl font-bold text-white">Jesse Johnson Digital Portfolio</h1>
-              <p className="mt-4 text-gray-400 leading-relaxed">
+              <p className="mt-4 text-gray-300 leading-relaxed">
                 I'm Jesse Johnson, focused on crafting web designs, developing e-commerce platforms, and creating impactful branding.
               </p>
             </div>
@@ -222,7 +222,7 @@ export default function PortfolioPage() {
       <section className="bg-[#1e1e1e] py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white">Want to work together?</h2>
-          <p className="mt-3 text-gray-400">I'm open to full-time roles and freelance projects.</p>
+          <p className="mt-3 text-gray-300">I'm open to full-time roles and freelance projects.</p>
           <div className="mt-8">
             <Link
               href="/contact"

@@ -12,27 +12,27 @@ export default function Footer() {
               </div>
               <p className="text-white font-medium">Jesse Johnson</p>
             </div>
-            <p className="text-gray-500 text-sm mt-2">Seattle, WA</p>
+            <p className="text-gray-400 text-sm mt-2">Seattle, WA</p>
           </div>
 
           <div className="flex items-center gap-6">
             <a
-              href="https://linkedin.com/in/jessejohnson"
+              href="https://linkedin.com/in/digitaljesse"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-[#d4a847] transition-colors underline-grow"
+              className="text-gray-400 hover:text-[#d4a847] transition-colors underline-grow"
             >
               LinkedIn
             </a>
             <a
               href="mailto:jesse@digitaljesse.com"
-              className="text-gray-500 hover:text-[#d4a847] transition-colors underline-grow"
+              className="text-gray-400 hover:text-[#d4a847] transition-colors underline-grow"
             >
-              Email
+              jesse@digitaljesse.com
             </a>
             <Link
               href="/resume.pdf"
-              className="text-gray-500 hover:text-[#d4a847] transition-colors underline-grow"
+              className="text-gray-400 hover:text-[#d4a847] transition-colors underline-grow"
             >
               Resume
             </Link>
@@ -41,10 +41,10 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-[#d4a847]/10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} Jesse Johnson. All rights reserved.
             </p>
-            <p className="text-gray-700 text-xs">
+            <p className="text-gray-500 text-xs">
               E-commerce Manager & Growth Specialist
             </p>
           </div>

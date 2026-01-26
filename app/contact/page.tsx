@@ -14,7 +14,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <span className="text-[#d4a847] font-medium tracking-wider uppercase text-sm">Contact</span>
           <h1 className="mt-2 text-4xl md:text-5xl font-bold text-white">Get in Touch</h1>
-          <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Looking for my next full-time gig. Also open to freelance if the project makes sense. Send me a note and I'll get back to you.
           </p>
         </div>
