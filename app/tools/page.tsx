@@ -18,6 +18,12 @@ const tools = [
         status: 'live' as const,
       },
       {
+        name: 'Affiliate Opportunity Finder',
+        description: 'Find affiliate revenue hiding in your existing content. Matches brand mentions to 500+ programs.',
+        href: '/tools/seo/affiliate-opportunity-finder',
+        status: 'live' as const,
+      },
+      {
         name: 'Bulk Title/Meta Auditor',
         description: 'Audit every title tag and meta description on your site in seconds.',
         href: '/tools/seo/meta-auditor',

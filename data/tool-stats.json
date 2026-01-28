@@ -3,5 +3,10 @@
     "sites_analyzed": 3,
     "links_found": 66,
     "pages_crawled": 84
+  },
+  "affiliate-opportunity-finder": {
+    "sites_analyzed": 35,
+    "links_found": 313,
+    "pages_crawled": 1027
   }
 }
