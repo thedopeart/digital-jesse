@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# linkedin cli
+tools/linkedin-cli/data/
+tools/linkedin-cli/dist/
+tools/linkedin-cli/node_modules/

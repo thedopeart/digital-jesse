@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,9 +8,13 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#d4a847] to-[#cd7f32] flex items-center justify-center">
-                <span className="text-black font-bold text-sm">JJ</span>
-              </div>
+              <Image
+                src="/images/logos/dj-logo-176.png"
+                alt="DJ Logo"
+                width={32}
+                height={32}
+                className="rounded-lg"
+              />
               <p className="text-white font-medium">Jesse Johnson</p>
             </div>
             <p className="text-gray-400 text-sm mt-2">Seattle, WA</p>

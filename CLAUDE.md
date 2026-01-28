@@ -64,14 +64,17 @@ All content for this project must follow these rules:
 
 ### Voice
 - Confident but not arrogant. Let results speak for themselves.
-- Professional yet personable. You're talking to potential employers and clients.
-- Clear and direct. No fluff.
+- Professional yet personable. You're talking to potential employers, clients, and fellow creators.
+- Clear, direct, and grounded. Jesse is a builder who ships real things, not someone who talks in abstractions.
 - Write naturally. Output should sound human and pass AI detection.
+- Stay grammatically correct without being stiff or robotic.
+- Match the context: portfolio copy is polished but not corporate. Tool descriptions are practical. Blog content is conversational.
 
 ### Brevity
 - Be concise. Every sentence should earn its place.
 - Lead with value. What can Jesse do for them?
 - Avoid padding and filler words.
+- Match detail level to information provided. Minimal info = minimal copy. Don't invent details.
 
 ### Formatting
 - Never use em dashes. Use periods, commas, or colons instead.
@@ -82,7 +85,9 @@ All content for this project must follow these rules:
 
 ## AI Detection Avoidance
 
-All content must sound natural and human. AI-generated content hurts credibility with recruiters and clients.
+All content must sound natural and human. AI-generated content hurts credibility, triggers reader skepticism, and may be penalized by search engines.
+
+**Why This Matters:** AI detectors analyze patterns, probabilities, and sentence structure. They look for predictable rhythm (AI text lacks "burstiness"), overused vocabulary, and formulaic structures.
 
 ### Banned Words (never use)
 
@@ -90,36 +95,75 @@ All content must sound natural and human. AI-generated content hurts credibility
 |----------|--------------|
 | Superlatives | exceptional, unparalleled, cutting-edge, groundbreaking, revolutionary, transformative, remarkable, game-changing |
 | Corporate buzzwords | leverage, synergy, robust, seamless, holistic, paradigm, streamline, optimize, utilize |
-| Overused adjectives | comprehensive, vital, pivotal, compelling, intriguing, thought-provoking, incredible, amazing, captivating, exquisite, stunning |
+| Overused adjectives | comprehensive, vital, pivotal, compelling, intriguing, thought-provoking, incredible, amazing, captivating, exquisite, stunning, majesty |
 | Action verbs | unleash, unlock, empower, embark, delve, foster, navigate, harness, elevate |
 | Transitions | furthermore, moreover, additionally, consequently, thus, hence |
-| AI favorites | tapestry, multifaceted, meticulous, testament, endeavors, realm, myriad, plethora, paramount, intricate, bespoke, curated |
+| AI favorites | tapestry, multifaceted, meticulous, testament, endeavors, realm, myriad, plethora, paramount, intricate, bespoke, curated, a touch of |
+
+### Use Instead
+
+| Instead of | Write |
+|------------|-------|
+| exceptional | really good, worth it |
+| comprehensive | complete, full, everything you need |
+| seamlessly integrated | works well together, fits right in |
+| navigate the landscape | figure out, find your way through |
+| foster meaningful connections | actually connect, get closer |
+| embark on a journey | try, start with |
+| leverage this opportunity | use this, take advantage of |
+| it's important to note | (just state it directly) |
+| captivating | striking, eye-catching |
+| stunning | bold, striking |
 
 ### Banned Phrases (never use)
 
 | Category | Phrases to Ban |
 |----------|----------------|
-| Generic openers | "Whether you're...", "In today's world...", "In the ever-evolving landscape...", "In an age where...", "Passionate about..." |
+| Generic openers | "Whether you're...", "In today's world...", "In the ever-evolving landscape...", "In an age where...", "In the world of...", "Passionate about..." |
 | Filler phrases | "It's important to note that", "This means that", "When it comes to", "At its core", "It's worth noting" |
+| AI conclusions | "In conclusion", "In summary", "In essence", "Only time will tell", "It remains to be seen", "Paving the way" |
+| Empowerment clichés | "Take X to the next level", "Unlock your potential", "Transform your approach", "Transform your space", "Make a statement" |
+| Creative clichés | "Embark on a journey", "A tapestry of...", "Woven into the fabric of...", "Paint a picture with words" |
+| Vague benefits | "Designed to help", "Can be used to", "May help you", "Aims to provide" |
+| Sales phrases | "Look no further", "Not only... but also", "Rest assured", "Dive into", "A wide array of", "Game-changing" |
 | Portfolio clichés | "I bring ideas to life", "I craft experiences", "I tell stories through design", "Detail-oriented professional", "Digital Dreamweaver" |
 | Vague claims | "Results-driven", "Self-starter", "Team player", "Think outside the box", "Wear many hats" |
 | Current site problems | "tapestry", "transformative growth", "digital dreams", "birthing a digital experience" |
 
+### Sentence Structure Red Flags
+
+Avoid these AI writing patterns:
+- Formulaic introductions starting with broad hook statements
+- Symmetrical lists with perfectly balanced pros/cons
+- Repetitive connectors ("however," "therefore," "in addition")
+- Uniform sentence length (AI struggles to mix short and long naturally)
+- Three adjectives in a row ("innovative, comprehensive, transformative")
+- Starting paragraphs with "Additionally," "Furthermore," or "Moreover"
+
 ### How to Sound Human
 
 Do these:
-- Use contractions: "don't" not "do not", "I've" not "I have"
+- Use contractions: "don't" not "do not", "I've" not "I have", "you'll" not "you will"
 - Add casual transitions: "honestly," "to be fair," "the thing is," "here's the deal"
-- Vary sentence length dramatically
-- Use first person naturally
+- Vary sentence length dramatically (3 words. Then maybe twenty-five words with commas and parentheses.)
+- Use first person naturally: I, we, you, my, your
 - Include specific numbers and results
+- Use idioms and colloquialisms: "a no-brainer," "worth checking out," "solid choice"
 - Read it aloud. If it sounds like a LinkedIn bio generator, rewrite it.
 
 Don't do these:
 - Start paragraphs with transitional adverbs
 - Use three adjectives in a row
 - Write vague claims without proof
+- End with generic calls-to-action
+- Write perfectly balanced bullet points
 - Use em dashes (use commas, periods, or parentheses instead)
+
+### Opening Sentence Rules
+- Never start with "Welcome to" or "Introducing"
+- Never start with a question
+- Never start with "Looking for...?"
+- Get to the point immediately
 
 ---
 

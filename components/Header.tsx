@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
@@ -24,6 +25,7 @@ export default function Header() {
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Skills' },
     { href: '/portfolio', label: 'Portfolio' },
+    { href: '/tools', label: 'Tools' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -44,12 +46,17 @@ export default function Header() {
             href="/"
             className="group flex items-center gap-3"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#d4a847] to-[#cd7f32] flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-amber-900/30 transition-all">
-              <span className="text-black font-bold text-xl">JJ</span>
-            </div>
+            <Image
+              src="/images/logos/dj-logo-176.png"
+              alt="DJ Logo"
+              width={56}
+              height={56}
+              className="rounded-xl shadow-lg group-hover:shadow-xl group-hover:shadow-amber-900/30 transition-all"
+              priority
+            />
             <div className="hidden sm:block">
               <span className="text-xl font-bold text-white group-hover:text-[#d4a847] transition-colors">
-                Jesse Johnson
+                Digital Jesse
               </span>
               <p className="text-xs text-gray-400">E-commerce & Growth</p>
             </div>

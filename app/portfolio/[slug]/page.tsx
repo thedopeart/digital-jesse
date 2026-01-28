@@ -217,6 +217,11 @@ export default async function PortfolioDetailPage({ params }: Props) {
                     {section.heading}
                   </h2>
                   <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] rounded-full mb-6" />
+                  {section.content && (
+                    <p className="text-gray-300 leading-relaxed text-center max-w-3xl mx-auto mb-6">
+                      <FormattedText text={section.content} boldClassName="text-white" />
+                    </p>
+                  )}
                   {section.bullets && section.bullets.length > 0 && (
                     <div className="grid md:grid-cols-2 gap-x-10 gap-y-4 max-w-4xl mx-auto">
                       {section.bullets.map((bullet, i) => (
