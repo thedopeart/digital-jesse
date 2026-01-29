@@ -9037,5 +9037,1766 @@
     "signupUrl": "https://www.airbnb.com/",
     "category": "entertainment",
     "description": "Unique local activities hosted by locals. Cooking classes, walking tours, art workshops, and more."
+  },
+  {
+    "brand": "Brother",
+    "variations": [
+      "brother",
+      "brother sewing",
+      "brother.com",
+      "brother machine",
+      "brother sewing machine",
+      "brother embroidery"
+    ],
+    "program": "Brother Affiliate Program",
+    "commission": "3-5%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://www.brother-usa.com/",
+    "category": "craft",
+    "description": "Sewing machines, embroidery machines, and crafting tools. One of the top sewing machine brands worldwide."
+  },
+  {
+    "brand": "Singer",
+    "variations": [
+      "singer",
+      "singer sewing",
+      "singer.com",
+      "singer machine",
+      "singer sewing machine"
+    ],
+    "program": "SVP Worldwide Affiliate Program",
+    "commission": "5%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.singer.com/",
+    "category": "craft",
+    "description": "Iconic sewing machine brand since 1851. Home sewing machines, sergers, and accessories."
+  },
+  {
+    "brand": "PFAFF",
+    "variations": [
+      "pfaff",
+      "pfaff sewing",
+      "pfaff machine"
+    ],
+    "program": "SVP Worldwide Affiliate Program",
+    "commission": "5%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.pfaff.com/",
+    "category": "craft",
+    "description": "Premium German sewing machines known for precision engineering and innovative features."
+  },
+  {
+    "brand": "Husqvarna Viking",
+    "variations": [
+      "husqvarna viking",
+      "viking sewing",
+      "husqvarna sewing machine"
+    ],
+    "program": "SVP Worldwide Affiliate Program",
+    "commission": "5%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.husqvarnaviking.com/",
+    "category": "craft",
+    "description": "Swedish sewing machines with smart technology. Part of the SVP Worldwide family."
+  },
+  {
+    "brand": "Janome",
+    "variations": [
+      "janome",
+      "janome sewing",
+      "janome machine",
+      "janome sewing machine"
+    ],
+    "program": "Janome Affiliate Program",
+    "commission": "3-5%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.janome.com/",
+    "category": "craft",
+    "description": "Japanese sewing machine manufacturer known for reliability and ease of use."
+  },
+  {
+    "brand": "Baby Lock",
+    "variations": [
+      "baby lock",
+      "babylock",
+      "baby lock sewing",
+      "baby lock serger"
+    ],
+    "program": "Baby Lock Affiliate Program",
+    "commission": "3-5%",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.babylock.com/",
+    "category": "craft",
+    "description": "Premium sewing and embroidery machines. Known for sergers and overlock machines."
+  },
+  {
+    "brand": "Bernina",
+    "variations": [
+      "bernina",
+      "bernina sewing",
+      "bernina machine",
+      "bernina sewing machine"
+    ],
+    "program": "Bernina Affiliate Program",
+    "commission": "3-5%",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.bernina.com/",
+    "category": "craft",
+    "description": "Swiss-made sewing machines. Premium brand for quilting and sewing enthusiasts."
+  },
+  {
+    "brand": "Cricut",
+    "variations": [
+      "cricut",
+      "cricut maker",
+      "cricut explore",
+      "cricut joy",
+      "cricut.com"
+    ],
+    "program": "Cricut Affiliate Program",
+    "commission": "Up to 12%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://www.cricut.com/",
+    "category": "craft",
+    "description": "Smart cutting machines for vinyl, paper, fabric, and more. Popular with DIY crafters."
+  },
+  {
+    "brand": "SewingMachinesPlus",
+    "variations": [
+      "sewingmachinesplus",
+      "sewing machines plus",
+      "sewingmachinesplus.com"
+    ],
+    "program": "SewingMachinesPlus Affiliate Program",
+    "commission": "Up to 10%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.sewingmachinesplus.com/",
+    "category": "craft",
+    "description": "Online retailer for sewing machines, quilting machines, and accessories from top brands."
+  },
+  {
+    "brand": "Michaels",
+    "variations": [
+      "michaels",
+      "michaels craft",
+      "michaels.com",
+      "michaels stores"
+    ],
+    "program": "Michaels Affiliate Program",
+    "commission": "2-4%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.michaels.com/",
+    "category": "craft",
+    "description": "Largest arts and crafts retail chain in North America. Supplies for every craft project."
+  },
+  {
+    "brand": "Hobby Lobby",
+    "variations": [
+      "hobby lobby",
+      "hobbylobby",
+      "hobbylobby.com"
+    ],
+    "program": "Hobby Lobby Affiliate Program",
+    "commission": "2-4%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.hobbylobby.com/",
+    "category": "craft",
+    "description": "Arts, crafts, and home decor store with fabric, sewing supplies, and craft materials."
+  },
+  {
+    "brand": "Fabric.com",
+    "variations": [
+      "fabric.com",
+      "fabric dot com",
+      "amazon fabric"
+    ],
+    "program": "Amazon Associates",
+    "commission": "4%",
+    "type": "percentage",
+    "network": "Amazon Associates",
+    "signupUrl": "https://www.fabric.com/",
+    "category": "craft",
+    "description": "Online fabric store with thousands of fabrics, patterns, and sewing supplies."
+  },
+  {
+    "brand": "Fat Quarter Shop",
+    "variations": [
+      "fat quarter shop",
+      "fatquartershop",
+      "fatquartershop.com"
+    ],
+    "program": "Fat Quarter Shop Affiliate Program",
+    "commission": "5-8%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.fatquartershop.com/",
+    "category": "craft",
+    "description": "Online quilt shop with fabrics, patterns, and quilting kits from top designers."
+  },
+  {
+    "brand": "Missouri Star Quilt",
+    "variations": [
+      "missouri star",
+      "missouri star quilt",
+      "msqc",
+      "missouriquiltco"
+    ],
+    "program": "Missouri Star Quilt Affiliate Program",
+    "commission": "5-8%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.missouriquiltco.com/",
+    "category": "craft",
+    "description": "Quilting fabrics, supplies, and tutorials. Known for popular quilting YouTube channel."
+  },
+  {
+    "brand": "Annie's",
+    "variations": [
+      "annies",
+      "annie's craft",
+      "anniescatalog",
+      "annies.com"
+    ],
+    "program": "Annie's Affiliate Program",
+    "commission": "20-30%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.annies.com/",
+    "category": "craft",
+    "description": "Craft kits, patterns, and online classes for knitting, crochet, quilting, and sewing."
+  },
+  {
+    "brand": "Sulky",
+    "variations": [
+      "sulky",
+      "sulky thread",
+      "sulky.com",
+      "sulky of america"
+    ],
+    "program": "Sulky Affiliate Program",
+    "commission": "8-10%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.sulky.com/",
+    "category": "craft",
+    "description": "Premium threads, stabilizers, and embroidery supplies for sewing and quilting."
+  },
+  {
+    "brand": "New Brothread",
+    "variations": [
+      "new brothread",
+      "brothread",
+      "newbrothread"
+    ],
+    "program": "New Brothread Affiliate Program",
+    "commission": "10%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.newbrothread.com/",
+    "category": "craft",
+    "description": "Machine embroidery threads and supplies at affordable prices."
+  },
+  {
+    "brand": "Dyson",
+    "variations": [
+      "dyson",
+      "dyson vacuum",
+      "dyson.com",
+      "dyson v15",
+      "dyson v12",
+      "dyson ball"
+    ],
+    "program": "Dyson Affiliate Program",
+    "commission": "2-4%",
+    "type": "percentage",
+    "network": "Rakuten",
+    "signupUrl": "https://www.dyson.com/",
+    "category": "craft",
+    "description": "Premium vacuums, air purifiers, and floor care. Known for powerful cordless vacuums."
+  },
+  {
+    "brand": "iRobot",
+    "variations": [
+      "irobot",
+      "roomba",
+      "irobot.com",
+      "irobot roomba",
+      "braava"
+    ],
+    "program": "iRobot Affiliate Program",
+    "commission": "3-5%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.irobot.com/",
+    "category": "craft",
+    "description": "Roomba robot vacuums and Braava robot mops for automated floor cleaning."
+  },
+  {
+    "brand": "Miele",
+    "variations": [
+      "miele",
+      "miele vacuum",
+      "miele.com"
+    ],
+    "program": "Miele Affiliate Program",
+    "commission": "2-4%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.mieleusa.com/",
+    "category": "craft",
+    "description": "German-engineered vacuums and home appliances. Premium quality and durability."
+  },
+  {
+    "brand": "Craftsy",
+    "variations": [
+      "craftsy",
+      "craftsy.com",
+      "bluprint",
+      "mybluprint"
+    ],
+    "program": "Craftsy Affiliate Program",
+    "commission": "15-20%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.craftsy.com/",
+    "category": "craft",
+    "description": "Online craft classes for sewing, quilting, knitting, cake decorating, and more."
+  },
+  {
+    "brand": "Creativebug",
+    "variations": [
+      "creativebug",
+      "creativebug.com"
+    ],
+    "program": "Creativebug Affiliate Program",
+    "commission": "15%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.creativebug.com/",
+    "category": "craft",
+    "description": "Online arts and crafts video classes taught by expert instructors."
+  },
+  {
+    "brand": "JOANN",
+    "variations": [
+      "joann",
+      "jo-ann",
+      "joann fabric",
+      "joann.com",
+      "joann fabrics"
+    ],
+    "program": "JOANN Affiliate Program",
+    "commission": "2-4%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.joann.com/",
+    "category": "craft",
+    "description": "Fabric and craft supplies retailer. Sewing, quilting, scrapbooking, and more."
+  },
+  {
+    "brand": "Litter-Robot",
+    "variations": [
+      "litter-robot",
+      "litterrobot",
+      "litter robot"
+    ],
+    "program": "Litter-Robot Affiliate Program",
+    "commission": "8% per sale",
+    "type": "percentage",
+    "network": "shareasale",
+    "signupUrl": "https://www.litter-robot.com/",
+    "category": "pet",
+    "description": "Self-cleaning litter box. Average order value over $550."
+  },
+  {
+    "brand": "PrettyLitter",
+    "variations": [
+      "prettylitter",
+      "pretty litter"
+    ],
+    "program": "PrettyLitter Affiliate Program",
+    "commission": "12% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.prettylitter.com/",
+    "category": "pet",
+    "description": "Health-monitoring cat litter subscription service."
+  },
+  {
+    "brand": "Nom Nom",
+    "variations": [
+      "nom nom",
+      "nomnom",
+      "nomnow"
+    ],
+    "program": "Nom Nom Affiliate Program",
+    "commission": "20% per sale",
+    "type": "percentage",
+    "network": "rakuten",
+    "signupUrl": "https://www.nomnomnow.com/",
+    "category": "pet",
+    "description": "Fresh dog food delivery service."
+  },
+  {
+    "brand": "Spot & Tango",
+    "variations": [
+      "spot and tango",
+      "spotandtango",
+      "spot & tango"
+    ],
+    "program": "Spot & Tango Affiliate Program",
+    "commission": "$20-$50 per sale",
+    "type": "flat",
+    "network": "direct",
+    "signupUrl": "https://www.spotandtango.com/",
+    "category": "pet",
+    "description": "Fresh and dry dog food subscription."
+  },
+  {
+    "brand": "Halo Collar",
+    "variations": [
+      "halo collar",
+      "halocollar"
+    ],
+    "program": "Halo Collar Affiliate Program",
+    "commission": "$50 per sale",
+    "type": "flat",
+    "network": "direct",
+    "signupUrl": "https://www.halocollar.com/",
+    "category": "pet",
+    "description": "GPS dog collar and wireless fence."
+  },
+  {
+    "brand": "Petcube",
+    "variations": [
+      "petcube",
+      "pet cube"
+    ],
+    "program": "Petcube Affiliate Program",
+    "commission": "10% per sale",
+    "type": "percentage",
+    "network": "awin",
+    "signupUrl": "https://petcube.com/",
+    "category": "pet",
+    "description": "Pet camera with treat tossing and GPS tracking."
+  },
+  {
+    "brand": "Furbo",
+    "variations": [
+      "furbo",
+      "furbo dog camera"
+    ],
+    "program": "Furbo Affiliate Program",
+    "commission": "5% per sale",
+    "type": "percentage",
+    "network": "shareasale",
+    "signupUrl": "https://furbo.com/",
+    "category": "pet",
+    "description": "Interactive dog camera with treat tossing."
+  },
+  {
+    "brand": "Trupanion",
+    "variations": [
+      "trupanion"
+    ],
+    "program": "Trupanion Affiliate Program",
+    "commission": "$35 per lead",
+    "type": "flat",
+    "network": "impact",
+    "signupUrl": "https://trupanion.com/",
+    "category": "pet",
+    "description": "Pet insurance with lifetime coverage."
+  },
+  {
+    "brand": "Lemonade Pet",
+    "variations": [
+      "lemonade",
+      "lemonade pet insurance"
+    ],
+    "program": "Lemonade Pet Insurance Affiliate Program",
+    "commission": "$15-$35 per sale",
+    "type": "flat",
+    "network": "impact",
+    "signupUrl": "https://www.lemonade.com/pet/",
+    "category": "pet",
+    "description": "Digital pet insurance with fast claims."
+  },
+  {
+    "brand": "Zesty Paws",
+    "variations": [
+      "zesty paws",
+      "zestypaws"
+    ],
+    "program": "Zesty Paws Affiliate Program",
+    "commission": "3% per sale",
+    "type": "percentage",
+    "network": "flexoffers",
+    "signupUrl": "https://zestypaws.com/",
+    "category": "pet",
+    "description": "Pet wellness supplements and vitamins."
+  },
+  {
+    "brand": "Honest Paws",
+    "variations": [
+      "honest paws",
+      "honestpaws"
+    ],
+    "program": "Honest Paws Affiliate Program",
+    "commission": "15-20% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.honestpaws.com/",
+    "category": "pet",
+    "description": "CBD and wellness products for pets."
+  },
+  {
+    "brand": "Open Farm",
+    "variations": [
+      "open farm",
+      "openfarm"
+    ],
+    "program": "Open Farm Affiliate Program",
+    "commission": "8-15% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://openfarmpet.com/",
+    "category": "pet",
+    "description": "Ethically sourced, sustainable pet food."
+  },
+  {
+    "brand": "Tuft + Paw",
+    "variations": [
+      "tuft and paw",
+      "tuft+paw",
+      "tuftandpaw"
+    ],
+    "program": "Tuft + Paw Affiliate Program",
+    "commission": "8% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://tuftandpaw.com/",
+    "category": "pet",
+    "description": "Modern cat furniture and products."
+  },
+  {
+    "brand": "Embark",
+    "variations": [
+      "embark",
+      "embark vet",
+      "embarkvet"
+    ],
+    "program": "Embark Dog DNA Affiliate Program",
+    "commission": "10% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://embarkvet.com/",
+    "category": "pet",
+    "description": "Dog DNA testing for breed and health."
+  },
+  {
+    "brand": "Embrace Pet Insurance",
+    "variations": [
+      "embrace",
+      "embrace pet insurance"
+    ],
+    "program": "Embrace Pet Insurance Affiliate Program",
+    "commission": "$36 per lead",
+    "type": "flat",
+    "network": "direct",
+    "signupUrl": "https://www.embracepetinsurance.com/",
+    "category": "pet",
+    "description": "Pet insurance with diminishing deductible."
+  },
+  {
+    "brand": "Rogue Fitness",
+    "variations": [
+      "rogue fitness",
+      "rogue",
+      "roguefitness.com"
+    ],
+    "program": "Rogue Fitness Affiliate Program",
+    "commission": "4% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.roguefitness.com/",
+    "category": "fitness",
+    "description": "Premium home gym equipment and CrossFit gear."
+  },
+  {
+    "brand": "REP Fitness",
+    "variations": [
+      "rep fitness",
+      "repfitness.com"
+    ],
+    "program": "REP Fitness Affiliate Program",
+    "commission": "5-8% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://repfitness.com/",
+    "category": "fitness",
+    "description": "Home gym equipment. Power racks, benches, and weights."
+  },
+  {
+    "brand": "Bowflex",
+    "variations": [
+      "bowflex",
+      "bowflex.com"
+    ],
+    "program": "Bowflex Affiliate Program",
+    "commission": "3-7% per sale",
+    "type": "percentage",
+    "network": "impact",
+    "signupUrl": "https://www.bowflex.com/",
+    "category": "fitness",
+    "description": "Adjustable dumbbells, home gyms, and cardio machines."
+  },
+  {
+    "brand": "NordicTrack",
+    "variations": [
+      "nordictrack",
+      "nordic track",
+      "nordictrack.com"
+    ],
+    "program": "NordicTrack Affiliate Program",
+    "commission": "Up to 5% per sale",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.nordictrack.com/",
+    "category": "fitness",
+    "description": "Treadmills, bikes, and ellipticals with interactive training."
+  },
+  {
+    "brand": "Therabody",
+    "variations": [
+      "therabody",
+      "theragun",
+      "therabody.com"
+    ],
+    "program": "Therabody Affiliate Program",
+    "commission": "Up to 10% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.therabody.com/",
+    "category": "fitness",
+    "description": "Recovery tools including massage guns and compression boots."
+  },
+  {
+    "brand": "Optimum Nutrition",
+    "variations": [
+      "optimum nutrition",
+      "optimumnutrition.com"
+    ],
+    "program": "Optimum Nutrition Affiliate Program",
+    "commission": "6-12% per sale",
+    "type": "percentage",
+    "network": "awin",
+    "signupUrl": "https://www.optimumnutrition.com/",
+    "category": "fitness",
+    "description": "Whey protein, pre-workout, and sports nutrition supplements."
+  },
+  {
+    "brand": "Hyperice",
+    "variations": [
+      "hyperice",
+      "hyperice.com"
+    ],
+    "program": "Hyperice Affiliate Program",
+    "commission": "Up to 8% per sale",
+    "type": "percentage",
+    "network": "awin",
+    "signupUrl": "https://hyperice.com/",
+    "category": "fitness",
+    "description": "Percussion massage and thermal recovery devices."
+  },
+  {
+    "brand": "Brooks Running",
+    "variations": [
+      "brooks",
+      "brooks running",
+      "brooksrunning.com"
+    ],
+    "program": "Brooks Running Affiliate Program",
+    "commission": "5-10% per sale",
+    "type": "percentage",
+    "network": "impact",
+    "signupUrl": "https://www.brooksrunning.com/",
+    "category": "fitness",
+    "description": "Premium running shoes and apparel."
+  },
+  {
+    "brand": "ASICS",
+    "variations": [
+      "asics",
+      "asics.com"
+    ],
+    "program": "ASICS Affiliate Program",
+    "commission": "3-4% per sale",
+    "type": "percentage",
+    "network": "flexoffers",
+    "signupUrl": "https://www.asics.com/",
+    "category": "fitness",
+    "description": "Performance running and training shoes."
+  },
+  {
+    "brand": "Manduka",
+    "variations": [
+      "manduka",
+      "manduka.com"
+    ],
+    "program": "Manduka Affiliate Program",
+    "commission": "6-10% per sale",
+    "type": "percentage",
+    "network": "rakuten",
+    "signupUrl": "https://www.manduka.com/",
+    "category": "fitness",
+    "description": "Premium yoga mats, props, and apparel."
+  },
+  {
+    "brand": "Alo Yoga",
+    "variations": [
+      "alo yoga",
+      "alo",
+      "aloyoga.com"
+    ],
+    "program": "Alo Yoga Affiliate Program",
+    "commission": "14-16% per sale",
+    "type": "percentage",
+    "network": "flexoffers",
+    "signupUrl": "https://www.aloyoga.com/",
+    "category": "fitness",
+    "description": "Stylish yoga and athleisure wear."
+  },
+  {
+    "brand": "Wahoo Fitness",
+    "variations": [
+      "wahoo",
+      "wahoo fitness",
+      "wahoofitness.com"
+    ],
+    "program": "Wahoo Fitness Affiliate Program",
+    "commission": "10% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.wahoofitness.com/",
+    "category": "fitness",
+    "description": "Indoor cycling trainers, bike computers, and heart rate monitors."
+  },
+  {
+    "brand": "TRX Training",
+    "variations": [
+      "trx",
+      "trx training",
+      "trxtraining.com"
+    ],
+    "program": "TRX Affiliate Program",
+    "commission": "10% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.trxtraining.com/",
+    "category": "fitness",
+    "description": "Suspension training equipment and bodyweight workout systems."
+  },
+  {
+    "brand": "MyProtein",
+    "variations": [
+      "myprotein",
+      "my protein",
+      "myprotein.com"
+    ],
+    "program": "MyProtein Affiliate Program",
+    "commission": "8% per sale",
+    "type": "percentage",
+    "network": "awin",
+    "signupUrl": "https://us.myprotein.com/",
+    "category": "fitness",
+    "description": "Sports nutrition supplements and protein powders."
+  },
+  {
+    "brand": "New Balance",
+    "variations": [
+      "new balance",
+      "newbalance",
+      "newbalance.com"
+    ],
+    "program": "New Balance Affiliate Program",
+    "commission": "5-7% per sale",
+    "type": "percentage",
+    "network": "impact",
+    "signupUrl": "https://www.newbalance.com/",
+    "category": "fitness",
+    "description": "Athletic footwear and apparel for running and training."
+  },
+  {
+    "brand": "Titan Fitness",
+    "variations": [
+      "titan fitness",
+      "titan.fitness"
+    ],
+    "program": "Titan Fitness Affiliate Program",
+    "commission": "5% per sale",
+    "type": "percentage",
+    "network": "impact",
+    "signupUrl": "https://titan.fitness/",
+    "category": "fitness",
+    "description": "Affordable home gym racks, barbells, and strength equipment."
+  },
+  {
+    "brand": "DXRacer",
+    "variations": [
+      "dxracer",
+      "dx racer",
+      "dxracer.com"
+    ],
+    "program": "DXRacer Affiliate Program",
+    "commission": "5% per sale",
+    "type": "percentage",
+    "network": "shareasale",
+    "signupUrl": "https://www.dxracer.com/",
+    "category": "gaming",
+    "description": "Gaming chairs and ergonomic office seating."
+  },
+  {
+    "brand": "Origin PC",
+    "variations": [
+      "origin pc",
+      "originpc",
+      "originpc.com"
+    ],
+    "program": "Origin PC Affiliate Program",
+    "commission": "3-5% per sale",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.originpc.com/",
+    "category": "gaming",
+    "description": "Custom-built gaming PCs, laptops, and workstations."
+  },
+  {
+    "brand": "BenQ",
+    "variations": [
+      "benq",
+      "benq.com",
+      "zowie"
+    ],
+    "program": "BenQ Affiliate Program",
+    "commission": "3% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.benq.com/",
+    "category": "gaming",
+    "description": "Gaming monitors, projectors, and display technology."
+  },
+  {
+    "brand": "Green Man Gaming",
+    "variations": [
+      "green man gaming",
+      "greenmangaming",
+      "greenmangaming.com"
+    ],
+    "program": "Green Man Gaming Affiliate Program",
+    "commission": "5% per sale",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.greenmangaming.com/",
+    "category": "gaming",
+    "description": "Digital game store with PC game keys and bundles."
+  },
+  {
+    "brand": "Humble Bundle",
+    "variations": [
+      "humble bundle",
+      "humblebundle",
+      "humblebundle.com"
+    ],
+    "program": "Humble Bundle Affiliate Program",
+    "commission": "5% per sale",
+    "type": "percentage",
+    "network": "impact",
+    "signupUrl": "https://www.humblebundle.com/",
+    "category": "gaming",
+    "description": "Game bundles and subscription with charity donations."
+  },
+  {
+    "brand": "G2A",
+    "variations": [
+      "g2a",
+      "g2a.com"
+    ],
+    "program": "G2A Affiliate Program",
+    "commission": "10% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.g2a.com/",
+    "category": "gaming",
+    "description": "Digital game marketplace for PC, console, and gift cards."
+  },
+  {
+    "brand": "Fanatical",
+    "variations": [
+      "fanatical",
+      "fanatical.com"
+    ],
+    "program": "Fanatical Affiliate Program",
+    "commission": "12% per sale",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.fanatical.com/",
+    "category": "gaming",
+    "description": "PC game bundles and deals from official publishers."
+  },
+  {
+    "brand": "Meta Quest",
+    "variations": [
+      "meta quest",
+      "oculus",
+      "quest 3",
+      "quest pro"
+    ],
+    "program": "Meta Quest Affiliate Program",
+    "commission": "$30 per sale",
+    "type": "flat",
+    "network": "impact",
+    "signupUrl": "https://www.meta.com/quest/",
+    "category": "gaming",
+    "description": "VR headsets for gaming and mixed reality."
+  },
+  {
+    "brand": "Nerd or Die",
+    "variations": [
+      "nerd or die",
+      "nerdordie",
+      "nerdordie.com"
+    ],
+    "program": "Nerd or Die Affiliate Program",
+    "commission": "20% per sale",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://nerdordie.com/",
+    "category": "gaming",
+    "description": "Streaming overlays, alerts, and graphics for Twitch and YouTube."
+  },
+  {
+    "brand": "GameFly",
+    "variations": [
+      "gamefly",
+      "gamefly.com"
+    ],
+    "program": "GameFly Affiliate Program",
+    "commission": "$15 per subscription",
+    "type": "flat",
+    "network": "cj",
+    "signupUrl": "https://www.gamefly.com/",
+    "category": "gaming",
+    "description": "Video game rental subscription service."
+  },
+  {
+    "brand": "Allianz Travel Insurance",
+    "variations": [
+      "allianz",
+      "allianz travel",
+      "allianz insurance"
+    ],
+    "program": "Allianz Travel Insurance Affiliate Program",
+    "commission": "12% per policy",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.allianztravelinsurance.com/",
+    "category": "travel",
+    "description": "Travel insurance policies with 45-day cookie duration."
+  },
+  {
+    "brand": "SafetyWing",
+    "variations": [
+      "safetywing",
+      "safety wing",
+      "safetywing.com"
+    ],
+    "program": "SafetyWing Affiliate Program",
+    "commission": "10% recurring",
+    "type": "recurring",
+    "network": "direct",
+    "signupUrl": "https://safetywing.com/",
+    "category": "travel",
+    "description": "Travel and remote worker insurance. 365-day cookie, recurring commissions."
+  },
+  {
+    "brand": "Discover Cars",
+    "variations": [
+      "discover cars",
+      "discovercars",
+      "discovercars.com"
+    ],
+    "program": "Discover Cars Affiliate Program",
+    "commission": "70% of profit",
+    "type": "percentage",
+    "network": "direct",
+    "signupUrl": "https://www.discovercars.com/",
+    "category": "travel",
+    "description": "Car rental comparison with 500+ providers worldwide."
+  },
+  {
+    "brand": "Travelpro",
+    "variations": [
+      "travelpro",
+      "travelpro.com"
+    ],
+    "program": "Travelpro Affiliate Program",
+    "commission": "8-10% per sale",
+    "type": "percentage",
+    "network": "shareasale",
+    "signupUrl": "https://www.travelpro.com/",
+    "category": "travel",
+    "description": "Luggage and travel bags used by airline crews."
+  },
+  {
+    "brand": "American Tourister",
+    "variations": [
+      "american tourister",
+      "americantourister"
+    ],
+    "program": "American Tourister Affiliate Program",
+    "commission": "8% per sale",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.americantourister.com/",
+    "category": "travel",
+    "description": "Affordable luggage and travel accessories."
+  },
+  {
+    "brand": "REI",
+    "variations": [
+      "rei",
+      "rei.com",
+      "rei co-op"
+    ],
+    "program": "REI Affiliate Program",
+    "commission": "5% per sale",
+    "type": "percentage",
+    "network": "impact",
+    "signupUrl": "https://www.rei.com/",
+    "category": "travel",
+    "description": "Outdoor and travel gear including backpacks, camping, and clothing."
+  },
+  {
+    "brand": "CruiseDirect",
+    "variations": [
+      "cruisedirect",
+      "cruise direct",
+      "cruisedirect.com"
+    ],
+    "program": "CruiseDirect Affiliate Program",
+    "commission": "3% per booking",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.cruisedirect.com/",
+    "category": "travel",
+    "description": "Cruise booking platform with all major cruise lines."
+  },
+  {
+    "brand": "Royal Caribbean",
+    "variations": [
+      "royal caribbean",
+      "royalcaribbean",
+      "royalcaribbean.com"
+    ],
+    "program": "Royal Caribbean Affiliate Program",
+    "commission": "4% per booking",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.royalcaribbean.com/",
+    "category": "travel",
+    "description": "Cruise line with ships sailing worldwide."
+  },
+  {
+    "brand": "Travelex",
+    "variations": [
+      "travelex",
+      "travelex.com"
+    ],
+    "program": "Travelex Affiliate Program",
+    "commission": "5-8% per sale",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.travelex.com/",
+    "category": "travel",
+    "description": "Currency exchange and travel money services."
+  },
+  {
+    "brand": "CyberGhost VPN",
+    "variations": [
+      "cyberghost",
+      "cyberghost vpn",
+      "cyberghostvpn.com"
+    ],
+    "program": "CyberGhost VPN Affiliate Program",
+    "commission": "100% first month",
+    "type": "percentage",
+    "network": "cj",
+    "signupUrl": "https://www.cyberghostvpn.com/",
+    "category": "travel",
+    "description": "VPN service with 9,000+ servers across 91 countries."
+  },
+  {
+    "brand": "Mondly",
+    "variations": [
+      "mondly",
+      "mondly.com"
+    ],
+    "program": "Mondly Affiliate Program",
+    "commission": "30% recurring",
+    "type": "recurring",
+    "network": "direct",
+    "signupUrl": "https://www.mondly.com/",
+    "category": "travel",
+    "description": "Language learning app supporting 41 languages."
+  },
+  {
+    "brand": "Ulta Beauty",
+    "variations": [
+      "ulta",
+      "ulta beauty",
+      "ulta.com"
+    ],
+    "program": "Ulta Beauty Affiliate Program",
+    "commission": "2-5%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://www.ulta.com/affiliates",
+    "category": "beauty",
+    "description": "Major beauty retailer offering cosmetics, skincare, hair care, and salon services."
+  },
+  {
+    "brand": "Paula's Choice",
+    "variations": [
+      "paulas choice",
+      "paula's choice skincare"
+    ],
+    "program": "Paula's Choice Affiliate Program",
+    "commission": "7%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.paulaschoice.com/affiliate-program",
+    "category": "beauty",
+    "description": "Science-backed skincare with BHA exfoliants, retinol, and vitamin C products."
+  },
+  {
+    "brand": "The Ordinary",
+    "variations": [
+      "the ordinary",
+      "deciem",
+      "the ordinary skincare"
+    ],
+    "program": "The Ordinary Affiliate Program",
+    "commission": "5-13%",
+    "type": "percentage",
+    "network": "Awin",
+    "signupUrl": "https://theordinary.com/affiliates",
+    "category": "beauty",
+    "description": "Affordable clinical skincare with active ingredients like niacinamide, hyaluronic acid, and retinoids."
+  },
+  {
+    "brand": "Charlotte Tilbury",
+    "variations": [
+      "charlotte tilbury",
+      "charlotte tilbury makeup"
+    ],
+    "program": "Charlotte Tilbury Affiliate Program",
+    "commission": "10-15%",
+    "type": "percentage",
+    "network": "Sovrn",
+    "signupUrl": "https://www.charlottetilbury.com/affiliates",
+    "category": "beauty",
+    "description": "Luxury makeup and skincare brand known for Pillow Talk and Magic Cream."
+  },
+  {
+    "brand": "MAC Cosmetics",
+    "variations": [
+      "mac",
+      "mac cosmetics",
+      "m.a.c."
+    ],
+    "program": "MAC Cosmetics Affiliate Program",
+    "commission": "5-10%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://www.maccosmetics.com/affiliates",
+    "category": "beauty",
+    "description": "Professional makeup brand with wide shade ranges for foundation, lipstick, and eye products."
+  },
+  {
+    "brand": "Olaplex",
+    "variations": [
+      "olaplex",
+      "olaplex hair"
+    ],
+    "program": "Olaplex Affiliate Program",
+    "commission": "15-35%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://www.olaplex.com/affiliates",
+    "category": "beauty",
+    "description": "Bond-building hair care system for damaged, color-treated, and chemically processed hair."
+  },
+  {
+    "brand": "Tarte Cosmetics",
+    "variations": [
+      "tarte",
+      "tarte cosmetics"
+    ],
+    "program": "Tarte Affiliate Program",
+    "commission": "8%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://tartecosmetics.com/affiliates",
+    "category": "beauty",
+    "description": "Clean, cruelty-free makeup including Shape Tape concealer and maracuja products."
+  },
+  {
+    "brand": "FabFitFun",
+    "variations": [
+      "fabfitfun",
+      "fab fit fun",
+      "fff"
+    ],
+    "program": "FabFitFun Affiliate Program",
+    "commission": "$8-12 per sale",
+    "type": "flat",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://fabfitfun.com/affiliates",
+    "category": "beauty",
+    "description": "Seasonal subscription box with beauty, wellness, fitness, and home products."
+  },
+  {
+    "brand": "Ipsy",
+    "variations": [
+      "ipsy",
+      "ipsy glam bag"
+    ],
+    "program": "Ipsy Affiliate Program",
+    "commission": "$5-10 per sale",
+    "type": "flat",
+    "network": "Direct",
+    "signupUrl": "https://www.ipsy.com/affiliates",
+    "category": "beauty",
+    "description": "Personalized monthly beauty subscription box with sample and full-size products."
+  },
+  {
+    "brand": "Fenty Beauty",
+    "variations": [
+      "fenty",
+      "fenty beauty",
+      "fenty skin"
+    ],
+    "program": "Fenty Beauty Affiliate Program",
+    "commission": "5-10%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://fentybeauty.com/affiliates",
+    "category": "beauty",
+    "description": "Rihanna's inclusive beauty brand with 50+ foundation shades and bold color cosmetics."
+  },
+  {
+    "brand": "Estée Lauder",
+    "variations": [
+      "estee lauder",
+      "estée lauder"
+    ],
+    "program": "Estée Lauder Affiliate Program",
+    "commission": "6%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://www.esteelauder.com/affiliates",
+    "category": "beauty",
+    "description": "Prestige skincare and makeup brand known for Advanced Night Repair and Double Wear foundation."
+  },
+  {
+    "brand": "Drunk Elephant",
+    "variations": [
+      "drunk elephant",
+      "drunk elephant skincare"
+    ],
+    "program": "Drunk Elephant Affiliate Program",
+    "commission": "5-10%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://www.drunkelephant.com/affiliates",
+    "category": "beauty",
+    "description": "Clean skincare brand focused on biocompatible ingredients and the Suspicious Six free philosophy."
+  },
+  {
+    "brand": "Bobbi Brown",
+    "variations": [
+      "bobbi brown",
+      "bobbi brown cosmetics"
+    ],
+    "program": "Bobbi Brown Affiliate Program",
+    "commission": "6-8%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://www.bobbibrowncosmetics.com/affiliates",
+    "category": "beauty",
+    "description": "Professional makeup brand known for natural-looking skin tints and long-wear foundations."
+  },
+  {
+    "brand": "BabyBjörn",
+    "variations": [
+      "babybjorn",
+      "baby bjorn",
+      "babybjörn"
+    ],
+    "program": "BabyBjörn Affiliate Program",
+    "commission": "12%",
+    "type": "percentage",
+    "network": "Awin",
+    "signupUrl": "https://www.babybjorn.com/affiliates",
+    "category": "parenting",
+    "description": "Swedish baby gear brand known for ergonomic carriers, bouncers, and travel cribs."
+  },
+  {
+    "brand": "Nanit",
+    "variations": [
+      "nanit",
+      "nanit pro",
+      "nanit baby monitor"
+    ],
+    "program": "Nanit Affiliate Program",
+    "commission": "10-20%",
+    "type": "percentage",
+    "network": "ShareASale",
+    "signupUrl": "https://www.nanit.com/affiliates",
+    "category": "parenting",
+    "description": "Smart baby monitor with sleep tracking, breathing wear, and real-time analytics."
+  },
+  {
+    "brand": "Lovevery",
+    "variations": [
+      "lovevery",
+      "love every"
+    ],
+    "program": "Lovevery Affiliate Program",
+    "commission": "10%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://lovevery.com/pages/affiliate-partnerships",
+    "category": "parenting",
+    "description": "Stage-based play kits and toys designed by child development experts."
+  },
+  {
+    "brand": "KiwiCo",
+    "variations": [
+      "kiwico",
+      "kiwi co",
+      "kiwi crate"
+    ],
+    "program": "KiwiCo Affiliate Program",
+    "commission": "$10-20 per subscription",
+    "type": "flat",
+    "network": "Direct",
+    "signupUrl": "https://www.kiwico.com/affiliate-program",
+    "category": "parenting",
+    "description": "STEM and creative subscription boxes for kids of all ages, from babies to teens."
+  },
+  {
+    "brand": "Carter's",
+    "variations": [
+      "carters",
+      "carter's",
+      "oshkosh",
+      "skip hop"
+    ],
+    "program": "Carter's Affiliate Program",
+    "commission": "2-5%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://www.carters.com/affiliateprogram",
+    "category": "parenting",
+    "description": "Leading children's clothing brand with baby, toddler, and kids apparel."
+  },
+  {
+    "brand": "Hanna Andersson",
+    "variations": [
+      "hanna andersson",
+      "hanna anderson"
+    ],
+    "program": "Hanna Andersson Affiliate Program",
+    "commission": "5-8%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://www.hannaandersson.com/affiliates",
+    "category": "parenting",
+    "description": "Quality kids clothing known for organic cotton pajamas and bright Scandinavian prints."
+  },
+  {
+    "brand": "The Honest Company",
+    "variations": [
+      "honest company",
+      "honest",
+      "honest baby"
+    ],
+    "program": "The Honest Company Affiliate Program",
+    "commission": "10%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://www.honest.com/affiliates",
+    "category": "parenting",
+    "description": "Clean baby and personal care products including diapers, wipes, and skincare."
+  },
+  {
+    "brand": "Babylist",
+    "variations": [
+      "babylist",
+      "baby list",
+      "babylist registry"
+    ],
+    "program": "Babylist Affiliate Program",
+    "commission": "3-5%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://www.babylist.com/affiliates",
+    "category": "parenting",
+    "description": "Universal baby registry where parents can add items from any store."
+  },
+  {
+    "brand": "Little Spoon",
+    "variations": [
+      "little spoon",
+      "littlespoon"
+    ],
+    "program": "Little Spoon Affiliate Program",
+    "commission": "10-15%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://www.littlespoon.com/affiliate-program",
+    "category": "parenting",
+    "description": "Fresh, organic baby food and kids meals delivered to your door."
+  },
+  {
+    "brand": "Once Upon a Farm",
+    "variations": [
+      "once upon a farm",
+      "once upon farm"
+    ],
+    "program": "Once Upon a Farm Affiliate Program",
+    "commission": "15%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://onceuponafarmorganics.com/pages/ambassadors",
+    "category": "parenting",
+    "description": "Cold-pressed organic baby food and kids snacks made with real ingredients."
+  },
+  {
+    "brand": "Bugaboo",
+    "variations": [
+      "bugaboo",
+      "bugaboo stroller"
+    ],
+    "program": "Bugaboo Affiliate Program",
+    "commission": "3-6%",
+    "type": "percentage",
+    "network": "Awin",
+    "signupUrl": "https://www.bugaboo.com/affiliate-program",
+    "category": "parenting",
+    "description": "Premium strollers and accessories designed for modern parents and urban life."
+  },
+  {
+    "brand": "Solly Baby",
+    "variations": [
+      "solly baby",
+      "sollybaby",
+      "solly wrap"
+    ],
+    "program": "Solly Baby Affiliate Program",
+    "commission": "12%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://sollybaby.com/affiliates",
+    "category": "parenting",
+    "description": "Lightweight baby wraps and carriers made from breathable, buttery-soft fabric."
+  },
+  {
+    "brand": "Coleman",
+    "variations": [
+      "coleman",
+      "coleman camping",
+      "coleman outdoor"
+    ],
+    "program": "Coleman Affiliate Program",
+    "commission": "5%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.coleman.com/affiliates",
+    "category": "outdoor",
+    "description": "Affordable camping gear including tents, coolers, lanterns, and sleeping bags."
+  },
+  {
+    "brand": "The North Face",
+    "variations": [
+      "north face",
+      "the north face",
+      "tnf"
+    ],
+    "program": "The North Face Affiliate Program",
+    "commission": "4%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://www.thenorthface.com/affiliates",
+    "category": "outdoor",
+    "description": "Outdoor apparel, footwear, and equipment for hiking, camping, and winter sports."
+  },
+  {
+    "brand": "Merrell",
+    "variations": [
+      "merrell",
+      "merrell hiking",
+      "merrell shoes"
+    ],
+    "program": "Merrell Affiliate Program",
+    "commission": "6%",
+    "type": "percentage",
+    "network": "FlexOffers",
+    "signupUrl": "https://www.merrell.com/affiliates",
+    "category": "outdoor",
+    "description": "Hiking boots, trail runners, and outdoor footwear for all terrain types."
+  },
+  {
+    "brand": "Salomon",
+    "variations": [
+      "salomon",
+      "salomon trail",
+      "salomon hiking"
+    ],
+    "program": "Salomon Affiliate Program",
+    "commission": "10%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://www.salomon.com/affiliates",
+    "category": "outdoor",
+    "description": "Trail running shoes, hiking boots, and ski equipment from a leading outdoor brand."
+  },
+  {
+    "brand": "KEEN",
+    "variations": [
+      "keen",
+      "keen footwear",
+      "keen shoes"
+    ],
+    "program": "KEEN Affiliate Program",
+    "commission": "6%",
+    "type": "percentage",
+    "network": "Awin",
+    "signupUrl": "https://www.keenfootwear.com/affiliates",
+    "category": "outdoor",
+    "description": "Durable outdoor sandals, hiking boots, and work shoes with toe protection."
+  },
+  {
+    "brand": "Columbia Sportswear",
+    "variations": [
+      "columbia",
+      "columbia sportswear"
+    ],
+    "program": "Columbia Affiliate Program",
+    "commission": "5-8%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://www.columbia.com/affiliates",
+    "category": "outdoor",
+    "description": "Outdoor jackets, boots, and gear with Omni-Heat and Omni-Tech technologies."
+  },
+  {
+    "brand": "Arc'teryx",
+    "variations": [
+      "arcteryx",
+      "arc'teryx",
+      "arc teryx"
+    ],
+    "program": "Arc'teryx Affiliate Program",
+    "commission": "7%",
+    "type": "percentage",
+    "network": "CJ Affiliate",
+    "signupUrl": "https://arcteryx.com/affiliates",
+    "category": "outdoor",
+    "description": "Premium technical outerwear and gear for mountaineering, climbing, and backcountry skiing."
+  },
+  {
+    "brand": "Goal Zero",
+    "variations": [
+      "goal zero",
+      "goalzero",
+      "goal zero solar"
+    ],
+    "program": "Goal Zero Affiliate Program",
+    "commission": "10%",
+    "type": "percentage",
+    "network": "Pepperjam",
+    "signupUrl": "https://www.goalzero.com/affiliates",
+    "category": "outdoor",
+    "description": "Portable solar panels, power stations, and lights for off-grid camping and adventures."
+  },
+  {
+    "brand": "Bass Pro Shops",
+    "variations": [
+      "bass pro",
+      "bass pro shops",
+      "basspro"
+    ],
+    "program": "Bass Pro Shops Affiliate Program",
+    "commission": "5%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://www.basspro.com/affiliates",
+    "category": "outdoor",
+    "description": "Outdoor megastore for fishing, hunting, camping, and boating gear."
+  },
+  {
+    "brand": "Cabela's",
+    "variations": [
+      "cabelas",
+      "cabela's"
+    ],
+    "program": "Cabela's Affiliate Program",
+    "commission": "5%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://www.cabelas.com/affiliates",
+    "category": "outdoor",
+    "description": "Hunting, fishing, and camping gear retailer with a wide selection of outdoor equipment."
+  },
+  {
+    "brand": "Big Agnes",
+    "variations": [
+      "big agnes",
+      "big agnes tents"
+    ],
+    "program": "Big Agnes Affiliate Program",
+    "commission": "8%",
+    "type": "percentage",
+    "network": "AvantLink",
+    "signupUrl": "https://www.bigagnes.com/affiliates",
+    "category": "outdoor",
+    "description": "Ultralight tents, sleeping bags, and camping pads for backpackers and thru-hikers."
+  },
+  {
+    "brand": "Kelty",
+    "variations": [
+      "kelty",
+      "kelty outdoor"
+    ],
+    "program": "Kelty Affiliate Program",
+    "commission": "10%",
+    "type": "percentage",
+    "network": "AvantLink",
+    "signupUrl": "https://www.kelty.com/affiliates",
+    "category": "outdoor",
+    "description": "Affordable backpacks, tents, and sleeping bags for camping and family adventures."
+  },
+  {
+    "brand": "Vivint",
+    "variations": [
+      "vivint",
+      "vivint smart home"
+    ],
+    "program": "Vivint Affiliate Program",
+    "commission": "$200 per sale",
+    "type": "flat",
+    "network": "Awin",
+    "signupUrl": "https://www.vivint.com/affiliates",
+    "category": "home-improvement",
+    "description": "Professional smart home security with cameras, doorbell, locks, and 24/7 monitoring."
+  },
+  {
+    "brand": "Ecobee",
+    "variations": [
+      "ecobee",
+      "ecobee thermostat"
+    ],
+    "program": "Ecobee Affiliate Program",
+    "commission": "6%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://www.ecobee.com/affiliates",
+    "category": "home-improvement",
+    "description": "Smart thermostats with room sensors, voice control, and energy savings features."
+  },
+  {
+    "brand": "Acme Tools",
+    "variations": [
+      "acme tools"
+    ],
+    "program": "Acme Tools Affiliate Program",
+    "commission": "2-3%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://www.acmetools.com/affiliates",
+    "category": "home-improvement",
+    "description": "Power tools and hand tools from DeWalt, Milwaukee, Makita, and other top brands."
+  },
+  {
+    "brand": "Samplize",
+    "variations": [
+      "samplize",
+      "samplize paint"
+    ],
+    "program": "Samplize Affiliate Program",
+    "commission": "12-18%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://www.samplize.com/affiliates",
+    "category": "home-improvement",
+    "description": "Peel-and-stick paint samples from Sherwin-Williams, Benjamin Moore, and other brands."
+  },
+  {
+    "brand": "Luminar Neo",
+    "variations": [
+      "luminar",
+      "luminar neo",
+      "skylum",
+      "luminar ai"
+    ],
+    "program": "Luminar Neo Affiliate Program",
+    "commission": "20-45%",
+    "type": "percentage",
+    "network": "Impact",
+    "signupUrl": "https://skylum.com/affiliates",
+    "category": "photography",
+    "description": "AI-powered photo editor with sky replacement, portrait retouching, and batch processing."
+  },
+  {
+    "brand": "Peak Design",
+    "variations": [
+      "peak design"
+    ],
+    "program": "Peak Design Affiliate Program",
+    "commission": "10%",
+    "type": "percentage",
+    "network": "Refersion",
+    "signupUrl": "https://www.peakdesign.com/affiliates",
+    "category": "photography",
+    "description": "Camera straps, bags, tripods, and phone mounts designed for photographers and creators."
+  },
+  {
+    "brand": "Topaz Labs",
+    "variations": [
+      "topaz labs",
+      "topaz ai",
+      "topaz gigapixel",
+      "topaz photo ai"
+    ],
+    "program": "Topaz Labs Affiliate Program",
+    "commission": "10%",
+    "type": "percentage",
+    "network": "Direct",
+    "signupUrl": "https://www.topazlabs.com/affiliates",
+    "category": "photography",
+    "description": "AI photo and video enhancement software for upscaling, denoising, and sharpening."
   }
 ]

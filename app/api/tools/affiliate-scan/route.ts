@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import * as cheerio from 'cheerio';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { YoutubeTranscript } from 'youtube-transcript';
 import type { PageData } from '@/lib/tools/text-analysis';
 import { buildAffiliateReport } from '@/lib/tools/affiliate-analysis';
 import type { AffiliateProgram } from '@/lib/tools/affiliate-analysis';
@@ -35,7 +36,15 @@ export async function POST(request: NextRequest) {
     if (urls && urls.length > 0) {
       pagesToCrawl = urls.slice(0, maxPages);
     } else if (sitemapUrl) {
-      pagesToCrawl = await parseSitemap(sitemapUrl, maxPages);
+      // Check if the input is a YouTube channel/handle URL
+      if (isYouTubeChannelUrl(sitemapUrl)) {
+        pagesToCrawl = await getYouTubeChannelVideoUrls(sitemapUrl, maxPages);
+      } else if (isYouTubeVideoUrl(sitemapUrl)) {
+        // Single video URL
+        pagesToCrawl = [sitemapUrl];
+      } else {
+        pagesToCrawl = await parseSitemap(sitemapUrl, maxPages);
+      }
     } else {
       return NextResponse.json(
         { error: 'Provide either a sitemap URL or a list of URLs.' },
@@ -58,7 +67,9 @@ export async function POST(request: NextRequest) {
     for (let i = 0; i < pagesToCrawl.length; i += batchSize) {
       const batch = pagesToCrawl.slice(i, i + batchSize);
       const results = await Promise.allSettled(
-        batch.map(url => fetchAndParsePage(url))
+        batch.map(url =>
+          isYouTubeVideoUrl(url) ? fetchYouTubeAsPage(url) : fetchAndParsePage(url)
+        )
       );
 
       for (let j = 0; j < results.length; j++) {
@@ -193,6 +204,151 @@ function extractUrlsFromSitemap(xml: string, maxPages: number): string[] {
   });
   return urls;
 }
+
+// -------------------------------------------------------------------
+// YouTube support
+// -------------------------------------------------------------------
+
+function isYouTubeUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    return ['www.youtube.com', 'youtube.com', 'youtu.be', 'm.youtube.com'].includes(u.hostname);
+  } catch {
+    return false;
+  }
+}
+
+function isYouTubeChannelUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    if (!isYouTubeUrl(url)) return false;
+    const p = u.pathname;
+    return p.startsWith('/@') || p.startsWith('/channel/') || p.startsWith('/c/') || p === '/' || p === '';
+  } catch {
+    return false;
+  }
+}
+
+function isYouTubeVideoUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    if (u.hostname === 'youtu.be') return true;
+    if (['www.youtube.com', 'youtube.com', 'm.youtube.com'].includes(u.hostname)) {
+      return u.pathname === '/watch' && u.searchParams.has('v');
+    }
+    return false;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Fetch video URLs from a YouTube channel page.
+ * Scrapes the channel HTML for video links since the Data API requires a key.
+ */
+async function getYouTubeChannelVideoUrls(channelUrl: string, max: number): Promise<string[]> {
+  // Ensure we hit the videos tab
+  let videosUrl = channelUrl.replace(/\/+$/, '');
+  if (!videosUrl.includes('/videos')) {
+    videosUrl += '/videos';
+  }
+
+  try {
+    const res = await fetch(videosUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9',
+      },
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const html = await res.text();
+
+    // YouTube embeds video data in JSON within the HTML.
+    // Extract video IDs from /watch?v= patterns in the page source.
+    const videoIds = new Set<string>();
+    const regex = /\/watch\?v=([a-zA-Z0-9_-]{11})/g;
+    let match;
+    while ((match = regex.exec(html)) !== null) {
+      videoIds.add(match[1]);
+      if (videoIds.size >= max) break;
+    }
+
+    return [...videoIds].slice(0, max).map(id => `https://www.youtube.com/watch?v=${id}`);
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Fetch a YouTube video page and build a PageData object from its
+ * title, description, and transcript (if available).
+ */
+async function fetchYouTubeAsPage(videoUrl: string): Promise<PageData | null> {
+  // Fetch the video page HTML for metadata
+  const res = await fetch(videoUrl, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Accept-Language': 'en-US,en;q=0.9',
+    },
+    signal: AbortSignal.timeout(12000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+  const html = await res.text();
+  const $ = cheerio.load(html);
+
+  const title = $('meta[property="og:title"]').attr('content')?.trim()
+    || $('title').first().text().trim()
+    || '';
+  const channelName = $('link[itemprop="name"]').attr('content')?.trim() || '';
+  const description = $('meta[property="og:description"]').attr('content')?.trim()
+    || $('meta[name="description"]').attr('content')?.trim()
+    || '';
+
+  // Try to get the full description from the JSON-LD or ytInitialData
+  let fullDescription = description;
+  const descMatch = html.match(/"shortDescription":"((?:[^"\\]|\\.)*)"/);
+  if (descMatch) {
+    fullDescription = descMatch[1]
+      .replace(/\\n/g, '\n')
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, '\\');
+  }
+
+  // Extract URLs from description for link detection
+  const descriptionLinks: string[] = [];
+  const urlRegex = /https?:\/\/[^\s"'<>]+/g;
+  let urlMatch;
+  while ((urlMatch = urlRegex.exec(fullDescription)) !== null) {
+    descriptionLinks.push(urlMatch[0]);
+  }
+
+  // Fetch transcript
+  let transcriptText = '';
+  try {
+    const transcript = await YoutubeTranscript.fetchTranscript(videoUrl, { lang: 'en' });
+    transcriptText = transcript.map(t => t.text).join(' ').replace(/\s+/g, ' ').trim();
+  } catch {
+    // Transcript not available (disabled, auto-generated only, etc.)
+    // Still useful with title + description
+  }
+
+  // Combine description and transcript as the body text
+  const bodyParts = [fullDescription, transcriptText].filter(Boolean);
+  const bodyText = bodyParts.join('\n\n').slice(0, 15000);
+
+  return {
+    url: videoUrl,
+    title: title ? `${title}` : 'YouTube Video',
+    h1: title,
+    headings: [channelName, title].filter(Boolean),
+    metaDescription: description.slice(0, 200),
+    bodyText,
+    internalLinks: descriptionLinks,
+  };
+}
+
 
 async function fetchAndParsePage(url: string): Promise<PageData | null> {
   const res = await fetch(url, {

@@ -60,6 +60,7 @@ export interface AffiliateReport {
   outreachOpportunities: AffiliateOpportunity[];
   quickWins: AffiliateOpportunity[];
   suggestedPrograms: SuggestedProgram[];
+  scannedPages: { url: string; title: string }[];
 }
 
 // -------------------------------------------------------------------
@@ -227,14 +228,74 @@ const NICHE_SIGNALS: Record<string, string[]> = {
   ],
   'entertainment': [
     'movie', 'film', 'music', 'concert', 'show', 'theater', 'theatre',
-    'streaming', 'gaming', 'game', 'event', 'ticket', 'performance',
+    'streaming', 'event', 'ticket', 'performance',
     'comedy', 'entertainment', 'fun', 'activity', 'experience',
     'museum', 'gallery', 'spa', 'adventure', 'escape room',
-    'bowling', 'karaoke', 'arcade', 'amusement',
+    'bowling', 'karaoke', 'amusement',
+  ],
+  'gaming': [
+    'gaming', 'game', 'gamer', 'esports', 'e-sports', 'pc gaming',
+    'console', 'playstation', 'xbox', 'nintendo', 'steam',
+    'twitch', 'streaming', 'fps', 'mmo', 'rpg', 'moba',
+    'gpu', 'graphics card', 'gaming mouse', 'gaming keyboard',
+    'gaming chair', 'gaming monitor', 'gaming headset',
+    'game review', 'gameplay', 'speedrun', 'mod', 'multiplayer',
+    'vr', 'virtual reality', 'arcade',
+  ],
+  'beauty': [
+    'skincare', 'makeup', 'cosmetics', 'beauty', 'foundation', 'concealer',
+    'mascara', 'lipstick', 'blush', 'eyeshadow', 'primer', 'serum',
+    'moisturizer', 'cleanser', 'toner', 'exfoliant', 'retinol', 'spf',
+    'sunscreen', 'hair care', 'shampoo', 'conditioner', 'hair mask',
+    'nail polish', 'fragrance', 'perfume', 'beauty routine', 'glow',
+    'acne', 'anti-aging', 'dermatologist', 'esthetician', 'facial',
+    'beauty box', 'subscription box', 'cruelty-free', 'clean beauty',
+    'vegan beauty', 'k-beauty', 'korean skincare',
+  ],
+  'parenting': [
+    'baby', 'toddler', 'infant', 'newborn', 'pregnancy', 'pregnant',
+    'parenting', 'parent', 'mom', 'dad', 'motherhood', 'fatherhood',
+    'diaper', 'stroller', 'car seat', 'nursery', 'crib', 'baby food',
+    'breastfeeding', 'formula', 'baby monitor', 'pacifier', 'teething',
+    'potty training', 'milestone', 'baby shower', 'maternity',
+    'kids', 'children', 'child', 'preschool', 'daycare',
+    'baby carrier', 'baby wrap', 'play mat', 'baby toy',
+  ],
+  'outdoor': [
+    'camping', 'hiking', 'backpacking', 'trail', 'outdoor', 'wilderness',
+    'tent', 'sleeping bag', 'campfire', 'campsite', 'national park',
+    'climbing', 'mountaineering', 'kayak', 'canoe', 'fishing',
+    'hunting', 'archery', 'survival', 'bushcraft', 'overlanding',
+    'ski', 'skiing', 'snowboard', 'snowboarding',
+    'trail running', 'thru-hike', 'backpack', 'trekking',
+    'off-grid', 'solar panel', 'portable power', 'campground',
+    'nature', 'wildlife', 'bird watching', 'foraging',
+  ],
+  'home-improvement': [
+    'renovation', 'remodel', 'diy project', 'home improvement',
+    'power tool', 'drill', 'saw', 'sander', 'woodworking project',
+    'paint', 'painting', 'drywall', 'flooring', 'tile', 'plumbing',
+    'electrical', 'hvac', 'insulation', 'roofing',
+    'smart home', 'home security', 'thermostat', 'doorbell camera',
+    'home automation', 'smart lock', 'security camera',
+    'deck', 'fence', 'patio', 'landscaping', 'garage',
+    'tool review', 'power tools', 'hand tools', 'workshop',
+    'contractor', 'handyman', 'home repair', 'fixer upper',
+  ],
+  'photography': [
+    'camera', 'lens', 'photography', 'photographer', 'photo',
+    'portrait', 'landscape photography', 'street photography',
+    'wedding photography', 'product photography', 'studio',
+    'lightroom', 'photoshop', 'photo editing', 'raw',
+    'aperture', 'shutter speed', 'iso', 'exposure', 'bokeh',
+    'tripod', 'flash', 'lighting', 'softbox', 'strobe',
+    'mirrorless', 'dslr', 'full frame', 'crop sensor',
+    'preset', 'color grading', 'retouching', 'compositing',
+    'photo print', 'gallery', 'portfolio', 'shoot', 'photoshoot',
   ],
   'health': [
     'health', 'wellness', 'medical', 'doctor', 'therapy', 'mental health',
-    'supplement', 'vitamin', 'skincare', 'beauty', 'self-care',
+    'supplement', 'vitamin', 'self-care',
     'meditation', 'mindfulness', 'sleep', 'diet',
   ],
   'home': [
@@ -260,24 +321,38 @@ const NICHE_SIGNALS: Record<string, string[]> = {
     'impressionism', 'art deco', 'decor', 'wall decor',
     'home decor', 'interior design', 'limited edition',
   ],
+  'craft': [
+    'sewing', 'sewing machine', 'quilting', 'quilt', 'embroidery',
+    'serger', 'overlock', 'bobbin', 'stitch', 'stitching', 'seam',
+    'fabric', 'thread', 'needle', 'pattern', 'notions', 'scissors',
+    'rotary cutter', 'cutting mat', 'iron', 'pressing', 'stabilizer',
+    'interfacing', 'zipper', 'button', 'hem', 'hemming',
+    'craft', 'crafting', 'diy', 'handmade', 'maker', 'cricut',
+    'knitting', 'crochet', 'yarn', 'cross stitch', 'needlework',
+    'scrapbook', 'scrapbooking', 'paper craft', 'bead', 'beading',
+    'jewelry making', 'woodworking', 'leather craft',
+    'vacuum', 'vacuum cleaner', 'floor care', 'carpet cleaner',
+    'singer', 'brother', 'janome', 'bernina', 'juki', 'pfaff',
+    'husqvarna viking', 'baby lock',
+  ],
 };
 
 // Which affiliate categories are relevant to each niche
 const NICHE_CATEGORY_RELEVANCE: Record<string, string[]> = {
   'dating': [
     'dating', 'entertainment', 'food', 'travel', 'gifts',
-    'courses', 'education', 'health', 'fashion',
+    'courses', 'education', 'fashion',
   ],
   'travel': [
-    'travel', 'insurance', 'photography', 'finance-personal',
-    'health', 'sustainability', 'entertainment',
+    'travel', 'insurance', 'finance-personal',
+    'sustainability', 'entertainment',
   ],
   'food': [
-    'food', 'health', 'ecommerce', 'courses', 'sustainability',
+    'food', 'health', 'courses', 'sustainability',
     'home', 'gifts',
   ],
   'fitness': [
-    'health', 'food', 'courses', 'ecommerce', 'education',
+    'fitness', 'health', 'food', 'courses', 'education',
   ],
   'tech': [
     'hosting', 'developer', 'ai', 'design', 'seo', 'security',
@@ -305,26 +380,47 @@ const NICHE_CATEGORY_RELEVANCE: Record<string, string[]> = {
     'hosting', 'ecommerce',
   ],
   'entertainment': [
-    'entertainment', 'music', 'video', 'gaming', 'travel', 'fashion',
-    'photography', 'creator', 'social', 'stock-media', 'food', 'gifts',
+    'entertainment', 'music', 'gaming', 'travel',
+    'food', 'gifts',
+  ],
+  'gaming': [
+    'gaming', 'entertainment',
   ],
   'health': [
-    'health', 'food', 'courses', 'education', 'sustainability',
+    'health', 'fitness', 'food', 'courses', 'education', 'sustainability',
   ],
   'home': [
-    'home', 'ecommerce', 'sustainability', 'real-estate', 'insurance',
+    'home', 'sustainability', 'real-estate', 'insurance',
     'finance-personal', 'photography',
   ],
   'fashion': [
-    'fashion', 'ecommerce', 'photography', 'social', 'creator',
+    'fashion', 'photography', 'social', 'creator',
     'print-on-demand', 'design',
   ],
+  'beauty': [
+    'beauty', 'fashion',
+  ],
+  'parenting': [
+    'parenting', 'education', 'courses',
+  ],
+  'outdoor': [
+    'outdoor', 'travel',
+  ],
+  'home-improvement': [
+    'home-improvement', 'home',
+  ],
+  'photography': [
+    'photography', 'stock-media', 'courses', 'video',
+  ],
   'pet': [
-    'pet', 'health', 'ecommerce', 'insurance',
+    'pet', 'insurance',
   ],
   'art': [
     'art', 'print-on-demand', 'design', 'ecommerce',
     'photography', 'stock-media', 'courses', 'home',
+  ],
+  'craft': [
+    'craft', 'home', 'courses',
   ],
 };
 
@@ -358,6 +454,44 @@ function detectNiche(pages: PageData[]): { niche: string; score: number }[] {
     if (count > 0) {
       scores[niche] = count;
     }
+  }
+
+  // If a specific niche (not ecommerce/marketing) scores strongly alongside
+  // ecommerce, the site is likely a STORE in that niche, not a site ABOUT
+  // ecommerce tools. Demote ecommerce so SaaS tools don't dominate suggestions.
+  const specificNiches = Object.keys(scores).filter(
+    n => !['ecommerce', 'marketing'].includes(n)
+  );
+  const hasStrongSpecific = specificNiches.some(n => scores[n] >= 20);
+  if (hasStrongSpecific && scores['ecommerce']) {
+    scores['ecommerce'] = Math.floor(scores['ecommerce'] * 0.15);
+  }
+  if (hasStrongSpecific && scores['marketing']) {
+    scores['marketing'] = Math.floor(scores['marketing'] * 0.3);
+  }
+
+  // If gaming scores strongly alongside entertainment, the site is about
+  // gaming specifically, not general entertainment. Demote entertainment.
+  if (scores['gaming'] && scores['gaming'] >= 10 && scores['entertainment']) {
+    scores['entertainment'] = Math.floor(scores['entertainment'] * 0.2);
+  }
+
+  // If beauty scores strongly alongside health, demote health so wellness
+  // supplements don't dominate a skincare/makeup site.
+  if (scores['beauty'] && scores['beauty'] >= 10 && scores['health']) {
+    scores['health'] = Math.floor(scores['health'] * 0.3);
+  }
+
+  // If outdoor scores strongly alongside fitness, demote fitness so gym
+  // equipment doesn't dominate a camping/hiking site.
+  if (scores['outdoor'] && scores['outdoor'] >= 10 && scores['fitness']) {
+    scores['fitness'] = Math.floor(scores['fitness'] * 0.3);
+  }
+
+  // If home-improvement scores strongly alongside home, demote home so
+  // generic home decor doesn't dominate a tools/renovation site.
+  if (scores['home-improvement'] && scores['home-improvement'] >= 10 && scores['home']) {
+    scores['home'] = Math.floor(scores['home'] * 0.3);
   }
 
   return Object.entries(scores)
@@ -570,11 +704,18 @@ const NICHE_LABELS: Record<string, string> = {
   finance: 'Finance',
   education: 'Education',
   entertainment: 'Entertainment',
+  gaming: 'Gaming',
   health: 'Health & Wellness',
   home: 'Home & Living',
   fashion: 'Fashion & Beauty',
+  beauty: 'Beauty & Skincare',
+  parenting: 'Parenting & Baby',
+  outdoor: 'Outdoor & Camping',
+  'home-improvement': 'Home Improvement & DIY',
+  photography: 'Photography & Creator',
   pet: 'Pets',
   art: 'Art & Home Decor',
+  craft: 'Craft, Sewing & DIY',
 };
 
 // Content angle suggestions per category (why this program fits the niche)
@@ -605,6 +746,13 @@ const CATEGORY_CONTENT_ANGLES: Record<string, Record<string, string>> = {
     health: 'Cover nutrition tools, healthy eating guides, and wellness products',
     home: 'Feature kitchen equipment, dining setups, and entertaining guides',
     gifts: 'Write about food gift baskets, wine clubs, and kitchen gift guides',
+  },
+  fitness: {
+    fitness: 'Review gym equipment, workout gear, and athletic apparel',
+    health: 'Cover supplements, recovery tools, and wellness trackers',
+    food: 'Write about meal prep, protein products, and sports nutrition',
+    courses: 'Feature online training programs, certifications, and workout apps',
+    education: 'Cover fitness certifications, coaching courses, and sports science resources',
   },
   tech: {
     hosting: 'Compare hosting providers and write setup tutorials',
@@ -641,6 +789,10 @@ const CATEGORY_CONTENT_ANGLES: Record<string, Record<string, string>> = {
     food: 'Feature food delivery and dining experience platforms',
     gifts: 'Write gift guides for entertainment lovers',
   },
+  gaming: {
+    gaming: 'Review gaming gear, peripherals, chairs, and PC components',
+    entertainment: 'Cover game subscription services, streaming platforms, and VR headsets',
+  },
   health: {
     health: 'Review wellness apps, supplements, and fitness trackers',
     food: 'Cover nutrition, meal planning, and healthy cooking tools',
@@ -656,10 +808,41 @@ const CATEGORY_CONTENT_ANGLES: Record<string, Record<string, string>> = {
     'real-estate': 'Write about property tools and home buying resources',
     sustainability: 'Cover eco-friendly home products and sustainable living',
   },
+  beauty: {
+    beauty: 'Review skincare routines, makeup products, and beauty tools',
+    health: 'Cover wellness supplements, self-care routines, and clean beauty products',
+    fashion: 'Write about beauty trends, seasonal looks, and styling with makeup',
+  },
+  parenting: {
+    parenting: 'Review baby gear, strollers, monitors, and kids products',
+    health: 'Cover baby nutrition, child wellness, and parenting self-care',
+    education: 'Feature educational toys, learning tools, and child development resources',
+    courses: 'Write about parenting classes, baby first aid, and child development courses',
+  },
+  outdoor: {
+    outdoor: 'Review camping gear, hiking boots, tents, and outdoor apparel',
+    fitness: 'Cover trail running gear, outdoor fitness equipment, and adventure sports',
+    travel: 'Write about national parks, outdoor destinations, and adventure travel',
+  },
+  'home-improvement': {
+    'home-improvement': 'Review power tools, smart home devices, and renovation materials',
+    home: 'Cover furniture, storage solutions, and home organization projects',
+  },
+  photography: {
+    photography: 'Review cameras, lenses, editing software, and lighting gear',
+    'stock-media': 'Cover stock photo platforms and selling photos online',
+    courses: 'Feature photography classes, editing tutorials, and skill-building resources',
+    video: 'Write about video gear, hybrid cameras, and content creation tools',
+  },
   pet: {
     pet: 'Review pet food brands, supplies, and services',
     health: 'Cover pet wellness products and veterinary resources',
     insurance: 'Compare pet insurance providers',
+  },
+  craft: {
+    craft: 'Review sewing machines, fabric suppliers, and craft tools',
+    home: 'Write about home organization for craft rooms, storage, and cleaning tools',
+    courses: 'Feature sewing classes, quilting workshops, and DIY skill-building platforms',
   },
   art: {
     art: 'Review art marketplaces, print services, and framing options',
@@ -867,5 +1050,6 @@ export function buildAffiliateReport(
     outreachOpportunities: outreach,
     quickWins,
     suggestedPrograms,
+    scannedPages: pages.map(p => ({ url: p.url, title: p.title })),
   };
 }

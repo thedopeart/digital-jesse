@@ -124,7 +124,7 @@ export default function AffiliateOpportunityFinderPage() {
 
     try {
       if (!sitemapUrl.trim()) {
-        setError('Enter a sitemap URL or domain to analyze.');
+        setError('Enter a domain, sitemap URL, or YouTube channel to analyze.');
         setIsLoading(false);
         return;
       }
@@ -343,13 +343,13 @@ export default function AffiliateOpportunityFinderPage() {
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Sitemap URL or domain
+                  Website or YouTube channel URL
                 </label>
                 <input
                   type="text"
                   value={sitemapUrl}
                   onChange={(e) => setSitemapUrl(e.target.value)}
-                  placeholder="https://example.com/sitemap.xml or example.com"
+                  placeholder="example.com or youtube.com/@channel"
                   onKeyDown={(e) => { if (e.key === 'Enter' && !isLoading) runScan(); }}
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#d4a847] focus:ring-2 focus:ring-[#d4a847]/20 focus:bg-white transition-colors"
                 />
@@ -385,102 +385,74 @@ export default function AffiliateOpportunityFinderPage() {
           {/* Results */}
           {hasResults && report && (
             <div className="mt-10">
-              {/* Results Control Card */}
-              <div className="bg-white border border-gray-200 rounded-2xl p-5 md:p-6 shadow-lg shadow-black/[0.04] ring-1 ring-black/[0.03] mb-6">
-                {/* Row 1: title + stats + export */}
-                <div className="flex flex-wrap items-center gap-3">
-                  <h2 className="text-2xl font-bold text-gray-900 mr-1">Results</h2>
-                  {crawlStats && (
-                    <div className="flex flex-wrap items-center gap-2">
-                      <div className="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-lg">
-                        <span className="text-gray-500 text-xs block leading-tight">Pages Scanned</span>
-                        <span className="text-gray-900 font-semibold text-sm">{crawlStats.crawled}</span>
-                      </div>
-                      <div className="px-3 py-1.5 bg-green-50 border border-green-200 rounded-lg">
-                        <span className="text-gray-500 text-xs block leading-tight">Opportunities</span>
-                        <span className="text-green-700 font-semibold text-sm">{opportunityCount}</span>
-                      </div>
-                      <div className="px-3 py-1.5 bg-blue-50 border border-blue-200 rounded-lg">
-                        <span className="text-gray-500 text-xs block leading-tight">Brands Found</span>
-                        <span className="text-blue-700 font-semibold text-sm">{report.totalBrandsFound}</span>
-                      </div>
-                      {crawlStats.errors > 0 && (
-                        <div className="px-3 py-1.5 bg-yellow-50 border border-yellow-200 rounded-lg">
-                          <span className="text-gray-500 text-xs block leading-tight">Errors</span>
-                          <span className="text-yellow-700 font-semibold text-sm">{crawlStats.errors}</span>
-                        </div>
-                      )}
-                    </div>
+              {/* Results tabs + actions */}
+              <div className="flex flex-wrap items-center gap-2 mb-6">
+                <div className="flex gap-1 bg-white border border-gray-200 rounded-lg p-1 shadow-sm">
+                  {suggestedCount > 0 && (
+                    <button
+                      onClick={() => setResultsTab('suggested')}
+                      className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                        resultsTab === 'suggested'
+                          ? 'bg-gray-900 text-white shadow-sm'
+                          : 'text-gray-500 hover:text-gray-800'
+                      }`}
+                    >
+                      Suggested ({suggestedCount})
+                    </button>
                   )}
                   <button
-                    onClick={exportCsv}
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black font-semibold text-sm rounded-lg hover:shadow-md hover:shadow-amber-900/15 hover:scale-[1.02] transition-all duration-200 ml-auto"
+                    onClick={() => setResultsTab('opportunities')}
+                    className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                      resultsTab === 'opportunities'
+                        ? 'bg-gray-900 text-white shadow-sm'
+                        : 'text-gray-500 hover:text-gray-800'
+                    }`}
                   >
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M7 2v7M7 9L4.5 6.5M7 9L9.5 6.5M2.5 11h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    Export CSV
+                    Opportunities ({opportunityCount})
+                  </button>
+                  <button
+                    onClick={() => setResultsTab('linked')}
+                    className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                      resultsTab === 'linked'
+                        ? 'bg-gray-900 text-white shadow-sm'
+                        : 'text-gray-500 hover:text-gray-800'
+                    }`}
+                  >
+                    Linked ({linkedCount})
+                  </button>
+                  <button
+                    onClick={() => setResultsTab('outreach')}
+                    className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                      resultsTab === 'outreach'
+                        ? 'bg-gray-900 text-white shadow-sm'
+                        : 'text-gray-500 hover:text-gray-800'
+                    }`}
+                  >
+                    Outreach ({outreachCount})
                   </button>
                 </div>
 
-                {/* Row 2: tabs */}
-                <div className="flex flex-wrap items-center gap-2 mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex gap-1 bg-gray-100 rounded-lg p-1">
-                    {suggestedCount > 0 && (
-                      <button
-                        onClick={() => setResultsTab('suggested')}
-                        className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                          resultsTab === 'suggested'
-                            ? 'bg-white text-gray-900 shadow-sm'
-                            : 'text-gray-500 hover:text-gray-800'
-                        }`}
-                      >
-                        Suggested ({suggestedCount})
-                      </button>
-                    )}
-                    <button
-                      onClick={() => setResultsTab('opportunities')}
-                      className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                        resultsTab === 'opportunities'
-                          ? 'bg-white text-gray-900 shadow-sm'
-                          : 'text-gray-500 hover:text-gray-800'
-                      }`}
-                    >
-                      Opportunities ({opportunityCount})
-                    </button>
-                    <button
-                      onClick={() => setResultsTab('linked')}
-                      className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                        resultsTab === 'linked'
-                          ? 'bg-white text-gray-900 shadow-sm'
-                          : 'text-gray-500 hover:text-gray-800'
-                      }`}
-                    >
-                      Already Linked ({linkedCount})
-                    </button>
-                    <button
-                      onClick={() => setResultsTab('outreach')}
-                      className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
-                        resultsTab === 'outreach'
-                          ? 'bg-white text-gray-900 shadow-sm'
-                          : 'text-gray-500 hover:text-gray-800'
-                      }`}
-                    >
-                      Outreach ({outreachCount})
-                    </button>
+                {/* Niche badges */}
+                {report.detectedNiches && report.detectedNiches.length > 0 && (
+                  <div className="flex items-center gap-1.5">
+                    {report.detectedNiches.slice(0, 2).map(n => (
+                      <span key={n} className="px-2.5 py-1 text-xs font-medium rounded-full bg-[#d4a847]/10 text-[#9a7b1f] border border-[#d4a847]/15 capitalize">
+                        {n}
+                      </span>
+                    ))}
                   </div>
-                  {/* Detected niche badge */}
-                  {report.detectedNiches && report.detectedNiches.length > 0 && (
-                    <div className="flex items-center gap-1.5 ml-auto sm:ml-0">
-                      <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">Niche:</span>
-                      {report.detectedNiches.slice(0, 2).map(n => (
-                        <span key={n} className="px-2 py-0.5 text-xs font-medium rounded-full bg-[#d4a847]/10 text-[#9a7b1f] border border-[#d4a847]/15 capitalize">
-                          {n}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                )}
+
+                {/* Export */}
+                <button
+                  onClick={exportCsv}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 text-gray-700 font-medium text-xs rounded-lg hover:border-[#d4a847]/40 hover:text-[#9a7b1f] transition-all duration-150 ml-auto shadow-sm"
+                >
+                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2v7M7 9L4.5 6.5M7 9L9.5 6.5M2.5 11h9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Export CSV
+                </button>
               </div>
 
               {/* Quick Wins Banner (only on opportunities tab) */}
@@ -506,7 +478,7 @@ export default function AffiliateOpportunityFinderPage() {
 
               {/* Results Cards */}
               {resultsTab === 'suggested' ? (
-                <SuggestedProgramsList programs={report.suggestedPrograms || []} />
+                <SuggestedProgramsList programs={report.suggestedPrograms || []} scannedPages={report.scannedPages || []} />
               ) : currentTabData.length === 0 ? (
                 <div className="text-center py-12 text-gray-400">
                   {resultsTab === 'opportunities'
@@ -539,9 +511,9 @@ export default function AffiliateOpportunityFinderPage() {
             <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-lg shadow-black/[0.04] ring-1 ring-black/[0.03]">
               <div className="space-y-5">
                 {[
-                  { step: '1', title: 'Drop in your URL', desc: 'Sitemap URL or just your domain. The tool crawls every page it can find.' },
-                  { step: '2', title: 'Content gets scanned', desc: 'Every page is checked for brand and product mentions against our database of 150+ affiliate programs.' },
-                  { step: '3', title: 'Get your opportunity report', desc: 'See which brands you mention, which have affiliate programs, and exactly where in your content the opportunities are.' },
+                  { step: '1', title: 'Drop in your URL', desc: 'Domain, sitemap URL, or YouTube channel. The tool crawls pages or scans video descriptions and transcripts.' },
+                  { step: '2', title: 'Content gets scanned', desc: 'Every page is checked for brand mentions against 500+ affiliate programs. Your site\'s niche is auto-detected too.' },
+                  { step: '3', title: 'Get your full report', desc: 'Unlinked opportunities in existing content, niche-matched program suggestions with content ideas, network signup shortcuts, and CSV export.' },
                 ].map((item, i) => (
                   <FadeIn key={item.step} delay={i * 100}>
                     <div className="flex gap-4 items-start group">
@@ -575,12 +547,12 @@ export default function AffiliateOpportunityFinderPage() {
 
           <div className="grid sm:grid-cols-2 gap-5 mb-16">
             {[
-              { title: 'Unlinked brand detection', desc: 'Every mention of a brand, tool, or product in your content that isn\'t wrapped in a link yet. These are free money sitting on the table.' },
-              { title: 'Affiliate program matching', desc: 'Each brand is cross-referenced against 150+ affiliate programs. You see the commission structure, the network, and where to sign up.' },
+              { title: 'Niche-matched suggestions', desc: 'Your site\'s niche is auto-detected, and you get a list of programs you don\'t mention yet but should. Each comes with content ideas to help you rank.' },
+              { title: 'Network signup shortcuts', desc: 'Programs are grouped by affiliate network (CJ, Impact, ShareASale, etc.). One signup per network unlocks multiple programs. Expand any network to see all its programs.' },
+              { title: 'Unlinked brand detection', desc: 'Every mention of a brand in your content that isn\'t wrapped in a link yet. These are the fastest wins since the content already exists.' },
+              { title: 'Sort and filter', desc: 'Sort suggested programs by best fit, highest earning potential, or recurring revenue first. Find the opportunities that match your strategy.' },
               { title: 'Context snippets', desc: 'See the exact sentence where each brand is mentioned so you can judge whether an affiliate link fits naturally.' },
-              { title: 'Quick wins section', desc: 'The top 5 highest-value opportunities sorted by mention count and commission potential. Start with these.' },
-              { title: 'Outreach opportunities', desc: 'Brands you mention frequently that don\'t have affiliate programs. Consider reaching out for a sponsorship deal.' },
-              { title: 'CSV export', desc: 'Download the full report. Hand it to your team, track your implementation progress, or reference it later.' },
+              { title: 'CSV export', desc: 'Download the full report with all programs, commissions, networks, and content strategies. Hand it to your team or track implementation.' },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 80} className="h-full">
                 <div className="h-full p-6 bg-white/[0.03] border border-white/[0.08] rounded-xl hover:border-[#d4a847]/30 hover:bg-white/[0.05] hover:-translate-y-0.5 transition-all duration-200">
@@ -602,9 +574,9 @@ export default function AffiliateOpportunityFinderPage() {
           </FadeIn>
           <div className="space-y-4 max-w-3xl mx-auto">
             {[
-              { step: '1', title: 'Start with the quick wins', desc: 'These are the brands you mention most with the highest commission rates. You can add these affiliate links in 10 minutes.' },
-              { step: '2', title: 'Sign up for the programs', desc: 'Click through to each affiliate program signup page. Most approve you within 24 hours if you have real content.' },
-              { step: '3', title: 'Add links where they fit naturally', desc: 'Look at the context snippets. Only add affiliate links where the mention is positive and the link would genuinely help your reader.' },
+              { step: '1', title: 'Join the affiliate networks', desc: 'Use the network shortcuts to sign up for CJ, Impact, or ShareASale. One signup per network gives you access to dozens of programs at once.' },
+              { step: '2', title: 'Add links to existing mentions', desc: 'Check the Opportunities tab for brands you already mention. These are the fastest wins since the content is already written and ranking.' },
+              { step: '3', title: 'Create content for suggested programs', desc: 'Use the content ideas from the Suggested tab to write new posts. These are programs matched to your niche that you\'re not covering yet.' },
               { step: '4', title: 'Add disclosure to those pages', desc: 'FTC requires affiliate disclosure. Add a note at the top of any page with affiliate links. It builds trust and keeps you legal.' },
             ].map((item, i) => (
               <FadeIn key={item.step} delay={i * 120}>
@@ -642,7 +614,7 @@ export default function AffiliateOpportunityFinderPage() {
             </FadeIn>
             <FadeIn delay={300}>
               <p>
-                This tool automates the discovery step. It scans your site, finds every brand mention, tells you which ones have affiliate programs, and shows you exactly where the opportunities are. You decide what fits. It's one of several{' '}
+                This tool automates the discovery step. It scans your site, finds every brand mention, matches them to 500+ affiliate programs, and suggests new programs based on your niche. You get network signup shortcuts, content ideas, and sorting tools to prioritize what to tackle first. It's one of several{' '}
                 <Link href="/tools" className="text-[#b8860b] hover:text-[#d4a847] underline underline-offset-2">
                   free SEO tools
                 </Link>{' '}
@@ -659,7 +631,7 @@ export default function AffiliateOpportunityFinderPage() {
             <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-lg shadow-black/[0.04] ring-1 ring-black/[0.03]">
               <FaqItem
                 question="How many affiliate programs does it check?"
-                answer="Over 150 across 15+ categories: e-commerce, email marketing, SEO tools, hosting, design, courses, and more. We add new programs regularly."
+                answer="Over 500 across 20+ categories: e-commerce, email marketing, SEO tools, hosting, design, courses, travel, dating, art, home decor, and more. New programs are added regularly."
               />
               <FaqItem
                 question="How does it know if a brand is already linked?"
@@ -933,6 +905,11 @@ function getContentIdeas(brand: string, category: string): string[] {
       `"Best wellness apps" comparison`,
       `"How ${brand} helped my routine"`,
     ],
+    'craft': [
+      `"${brand} review for sewers and crafters"`,
+      `"Best ${brand} products for beginners"`,
+      `"${brand} vs competitors" comparison guide`,
+    ],
   };
 
   return ideas[category] || [
@@ -978,8 +955,55 @@ function parseCommissionValue(commission: string): number {
 
 type SuggestedSort = 'best-fit' | 'highest-earning' | 'recurring-first';
 
+/* ── Page matching for suggested programs ── */
+const CATEGORY_PAGE_KEYWORDS: Record<string, string[]> = {
+  'art': ['art', 'paint', 'canvas', 'gallery', 'print', 'poster', 'frame', 'decor', 'wall art', 'artist'],
+  'home': ['home', 'decor', 'interior', 'furniture', 'living', 'room', 'design', 'style'],
+  'ecommerce': ['shop', 'store', 'buy', 'product', 'sell', 'price', 'collection'],
+  'print-on-demand': ['print', 'custom', 'merch', 'product', 'design', 'create'],
+  'design': ['design', 'creative', 'graphic', 'logo', 'brand', 'visual'],
+  'photography': ['photo', 'camera', 'image', 'picture', 'shoot'],
+  'stock-media': ['stock', 'image', 'photo', 'asset', 'media', 'resource'],
+  'courses': ['course', 'learn', 'class', 'tutorial', 'workshop', 'guide'],
+  'dating': ['date', 'dating', 'relationship', 'couple', 'romance', 'love'],
+  'travel': ['travel', 'hotel', 'flight', 'trip', 'vacation', 'destination', 'booking'],
+  'food': ['food', 'recipe', 'cook', 'meal', 'restaurant', 'kitchen', 'dinner'],
+  'entertainment': ['movie', 'music', 'show', 'event', 'ticket', 'game', 'fun', 'activity'],
+  'health': ['health', 'wellness', 'fitness', 'meditation', 'sleep', 'self-care'],
+  'email': ['email', 'newsletter', 'subscriber', 'list', 'marketing'],
+  'seo': ['seo', 'keyword', 'ranking', 'search', 'traffic', 'organic'],
+  'hosting': ['hosting', 'server', 'website', 'domain', 'wordpress'],
+  'finance': ['finance', 'money', 'budget', 'invest', 'accounting', 'tax'],
+  'fashion': ['fashion', 'style', 'outfit', 'clothing', 'wear', 'trend'],
+  'craft': ['sewing', 'quilt', 'craft', 'fabric', 'stitch', 'embroidery', 'pattern', 'machine', 'vacuum', 'diy'],
+};
+
+function findBestPages(
+  category: string,
+  scannedPages: { url: string; title: string }[],
+  max = 3
+): { url: string; title: string }[] {
+  const keywords = CATEGORY_PAGE_KEYWORDS[category];
+  if (!keywords || scannedPages.length === 0) return [];
+
+  const scored = scannedPages.map(page => {
+    const text = `${page.title} ${page.url}`.toLowerCase();
+    let score = 0;
+    for (const kw of keywords) {
+      if (text.includes(kw)) score++;
+    }
+    return { page, score };
+  });
+
+  return scored
+    .filter(s => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, max)
+    .map(s => s.page);
+}
+
 /* ── Suggested Programs List ── */
-function SuggestedProgramsList({ programs }: { programs: SuggestedProgram[] }) {
+function SuggestedProgramsList({ programs, scannedPages }: { programs: SuggestedProgram[]; scannedPages: { url: string; title: string }[] }) {
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
   const [expandedNetwork, setExpandedNetwork] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<SuggestedSort>('best-fit');
@@ -1002,8 +1026,8 @@ function SuggestedProgramsList({ programs }: { programs: SuggestedProgram[] }) {
 
   // Aggregate affiliate networks across suggested programs
   const NETWORK_INFO: Record<string, { name: string; description: string; url: string }> = {
-    cj: { name: 'CJ Affiliate', description: 'One of the largest affiliate networks. Home to eHarmony, Match.com, FTD, 1-800-Flowers, and hundreds more.', url: 'https://signup.cj.com/member/signup/publisher/' },
-    impact: { name: 'Impact', description: 'Modern affiliate platform used by Shopify, Canva, Uber, and other top brands.', url: 'https://impact.com/' },
+    cj: { name: 'CJ Affiliate', description: 'One of the largest affiliate networks with thousands of merchants across every category.', url: 'https://signup.cj.com/member/signup/publisher/' },
+    impact: { name: 'Impact', description: 'Modern affiliate platform used by major brands across e-commerce, SaaS, and more.', url: 'https://impact.com/' },
     shareasale: { name: 'ShareASale', description: 'Popular network with 30,000+ merchants across every category.', url: 'https://www.shareasale.com/newsignup.cfm' },
     awin: { name: 'Awin', description: 'Global affiliate network (owns ShareASale). Strong in travel, retail, and finance.', url: 'https://www.awin.com/us/publishers' },
     flexoffers: { name: 'FlexOffers', description: 'Growing network with 12,000+ advertisers across all niches.', url: 'https://www.flexoffers.com/' },
@@ -1034,18 +1058,172 @@ function SuggestedProgramsList({ programs }: { programs: SuggestedProgram[] }) {
     return !net || net === 'none' || net === 'direct' || !topNetworkKeys.has(net);
   });
 
+  // Compute insights for the summary panel
+  const recurringPrograms = programs.filter(sp => sp.program.type === 'recurring');
+  const flatPrograms = programs.filter(sp => sp.program.type === 'flat');
+  const percentagePrograms = programs.filter(sp => sp.program.type === 'percentage');
+
+  // Top earners by parsed commission value
+  const programsByEarning = [...programs].sort((a, b) =>
+    parseCommissionValue(b.program.commission) - parseCommissionValue(a.program.commission)
+  );
+  const topEarners = programsByEarning.slice(0, 5);
+
+  // Category breakdown
+  const categoryBreakdown = new Map<string, number>();
+  for (const sp of programs) {
+    categoryBreakdown.set(sp.program.category, (categoryBreakdown.get(sp.program.category) || 0) + 1);
+  }
+  const topCategories = [...categoryBreakdown.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+  // Content strategy count
+  const strategyCount = grouped.size;
+
+  // Network count
+  const uniqueNetworks = new Set(programs.map(sp => sp.program.network).filter(n => n && n !== 'none' && n !== 'direct'));
+
+  const [insightsOpen, setInsightsOpen] = useState(false);
+
   return (
     <div className="space-y-4">
-      {/* Intro banner */}
-      <div className="bg-gradient-to-br from-[#d4a847]/[0.06] to-[#cd7f32]/[0.04] border border-[#d4a847]/15 rounded-xl px-5 py-3.5 flex items-center gap-3">
-        <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black flex items-center justify-center shrink-0 shadow-sm">
-          <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-            <path d="M9 2.5L10.5 6.5H15L11.5 9L12.5 13.5L9 11L5.5 13.5L6.5 9L3 6.5H7.5L9 2.5Z" fill="currentColor"/>
+      {/* Insights panel */}
+      <div className="bg-white border border-[#d4a847]/20 rounded-xl overflow-hidden shadow-sm">
+        <button
+          onClick={() => setInsightsOpen(!insightsOpen)}
+          className="w-full px-5 py-4 flex items-center gap-3 text-left hover:bg-[#d4a847]/[0.02] transition-colors"
+        >
+          <span className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#d4a847] to-[#cd7f32] text-black flex items-center justify-center shrink-0 shadow-sm">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <path d="M9 2.5L10.5 6.5H15L11.5 9L12.5 13.5L9 11L5.5 13.5L6.5 9L3 6.5H7.5L9 2.5Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <div className="flex-1 min-w-0">
+            <p className="text-base font-semibold text-gray-900">
+              {programs.length} programs matched to your niche
+            </p>
+            <p className="text-sm text-gray-500">
+              {strategyCount} content strategies across {uniqueNetworks.size} network{uniqueNetworks.size !== 1 ? 's' : ''}. Click to see the full breakdown.
+            </p>
+          </div>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            className={`shrink-0 text-gray-400 transition-transform duration-200 ${insightsOpen ? 'rotate-180' : ''}`}
+          >
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-        </span>
-        <p className="text-sm text-gray-700">
-          <strong className="text-gray-900">Programs matched to your niche.</strong> You don&apos;t mention these yet. Click any to see content ideas and signup links.
-        </p>
+        </button>
+
+        {insightsOpen && (
+          <div className="border-t border-[#d4a847]/10 px-5 pb-5">
+            {/* Stats row */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 mb-5">
+              {[
+                { value: programs.length.toString(), label: 'Total programs', color: 'text-gray-900' },
+                { value: recurringPrograms.length.toString(), label: 'Recurring revenue', color: 'text-green-700' },
+                { value: uniqueNetworks.size.toString(), label: 'Networks to join', color: 'text-[#9a7b1f]' },
+                { value: strategyCount.toString(), label: 'Content strategies', color: 'text-blue-700' },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-gray-50 rounded-lg p-3 text-center">
+                  <p className={`text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Two-column layout */}
+            <div className="grid md:grid-cols-2 gap-5">
+              {/* Left: Top earners */}
+              <div>
+                <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Highest earning potential</h4>
+                <div className="space-y-1.5">
+                  {topEarners.map((sp, i) => (
+                    <button
+                      key={sp.program.brand}
+                      onClick={() => {
+                        setInsightsOpen(false);
+                        setExpandedProgram(sp.program.brand);
+                        setTimeout(() => {
+                          document.getElementById(`suggested-${sp.program.brand}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 150);
+                      }}
+                      className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#d4a847]/[0.06] transition-colors text-left group cursor-pointer"
+                    >
+                      <span className="w-5 h-5 rounded-full bg-gradient-to-br from-[#d4a847] to-[#cd7f32] text-black font-bold text-[10px] flex items-center justify-center shrink-0">
+                        {i + 1}
+                      </span>
+                      <span className="flex-1 text-sm font-medium text-gray-900 group-hover:text-[#9a7b1f] transition-colors truncate">{sp.program.brand}</span>
+                      <span className="text-sm font-semibold text-green-700 shrink-0">{sp.program.commission}</span>
+                      {sp.program.type === 'recurring' && (
+                        <span className="text-[10px] font-bold text-[#9a7b1f] bg-[#d4a847]/10 px-1.5 py-0.5 rounded shrink-0 uppercase tracking-wider">Recurring</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: Category breakdown + revenue types */}
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Programs by category</h4>
+                  <div className="space-y-1.5">
+                    {topCategories.map(([cat, count]) => {
+                      const pct = Math.round((count / programs.length) * 100);
+                      return (
+                        <div key={cat} className="flex items-center gap-3">
+                          <span className="text-sm text-gray-700 capitalize flex-1 min-w-0 truncate">{cat.replace(/-/g, ' ')}</span>
+                          <div className="w-24 h-1.5 bg-gray-100 rounded-full overflow-hidden shrink-0">
+                            <div
+                              className="h-full bg-gradient-to-r from-[#d4a847] to-[#cd7f32] rounded-full"
+                              style={{ width: `${pct}%` }}
+                            />
+                          </div>
+                          <span className="text-xs text-gray-400 font-medium w-6 text-right shrink-0">{count}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Revenue types</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {recurringPrograms.length > 0 && (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-50 border border-green-100 rounded-lg text-xs font-medium text-green-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                        {recurringPrograms.length} recurring
+                      </span>
+                    )}
+                    {flatPrograms.length > 0 && (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-lg text-xs font-medium text-blue-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                        {flatPrograms.length} one-time
+                      </span>
+                    )}
+                    {percentagePrograms.length > 0 && (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 border border-amber-100 rounded-lg text-xs font-medium text-amber-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                        {percentagePrograms.length} percentage
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick tip at the bottom */}
+            <div className="mt-5 pt-4 border-t border-gray-100 flex items-start gap-2.5">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-[#9a7b1f] shrink-0 mt-0.5">
+                <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3.5v4M8 11h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <p className="text-sm text-gray-600">
+                <strong className="text-gray-800">Start with recurring programs.</strong> They pay monthly as long as the customer stays subscribed. {recurringPrograms.length > 0 ? `${recurringPrograms[0].program.brand}${recurringPrograms.length > 1 ? `, ${recurringPrograms[1].program.brand},` : ''} and others offer recurring commissions here.` : 'Sort by "Recurring First" below to find them.'}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Signup shortcuts: networks + direct programs side by side */}
@@ -1199,6 +1377,7 @@ function SuggestedProgramsList({ programs }: { programs: SuggestedProgram[] }) {
         const renderProgramRow = (sp: SuggestedProgram, idx: number) => {
           const isExpanded = expandedProgram === sp.program.brand;
           const contentIdeas = getContentIdeas(sp.program.brand, sp.program.category);
+          const bestPages = findBestPages(sp.program.category, scannedPages);
 
           return (
             <div key={sp.program.brand} id={`suggested-${sp.program.brand}`} className={`transition-colors ${idx % 2 === 1 ? 'bg-[#d4a847]/[0.04]' : 'hover:bg-gray-50/50'}`}>
@@ -1263,9 +1442,31 @@ function SuggestedProgramsList({ programs }: { programs: SuggestedProgram[] }) {
                           </li>
                         ))}
                       </ul>
+
+                      {bestPages.length > 0 && (
+                        <div className="mt-4">
+                          <h5 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Best pages to add this</h5>
+                          <div className="space-y-1">
+                            {bestPages.map((page) => (
+                              <a
+                                key={page.url}
+                                href={page.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm text-gray-700 hover:text-[#b8860b] transition-colors group"
+                              >
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="shrink-0 text-gray-300 group-hover:text-[#d4a847] transition-colors">
+                                  <path d="M2 3h8M2 6h8M2 9h5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+                                </svg>
+                                <span className="truncate">{page.title || page.url}</span>
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
 
-                    <div className="md:w-80 shrink-0">
+                    <div className="md:w-96 shrink-0">
                       <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
                         <div className="space-y-3 mb-5">
                           <div className="flex justify-between items-center">
