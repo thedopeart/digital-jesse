@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getPortfolioPage, portfolioPages } from '@/lib/portfolio-pages';
 import Image from 'next/image';
 import ImageLightbox from '@/components/ImageLightbox';
+import ImageSlider from '@/components/ImageSlider';
 import FormattedText from '@/components/FormattedText';
 
 interface Props {
@@ -85,12 +86,22 @@ export default async function PortfolioDetailPage({ params }: Props) {
               ))}
             </div>
           )}
+          {page.headerMetrics && page.headerMetrics.length > 0 && (
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+              {page.headerMetrics.map((metric, i) => (
+                <div key={i} className="bg-black/30 border border-[#d4a847]/20 p-4 rounded-xl text-center">
+                  <p className="text-2xl font-bold gradient-text">{metric.value}</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">{metric.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* Sections */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-      <div className="space-y-16">
+      <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="space-y-10">
         {page.sections.map((section, index) => {
           const layout = section.layout || 'default';
           const isImageGrid = layout === 'image-grid';
@@ -157,10 +168,10 @@ export default async function PortfolioDetailPage({ params }: Props) {
               : undefined;
 
             return (
-              <section key={index} className="border-t border-gray-100 pt-8">
-                <div className={`grid md:grid-cols-2 gap-8 items-center ${isEven ? '' : 'md:[direction:rtl]'}`}>
+              <section key={index} className={`${index > 0 && page.sections[index - 1].layout === 'section-header' ? '' : 'border-t border-gray-100'} pt-8`}>
+                <div className={`grid md:grid-cols-2 gap-8 items-center ${isEven ? 'md:[direction:rtl]' : ''}`}>
                   {/* Image side */}
-                  <div className={isEven ? '' : 'md:[direction:ltr]'} style={section.imageMaxWidth ? { maxWidth: section.imageMaxWidth } : undefined}>
+                  <div className={isEven ? 'md:[direction:ltr]' : ''} style={section.imageMaxWidth ? { maxWidth: section.imageMaxWidth } : undefined}>
                     {section.images.length === 1 ? (
                       <ImageLightbox
                         src={section.images[0].src}
@@ -169,7 +180,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
                         style={singleStyle}
                         contain
                       />
-                    ) : (
+                    ) : phoneAspect ? (
                       <div className="grid grid-cols-2 gap-3">
                         {section.images.map((img, i) => (
                           <ImageLightbox
@@ -180,18 +191,31 @@ export default async function PortfolioDetailPage({ params }: Props) {
                           />
                         ))}
                       </div>
+                    ) : (
+                      <ImageSlider images={section.images} aspectRatio={section.imageAspect} />
                     )}
                   </div>
 
                   {/* Content side */}
-                  <div className={isEven ? '' : 'md:[direction:ltr]'}>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-1">
-                      {section.heading}
-                    </h2>
-                    {section.subheading && (
-                      <p className="text-sm text-gray-400 mb-4">{section.subheading}</p>
+                  <div className={isEven ? 'md:[direction:ltr]' : ''}>
+                    {section.sectionLabel && (
+                      <div className="bg-[#1e1e1e] rounded-lg px-6 py-4 mb-5">
+                        <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#d4a847] to-[#cd7f32] bg-clip-text text-transparent uppercase tracking-wide">{section.sectionLabel}</h2>
+                        {section.subheading && (
+                          <p className="text-gray-300 text-lg mt-1">{section.subheading}</p>
+                        )}
+                      </div>
                     )}
-                    {!section.subheading && <div className="mb-3" />}
+                    {!section.sectionLabel && (
+                      <>
+                        {section.subheading && (
+                          <p className="text-sm font-semibold text-[#b8860b] uppercase tracking-wider mb-2">{section.subheading}</p>
+                        )}
+                        <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                          {section.heading}
+                        </h2>
+                      </>
+                    )}
 
                     {section.content && (
                       <p className="text-gray-600 leading-relaxed">
@@ -228,13 +252,16 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
           // Default layout
           return (
-            <section key={index} className={isSectionHeader ? 'pt-8' : 'border-t border-gray-100 pt-8'}>
+            <section key={index} className={isSectionHeader ? 'pt-8' : `${index > 0 && (page.sections[index - 1].layout === 'section-header') ? '' : 'border-t border-gray-100'} pt-8`}>
               {isSectionHeader ? (
-                <div className="bg-[#1e1e1e] rounded-2xl py-8 px-8 md:px-12 max-w-4xl mx-auto">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white text-center uppercase tracking-wide">
+                <div className="bg-[#1e1e1e] rounded-lg py-4 px-6 md:w-1/2">
+                  <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#d4a847] to-[#cd7f32] bg-clip-text text-transparent uppercase tracking-wide">
                     {section.heading}
                   </h2>
-                  <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] rounded-full mb-6" />
+                  {section.subheading && (
+                    <p className="mt-1 text-gray-300">{section.subheading}</p>
+                  )}
+                  <div className={`mt-2 w-12 h-0.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] rounded-full ${(section.content || (section.bullets && section.bullets.length > 0)) ? 'mb-4' : ''}`} />
                   {section.content && (
                     <p className="text-gray-300 leading-relaxed text-center max-w-3xl mx-auto mb-6">
                       <FormattedText text={section.content} boldClassName="text-white" />

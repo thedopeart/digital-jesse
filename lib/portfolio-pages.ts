@@ -15,6 +15,8 @@ export interface PortfolioSection {
   imageAspect?: string;
   /** Scale down the image container (e.g. '80%') */
   imageMaxWidth?: string;
+  /** Label displayed above heading in a dark badge (e.g. 'SEO Case Study #1') */
+  sectionLabel?: string;
 }
 
 export interface PortfolioPage {
@@ -29,6 +31,8 @@ export interface PortfolioPage {
   heroCaption?: string;
   /** Tags displayed in the header */
   tags?: string[];
+  /** Metrics displayed in the header below description */
+  headerMetrics?: { label: string; value: string }[];
   sections: PortfolioSection[];
 }
 
@@ -85,31 +89,40 @@ export const portfolioPages: PortfolioPage[] = [
   },
   {
     slug: 'organic-seo-growth-2',
-    title: 'Driving SEO Success',
-    subtitle: 'Highlight Project 2: The Dope Art',
+    title: 'SEO Case Studies',
+    subtitle: 'TheDopeArt.com, LuxuryWallArt.com, QualitySewing.com',
     category: 'seo',
-    description: 'Building organic traffic for a digital art brand through strategic keyword targeting, consistent content development, and technical SEO optimization over a two-year period.',
+    description: 'Real SEO results across three brands I built or managed. Keyword research, on-page optimization, technical audits, content strategy, and organic traffic growth from scratch.',
+    tags: ['SEO', 'Content Creation', 'Competitor Analysis', 'Data Analytics', 'UI/UX'],
     sections: [
       {
-        heading: 'The Dope Art SEO Stats',
-        layout: 'image-grid' as const,
-        gridCols: 3,
-        content: 'A snapshot of The Dope Art\'s SEO growth from November 2022 through August 2024, tracking keyword rankings, organic traffic, and overall search visibility.',
-        images: [
-          { src: '/images/portfolio/detail/seo/tda-stats-aug-2024.png', alt: 'TDA SEO Stats August 2024' },
-          { src: '/images/portfolio/detail/seo/seo-stats-nov-2022.png', alt: 'TDA SEO Stats November 2022' },
-          { src: '/images/portfolio/detail/seo/keywords-ranking.png', alt: 'TDA Keywords Ranking August 2024' },
+        heading: 'The Dope Art SEO Progress',
+        sectionLabel: 'SEO Case Study #1',
+        subheading: 'TheDopeArt.com',
+        layout: 'side-by-side' as const,
+        content: '**[The Dope Art](https://thedopeart.com)** was the first website I fully optimized for **SEO from the ground up**. Watching real traffic, rankings, and revenue grow from nothing taught me more than any course could. That hands-on experience is what got me hooked on e-commerce, SEO, and analytics, and it\'s been the **foundation of every project** I\'ve taken on since.\n\nWith my diligent efforts I was able to grow it from near-zero organic visibility to **5,400+ monthly organic visitors** and **8,000+ ranking keywords** over two years. The work included deep **keyword research** using Ahrefs and Google Search Console, **competitor analysis** to find ranking gaps, and rewriting every product listing with optimized titles, descriptions, and tags.\n\nI rebuilt the site structure for better crawling, created **targeted blog content** around high-value search terms, and ran regular **technical SEO audits** with Screaming Frog to catch issues early. The result: 120+ keywords in the top 3, 590 in the top 10, and a 544% increase in organic search traffic.',
+        metrics: [
+          { label: 'Monthly Organic Visitors', value: '5,400+' },
+          { label: 'Top 3 Keywords', value: '120+' },
+          { label: 'Top 10 Keywords', value: '590' },
         ],
-        imageAspect: '1/1',
+        images: [
+          { src: '/images/portfolio/detail/seo/lwa-progress-sept.png', alt: 'The Dope Art SEO Progress September 2024' },
+        ],
       },
       {
         heading: 'The Results of On-Page SEO',
-        content: 'Two years ago, I set out to improve the SEO for [The Dope Art](https://thedopeart.com), starting with just a handful of ranking keywords and minimal organic traffic. By focusing on strategic keyword integration, on-page optimization, and regular targeted blog posts, I was able to dramatically increase the site\'s visibility. What began as a small online presence has now grown to **over 5,000 monthly organic visitors**, with steady growth continuing month after month. Growing from 10 to **over 120 keywords in the top 3**, and **590 in the top 10** has dramatically enhanced steady organic traffic performance.',
+        layout: 'side-by-side' as const,
+        content: 'During my peak involvement building out The Dope Art\'s SEO, Google Analytics tracked a **544% increase in organic search** traffic, hitting 46,000 sessions over a 12-month window. That growth came from consistent keyword targeting, on-page content optimization, and regular performance monitoring through Search Console and Ahrefs.\n\nDirect traffic also grew by **53.9%** during the same period, which makes sense: as more people discovered the site through search, they started coming back on their own. The site continued growing past these numbers before I shifted focus to other projects.',
         metrics: [
-          { label: 'Monthly Organic Visitors', value: '5,000+' },
-          { label: 'Top 3 Keywords', value: '120+' },
-          { label: 'Top 10 Keywords', value: '590' },
+          { label: 'Organic Search Growth', value: '544%' },
+          { label: 'Direct Traffic Growth', value: '53.9%' },
           { label: 'Total Sessions', value: '46,000' },
+        ],
+        images: [
+          { src: '/images/portfolio/detail/seo/tda-ga-12-months.png', alt: 'TDA Google Analytics 12 Months Traffic Aug 2024' },
+          { src: '/images/portfolio/detail/seo/seo-stats-nov-2022.png', alt: 'Ranking Keywords November 2022' },
+          { src: '/images/portfolio/detail/seo/keywords-ranking.png', alt: 'Ranking Keywords August 2024' },
         ],
       },
       {
@@ -126,19 +139,6 @@ export const portfolioPages: PortfolioPage[] = [
         ],
       },
       {
-        heading: 'Massive Organic Traffic Growth',
-        content: 'Over the past year, Google Analytics showed a **544% increase in organic search** traffic for The Dope Art, reaching 46,000 sessions. This growth stems from strategic keyword targeting, content optimization, and diligent monitoring, also **boosting direct traffic by 53.9%**. This growth underscores the power of a well-executed SEO strategy in driving consistent traffic growth.',
-        layout: 'side-by-side' as const,
-        metrics: [
-          { label: 'Organic Search Growth', value: '544%' },
-          { label: 'Direct Traffic Growth', value: '53.9%' },
-          { label: 'Total Sessions', value: '46,000' },
-        ],
-        images: [
-          { src: '/images/portfolio/detail/seo/tda-ga-12-months.png', alt: 'TDA Google Analytics 12 Months Traffic Aug 2024' },
-        ],
-      },
-      {
         heading: 'Additional Insights',
         layout: 'image-grid' as const,
         gridCols: 3,
@@ -148,26 +148,6 @@ export const portfolioPages: PortfolioPage[] = [
           { src: '/images/portfolio/detail/seo/ga-impressions.png', alt: 'Google Analytics Impressions' },
         ],
         imageAspect: '2000/843',
-      },
-      {
-        heading: 'Blog Ranking Results',
-        layout: 'image-grid' as const,
-        gridCols: 3,
-        images: [
-          { src: '/images/portfolio/detail/seo/blog-king-of-hearts.png', alt: 'King of Hearts Blog Post' },
-          { src: '/images/portfolio/detail/seo/blog-queen-spades.png', alt: 'Queen of Spades Blog Post' },
-          { src: '/images/portfolio/detail/seo/blog-macabre.png', alt: 'Macabre Blog Post' },
-        ],
-        imageAspect: '1/1',
-      },
-      {
-        heading: 'Luxury Wall Art Progress',
-        layout: 'image-grid' as const,
-        gridCols: 1,
-        images: [
-          { src: '/images/portfolio/detail/seo/lwa-progress-sept.png', alt: 'Luxury Wall Art SEO Progress September 2024' },
-        ],
-        imageAspect: '4/5',
       },
     ],
   },
@@ -207,6 +187,15 @@ export const portfolioPages: PortfolioPage[] = [
         heading: 'Results & Ongoing Optimization',
         content: 'The optimized listings showed **significant improvements** in Etsy search rankings, leading to increased views and sales without additional advertising spend. Visibility in search results improved across multiple product categories, with several listings reaching the first page for their target keywords. The work didn\'t stop at initial optimization. I continue to monitor search trends, test new keywords, and update listings based on performance data. Etsy\'s algorithm rewards active shops, so regular updates and renewals are part of the ongoing strategy. The combination of strong SEO and quality products has helped The Dope Art maintain a **5-star rating** with consistent sales.',
       },
+      {
+        heading: 'SEO & Keyword Stats',
+        layout: 'image-grid' as const,
+        gridCols: 2,
+        images: [
+          { src: '/images/portfolio/detail/seo/etsy-seo-stats.png', alt: 'SEO Stats Overview' },
+          { src: '/images/portfolio/detail/seo/seo-keyword-research-stats.jpg', alt: 'SEO Keyword Research Stats' },
+        ],
+      },
     ],
   },
   {
@@ -215,31 +204,100 @@ export const portfolioPages: PortfolioPage[] = [
     subtitle: 'Content That Ranks and Converts',
     category: 'seo',
     description: 'Creating strategic blog content that ranks for high-value keywords, drives organic traffic, and guides visitors toward purchases through informative, engaging articles.',
+    tags: ['SEO', 'Keyword Research', 'Analytics', 'Writing', 'Blogging', 'Competitive Analysis'],
     sections: [
       {
         heading: 'Content Strategy Overview',
-        content: 'The rapid growth in organic traffic and keyword rankings for my e-commerce sites came from a deliberate **content marketing strategy** built around SEO. Rather than writing random blog posts, every article targets specific search queries with **commercial intent**. The goal is to attract potential customers who are researching topics related to wall art, home decor, and interior design. These visitors arrive through informational searches but discover products that solve their needs. Each blog post is optimized for a primary keyword while naturally incorporating related terms, creating comprehensive content that search engines reward with rankings.',
+        content: 'The rapid growth in organic traffic and keyword rankings for my e-commerce sites came from a deliberate **content marketing strategy** built around SEO. Rather than writing random blog posts, every article targets specific search queries with **commercial intent**. The goal is to attract potential customers who are researching topics related to wall art, home decor, and interior design.\n\nThese visitors arrive through informational searches but discover products that solve their needs. Each blog post is optimized for a primary keyword while naturally incorporating related terms, creating content that search engines reward with rankings.',
+        images: [
+          { src: '/images/portfolio/detail/blogs/hero-macabre.jpg', alt: 'Blogging and Copywriting Hero' },
+        ],
       },
       {
-        heading: 'Content Categories & Topics',
-        content: 'I developed content across multiple niches to capture diverse search traffic and appeal to different customer segments. The blog covers everything from **investment office design** to **gothic home decor**, each topic chosen based on keyword research showing real search volume. The content isn\'t thin or generic. Articles typically run 1,500-3,000 words and provide genuine value to readers. This depth helps with rankings and keeps visitors on the site longer, sending positive **engagement signals** to search engines. Internal links within each article guide readers to relevant product collections, creating natural pathways to purchase.',
-        bullets: [
-          '**Wall Street & Finance**: Investment office design, bull market art, trader aesthetics',
-          '**Macabre & Gothic**: Dark art collector guides, Halloween decor, skull artwork',
-          '**Poker & Gaming**: Casino art, card game room design, man cave aesthetics',
-          '**Royalty & Luxury**: King and queen artwork, luxury home decor, gold accents',
-          '**Nature & Animals**: Wildlife art guides, ocean themes, forest imagery',
-        ],
+        heading: 'Blogs: Wall Street & Finance',
+        content: 'Investment office design, bull market art, trader aesthetics, and financial advisor office guides. Each article targets **high-value keywords** in the finance and investing niche, connecting readers to relevant wall art products.',
+        layout: 'image-grid' as const,
+        gridCols: 4,
         images: [
-          { src: '/images/portfolio/detail/seo/blog-luxury-art.jpg', alt: 'Luxury Art Blog' },
-          { src: '/images/portfolio/detail/seo/blog-macabre.jpg', alt: 'Macabre Blog Examples' },
-          { src: '/images/portfolio/detail/seo/blog-queen-spades.jpg', alt: 'Queen of Spades Blog' },
-          { src: '/images/portfolio/detail/seo/seo-score-100.png', alt: 'SEO Score 100' },
+          { src: '/images/portfolio/detail/blogs/wallstreet-investing-insights.jpg', alt: 'Investing Insights Blog' },
+          { src: '/images/portfolio/detail/blogs/wallstreet-financial-advisors-office.jpg', alt: 'Financial Advisors Office Blog' },
+          { src: '/images/portfolio/detail/blogs/wallstreet-financial-advisors-2.jpg', alt: 'Financial Advisors Office Blog 2' },
+          { src: '/images/portfolio/detail/blogs/wallstreet-after-hours.jpg', alt: 'After Hours Blog' },
+          { src: '/images/portfolio/detail/blogs/wallstreet-anatomy-markets.jpg', alt: 'Anatomy of Markets Blog' },
+          { src: '/images/portfolio/detail/blogs/wallstreet-forecasts-2.jpg', alt: 'Forecasts Blog 2' },
+          { src: '/images/portfolio/detail/blogs/wallstreet-breakout-trading.jpg', alt: 'Breakout Trading Blog' },
+          { src: '/images/portfolio/detail/blogs/wallstreet-forecasts.jpg', alt: 'Forecasts Blog' },
+        ],
+      },
+      {
+        heading: 'Google Ranking Results',
+        content: 'Multiple blog posts ranking on **page one of Google** for their target keywords, driving consistent organic traffic that converts into sales.',
+        layout: 'image-grid' as const,
+        gridCols: 3,
+        images: [
+          { src: '/images/portfolio/detail/blogs/ranking-macabre-stats.jpg', alt: 'Macabre Blog Ranking Stats' },
+          { src: '/images/portfolio/detail/blogs/ranking-luxury-stats.jpg', alt: 'Luxury Blog Ranking Stats' },
+          { src: '/images/portfolio/detail/blogs/ranking-queen-spades.png', alt: 'Queen of Spades Blog Rankings' },
+        ],
+      },
+      {
+        heading: 'Blogs: Macabre, Royalty, Money',
+        content: 'Dark art collector guides, Halloween decor, skull artwork, king and queen art, and money-themed content. These niches have **strong search volume** and connect well to canvas art products.',
+        layout: 'image-grid' as const,
+        gridCols: 3,
+        images: [
+          { src: '/images/portfolio/detail/blogs/macabre-poker-7.jpg', alt: 'Poker Royalty Blog' },
+          { src: '/images/portfolio/detail/blogs/macabre-1.jpg', alt: 'Macabre Art Blog 1' },
+          { src: '/images/portfolio/detail/blogs/macabre-2.jpg', alt: 'Macabre Art Blog 2' },
+          { src: '/images/portfolio/detail/blogs/macabre-money-1.jpg', alt: 'Money Theme Blog 1' },
+          { src: '/images/portfolio/detail/blogs/macabre-money-2.jpg', alt: 'Money Theme Blog 2' },
+        ],
+      },
+      {
+        heading: 'Blogs: Finance & Loans',
+        content: 'Blog content written for **Quick Lenders**, targeting finance and lending keywords. Each article was built around **keyword research** to attract business owners searching for funding options.',
+        layout: 'image-grid' as const,
+        gridCols: 4,
+        images: [
+          { src: '/images/portfolio/detail/blogs/finance-1.jpg', alt: 'Finance Blog 1' },
+          { src: '/images/portfolio/detail/blogs/finance-2.jpg', alt: 'Finance Blog 2' },
+          { src: '/images/portfolio/detail/blogs/finance-3.jpg', alt: 'Finance Blog 3' },
+          { src: '/images/portfolio/detail/blogs/finance-8.jpg', alt: 'Finance Blog 8' },
+          { src: '/images/portfolio/detail/blogs/finance-4.jpg', alt: 'Finance Blog 4' },
+          { src: '/images/portfolio/detail/blogs/finance-5.jpg', alt: 'Finance Blog 5' },
+          { src: '/images/portfolio/detail/blogs/finance-6.jpg', alt: 'Finance Blog 6' },
+          { src: '/images/portfolio/detail/blogs/finance-7.jpg', alt: 'Finance Blog 7' },
+        ],
+      },
+      {
+        heading: 'Blogs: Poker & Gambling',
+        content: 'Casino art, card game room design, and man cave aesthetics. This niche performed well for **long-tail keywords** and connected directly to themed canvas art collections.',
+        layout: 'image-grid' as const,
+        gridCols: 4,
+        images: [
+          { src: '/images/portfolio/detail/blogs/poker-1.jpg', alt: 'Poker Blog 1' },
+          { src: '/images/portfolio/detail/blogs/poker-2.jpg', alt: 'Poker Blog 2' },
+          { src: '/images/portfolio/detail/blogs/poker-4.jpg', alt: 'Poker Blog 4' },
+          { src: '/images/portfolio/detail/blogs/poker-5.jpg', alt: 'Poker Blog 5' },
+          { src: '/images/portfolio/detail/blogs/poker-6.jpg', alt: 'Poker Blog 6' },
+          { src: '/images/portfolio/detail/blogs/poker-9.jpg', alt: 'Poker Blog 9' },
+          { src: '/images/portfolio/detail/blogs/poker-3.jpg', alt: 'Poker Blog 3' },
+          { src: '/images/portfolio/detail/blogs/poker-8.jpg', alt: 'Poker Blog 8' },
+        ],
+      },
+      {
+        heading: 'Blogs: Pharmaceutical',
+        content: 'SEO blog content created for **American Nutriceuticals**, a health and wellness brand. Articles targeted supplement and health-related keywords with Figma-designed blog layouts.',
+        layout: 'image-grid' as const,
+        gridCols: 2,
+        images: [
+          { src: '/images/portfolio/detail/blogs/pharma-figma-design.jpg', alt: 'Pharmaceutical Blog Figma Design' },
+          { src: '/images/portfolio/detail/blogs/pharma-blog-cut.jpg', alt: 'Pharmaceutical Blog Layout' },
         ],
       },
       {
         heading: 'Writing Process & Results',
-        content: 'Each blog post follows a proven process: **keyword research** to identify the target term and related queries, **competitive analysis** to understand what\'s already ranking, outline creation with proper heading structure, and writing that balances SEO optimization with readability. I use tools like Clearscope and SurferSEO to ensure comprehensive coverage of topics. Posts include custom images, internal links to products, and clear calls-to-action. Multiple blog posts now rank on **page one of Google** for their target keywords, driving consistent organic traffic that converts into sales. The content library continues to grow, compounding traffic gains over time.',
+        content: 'Each blog post follows a proven process: **keyword research** to identify the target term and related queries, **competitive analysis** to understand what\'s already ranking, outline creation with proper heading structure, and writing that balances SEO optimization with readability.\n\nPosts include custom images, internal links to products, and clear calls-to-action. The content library continues to grow, compounding traffic gains over time.',
       },
     ],
   },
@@ -512,30 +570,106 @@ export const portfolioPages: PortfolioPage[] = [
     ],
   },
   {
-    slug: 'social-media-posts-example',
-    title: 'Social Media Content Creation',
-    subtitle: 'Graphics, Copy & Engagement',
+    slug: 'social-media-management',
+    title: 'Social Media Management',
+    subtitle: 'Multi-Platform Growth Strategy',
     category: 'ecommerce',
-    description: 'Creating scroll-stopping social media content that builds brand presence, engages audiences, and drives traffic through strategic visual storytelling and platform-specific optimization.',
+    description: 'Managing social media presence across TikTok, Instagram, Facebook, Pinterest, and more with focus on audience growth, engagement, and driving traffic to e-commerce stores.',
     sections: [
+      {
+        heading: 'Platform Strategy',
+        content: 'I manage social media accounts across multiple platforms with tailored strategies for each. **TikTok** requires short, engaging video content that hooks viewers in the first second. **Instagram** rewards consistent posting and strong visual aesthetics. **Pinterest** functions more like a search engine, requiring keyword-optimized pins and boards. **Facebook** remains valuable for community building and certain demographics. Rather than posting the same content everywhere, I create platform-native content that works with each algorithm and audience expectation.',
+        bullets: [
+          '**Content calendar** planning and scheduling across all platforms',
+          '**Video creation** optimized for TikTok, Reels, and Shorts formats',
+          '**Visual identity** maintained consistently across different networks',
+          '**Community management** including comments, DMs, and engagement',
+          '**Analytics tracking** with monthly reporting on key metrics',
+          '**Trend monitoring** to capitalize on viral moments and formats',
+        ],
+        images: [
+          { src: '/images/portfolio/detail/ecommerce/social-media-phones.png', alt: 'Social Media Phone Mockups' },
+        ],
+        layout: 'side-by-side',
+      },
+      {
+        heading: 'The Dope Art',
+        content: 'I grew **The Dope Art** from zero to over **50,000 followers** across Instagram, TikTok, and Facebook through **strategic content planning** and consistent engagement. The growth came from understanding what the target audience wants to see: bold, eye-catching artwork presented in inspiring contexts. I developed content themes, created a consistent posting schedule, and actively engaged with the art community.\n\nCustomer content showing their purchases built **social proof**. Behind-the-scenes content humanized the brand. Collaborations with other artists and creators expanded reach to new audiences.',
+        metrics: [
+          { label: 'Followers Grown', value: '50,000+' },
+          { label: 'Starting Point', value: '0' },
+          { label: 'Platforms', value: 'IG, TikTok, FB' },
+        ],
+        images: [
+          { src: '/images/portfolio/detail/ecommerce/social-media-2-phones-tda.jpg', alt: 'The Dope Art Instagram' },
+        ],
+        layout: 'side-by-side',
+      },
+      {
+        heading: '26K+ Growth on Multiple Platforms',
+        images: [
+          { src: '/images/portfolio/detail/ecommerce/tik-post.png', alt: 'TikTok Post' },
+          { src: '/images/portfolio/detail/ecommerce/all-seeing-king.png', alt: 'All Seeing King' },
+          { src: '/images/portfolio/detail/ecommerce/reels-1.png', alt: 'Instagram Reels' },
+          { src: '/images/portfolio/detail/ecommerce/signing-art.png', alt: 'Signing Art' },
+          { src: '/images/portfolio/detail/ecommerce/anon-king-sm.png', alt: 'Anonymous King' },
+          { src: '/images/portfolio/detail/ecommerce/tiktok-viral.png', alt: 'TikTok Viral Content' },
+          { src: '/images/portfolio/detail/ecommerce/tiktok-viral-2.png', alt: 'TikTok Viral' },
+          { src: '/images/portfolio/detail/ecommerce/devil-royal.png', alt: 'Devil Royal' },
+          { src: '/images/portfolio/detail/ecommerce/kq-set.png', alt: 'KQ Set' },
+        ],
+        layout: 'image-grid',
+        gridCols: 5,
+        phoneAspect: true,
+      },
+      {
+        heading: 'Pinterest-Driven Organic Growth',
+        content: 'For **Luxury Wall Art**, Pinterest was the biggest organic traffic driver. I treated it like a visual search engine: keyword-optimized pin titles, descriptions, and board names targeting what people actually search for when looking for wall art. Every pin linked back to the Shopify store, turning discovery into sales.\n\nThe strategy contributed to **$60K+ in organic conversions** without spending on ads. **Facebook** and **Instagram** played supporting roles for community building and showcasing art in real settings, but Pinterest SEO was the core growth engine for this brand.',
+        metrics: [
+          { label: 'Organic Conversions', value: '$60K+' },
+          { label: 'Primary Channel', value: 'Pinterest' },
+          { label: 'Platforms Managed', value: '5+' },
+        ],
+        images: [
+          { src: '/images/portfolio/detail/ecommerce/lwa-social-media.png', alt: 'Luxury Wall Art Social Media' },
+        ],
+        layout: 'side-by-side',
+      },
+      {
+        heading: 'YouTube SEO',
+        content: 'I handle YouTube SEO for Quality Sewing\'s channel, optimizing titles, descriptions, tags, and thumbnails to drive organic discovery. Sewing tutorials and product demos are a natural fit for search-driven video content, so I treat each upload like a blog post: keyword research first, then structured metadata that matches what people are actually searching for. I also work on playlist organization and end screen strategy to keep viewers on the channel longer.',
+        bullets: [
+          '**Keyword-optimized titles and descriptions** for every video upload',
+          '**Custom thumbnails** designed for click-through rate',
+          '**Tag strategy** targeting long-tail sewing and quilting search terms',
+          '**Playlist curation** to improve session duration and channel authority',
+          '**Analytics review** to identify top-performing content and double down',
+        ],
+        layout: 'side-by-side',
+      },
+      {
+        heading: 'Scheduling Posts',
+        content: 'Managing multiple accounts efficiently requires the right tools and systems. I use **Hootsuite** and **Facebook Business Suite** to batch content creation and ensure consistent posting. I plan content calendars weeks in advance, batch-create graphics and captions, and schedule everything out. Platform-native analytics tell me what\'s working so I can double down. I track follower growth, engagement rate, reach, and the metric that actually matters: traffic and conversions driven to the store.',
+        bullets: [
+          '**Hootsuite** for multi-platform scheduling and management',
+          '**Facebook Business Suite** for Meta platform management',
+          '**Canva** for quick graphic creation and templates',
+          '**Platform analytics** for performance tracking and optimization',
+        ],
+        images: [
+          { src: '/images/portfolio/detail/ecommerce/lwa-planning.png', alt: 'Content Calendar and Planning' },
+        ],
+        layout: 'side-by-side',
+      },
       {
         heading: 'Social Media Content Creation',
         layout: 'section-header',
+        content: 'All graphics designed from scratch in **Adobe Photoshop** after researching each topic, audience, and platform. Every post starts with competitor analysis and keyword research before I touch a single layer.',
         bullets: [
-          '**Visual Storytelling:** Crafted eye-catching graphics that connect with audiences and highlight key brand messages',
-          '**Engagement-Driven Posts:** Created content designed to boost interactions, drive conversations, and increase followers',
-          '**Brand Consistency:** Maintained a cohesive look and feel across all social media platforms to strengthen brand identity',
-          '**Effective Call-to-Action:** Designed posts that direct users toward specific actions, enhancing lead generation and conversions',
+          '**QuickLenders** marketing materials, social posts, and branded graphics',
+          '**Social media hacks** carousel series for engagement and shares',
+          '**SEO education** content designed to build authority and drive follows',
         ],
-      },
-      {
-        heading: 'QuickLenders.com',
-        content: 'For **QuickLenders**, I developed high-impact social media content that increases brand presence and engages the target audience, focusing on visually compelling designs and strategic messaging.',
-        images: [
-          { src: '/images/portfolio/detail/social-posts/ql-fb-cover.jpg', alt: 'Quick Lenders Facebook Cover' },
-        ],
-        layout: 'side-by-side',
-        imageAspect: '8/3',
       },
       {
         heading: 'QuickLenders.com Marketing Materials',
@@ -592,100 +726,6 @@ export const portfolioPages: PortfolioPage[] = [
           { src: '/images/portfolio/detail/social-posts/seo-9.jpg', alt: 'Maximize SEO with Social Interaction' },
           { src: '/images/portfolio/detail/social-posts/seo-10.jpg', alt: 'Stay Ahead in the Digital World' },
         ],
-      },
-    ],
-  },
-  {
-    slug: 'social-media-management',
-    title: 'Social Media Management',
-    subtitle: 'Multi-Platform Growth Strategy',
-    category: 'ecommerce',
-    description: 'Managing social media presence across TikTok, Instagram, Facebook, Pinterest, and more with focus on audience growth, engagement, and driving traffic to e-commerce stores.',
-    sections: [
-      {
-        heading: 'Platform Strategy',
-        content: 'I manage social media accounts across multiple platforms with tailored strategies for each. **TikTok** requires short, engaging video content that hooks viewers in the first second. **Instagram** rewards consistent posting and strong visual aesthetics. **Pinterest** functions more like a search engine, requiring keyword-optimized pins and boards. **Facebook** remains valuable for community building and certain demographics. Rather than posting the same content everywhere, I create platform-native content that works with each algorithm and audience expectation.',
-        bullets: [
-          '**Content calendar** planning and scheduling across all platforms',
-          '**Video creation** optimized for TikTok, Reels, and Shorts formats',
-          '**Visual identity** maintained consistently across different networks',
-          '**Community management** including comments, DMs, and engagement',
-          '**Analytics tracking** with monthly reporting on key metrics',
-          '**Trend monitoring** to capitalize on viral moments and formats',
-        ],
-        images: [
-          { src: '/images/portfolio/detail/ecommerce/social-media-phones.png', alt: 'Social Media Phone Mockups' },
-        ],
-        layout: 'side-by-side',
-      },
-      {
-        heading: 'The Dope Art',
-        content: 'I grew **The Dope Art** from zero to over **26,000 followers** across Instagram and TikTok through strategic content planning and consistent engagement. The growth came from understanding what the target audience wants to see: bold, eye-catching artwork presented in inspiring contexts. I developed content themes, created a consistent posting schedule, and actively engaged with the art community. Customer content showing their purchases built social proof. Behind-the-scenes content humanized the brand. Collaborations with other artists and creators expanded reach to new audiences.',
-        metrics: [
-          { label: 'Followers Grown', value: '26,000+' },
-          { label: 'Starting Point', value: '0' },
-          { label: 'Platforms', value: 'IG, TikTok, FB' },
-        ],
-        images: [
-          { src: '/images/portfolio/detail/ecommerce/social-media-2-phones-tda.jpg', alt: 'The Dope Art Instagram' },
-        ],
-        layout: 'side-by-side',
-      },
-      {
-        heading: '26K+ Growth on Multiple Platforms',
-        images: [
-          { src: '/images/portfolio/detail/ecommerce/tik-post.png', alt: 'TikTok Post' },
-          { src: '/images/portfolio/detail/ecommerce/all-seeing-king.png', alt: 'All Seeing King' },
-          { src: '/images/portfolio/detail/ecommerce/reels-1.png', alt: 'Instagram Reels' },
-          { src: '/images/portfolio/detail/ecommerce/signing-art.png', alt: 'Signing Art' },
-          { src: '/images/portfolio/detail/ecommerce/anon-king-sm.png', alt: 'Anonymous King' },
-          { src: '/images/portfolio/detail/ecommerce/tiktok-viral.png', alt: 'TikTok Viral Content' },
-          { src: '/images/portfolio/detail/ecommerce/tiktok-viral-2.png', alt: 'TikTok Viral' },
-          { src: '/images/portfolio/detail/ecommerce/devil-royal.png', alt: 'Devil Royal' },
-          { src: '/images/portfolio/detail/ecommerce/kq-set.png', alt: 'KQ Set' },
-        ],
-        layout: 'image-grid',
-        gridCols: 5,
-        phoneAspect: true,
-      },
-      {
-        heading: 'Facebook, Pinterest, Instagram',
-        content: 'For **Luxury Wall Art**, I built a multi-platform social strategy that drove traffic and sales to the Shopify store. Each platform served a different purpose in the funnel. **Pinterest** drove long-term organic discovery through keyword-optimized pins. **Facebook** built community and retargeted warm audiences. **Instagram** showcased the art in real settings and drove direct sales through stories and posts. The combined strategy contributed to **$60K+ in organic conversions** and built a follower base of over **200,000** across all platforms.',
-        metrics: [
-          { label: 'Combined Followers', value: '200K+' },
-          { label: 'Organic Conversions', value: '$60K+' },
-          { label: 'Platforms Managed', value: '5+' },
-        ],
-        images: [
-          { src: '/images/portfolio/detail/ecommerce/lwa-social-media.png', alt: 'Luxury Wall Art Social Media' },
-        ],
-        layout: 'side-by-side',
-      },
-      {
-        heading: 'YouTube SEO',
-        content: 'I handle YouTube SEO for Quality Sewing\'s channel, optimizing titles, descriptions, tags, and thumbnails to drive organic discovery. Sewing tutorials and product demos are a natural fit for search-driven video content, so I treat each upload like a blog post: keyword research first, then structured metadata that matches what people are actually searching for. I also work on playlist organization and end screen strategy to keep viewers on the channel longer.',
-        bullets: [
-          '**Keyword-optimized titles and descriptions** for every video upload',
-          '**Custom thumbnails** designed for click-through rate',
-          '**Tag strategy** targeting long-tail sewing and quilting search terms',
-          '**Playlist curation** to improve session duration and channel authority',
-          '**Analytics review** to identify top-performing content and double down',
-        ],
-        layout: 'side-by-side',
-      },
-      {
-        heading: 'Scheduling Posts',
-        content: 'Managing multiple accounts efficiently requires the right tools and systems. I use **Hootsuite** and **Facebook Business Suite** to batch content creation and ensure consistent posting. I plan content calendars weeks in advance, batch-create graphics and captions, and schedule everything out. Platform-native analytics tell me what\'s working so I can double down. I track follower growth, engagement rate, reach, and the metric that actually matters: traffic and conversions driven to the store.',
-        bullets: [
-          '**Hootsuite** for multi-platform scheduling and management',
-          '**Facebook Business Suite** for Meta platform management',
-          '**Canva** for quick graphic creation and templates',
-          '**Platform analytics** for performance tracking and optimization',
-        ],
-        images: [
-          { src: '/images/portfolio/detail/ecommerce/lwa-planning.png', alt: 'Content Calendar and Planning' },
-        ],
-        layout: 'side-by-side',
       },
     ],
   },

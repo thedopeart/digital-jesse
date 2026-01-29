@@ -9,17 +9,32 @@ interface FormattedTextProps {
 export default function FormattedText({ text, className = '', boldClassName = 'text-gray-900' }: FormattedTextProps) {
   // Parse markdown: **bold** and [link](url)
   // First split by links, then by bold within each part
-  const linkRegex = /(\[[^\]]+\]\([^)]+\))/g;
+  const linkRegex = /(\*\*\[[^\]]+\]\([^)]+\)\*\*|\[[^\]]+\]\([^)]+\))/g;
   const boldRegex = /(\*\*[^*]+\*\*)/g;
 
   const parseText = (str: string, keyPrefix: string = ''): React.ReactNode[] => {
-    // Split by links first
+    // Split by links first (including bold-wrapped links)
     const linkParts = str.split(linkRegex);
 
     return linkParts.flatMap((part, i) => {
+      // Bold link: **[text](url)**
+      const boldLinkMatch = part.match(/^\*\*\[([^\]]+)\]\(([^)]+)\)\*\*$/);
+      if (boldLinkMatch) {
+        const [, linkText, url] = boldLinkMatch;
+        return (
+          <a
+            key={`${keyPrefix}link-${i}`}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-600 hover:text-teal-700 underline font-semibold"
+          >
+            {linkText}
+          </a>
+        );
+      }
       const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
       if (linkMatch) {
-        // This is a link
         const [, linkText, url] = linkMatch;
         return (
           <a
