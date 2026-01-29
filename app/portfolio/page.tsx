@@ -106,11 +106,11 @@ const sections: Section[] = [
       { bold: 'Eternal Royals', text: 'blockchain-authenticated art with physical NFC-enabled prints' },
     ],
     images: [
-      { src: '/images/portfolio/brands/quick-lenders.png', label: 'Quick Lenders', isLogo: true },
-      { src: '/images/portfolio/brands/luxury-wall-art.png', label: 'Luxury Wall Art', isLogo: true },
-      { src: '/images/portfolio/brands/the-dope-art.png', label: 'The Dope Art', isLogo: true },
+      { src: '/images/portfolio/brands/quick-lenders.png', label: 'Quick Lenders', isLogo: true, href: 'https://quicklenders.com' },
+      { src: '/images/portfolio/brands/luxury-wall-art.png', label: 'Luxury Wall Art', isLogo: true, href: 'https://luxurywallart.com' },
+      { src: '/images/portfolio/brands/the-dope-art.png', label: 'The Dope Art', isLogo: true, href: 'https://thedopeart.com' },
       { src: '/images/portfolio/brands/eternal-royals.png', label: 'Eternal Royals', isLogo: true },
-      { src: '/images/portfolio/brands/date-ideas.png', label: 'Date Ideas', isLogo: true },
+      { src: '/images/portfolio/brands/date-ideas.png', label: 'Date Ideas', isLogo: true, href: 'https://dateideas.com' },
     ],
   },
 ];
@@ -205,9 +205,9 @@ export default function PortfolioPage() {
                   );
 
                   return img.href ? (
-                    <Link key={i} href={img.href}>
+                    <a key={i} href={img.href} target="_blank" rel="noopener noreferrer">
                       {ImageCard}
-                    </Link>
+                    </a>
                   ) : (
                     <div key={i}>{ImageCard}</div>
                   );

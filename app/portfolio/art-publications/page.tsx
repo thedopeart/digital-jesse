@@ -9,28 +9,39 @@ export const metadata: Metadata = {
 
 export default function ArtPublicationsPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
-      {/* Back Link */}
-      <Link
-        href="/portfolio"
-        className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 mb-6"
-      >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-        Back to Portfolio
-      </Link>
+    <div>
+      {/* Dark Header */}
+      <section className="bg-[#1e1e1e] pt-2 pb-10">
+        {/* Breadcrumb */}
+        <div className="max-w-7xl mx-auto px-6 mb-4">
+          <Link
+            href="/portfolio"
+            className="text-gray-500 hover:text-[#d4a847] text-sm transition-colors inline-flex items-center gap-1.5"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="opacity-60">
+              <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Portfolio
+          </Link>
+        </div>
 
-      {/* Header */}
-      <div className="mb-12 text-center py-8 bg-gradient-to-b from-purple-50 to-white rounded-xl">
-        <span className="inline-block px-4 py-1.5 text-sm font-medium text-white rounded-full mb-4 bg-[#553C9A] shadow-sm">
-          Digital Art
-        </span>
-        <h1 className="text-4xl font-bold text-gray-900">Art Publications</h1>
-        <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
-          Press coverage, media features, and brand partnerships that have expanded reach and credibility in the digital art space.
-        </p>
-      </div>
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight gradient-text">Art Publications</h1>
+          <p className="mt-2 text-lg text-gray-400">Press Coverage & Brand Partnerships</p>
+          <p className="mt-4 text-gray-300 leading-relaxed">
+            Press coverage, media features, and brand partnerships that have expanded reach and credibility in the digital art space.
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center gap-2">
+            {['Digital Art', 'Collaborations', 'Partnerships'].map((tag, i) => (
+              <span key={i} className="inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase tracking-wide border border-[#d4a847]/40 text-[#d4a847]">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6 py-12">
 
       {/* Tiger King Section */}
       <section className="mb-14">
@@ -149,11 +160,7 @@ export default function ArtPublicationsPage() {
               <a href="https://thedopeart.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:text-teal-700 underline">
                 The Dope Art
               </a>{' '}
-              and{' '}
-              <a href="https://eternalroyals.io/" target="_blank" rel="noopener noreferrer" className="font-semibold text-teal-600 hover:text-teal-700 underline">
-                Eternal Royals
-              </a>
-              .
+              and Eternal Royals.
             </p>
             <p className="text-gray-600 leading-relaxed">
               I designed our booth layout and featured artwork, blending physical art with digital innovation. This collaboration was a fantastic way to highlight both my art and Jondo&apos;s print quality, while engaging with the NFT and digital art community, expanding The Dope Art&apos;s reach.
@@ -213,6 +220,7 @@ export default function ArtPublicationsPage() {
         </div>
       </section>
 
+    </div>
     </div>
   );
 }

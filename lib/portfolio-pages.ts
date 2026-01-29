@@ -1,5 +1,6 @@
 export interface PortfolioSection {
   heading: string;
+  subheading?: string;
   content?: string;
   metrics?: { label: string; value: string }[];
   images?: { src: string; alt: string }[];
@@ -12,6 +13,8 @@ export interface PortfolioSection {
   phoneAspect?: boolean;
   /** Custom aspect ratio for images (e.g. '4/5', '16/9', 'auto') */
   imageAspect?: string;
+  /** Scale down the image container (e.g. '80%') */
+  imageMaxWidth?: string;
 }
 
 export interface PortfolioPage {
@@ -20,6 +23,12 @@ export interface PortfolioPage {
   subtitle?: string;
   category: 'seo' | 'design' | 'ecommerce' | 'art' | 'brands';
   description: string;
+  /** Hero image shown in the header alongside the description */
+  heroImage?: { src: string; alt: string };
+  /** Caption text for the hero image */
+  heroCaption?: string;
+  /** Tags displayed in the header */
+  tags?: string[];
   sections: PortfolioSection[];
 }
 
@@ -685,36 +694,142 @@ export const portfolioPages: PortfolioPage[] = [
     title: 'Digital Art & Design',
     subtitle: 'Original Artwork Collections',
     category: 'art',
-    description: 'Creating digital artwork that resonates with entrepreneurs and dreamers, exploring themes of ambition, success, struggle, and triumph through bold visual storytelling.',
+    description: 'I create digital artwork for entrepreneurs and dreamers. Every piece explores themes of ambition, success, struggle, and triumph through bold visual storytelling.',
+    tags: ['Digital Art', 'Photoshop', 'E-Commerce', 'Print on Demand'],
     sections: [
+      // The Dope Art Brand - side by side
       {
         heading: 'The Dope Art Brand',
-        content: 'The Dope Art is my primary **digital art brand**, featuring diverse artwork collections that speak to entrepreneurs, hustlers, and dreamers. The pieces explore themes of **ambition**, success, and the entrepreneurial journey. This isn\'t generic wall art. Every piece is designed to inspire and motivate, whether it\'s a roaring lion representing courage, a bull symbolizing market optimism, or abstract expressions of the creative process. The brand has built a loyal following of customers who connect with the message behind the art. Quality printing on premium canvas ensures the digital designs translate into impressive physical products.',
+        layout: 'side-by-side',
+        content: '[The Dope Art](https://thedopeart.com) is my primary digital art brand, featuring collections that speak to entrepreneurs, hustlers, and dreamers. Every piece is designed to inspire and motivate, from a roaring lion representing courage to a bull symbolizing market optimism.\n\nThe brand has built a loyal customer base of **3,000+ buyers** across Shopify and Etsy, with a **5-star rating** on both platforms. Quality printing on premium canvas ensures the digital designs translate into impressive physical products. The brand has also organically grown to over **50K followers** across Instagram, Facebook, and TikTok.',
+        metrics: [
+          { label: 'Total Sales', value: '$400K+' },
+          { label: 'Customers', value: '3,000+' },
+          { label: 'Rating', value: '5 Stars' },
+        ],
         images: [
           { src: '/images/portfolio/detail/art/tda-site-1.jpg', alt: 'The Dope Art Website' },
-          { src: '/images/portfolio/detail/art/tda-site-2.jpg', alt: 'The Dope Art Products' },
         ],
       },
+      // Featured artwork grid (The Dope Art pieces)
       {
-        heading: 'Art Collections',
-        content: 'I\'ve developed multiple themed collections, each with its own aesthetic and audience appeal. The **Royalty Collection** features kings, queens, and luxury themes that resonate with those who see themselves as rulers of their domain. The **Wall Street Collection** captures bull and bear market energy for traders and investors. **Surrealism pieces** explore dream-like imagery and abstract concepts. **Money and Finance** artwork speaks directly to wealth mindset and financial ambition. Each collection is curated rather than random, creating cohesive groups that work together in customer spaces.',
-        bullets: [
-          '**Royalty Collection**: Kings, queens, crowns, and luxury themes',
-          '**Wall Street Collection**: Bulls, bears, trading floors, market energy',
-          '**Surrealism Series**: Dream-like imagery, abstract concepts, mind-bending visuals',
-          '**Money & Finance**: Currency imagery, wealth symbols, success themes',
-          '**Animals & Nature**: Powerful creatures, natural beauty, wildlife majesty',
-        ],
+        heading: 'Featured Artwork',
+        layout: 'image-grid',
+        gridCols: 4,
+        imageAspect: '4/5',
         images: [
-          { src: '/images/portfolio/detail/art/lwa-royalty.jpg', alt: 'Royalty Collection' },
-          { src: '/images/portfolio/detail/art/lwa-abstracts.jpg', alt: 'Abstracts Collection' },
-          { src: '/images/portfolio/detail/art/moon-boat.jpg', alt: 'Moon Boat Art' },
+          { src: '/images/portfolio/detail/art/time-is-king.jpg', alt: 'Time is King' },
+          { src: '/images/portfolio/detail/art/moon-boat.jpg', alt: 'Moon Boat - Surrealism' },
           { src: '/images/portfolio/detail/art/outrun.jpg', alt: 'Outrun Art' },
+          { src: '/images/portfolio/detail/art/tiger-king-art.jpg', alt: 'Tiger King Art' },
         ],
       },
+      // Studio & product photos
+      {
+        heading: 'From Screen to Canvas',
+        layout: 'image-grid',
+        gridCols: 3,
+        imageAspect: '1/1',
+        content: 'Every design starts in Photoshop and ends as a gallery-quality canvas print. I handle the full pipeline: concept, design, mockups, product listings, and fulfillment.',
+        images: [
+          { src: '/images/portfolio/detail/art/jesse-studio.jpg', alt: 'Jesse in the Studio' },
+          { src: '/images/portfolio/detail/art/art-boxes.jpg', alt: 'Packaged Art Products' },
+          { src: '/images/portfolio/detail/art/lwa/all-acrylics.jpg', alt: 'Acrylic Art Collection Overview' },
+        ],
+      },
+      // Customer feedback
+      {
+        heading: 'Customer Feedback',
+        layout: 'side-by-side',
+        content: 'Both The Dope Art and Luxury Wall Art maintain **5-star ratings** across Etsy and Shopify. With over **3,000 customers** served, the feedback has been consistently positive. Buyers regularly share photos of their pieces on display, and repeat customers make up a solid chunk of sales.\n\nQuality control is a big part of that. Every order is inspected before shipping, and I personally handle any issues that come up. That hands-on approach keeps return rates low and review scores high.',
+        images: [
+          { src: '/images/portfolio/detail/art/reviews.jpg', alt: 'Customer Reviews and Feedback' },
+        ],
+      },
+      // Surrealism
+      {
+        heading: 'Surrealism',
+        layout: 'image-grid',
+        gridCols: 4,
+        imageAspect: '4/5',
+        images: [
+          { src: '/images/portfolio/detail/art/lwa/surreal-1.jpg', alt: 'Cosmonaut Canvas Art' },
+          { src: '/images/portfolio/detail/art/lwa/surreal-2.jpg', alt: 'Neon City Dreamscape' },
+          { src: '/images/portfolio/detail/art/lwa/surreal-3.jpg', alt: 'Cosmic Butterflies' },
+          { src: '/images/portfolio/detail/art/lwa/surreal-4.jpg', alt: 'Sail Away Ship' },
+        ],
+      },
+      // Wall Street Collection
+      {
+        heading: 'Wall Street Collection',
+        layout: 'image-grid',
+        gridCols: 5,
+        imageAspect: '4/5',
+        images: [
+          { src: '/images/portfolio/detail/art/lwa/ws-1.jpg', alt: 'Bull Boxer' },
+          { src: '/images/portfolio/detail/art/lwa/ws-2.jpg', alt: 'Bear Boxer' },
+          { src: '/images/portfolio/detail/art/lwa/ws-3.jpg', alt: 'Wall Street Bull' },
+          { src: '/images/portfolio/detail/art/lwa/ws-4.jpg', alt: 'Seeing Red Bear' },
+          { src: '/images/portfolio/detail/art/lwa/ws-5.jpg', alt: 'To The Moon' },
+        ],
+      },
+      // Royalty Collection
+      {
+        heading: 'Royalty Collection',
+        layout: 'image-grid',
+        gridCols: 5,
+        imageAspect: '4/5',
+        images: [
+          { src: '/images/portfolio/detail/art/lwa/royal-1.jpg', alt: 'All Seeing King' },
+          { src: '/images/portfolio/detail/art/lwa/royal-2.jpg', alt: 'All Seeing Queen' },
+          { src: '/images/portfolio/detail/art/lwa/royal-3.jpg', alt: 'Time is King' },
+          { src: '/images/portfolio/detail/art/lwa/royal-4.jpg', alt: 'Queen with Crown' },
+          { src: '/images/portfolio/detail/art/lwa/royal-5.jpg', alt: 'King of Hearts' },
+          { src: '/images/portfolio/detail/art/lwa/royal-6.jpg', alt: 'Time is Money' },
+          { src: '/images/portfolio/detail/art/lwa/royal-7.jpg', alt: 'Tiger King' },
+          { src: '/images/portfolio/detail/art/lwa/royal-8.jpg', alt: 'Midas Touch' },
+          { src: '/images/portfolio/detail/art/lwa/royal-9.jpg', alt: 'Vault King' },
+          { src: '/images/portfolio/detail/art/lwa/royal-10.jpg', alt: 'Leopard Suit' },
+        ],
+      },
+      // Luxury Wall Art - side by side
       {
         heading: 'Luxury Wall Art Brand',
-        content: 'I also operate **Luxury Wall Art**, a second brand with a different positioning. While The Dope Art has a bolder, more streetwear-influenced aesthetic, Luxury Wall Art targets customers seeking elegant, sophisticated pieces for upscale spaces. This brand incorporates **AI-integrated art creation**, demonstrating how technology can enhance rather than replace artistic vision. The AI tools help generate initial concepts and variations, but human curation and refinement ensure quality and coherence. Running two brands in the same space provides valuable data on different customer segments and marketing approaches.',
+        layout: 'side-by-side',
+        content: 'I also operate [Luxury Wall Art](https://luxurywallart.com), a second brand with different positioning. While The Dope Art has a bolder, streetwear-influenced aesthetic, Luxury Wall Art targets customers seeking elegant pieces for upscale spaces.\n\nThe store features a **massive collection of wall art** across dozens of styles and categories. Beyond my own work, the platform supports other independent artists by hosting and selling their pieces, giving them a storefront and audience they wouldn\'t have on their own. Running two brands in the same space provides valuable data on different customer segments and marketing approaches.',
+        metrics: [
+          { label: 'Revenue', value: '$120K+' },
+          { label: 'Keywords Ranking', value: '9,200+' },
+          { label: 'Domain Authority', value: '1→20' },
+        ],
+        images: [
+          { src: '/images/portfolio/detail/art/lwa-front-page.jpg', alt: 'Luxury Wall Art Website' },
+        ],
+      },
+      // LWA art prints and mockups
+      {
+        heading: '',
+        layout: 'image-grid',
+        gridCols: 4,
+        images: [
+          { src: '/images/portfolio/detail/art/lwa/elephants.jpg', alt: 'Elephant Canvas Art Collection' },
+          { src: '/images/portfolio/detail/art/lwa/lion-set.jpg', alt: 'Lion Canvas Art Set' },
+          { src: '/images/portfolio/detail/art/lwa/mockup.png', alt: 'Luxury Wall Art Room Mockup' },
+          { src: '/images/portfolio/detail/art/lwa/featured-artist.jpg', alt: 'Featured Artist Collaboration' },
+        ],
+      },
+      // LWA detailed showcase
+      {
+        heading: '',
+        layout: 'image-grid',
+        gridCols: 4,
+        imageAspect: '4/5',
+        images: [
+          { src: '/images/portfolio/detail/art/lwa/top-sellers.jpg', alt: 'Top Revenue-Generating Art' },
+          { src: '/images/portfolio/detail/art/lwa/growth-strategy.jpg', alt: 'Growth Strategy' },
+          { src: '/images/portfolio/detail/art/lwa/collections.jpg', alt: 'Expanding Collections' },
+          { src: '/images/portfolio/detail/art/lwa/seo-stats.jpg', alt: 'Booming SEO Growth' },
+        ],
       },
     ],
   },
@@ -754,7 +869,8 @@ export const portfolioPages: PortfolioPage[] = [
     title: 'Art Publications',
     subtitle: 'Press Coverage & Brand Partnerships',
     category: 'art',
-    description: 'Featured publications, media coverage, and brand collaborations that have expanded reach and established credibility in the digital art space.',
+    description: 'Press coverage, media features, and brand partnerships that have expanded reach and credibility in the digital art space.',
+    tags: ['Digital Art', 'Collaborations', 'Partnerships'],
     sections: [
       {
         heading: 'Tiger King Comic Book Cover Art',
@@ -811,36 +927,116 @@ export const portfolioPages: PortfolioPage[] = [
     subtitle: 'Eternal Royals Collection',
     category: 'art',
     description: 'Bridging digital art with blockchain technology through the Eternal Royals NFT collection, combining on-chain ownership with physical canvas prints and real-world utility.',
+    tags: ['Photoshop', 'Blockchain', 'NFT', 'Team Management', 'Digital Art'],
     sections: [
+      // Eternal Royals NFTs - side by side
       {
-        heading: 'The Eternal Royals Project',
-        content: 'Eternal Royals is a collection of **9,224 unique Kings and Queens** NFTs that bridges digital art with physical products. Unlike many NFT projects focused purely on speculation, Eternal Royals was built around **real utility**: holders receive access to limited edition art drops, invitations to IRL and virtual events, and the ability to order **1-of-1 canvas prints** of their specific NFT. The artwork features detailed, regal characters with hundreds of unique traits and combinations. Each piece was crafted to work both as a digital collectible and a striking physical print that owners would proudly display.',
+        heading: 'Eternal Royals NFTs',
+        subheading: 'Digital Artwork by Jesse Johnson 2021',
+        layout: 'side-by-side',
+        content: 'In 2021, at the peak of the NFT boom, I designed and launched a collection of **9,224 unique Kings and Queens**, each built from scratch in Photoshop using thousands of layered photographs and original digital artwork.\n\nThe **Eternal Royals NFT** collection bridges digital art with physical canvas prints, making it more than just a digital collectible. Each NFT serves as your key to the realm, including access to limited edition art drops, IRL and virtual events, and **1-of-1 prints of your NFT**.\n\nThat creative process quickly built a following of eager collectors looking to grab a set. It also led to traveling across the country to collaborate with creators, investors, and entrepreneurs in the space. From **NFT NYC** to **NFT LA**, Minneapolis, and Art Week in Florida.',
         images: [
-          { src: '/images/portfolio/detail/art/er-cover.jpg', alt: 'Eternal Royals Collection' },
-          { src: '/images/portfolio/detail/art/er-king.jpg', alt: 'Eternal Royals King' },
-          { src: '/images/portfolio/detail/art/er-queen.jpg', alt: 'Eternal Royals Queen' },
+          { src: '/images/portfolio/detail/art/er-project-site.jpg', alt: 'Eternal Royals Project Site' },
         ],
       },
+      // Royals Artwork - grid of kings
+      {
+        heading: 'Royals Artwork',
+        layout: 'image-grid',
+        gridCols: 3,
+        imageAspect: '1/1',
+        images: [
+          { src: '/images/portfolio/detail/art/er-artwork/er-king-1.jpg', alt: 'Eternal Royals King 1' },
+          { src: '/images/portfolio/detail/art/er-artwork/er-king-2.jpg', alt: 'Eternal Royals King 2' },
+          { src: '/images/portfolio/detail/art/er-artwork/er-king-3.jpg', alt: 'Eternal Royals King 3' },
+        ],
+      },
+      // OpenSea + Stats - side by side
       {
         heading: 'Sales & Market Performance',
-        content: 'The collection achieved significant success in both primary and secondary markets. Primary sales exceeded **$2 million**, with the collection selling out during the initial mint. Secondary trading volume also surpassed **$2 million** on OpenSea, demonstrating sustained interest beyond the initial launch. The project incorporated innovative features including **NFC chips** embedded in physical prints that link to the blockchain record, verifying authenticity. This combination of digital ownership with physical collectibles represented a new model for how NFTs could provide tangible value beyond speculation.',
+        layout: 'side-by-side',
+        imageAspect: '16/10',
+        content: 'I led a dedicated team of professionals to launch and grow Eternal Royals, from community management to event coordination, pioneering a new marketplace in a space that was being built in real time. The project achieved over **$2 million in primary sales**, with additional revenue generated through ongoing royalties from secondary market trades.\n\nThe collection has since amassed over **$2 million in secondary trading volume** on platforms like OpenSea. Building and sustaining value in a competitive, fast-evolving market took constant execution across art, tech, and community.',
         metrics: [
           { label: 'Primary Sales', value: '$2M+' },
           { label: 'Trading Volume', value: '$2M+' },
           { label: 'Unique NFTs', value: '9,224' },
         ],
         images: [
-          { src: '/images/portfolio/detail/art/er-opensea.jpg', alt: 'Eternal Royals on OpenSea' },
-          { src: '/images/portfolio/detail/art/er-opensea-2.jpg', alt: 'OpenSea Trading' },
-          { src: '/images/portfolio/detail/art/nfc-chips.jpg', alt: 'NFC Chips' },
+          { src: '/images/portfolio/detail/art/er-opensea-collection.png', alt: 'Eternal Royals on OpenSea' },
+          { src: '/images/portfolio/detail/art/er-opensea-stats.jpg', alt: 'OpenSea Trading Stats' },
         ],
       },
+      // NFT LA - side by side with event context
       {
-        heading: 'Eternal Guardians (Unreleased)',
-        content: 'Following Eternal Royals, I developed **Eternal Guardians**, an ambitious collection representing six months of intensive work. Using advanced **Photoshop** techniques and photo manipulation, I created artwork featuring over 400 distinct traits with interconnected storylines. Each Guardian was designed to work individually while also fitting into a larger narrative universe. The collection pushed the boundaries of what\'s possible with generative art, maintaining artistic coherence across thousands of unique combinations. While market conditions led to pausing the launch, the project demonstrated advanced technical and artistic capabilities in the NFT space.',
+        heading: 'NFT LA with Jondo Global',
+        layout: 'side-by-side',
+        imageAspect: '4/3',
+        content: 'I co-sponsored and hosted an event at **NFT LA** alongside the **founder of Jondo Global**, a premium printing company that produced physical canvas prints of the Eternal Royals artwork. We showcased the collection on their high-end products and connected with collectors, artists, and blockchain builders from across the country.\n\nThe partnership brought the digital side of the project into the real world, giving holders a tangible version of their NFTs printed on gallery-quality canvas.',
         images: [
-          { src: '/images/portfolio/detail/art/er-mystery.jpg', alt: 'Mystery Royal Preview' },
-          { src: '/images/portfolio/detail/art/miami-sign-1.jpg', alt: 'Miami Event Sign' },
+          { src: '/images/portfolio/detail/art/er-nft-la-hero.jpg', alt: 'Co-hosting the Eternal Royals event at NFT LA with Jondo Global' },
+        ],
+      },
+      // NFT Sales Highlights grid
+      {
+        heading: 'NFT Sales Highlights',
+        layout: 'image-grid',
+        gridCols: 5,
+        imageAspect: '1/1',
+        images: [
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-1.jpg', alt: 'Eternal Royals Canvas 1' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-2.jpg', alt: 'Eternal Royals Canvas 2' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-3.jpg', alt: 'Eternal Royals Canvas 3' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-4.jpg', alt: 'Eternal Royals Canvas 4' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-5.jpg', alt: 'Eternal Royals Canvas 5' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-6.jpg', alt: 'Eternal Royals Canvas 6' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-7.jpg', alt: 'Eternal Royals Canvas 7' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-8.jpg', alt: 'Eternal Royals Canvas 8' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-9.jpg', alt: 'Eternal Royals Canvas 9' },
+          { src: '/images/portfolio/detail/art/er-canvases/canvas-10.jpg', alt: 'Eternal Royals Canvas 10' },
+        ],
+      },
+      // Events and Promotions header
+      {
+        heading: 'Events and Promotions',
+        layout: 'section-header',
+        content: 'Merging digital and physical assets with blockchain and premium printing technologies with Jondo Global.',
+      },
+      // Events grid
+      {
+        heading: '',
+        layout: 'image-grid',
+        gridCols: 4,
+        imageAspect: '1/1',
+        images: [
+          { src: '/images/portfolio/detail/art/er-events/nft-la-booth.jpg', alt: 'NFT LA Booth' },
+          { src: '/images/portfolio/detail/art/er-events/veecon-royals.jpg', alt: 'VeeCon Royals' },
+          { src: '/images/portfolio/detail/art/er-events/nfc-chip.jpg', alt: 'NFC Chip Technology' },
+          { src: '/images/portfolio/detail/art/er-events/jesse-nyc.jpg', alt: 'Jesse in NYC' },
+          { src: '/images/portfolio/detail/art/er-events/poker-chips.jpg', alt: 'Branded Poker Chips' },
+          { src: '/images/portfolio/detail/art/er-events/sara-vee.jpg', alt: 'Sara at VeeCon' },
+          { src: '/images/portfolio/detail/art/er-events/event-photo-1.jpg', alt: 'Event Photo' },
+          { src: '/images/portfolio/detail/art/er-events/rob-nyc.jpg', alt: 'Rob in NYC' },
+          { src: '/images/portfolio/detail/art/er-events/nft-la-event.jpg', alt: 'NFT LA Event' },
+          { src: '/images/portfolio/detail/art/er-events/event-photo-2.jpg', alt: 'Event Photo' },
+          { src: '/images/portfolio/detail/art/er-events/touch-screen.jpg', alt: 'Touch Screen Display' },
+          { src: '/images/portfolio/detail/art/er-events/crowd.jpg', alt: 'Crowd at Event' },
+          { src: '/images/portfolio/detail/art/er-events/signed-print.jpg', alt: 'Signed Print' },
+          { src: '/images/portfolio/detail/art/er-events/jesse-times-square.png', alt: 'Jesse at Times Square' },
+          { src: '/images/portfolio/detail/art/er-events/event-photo-3.jpg', alt: 'Event Photo' },
+          { src: '/images/portfolio/detail/art/er-events/event-photo-4.jpg', alt: 'Event Photo' },
+          { src: '/images/portfolio/detail/art/er-events/event-photo-5.jpg', alt: 'Event Photo' },
+          { src: '/images/portfolio/detail/art/er-events/event-photo-6.jpg', alt: 'Event Photo' },
+          { src: '/images/portfolio/detail/art/er-events/event-photo-7.jpg', alt: 'Event Photo' },
+        ],
+      },
+      // Eternal Guardians - side by side
+      {
+        heading: 'Eternal Guardians',
+        layout: 'side-by-side',
+        content: '"The Eternal Guardians" are my newest digital art collection, crafted meticulously and yet awaiting its official debut.\n\nThis unreleased collection is the culmination of six months of rigorous work, employing advanced **Photoshop techniques** and innovative photo manipulations.\n\nWith over **400 distinct traits**, each piece is interconnected, offering a near limitless number of potential combinations.',
+        images: [
+          { src: '/images/portfolio/detail/art/er-guardians.jpg', alt: 'Eternal Guardians Collection' },
         ],
       },
     ],

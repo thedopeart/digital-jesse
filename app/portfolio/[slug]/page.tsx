@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getPortfolioPage, portfolioPages } from '@/lib/portfolio-pages';
+import Image from 'next/image';
 import ImageLightbox from '@/components/ImageLightbox';
 import FormattedText from '@/components/FormattedText';
 
@@ -51,33 +52,44 @@ export default async function PortfolioDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-16">
-      {/* Back Link */}
-      <Link
-        href="/portfolio"
-        className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-700 mb-8"
-      >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-        Back to Portfolio
-      </Link>
+    <div>
+      {/* Dark Header */}
+      <section className="bg-[#1e1e1e] pt-2 pb-10">
+        {/* Breadcrumb */}
+        <div className="max-w-7xl mx-auto px-6 mb-4">
+          <Link
+            href="/portfolio"
+            className="text-gray-500 hover:text-[#d4a847] text-sm transition-colors inline-flex items-center gap-1.5"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="opacity-60">
+              <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Portfolio
+          </Link>
+        </div>
 
-      {/* Header */}
-      <div className="mb-12">
-        <span className={`inline-block px-3 py-1 text-sm text-white rounded-full mb-4 ${categoryColors[page.category]}`}>
-          {categoryLabels[page.category]}
-        </span>
-        <h1 className="text-4xl font-bold text-gray-900">{page.title}</h1>
-        {page.subtitle && (
-          <p className="mt-2 text-xl text-gray-500">{page.subtitle}</p>
-        )}
-        <p className="mt-4 text-lg text-gray-600">
-          <FormattedText text={page.description} />
-        </p>
-      </div>
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight gradient-text">{page.title}</h1>
+          {page.subtitle && (
+            <p className="mt-2 text-lg text-gray-400">{page.subtitle}</p>
+          )}
+          <p className="mt-4 text-gray-300 leading-relaxed">
+            <FormattedText text={page.description} boldClassName="text-white" />
+          </p>
+          {page.tags && page.tags.length > 0 && (
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
+              {page.tags.map((tag, i) => (
+                <span key={i} className="inline-block px-3 py-1 text-xs font-semibold rounded-full uppercase tracking-wide border border-[#d4a847]/40 text-[#d4a847]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* Sections */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
       <div className="space-y-16">
         {page.sections.map((section, index) => {
           const layout = section.layout || 'default';
@@ -106,17 +118,19 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
             return (
               <section key={index} className="pt-8">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 uppercase tracking-wide">
-                    {section.heading}
-                  </h2>
-                  <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] rounded-full" />
-                  {section.content && (
-                    <p className="mt-4 text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                      <FormattedText text={section.content} />
-                    </p>
-                  )}
-                </div>
+                {section.heading && (
+                  <div className="text-center mb-8">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 uppercase tracking-wide">
+                      {section.heading}
+                    </h2>
+                    <div className="mt-3 mx-auto w-16 h-0.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] rounded-full" />
+                    {section.content && (
+                      <p className="mt-4 text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                        <FormattedText text={section.content} />
+                      </p>
+                    )}
+                  </div>
+                )}
                 {section.images && section.images.length > 0 && (
                   <div className={`grid ${gridClass} gap-3`}>
                     {section.images.map((img, i) => (
@@ -146,12 +160,12 @@ export default async function PortfolioDetailPage({ params }: Props) {
               <section key={index} className="border-t border-gray-100 pt-8">
                 <div className={`grid md:grid-cols-2 gap-8 items-center ${isEven ? '' : 'md:[direction:rtl]'}`}>
                   {/* Image side */}
-                  <div className={isEven ? '' : 'md:[direction:ltr]'}>
+                  <div className={isEven ? '' : 'md:[direction:ltr]'} style={section.imageMaxWidth ? { maxWidth: section.imageMaxWidth } : undefined}>
                     {section.images.length === 1 ? (
                       <ImageLightbox
                         src={section.images[0].src}
                         alt={section.images[0].alt}
-                        className={`relative ${singleAspect} rounded-xl overflow-hidden bg-gray-100`}
+                        className={`relative ${singleAspect} rounded-xl overflow-hidden`}
                         style={singleStyle}
                         contain
                       />
@@ -171,9 +185,13 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
                   {/* Content side */}
                   <div className={isEven ? '' : 'md:[direction:ltr]'}>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-1">
                       {section.heading}
                     </h2>
+                    {section.subheading && (
+                      <p className="text-sm text-gray-400 mb-4">{section.subheading}</p>
+                    )}
+                    {!section.subheading && <div className="mb-3" />}
 
                     {section.content && (
                       <p className="text-gray-600 leading-relaxed">
@@ -184,9 +202,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
                     {section.metrics && section.metrics.length > 0 && (
                       <div className="mt-6 grid grid-cols-3 gap-3">
                         {section.metrics.map((metric, i) => (
-                          <div key={i} className="bg-gray-50 p-3 rounded-lg text-center">
-                            <p className="text-xl font-bold text-gray-900">{metric.value}</p>
-                            <p className="text-xs text-gray-500">{metric.label}</p>
+                          <div key={i} className="bg-[#1e1e1e] p-4 rounded-xl text-center">
+                            <p className="text-2xl font-bold gradient-text">{metric.value}</p>
+                            <p className="mt-1 text-xs text-gray-400 uppercase tracking-wider font-medium">{metric.label}</p>
                           </div>
                         ))}
                       </div>
@@ -212,7 +230,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
           return (
             <section key={index} className={isSectionHeader ? 'pt-8' : 'border-t border-gray-100 pt-8'}>
               {isSectionHeader ? (
-                <div className="bg-gray-900 rounded-2xl py-8 px-8 md:px-12">
+                <div className="bg-[#1e1e1e] rounded-2xl py-8 px-8 md:px-12 max-w-4xl mx-auto">
                   <h2 className="text-2xl md:text-3xl font-bold text-white text-center uppercase tracking-wide">
                     {section.heading}
                   </h2>
@@ -223,11 +241,11 @@ export default async function PortfolioDetailPage({ params }: Props) {
                     </p>
                   )}
                   {section.bullets && section.bullets.length > 0 && (
-                    <div className="grid md:grid-cols-2 gap-x-10 gap-y-4 max-w-4xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-x-8 gap-y-4 max-w-3xl mx-auto">
                       {section.bullets.map((bullet, i) => (
-                        <div key={i} className="flex items-start gap-3 text-gray-300 text-base leading-relaxed">
-                          <span className="text-[#d4a847] mt-1 flex-shrink-0">•</span>
-                          <FormattedText text={bullet} boldClassName="text-white" />
+                        <div key={i} className="flex items-start gap-3 text-gray-300 text-sm leading-relaxed">
+                          <span className="text-[#d4a847] mt-0.5 flex-shrink-0">•</span>
+                          <FormattedText text={bullet} boldClassName="text-[#d4a847]" />
                         </div>
                       ))}
                     </div>
@@ -249,9 +267,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
                   {section.metrics && section.metrics.length > 0 && (
                     <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
                       {section.metrics.map((metric, i) => (
-                        <div key={i} className="bg-gray-50 p-4 rounded-lg">
-                          <p className="text-2xl font-bold text-gray-900">{metric.value}</p>
-                          <p className="text-sm text-gray-500">{metric.label}</p>
+                        <div key={i} className="bg-[#1e1e1e] p-5 rounded-xl text-center">
+                          <p className="text-3xl font-bold gradient-text">{metric.value}</p>
+                          <p className="mt-1 text-xs text-gray-400 uppercase tracking-wider font-medium">{metric.label}</p>
                         </div>
                       ))}
                     </div>
@@ -306,17 +324,6 @@ export default async function PortfolioDetailPage({ params }: Props) {
           );
         })}
       </div>
-
-      {/* CTA */}
-      <div className="mt-16 p-10 bg-gray-900 rounded-2xl text-center">
-        <h3 className="text-2xl font-bold text-white">Want similar results?</h3>
-        <p className="mt-3 text-gray-300">Let&apos;s talk about how I can help with your project.</p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-block px-8 py-3.5 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-xl hover:shadow-lg hover:shadow-amber-900/30 transition-all font-semibold"
-        >
-          Get in Touch
-        </Link>
       </div>
     </div>
   );

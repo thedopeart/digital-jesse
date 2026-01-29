@@ -49,5 +49,20 @@ export default function FormattedText({ text, className = '', boldClassName = 't
     });
   };
 
-  return <span className={className}>{parseText(text)}</span>;
+  // Split by double newlines into paragraphs
+  const paragraphs = text.split(/\n\n+/);
+  if (paragraphs.length <= 1) {
+    return <span className={className}>{parseText(text)}</span>;
+  }
+
+  return (
+    <span className={className}>
+      {paragraphs.map((para, i) => (
+        <span key={i}>
+          {i > 0 && <><br /><br /></>}
+          {parseText(para, `p${i}-`)}
+        </span>
+      ))}
+    </span>
+  );
 }
