@@ -440,12 +440,6 @@ export default function AboutPage() {
               >
                 Get in Touch
               </Link>
-              <a
-                href="/resume.pdf"
-                className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg hover:border-[#d4a847] hover:text-[#b8860b] transition-all font-medium text-lg"
-              >
-                Download Resume
-              </a>
             </div>
           </div>
         </div>

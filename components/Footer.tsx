@@ -71,11 +71,6 @@ export default function Footer() {
                   jesse@digitaljesse.com
                 </a>
               </li>
-              <li>
-                <Link href="/resume.pdf" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Resume
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

@@ -823,6 +823,42 @@ export default function LinkInBioBuilderPage() {
         </div>
       </div>
 
+      {/* FAQ Section */}
+      <div className="bg-[#f5f5f0] py-14 md:py-18">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why build your own link-in-bio page?</h2>
+          <div className="space-y-4 text-gray-700 text-base leading-relaxed mb-14">
+            <p>
+              Linktree, Beacons, and the rest charge monthly fees for features you can get for free. Worse, they own your page. If they shut down or change pricing, your links break.
+            </p>
+            <p>
+              This builder gives you a page you actually own. Design it however you want, export clean HTML, and host it anywhere. No branding slapped on top. No $9/month for a custom color.
+            </p>
+            <p>
+              Pick a template, add your links, customize the design, and export. The HTML works on any hosting provider: Netlify, Vercel, GitHub Pages, your own server. You keep full control.
+            </p>
+          </div>
+
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Common questions</h2>
+          <div className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-lg shadow-black/[0.04] ring-1 ring-black/[0.03]">
+            {[
+              { q: 'Is this really free?', a: 'Yes. No signup, no trial, no hidden upsell. Build your page and export it.' },
+              { q: 'Where do I host the exported HTML?', a: 'Anywhere that serves static files. Netlify and Vercel both have free tiers. GitHub Pages works too. Upload the HTML file and point your domain at it.' },
+              { q: 'Can I use my own domain?', a: 'Yes. Since you own the HTML file, you can host it on any domain you control. Most hosting providers let you connect a custom domain in a few clicks.' },
+              { q: 'Will it look good on mobile?', a: 'The exported page is fully responsive. It looks good on phones, tablets, and desktops. Use the preview toggle in the builder to check both views.' },
+              { q: 'Can I edit it after exporting?', a: 'Yes. Save a draft in the builder so you can come back and make changes. You can also edit the exported HTML directly if you know basic code.' },
+              { q: 'Do you store my data?', a: 'No. Everything stays in your browser. Drafts are saved to your local storage. Nothing is sent to a server.' },
+              { q: 'How is this different from Linktree?', a: 'You own the output. No monthly fees, no forced branding, no dependency on a third-party service. Export once and it works forever.' },
+            ].map((item, i, arr) => (
+              <div key={item.q} className={i < arr.length - 1 ? 'pb-5 mb-5 border-b border-gray-100' : ''}>
+                <h3 className="font-semibold text-gray-900 text-base mb-1.5">{item.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Modals */}
       {editingEl?.type === 'profile' && (
         <EditProfileModal el={editingEl as ProfileElement} onSave={updateElement} onClose={() => setEditingEl(null)} />
