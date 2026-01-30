@@ -93,6 +93,12 @@ const tools = [
         href: '/tools/social/image-resizer',
         status: 'coming' as const,
       },
+      {
+        name: 'Link in Bio Builder',
+        description: 'Build a custom link-in-bio page. No branding, no monthly fees. Export as HTML.',
+        href: '/tools/social/link-in-bio-builder',
+        status: 'live' as const,
+      },
     ],
   },
 ];
@@ -123,17 +129,8 @@ export default function ToolsPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {category.items.map((tool) => {
                   const isLive = tool.status === 'live';
-                  const Card = isLive ? Link : 'div';
-                  return (
-                    <Card
-                      key={tool.name}
-                      href={isLive ? tool.href : ''}
-                      className={`block p-6 rounded-2xl border transition-all duration-200 ${
-                        isLive
-                          ? 'border-[#d4a847]/20 bg-white/[0.03] hover:border-[#d4a847]/40 hover:bg-white/[0.06] cursor-pointer'
-                          : 'border-white/5 bg-white/[0.02] opacity-60 cursor-default'
-                      }`}
-                    >
+                  const inner = (
+                    <>
                       <div className="flex items-start justify-between mb-3">
                         <h3 className="text-white font-semibold text-lg">{tool.name}</h3>
                         {isLive ? (
@@ -147,7 +144,17 @@ export default function ToolsPage() {
                         )}
                       </div>
                       <p className="text-gray-400 text-sm leading-relaxed">{tool.description}</p>
-                    </Card>
+                    </>
+                  );
+                  const cls = `block p-6 rounded-2xl border transition-all duration-200 ${
+                    isLive
+                      ? 'border-[#d4a847]/20 bg-white/[0.03] hover:border-[#d4a847]/40 hover:bg-white/[0.06] cursor-pointer'
+                      : 'border-white/5 bg-white/[0.02] opacity-60 cursor-default'
+                  }`;
+                  return isLive ? (
+                    <Link key={tool.name} href={tool.href} className={cls}>{inner}</Link>
+                  ) : (
+                    <div key={tool.name} className={cls}>{inner}</div>
                   );
                 })}
               </div>

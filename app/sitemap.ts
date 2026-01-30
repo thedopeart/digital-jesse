@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/tools`, priority: 0.7 },
     { url: `${baseUrl}/tools/seo/internal-link-finder`, priority: 0.6 },
     { url: `${baseUrl}/tools/seo/affiliate-opportunity-finder`, priority: 0.6 },
+    { url: `${baseUrl}/tools/social/link-in-bio-builder`, priority: 0.6 },
   ];
 
   const portfolioRoutes = portfolioPages.map((page) => ({
