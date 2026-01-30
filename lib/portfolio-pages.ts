@@ -88,7 +88,7 @@ export const portfolioPages: PortfolioPage[] = [
     ],
   },
   {
-    slug: 'organic-seo-growth-2',
+    slug: 'seo-organic-growth-case-studies',
     title: 'SEO Case Studies',
     subtitle: 'TheDopeArt.com, LuxuryWallArt.com, QualitySewing.com',
     category: 'seo',

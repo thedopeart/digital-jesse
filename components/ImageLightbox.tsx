@@ -26,7 +26,7 @@ export default function ImageLightbox({ src, alt, className = '', contain = fals
           src={src}
           alt={alt}
           fill
-          className={`${contain ? 'object-contain' : 'object-cover'} hover:scale-105 transition-transform duration-300`}
+          className={`${contain ? 'object-contain' : 'object-cover'} hover:scale-[1.03] transition-transform duration-700 ease-out`}
         />
       </div>
 

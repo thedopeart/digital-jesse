@@ -1,0 +1,325 @@
+{
+  "gaming": [
+    {
+      "brand": "DXRacer",
+      "variations": ["dxracer", "dx racer", "dxracer.com"],
+      "program": "DXRacer Affiliate Program",
+      "commission": "5% per sale",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://www.dxracer.com/",
+      "category": "gaming",
+      "description": "Gaming chairs and racing cockpits with 30-day cookie duration."
+    },
+    {
+      "brand": "GT Omega",
+      "variations": ["gt omega", "gtomega", "gtomegaracing.com"],
+      "program": "GT Omega Affiliate Program",
+      "commission": "8% per sale",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://www.gtomegaracing.com/",
+      "category": "gaming",
+      "description": "Gaming chairs, racing cockpits, and desk accessories for gamers and sim racers."
+    },
+    {
+      "brand": "Origin PC",
+      "variations": ["origin pc", "originpc", "originpc.com"],
+      "program": "Origin PC Affiliate Program",
+      "commission": "3-5% per sale",
+      "type": "percentage",
+      "network": "cj",
+      "signupUrl": "https://www.originpc.com/affiliates/register/",
+      "category": "gaming",
+      "description": "Custom-built gaming PCs and high-performance systems through Commission Junction."
+    },
+    {
+      "brand": "ASUS",
+      "variations": ["asus", "asus rog", "rog", "asus.com"],
+      "program": "ASUS Affiliate Program",
+      "commission": "1-2% per sale",
+      "type": "percentage",
+      "network": "awin",
+      "signupUrl": "https://www.asus.com/us/site/creator-affiliate-program/",
+      "category": "gaming",
+      "description": "Gaming laptops, monitors, motherboards, and ROG peripherals via Awin network."
+    },
+    {
+      "brand": "BenQ",
+      "variations": ["benq", "benq gaming", "benq.com"],
+      "program": "BenQ Affiliate Program",
+      "commission": "3% per sale",
+      "type": "percentage",
+      "network": "flexoffers",
+      "signupUrl": "https://www.benq.com/",
+      "category": "gaming",
+      "description": "Gaming monitors with tiered sponsorship program and branded coupons."
+    },
+    {
+      "brand": "Green Man Gaming",
+      "variations": ["green man gaming", "greenmangaming", "greenmangaming.com"],
+      "program": "Green Man Gaming Affiliate Program",
+      "commission": "5% per sale",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://www.greenmangaming.com/affiliates/",
+      "category": "gaming",
+      "description": "PC game marketplace with 30-day cookies and 10% on bundle sales."
+    },
+    {
+      "brand": "GameFly",
+      "variations": ["gamefly", "game fly", "gamefly.com"],
+      "program": "GameFly Affiliate Program",
+      "commission": "$15 per subscription",
+      "type": "flat",
+      "network": "direct",
+      "signupUrl": "https://www.gamefly.com/",
+      "category": "gaming",
+      "description": "Video game rental subscription service for PlayStation, Xbox, and Nintendo Switch."
+    },
+    {
+      "brand": "Humble Bundle",
+      "variations": ["humble bundle", "humblebundle", "humble", "humblebundle.com"],
+      "program": "Humble Bundle Affiliate Program",
+      "commission": "5% per sale + $10 per Choice subscriber",
+      "type": "hybrid",
+      "network": "direct",
+      "signupUrl": "https://www.humblebundle.com/",
+      "category": "gaming",
+      "description": "Game bundles and Humble Choice subscription with mixed commission structure."
+    },
+    {
+      "brand": "G2A",
+      "variations": ["g2a", "g2a.com"],
+      "program": "G2A Affiliate Program",
+      "commission": "10% per sale",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://www.g2a.com/",
+      "category": "gaming",
+      "description": "Digital game marketplace with 30-day cookie tracking window."
+    },
+    {
+      "brand": "Fanatical",
+      "variations": ["fanatical", "fanatical.com"],
+      "program": "Fanatical Affiliate Program",
+      "commission": "12% per sale",
+      "type": "percentage",
+      "network": "cj",
+      "signupUrl": "https://www.fanatical.com/",
+      "category": "gaming",
+      "description": "PC game bundles and deals with 30-day cookies via Commission Junction."
+    },
+    {
+      "brand": "Nerd or Die",
+      "variations": ["nerd or die", "nerdordie", "nerdordie.com"],
+      "program": "Nerd or Die Affiliate Program",
+      "commission": "20% per sale",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://nerdordie.com/",
+      "category": "gaming",
+      "description": "Stream overlays, alerts, and widgets for Twitch, YouTube, and Kick creators."
+    },
+    {
+      "brand": "Meta Quest",
+      "variations": ["meta quest", "oculus", "metaquest", "quest vr"],
+      "program": "Meta Quest Creator Affiliates",
+      "commission": "$30 Quest Cash per device",
+      "type": "flat",
+      "network": "direct",
+      "signupUrl": "https://www.meta.com/creators/affiliates/",
+      "category": "gaming",
+      "description": "VR headsets with creator referral program earning Quest Store credit."
+    }
+  ],
+  "travel": [
+    {
+      "brand": "Allianz Travel Insurance",
+      "variations": ["allianz", "allianz travel", "allianzassistance.com"],
+      "program": "Allianz Global Assistance",
+      "commission": "12% per sale",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://www.allianzassistance.com/",
+      "category": "travel",
+      "description": "Travel insurance with tiered commission structure and 45-day cookie duration."
+    },
+    {
+      "brand": "SafetyWing",
+      "variations": ["safetywing", "safety wing", "safetywing.com"],
+      "program": "SafetyWing Affiliate Program",
+      "commission": "10% recurring",
+      "type": "recurring",
+      "network": "direct",
+      "signupUrl": "https://www.safetywing.com/",
+      "category": "travel",
+      "description": "Digital nomad travel insurance with 365-day cookie and recurring commissions."
+    },
+    {
+      "brand": "Travelex",
+      "variations": ["travelex", "travelex.com"],
+      "program": "Travelex Affiliate Program",
+      "commission": "5-8% per transaction",
+      "type": "percentage",
+      "network": "partnerize",
+      "signupUrl": "https://www.travelex.com/",
+      "category": "travel",
+      "description": "Currency exchange and travel money cards with 30-day cookies via Partnerize."
+    },
+    {
+      "brand": "Discover Cars",
+      "variations": ["discovercars", "discover cars", "discovercars.com"],
+      "program": "Discover Cars Affiliate Program",
+      "commission": "70% of rental profit + 30% coverage",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://www.discovercars.com/affiliate",
+      "category": "travel",
+      "description": "Car rental comparison with industry-leading 365-day cookie duration."
+    },
+    {
+      "brand": "Travelpro",
+      "variations": ["travelpro", "travelpro.com"],
+      "program": "Travelpro Affiliate Program",
+      "commission": "8-10% per sale",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://travelpro.com/pages/affiliate-program",
+      "category": "travel",
+      "description": "Premium luggage with tiered commissions: 8% base, 9% at $500+, 10% at $1000+."
+    },
+    {
+      "brand": "American Tourister",
+      "variations": ["american tourister", "americantourister", "americantourister.com"],
+      "program": "American Tourister Affiliate Program",
+      "commission": "8% per sale",
+      "type": "percentage",
+      "network": "cj",
+      "signupUrl": "https://www.americantourister.com/",
+      "category": "travel",
+      "description": "Durable luggage and travel bags with 30-day cookie duration."
+    },
+    {
+      "brand": "REI",
+      "variations": ["rei", "rei.com", "rei co-op"],
+      "program": "REI Affiliate Program",
+      "commission": "5% per sale",
+      "type": "percentage",
+      "network": "cj",
+      "signupUrl": "https://www.rei.com/",
+      "category": "travel",
+      "description": "Outdoor gear and travel equipment from trusted co-op retailer."
+    },
+    {
+      "brand": "NordVPN",
+      "variations": ["nordvpn", "nord vpn", "nordvpn.com"],
+      "program": "NordVPN Affiliate Program",
+      "commission": "40-100% per sale + 30% renewals",
+      "type": "hybrid",
+      "network": "impact",
+      "signupUrl": "https://nordvpn.com/",
+      "category": "travel",
+      "description": "VPN for travelers with 100% on monthly plans, 40% on annual subscriptions."
+    },
+    {
+      "brand": "Surfshark",
+      "variations": ["surfshark", "surfshark.com"],
+      "program": "Surfshark Affiliate Program",
+      "commission": "40-60% per sale",
+      "type": "percentage",
+      "network": "impact",
+      "signupUrl": "https://surfshark.com/affiliate",
+      "category": "travel",
+      "description": "Travel VPN with 30-day cookies and performance bonuses averaging 60% commission."
+    },
+    {
+      "brand": "CyberGhost",
+      "variations": ["cyberghost", "cyber ghost", "cyberghostvpn.com"],
+      "program": "CyberGhost Affiliate Program",
+      "commission": "100% on monthly + 45% on annual",
+      "type": "hybrid",
+      "network": "impact",
+      "signupUrl": "https://www.cyberghostvpn.com/",
+      "category": "travel",
+      "description": "VPN service with 45-day cookie duration and exceptional monthly commissions."
+    },
+    {
+      "brand": "Private Internet Access",
+      "variations": ["pia", "private internet access", "privateinternetaccess.com"],
+      "program": "PIA VPN Affiliate Program",
+      "commission": "80% on monthly + 33% on annual",
+      "type": "hybrid",
+      "network": "flexoffers",
+      "signupUrl": "https://www.privateinternetaccess.com/affiliate-program",
+      "category": "travel",
+      "description": "VPN with lifetime recurring commissions and 24% on subscription renewals."
+    },
+    {
+      "brand": "Babbel",
+      "variations": ["babbel", "babbel.com"],
+      "program": "Babbel Affiliate Program",
+      "commission": "$32-40 per sale",
+      "type": "flat",
+      "network": "impact",
+      "signupUrl": "https://www.babbel.com/",
+      "category": "travel",
+      "description": "Language learning app with 45-day cookies and flat-rate or percentage options."
+    },
+    {
+      "brand": "Rosetta Stone",
+      "variations": ["rosetta stone", "rosettastone", "rosettastone.com"],
+      "program": "Rosetta Stone Affiliate Program",
+      "commission": "7% per sale",
+      "type": "percentage",
+      "network": "cj",
+      "signupUrl": "https://www.rosettastone.com/",
+      "category": "travel",
+      "description": "Language learning software with 30-day cookie duration via Commission Junction."
+    },
+    {
+      "brand": "Rocket Languages",
+      "variations": ["rocket languages", "rocketlanguages", "rocketlanguages.com"],
+      "program": "Rocket Languages Affiliate Program",
+      "commission": "36-60% per sale",
+      "type": "percentage",
+      "network": "impact",
+      "signupUrl": "https://affiliate.rocketlanguages.com/",
+      "category": "travel",
+      "description": "Language courses with 60-day cookies and Rockstar Partner status at 60% commission."
+    },
+    {
+      "brand": "Mondly",
+      "variations": ["mondly", "mondly.com"],
+      "program": "Mondly Affiliate Program",
+      "commission": "30% recurring",
+      "type": "recurring",
+      "network": "impact",
+      "signupUrl": "https://www.mondly.com/",
+      "category": "travel",
+      "description": "Language learning by Pearson with 120-day cookies and recurring commissions."
+    },
+    {
+      "brand": "CruiseDirect",
+      "variations": ["cruise direct", "cruisedirect", "cruisedirect.com"],
+      "program": "CruiseDirect Affiliate Program",
+      "commission": "3% per booking",
+      "type": "percentage",
+      "network": "direct",
+      "signupUrl": "https://www.cruisedirect.com/affiliates",
+      "category": "travel",
+      "description": "Cruise bookings with 45-day cookie duration on average $2,500+ orders."
+    },
+    {
+      "brand": "Royal Caribbean",
+      "variations": ["royal caribbean", "royalcaribbean", "royalcaribbean.com"],
+      "program": "Royal Caribbean Affiliate Program",
+      "commission": "4% per booking",
+      "type": "percentage",
+      "network": "cj",
+      "signupUrl": "https://www.royalcaribbean.com/",
+      "category": "travel",
+      "description": "Cruise line with $100+ per sale on average bookings and 45-day cookies."
+    }
+  ]
+}
