@@ -82,10 +82,10 @@ const tools = [
     category: 'Social Tools',
     items: [
       {
-        name: 'Blog to Social Snippets',
-        description: 'Turn one blog post into 15 ready-to-post social updates.',
+        name: 'Page to Social Posts',
+        description: 'Turn any page into ready-to-post social content for every platform.',
         href: '/tools/social/blog-snippets',
-        status: 'coming' as const,
+        status: 'live' as const,
       },
       {
         name: 'Social Media Image Resizer',
