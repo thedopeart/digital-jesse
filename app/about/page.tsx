@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import HiddenSection from '@/components/HiddenSection';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -95,7 +96,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     ),
-    skills: ['Google Analytics 4', 'Google Search Console', 'Ahrefs', 'Screaming Frog', 'SEMrush', 'YouTube SEO'],
+    skills: ['Google Analytics 4', 'Google Search Console', 'Ahrefs', 'Screaming Frog', 'SEMrush', 'YouTube SEO', 'E-Rank', 'UberSuggest'],
   },
   {
     title: 'Design & Creative',
@@ -104,7 +105,7 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
       </svg>
     ),
-    skills: ['Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Canva', 'Adobe Premiere Pro', '3D Mockups'],
+    skills: ['Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Canva', 'Adobe Premiere Pro', 'Adobe InDesign', '3D Mockups'],
   },
   {
     title: 'Marketing & Ads',
@@ -114,7 +115,34 @@ const skillCategories = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
       </svg>
     ),
-    skills: ['Google Ads', 'Meta Ads (Facebook/Instagram)', 'Email Marketing (Klaviyo)', 'Content Strategy', 'Social Media Management', 'Influencer Marketing'],
+    skills: ['Google Ads', 'Meta Ads (Facebook/Instagram)', 'Email Marketing (Klaviyo)', 'Content Strategy', 'Social Media Management', 'Influencer Marketing', 'Blog Writing & Copywriting', 'Hootsuite'],
+  },
+  {
+    title: 'Development & Coding',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vite', 'Liquid (Shopify)', 'HTML/CSS', 'JavaScript', 'Node.js', 'Git/GitHub', 'Shopify App Development'],
+  },
+  {
+    title: 'Business & Operations',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+    skills: ['Product Catalog Management', 'Inventory Systems', 'Order Fulfillment', 'Vendor Relations', 'P&L Management', 'Process Optimization'],
+  },
+  {
+    title: 'AI & Automation',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    skills: ['Claude', 'ChatGPT', 'Cursor', 'AI-Assisted Development', 'Prompt Engineering', 'Workflow Automation'],
   },
 ];
 
@@ -165,12 +193,12 @@ export default function AboutPage() {
       <section className="relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#d4a847]/5 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-6 py-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-[320px_1fr] gap-12 items-center">
             {/* Left - Image & Quick Facts */}
             <div className="text-center md:text-left">
               <div className="relative inline-block">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#d4a847]/20 to-[#cd7f32]/10 blur-2xl scale-110" />
-                <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-[#d4a847]/30 shadow-2xl mx-auto md:mx-0">
+                <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden border-2 border-[#d4a847]/30 shadow-2xl mx-auto md:mx-0">
                   <Image
                     src="/images/headshots/jesse-pfp.jpg"
                     alt="Jesse Johnson"
@@ -194,10 +222,10 @@ export default function AboutPage() {
                 I've been selling things online since I was 15, starting on eBay and eventually building multiple e-commerce brands. Now I manage digital operations for a Seattle retailer while running my own projects on the side.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed mb-4">
-                At Quality Sewing, I took organic traffic from 5K to 22K monthly visitors while managing $2M+ in annual sales. I handle everything: product catalog, SEO, paid ads, email, social, and the custom tools that tie it all together.
+                What I love most is taking something from zero and making it work. I've launched five brands, grown them to $4.5M+ in total sales, and served over 3,000 customers along the way. Each one taught me something different about product, marketing, and what actually moves the needle.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                On my own, I've built multiple brands from scratch. The Dope Art did $400K+ in art sales. Eternal Royals (my NFT project) generated $2M+ in sales. Between those and Luxury Wall Art, I've served 3,000+ customers with 5-star ratings on Etsy. I also build tools when I see a problem worth solving, like my Masterpiece Locator that indexes 4,000+ paintings across 455 museums.
+                That same energy carries into the work I do for others. I've taken over e-commerce operations pulling in $2M+ a year, cut ad spend while growing organic traffic by 340%, and built 30+ tools to solve problems I kept running into. I don't just run campaigns or manage catalogs. I figure out what's not working, fix it, and build systems so it stays fixed.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -393,7 +421,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What I'm Looking For - WHITE CTA */}
+      {/* What I'm Looking For - WHITE CTA (hidden unless ?show=all) */}
+      <HiddenSection>
       <section className="bg-gradient-to-b from-gray-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
@@ -421,6 +450,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      </HiddenSection>
     </div>
   );
 }

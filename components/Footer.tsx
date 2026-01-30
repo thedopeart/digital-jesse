@@ -62,7 +62,7 @@ export default function Footer() {
             <h4 className="text-[#d4a847] font-semibold text-sm uppercase tracking-wider mb-4">Connect</h4>
             <ul className="space-y-2">
               <li>
-                <a href="https://linkedin.com/in/digitaljesse" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a href="https://www.linkedin.com/in/digitaljesse/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors text-sm">
                   LinkedIn
                 </a>
               </li>

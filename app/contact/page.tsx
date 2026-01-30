@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -44,7 +45,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/jessejohnson"
+                  href="https://www.linkedin.com/in/digitaljesse/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-xl hover:border-[#d4a847] hover:shadow-md transition-all group"
@@ -79,79 +80,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right - Contact Form */}
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h2>
-              <form
-                action="https://formspree.io/f/your-form-id"
-                method="POST"
-                className="space-y-6"
-              >
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#d4a847]/50 focus:border-[#d4a847] outline-none transition-all"
-                    placeholder="Your name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#d4a847]/50 focus:border-[#d4a847] outline-none transition-all"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:ring-2 focus:ring-[#d4a847]/50 focus:border-[#d4a847] outline-none transition-all"
-                  >
-                    <option value="job">Job Opportunity</option>
-                    <option value="freelance">Freelance Project</option>
-                    <option value="collaboration">Collaboration</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-[#d4a847]/50 focus:border-[#d4a847] outline-none transition-all resize-none"
-                    placeholder="Tell me about your project or opportunity..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-[#d4a847] to-[#cd7f32] text-black rounded-lg hover:shadow-lg hover:shadow-amber-900/30 transition-all font-semibold text-lg"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </div>
